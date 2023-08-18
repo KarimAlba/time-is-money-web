@@ -52,6 +52,7 @@
 }
 
 .block-Login1 button {
+    cursor: pointer;
     width: 200px;
     font-size: 18px;
     margin-top: 25px;
