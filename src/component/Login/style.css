@@ -1,0 +1,190 @@
+.ContainerLogin {
+    display: flex;
+    flex-direction: row;
+}
+
+.ContainerLogin img {
+    position: absolute;
+    height: 64vh;
+    width: 76vw;
+    z-index: 1;
+}
+
+.form-login {
+    position: relative;
+    z-index: 2;
+    left: 40%;
+}
+
+.form-login span {
+    display: flex;
+    justify-content: center;
+    color: #00b2f4;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
+.block-Login1 {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1.5rem 35px;
+    border-radius: 0.5rem;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    /* height: 300px; */
+    width: 750px;
+    margin-right: 15px;
+    margin-top: 55px;
+}
+
+.block-Login1 h3 {
+    font-size: 1.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 20px;
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    font-family: 'Roboto', sans-serif;
+}
+
+.block-Login1 button {
+    width: 200px;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-left: 275px; 
+    border: 0;
+    height: 36px;
+    background-color: #00b2f4;
+    color: #eee;
+    border-radius: 16px;
+}
+
+.block-Login1 span {
+    color: #00b2f4;
+    text-decoration: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.animateContainer {
+    position: relative;
+}
+
+.animateContainer input[id="id_email"],
+.animateContainer input[id="pass"] {
+    display: block;
+    outline: none;
+    width: 50%;
+    height: calc(3.5rem + -8px);
+    background: transparent;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    color: #000;
+    text-transform: initial;
+    box-sizing: border-box;
+    background-color: rgb(217, 249, 255);
+    margin-left: 195px;
+    margin-top: 18px;
+}
+
+.animateContainer label[for="id_email"],
+.animateContainer label[for="pass"] {
+    cursor: text;
+    display: block;
+    position: absolute;
+    left: 120px;
+    top: 25px;
+    text-align: left;
+    font-size: 17px;
+    color: #000;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.animateContainer label[for="pass"] {
+    top: 95px;
+    left: 112px;
+}
+
+.animateContainer input[id="id_email"]:valid+label[for="id_email"],
+.animateContainer input[id="id_email"]:focus+label[for="id_email"] {
+    /* top: 0px; */
+    font-size: 17px;
+    outline: 0;
+    /* color: #b6b8bf; */
+
+    /* transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out; */
+}
+
+.animateContainer input[id="id_email"]:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.animateContainer input[id="pass"]:valid+label[for="pass"],
+.animateContainer input[id="pass"]:focus+label[for="pass"] {
+    top: 95px;
+    font-size: 17px;
+    /* color: #b6b8bf; */
+}
+
+.animateContainer input[id="pass"]:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+
+input:focus+label,
+textarea:valid+label {
+    top: -17px;
+    font-size: 13px;
+    opacity: 0.65;
+    font-family: inherit;
+}
+
+.passwordRecovery {
+    margin-top: 0.5rem !important;
+}
+
+.modal-choice-registration-Container {
+    /* z-index: 1050;
+    width: 100%;
+    height: 100%;
+    position: fixed; */
+    top: 77%;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-choice-registration {
+    width: 310px;
+    height: 100px;
+    background-color: white;
+    border-color: #515151;
+    border: 1px solid #515151;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+.modal-choice-registration p{
+    text-align: center;
+    margin-top: 0;
+}
+.modal-choice-registration span{
+    color: #00b2f4;
+    font-size: 15px;
+    line-height: 30px;
+    cursor: pointer;
+}

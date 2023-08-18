@@ -1,0 +1,19 @@
+.container-Footer{
+    display: flex;
+    flex-direction: row;
+}
+
+.Footer {
+    width: 100%;
+    margin: auto;
+    margin-top: 75px;
+}
+.Footer h4{
+    text-align: center;
+    font-family: revert;
+    font-weight: 500;
+}
+.span{
+    color: #00B2F4;
+    border-top: 1px solid #00B2F4;
+}

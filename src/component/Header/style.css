@@ -1,0 +1,32 @@
+.container-header{
+    display: flex;
+    flex-direction: row;
+}
+
+.button-container {
+    position: absolute;
+    right: 0;
+    margin-top: 30px;
+
+
+}
+.button-container button {
+    Width: 110px;
+    Height: 40px;
+    margin: 10px;
+    padding: initial;
+    border: 2px solid;
+    background-color: rgb(255, 255, 255);
+    border-color:  #00B2F4;
+    font-family: 'Arial';
+    font-size: 14px;
+    box-shadow: 8px 10px 5px 2px rgba(105, 105, 106, 0.2)
+}
+.container-img{
+    margin-left: 35%;
+}
+.container-img img{
+    width: 100px;
+    height: 100px;
+    margin-top: 21px;
+}

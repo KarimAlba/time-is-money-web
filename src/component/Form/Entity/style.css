@@ -1,0 +1,177 @@
+.form-register-legal-entity {
+    display: flex;
+    flex-direction: column;
+    padding: 0.7rem 1.5rem 35px;
+    border-radius: 0.5rem;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    /* height: 300px; */
+    width: 750px;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.legal-entiti-block1 {
+    position: relative;
+
+}
+
+.legal-entiti-block1 input[id="name-of-company"],
+.legal-entiti-block1 input[id="legal-address"],
+.legal-entiti-block1 input[id="inn"],
+.legal-entiti-block1 input[id="checkpoint"],
+.legal-entiti-block1 input[id="surname"],
+.legal-entiti-block1 input[id="name"],
+.legal-entiti-block1 input[id="patronymic"],
+.legal-entiti-block1 input[id="email"],
+.legal-entiti-block1 input[id="confirmation-email"],
+.legal-entiti-block1 input[id="pass"],
+.legal-entiti-block1 input[id="confirmation-pass"] {
+    display: block;
+    outline: none;
+    width: 60%;
+    height: calc(3.5rem + -8px);
+    background: transparent;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    color: #000;
+    text-transform: initial;
+    box-sizing: border-box;
+    background-color: rgb(217, 249, 255);
+    margin-left: 305px;
+    margin-top: 18px;
+}
+
+.legal-entiti-block1 label[for="name-of-company"],
+.legal-entiti-block1 label[for="legal-address"],
+.legal-entiti-block1 label[for="inn"],
+.legal-entiti-block1 label[for="checkpoint"],
+.legal-entiti-block1 label[for="surname"],
+.legal-entiti-block1 label[for="name"],
+.legal-entiti-block1 label[for="patronymic"],
+.legal-entiti-block1 label[for="email"],
+.legal-entiti-block1 label[for="confirmation-email"],
+.legal-entiti-block1 label[for="pass"],
+.legal-entiti-block1 label[for="confirmation-pass"] {
+    display: block;
+    position: absolute;
+    left: 70px;
+    top: 38px;
+    text-align: left;
+    font-size: 17px;
+    color: #000;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+
+.legal-entiti-block1 label[for="legal-address"] {
+    top: 105px;
+    left: 135px;
+}
+
+.legal-entiti-block1 label[for="inn"] {
+    left: 257px;
+    top: 170px;
+}
+
+.legal-entiti-block1 label[for="checkpoint"] {
+    top: 235px;
+    left: 257px;
+}
+
+.legal-entiti-block1 label[for="surname"] {
+    top: 300px;
+    left: -6px;
+}
+
+.legal-entiti-block1 label[for="name"] {
+    top: 368px;
+    left: 257px;
+}
+
+.legal-entiti-block1 label[for="patronymic"] {
+    top: 435px;
+    left: 220px;
+}
+
+.legal-entiti-block1 label[for="email"] {
+    top: 500px;
+    left: 245px;
+}
+
+.legal-entiti-block1 label[for="confirmation-email"] {
+    left: 139px;
+    top: 563px;
+}
+.legal-entiti-block1 label[for="pass"]{
+    top: 630px;
+    left: 160px;
+}
+.legal-entiti-block1 label[for="confirmation-pass"]{
+    top: 695px;
+    left: 130px;
+}
+
+/* .legal-person-block1 input[id="id_Entity"] {
+    display: block;
+    outline: none;
+    height: calc(3.5rem + -13px);
+    background: transparent;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    color: #000;
+    text-transform: initial;
+    background-color: rgb(217, 249, 255);
+    margin-left: 295px;
+    margin-top: 5px;
+}
+
+.legal-person-block1 label[for="id_Entity"] {
+    margin-right: 260px;
+    margin-top: -20px;
+}
+
+.legal-person-block1 label[for="id_Entity2"] {
+    margin-right: 226px;
+    margin-top: -20px;
+}
+
+.legal-person-block1 label[for="id_Entity3"] {
+    margin-right: 260px;
+    margin-top: -20px;
+}
+
+.legal-person-block1 label[for="id_Entity4"] {
+    margin-right: 235px;
+    margin-top: -20px;
+}
+
+.legal-person-block1 label[for="id_Entity5"] {
+    margin-right: 333px;
+    margin-top: -20px;
+}
+
+.legal-person-block1 label[for="id_Entity6"] {
+    margin-right: 315px;
+    margin-top: -20px;
+}
+
+.legal-person-block1 label[for="id_Entity7"] {
+    margin-right: 345px;
+    margin-top: -20px;
+} */
+
+.form-register-legal-entity button {
+    width: 200px;
+    font-size: 18px;
+    margin-top: 25px;
+    margin-left: 295px;
+    border: 0;
+    height: 36px;
+    background-color: #00b2f4;
+    color: #eee;
+    border-radius: 13px;
+    font-size: 15px;
+}
