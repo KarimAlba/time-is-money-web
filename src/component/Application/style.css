@@ -30,6 +30,7 @@
 
 .aplication-text1-block1 span {
     color: #00B2F4;
+    cursor: pointer;
 
 }
 
@@ -79,22 +80,27 @@
     top: 23px;
     height: 50px;
 }
-.block-one h1{
+
+.block-one h1 {
     margin-left: 27px;
 }
-.block-one p{
+
+.block-one p {
     text-align: end;
     margin-top: 60px;
 }
+
 /* блок 3 */
-.Aplication-contauner-block3{
+.Aplication-contauner-block3 {
     padding: 150px;
-    
+
 }
-.Aplication-contauner-block3 img{
+
+.Aplication-contauner-block3 img {
     width: 374px;
 }
-.bloc3-text{
+
+.bloc3-text {
     border: 1px solid #eee;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
     margin-right: 64px;
@@ -106,11 +112,77 @@
     padding: 30px;
 
 }
-.bloc3-text img{
+
+.bloc3-text img {
     height: 70px;
     margin: 20px;
 }
-.text1 p{
+
+.text1 p {
     margin-top: 50px;
     text-align: end;
+}
+
+@media(width <=470px) {
+    .block1 img {
+        width: 300px;
+        margin-top: -85px;
+    }
+
+    .block1 {
+        flex-direction: column;
+    }
+
+    .aplication-text1-block1 {
+        width: 60%;
+        margin-left: 20px;
+        margin-top: 45px;
+        border-radius: 15px;
+        margin-right: 20px;
+    }
+
+    .text1,
+    .Aplication-contauner-block3,
+    .container-info-screen,
+    .container-mobile-phone-screen {
+        flex-direction: column;
+    }
+
+    .block-one {
+        width: 80%;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-top: 23px;
+        border-radius: 20px;
+    }
+
+    .block-one p {
+        margin-top: 30px;
+    }
+
+    .Aplication-contauner-block3 img {
+        width: 272px;
+        margin-left: -140px;
+    }
+
+    .bloc3-text {
+        width: 295px;
+        height: 325px;
+        margin-right: 203px;
+        margin-left: -95px;
+
+    }
+
+    .container-mobile-phone-screen img {
+        width: 278px;
+        margin: 17%;
+        margin-top: -5px;
+    }
+
+    .text1 p {
+        margin-top: -50px;
+    }
+    .bloc3-text img{
+        margin-top: -15px;
+    }
 }

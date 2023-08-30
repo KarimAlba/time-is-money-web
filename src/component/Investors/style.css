@@ -42,7 +42,7 @@ li::marker {
 
 .quantity-clients {
     margin-top: 50px;
-    margin-left: 80px;
+    margin-left: -40px;
     background-image: url('../imgTimeIsMoney/materik.svg');
     background-repeat: no-repeat;
 }
@@ -53,19 +53,28 @@ li::marker {
     display: flex;
     justify-content: center;
     margin: 0;
-    margin-left: -79px;
+    margin-left:125px;
 }
 
 .quantity-clients p {
+    margin: 0;
     display: flex;
     justify-content: center;
-    font-weight: 600;
 
+}
+
+.quantity-clients span {
+    font-size: 19px;
+    color: black;
+    margin-left: -80px;
+    margin-top: 5px;
+    margin-right: 40px;
+    font-weight: 100;
 }
 
 .quantity-clients img {
     position: relative;
-    left: -13%;
+    left: 30%;
     top: 25px;
     height: 80px;
 }
@@ -162,13 +171,17 @@ li::marker {
 .container-client-4-content {
     display: flex;
     flex-direction: row;
-    margin-left: 20px;
+    justify-content: space-around;
 
+}
+
+.client4-content {
+    display: flex;
+    flex-direction: column;
 }
 
 .container-client-4-content img {
     height: 150px;
-    margin-right: 228px;
     margin-top: 50px;
 }
 
@@ -179,15 +192,15 @@ li::marker {
 
 .client-4-footer-container {
     border: 1px solid #eee;
-    border: 1px solid #eee;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
     margin-left: 20px;
     width: 250px;
     margin-top: 30px;
-    margin-right: 65px;
-    padding-left: 24px;
     height: 130px;
     border-radius: 15px;
+}
+.client-4-footer-container p{
+    padding: 10px;
 }
 
 .container-client-5-heder {
@@ -201,21 +214,29 @@ li::marker {
     margin-top: 250px;
 }
 
+.container-client5-content {
+    display: flex;
+
+}
+
 .container-client-5-icon {
     display: flex;
-    flex-direction: row;
-    margin-right: 200px;
+    /* flex-direction: row;
+    margin-right: 200px; */
 }
+
+.container-client-5-icon p {
+    margin: 0;
+    color: #00B2F4
+}
+
 
 .container-client-5-icon img {
     height: 65px;
     margin-right: 10px;
 }
 
-.container-client-5-content {
-    display: flex;
-    flex-direction: row;
-}
+
 
 .container-client-5-heder p {
     margin: 0;
@@ -392,7 +413,7 @@ li::marker {
     width: 425px;
     margin-top: 30px;
     padding: 45px;
-    height: 400px;
+    /* height: 400px; */
     border-radius: 15px;
 }
 
@@ -464,4 +485,207 @@ li::marker {
     height: 230px;
     top: -15px;
     left: -50%;
+}
+.ellipse2 {
+    position: relative;
+    height: 230px;
+    top: -11px;
+    left: -118px;;
+}
+
+
+@media(width <=470px) {
+    .container-clients-investor {
+        flex-direction: column;
+    }
+    body{
+        background-image: none;
+    }
+
+    .container-client-1 {
+        margin-top: 30px;
+        margin-left: 50px;
+    }
+
+    .business-model {
+        width: 320px;
+    }
+
+    .business-model img {
+        left: 265px;
+    }
+
+    .media-scroll-client-5 {
+        overflow-x: scroll;
+    }
+
+    .container-client-3 {
+        flex-direction: column;
+    }
+
+    .container-client-4-content img {
+        height: 100px;
+        margin-left: -255px;
+    }
+
+    .client-4-footer-container p {
+        padding: 10px;
+    }
+
+    .client-4-footer-container {
+        height: auto;
+        width: 170px;
+    }
+
+    .container-client-6-heder {
+        margin-bottom: 80px;
+    }
+
+    .container-client-8-header img,
+    .container-client-7-header img,
+    .container-client-6-heder img,
+    .container-clirnt-4-heder img {
+        margin-left: 10%;
+        height: 50px;
+    }
+
+    .client-6-conteiner1 {
+        width: 330px;
+        height: auto;
+        margin-left: 5px;
+    }
+
+    .client-6-conteiner1 img {
+        left: 266px;
+        height: 65px;
+    }
+
+    .container-client-6-footer {
+        flex-direction: column;
+    }
+
+    .client-6-container3 {
+        margin-top: 30px;
+    }
+
+    .client-6-container3,
+    .client-6-conteiner2 {
+        /* width: 345px; */
+        margin-left: 5px;
+    }
+
+    .container-client-7-content {
+        flex-direction: column;
+    }
+
+    .client-7-content-block1 {
+        width: 360px;
+        padding: 20px;
+        height: auto;
+    }
+
+    .container-client-7-header img {
+        margin-left: 0%;
+    }
+
+    .container-client-7-content img {
+        left: 310px;
+        top: 95px;
+        width: 100px;
+    }
+
+    .client-7-content-block2 {
+        margin-left: 10px;
+    }
+
+    .container-client-8-content {
+        /* overflow-x: scroll; */
+        flex-direction: column;
+    }
+
+    .container-client-8-header img {
+        margin-left: 10%;
+    }
+
+    .container-main-Investors h1 {
+        margin-left: 35px;
+    }
+
+    .quantity-clients img {
+        left: 35%;
+
+    }
+
+    .quantity-clients h1 {
+        margin-left: 125px;
+    }
+
+    .client-7-content-block2 img {
+        height: 250px;
+        width: 300px;
+    }
+
+    .client-7-content-block2 p {
+        text-align: initial;
+    }
+
+    .client-7-content-block2 span {
+        width: 27px;
+        margin-left: 0;
+    }
+
+    .container-client-7-header h1 {
+        font-size: 25px;
+    }
+
+    .client-8-content-block1 {
+        margin-left: 25px;
+    }
+
+    .container-client-8 p {
+        font-size: 18px;
+    }
+
+    .client-8-content-block1-men {
+        height: 170px;
+    }
+
+    .ellipse {
+        height: 196px;
+        top: -11px;
+        left: -46%;
+    }
+
+    .ellipse2 {
+        position: relative;
+        height: 192px;
+        top: -11px;
+        left: 0;
+    }
+
+    .container-client-3 span {
+        width: 50px;
+        display: none;
+    }
+
+    .container-client-4-content {
+        flex-direction: column;
+    }
+
+    .container-client5-content {
+        flex-direction: column;
+    }
+
+    .content-block {
+        margin-bottom: 50px;
+    }
+
+    .container-client-5-icon img {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+
+    .client-5-content-container {
+        width: 200px;
+    }
 }

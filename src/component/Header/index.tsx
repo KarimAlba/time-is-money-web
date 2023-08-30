@@ -2,6 +2,7 @@ import React from "react"
 import './style.css';
 import logo from '../imgTimeIsMoney/logo.svg'
 import { useNavigate } from "react-router-dom";
+import burger from '../imgTimeIsMoney/hamburger.svg'
 const Header = () => {
     const navigate = useNavigate();
     const toMain = () => navigate('/main');
@@ -11,10 +12,9 @@ const Header = () => {
     const toLogin = () => navigate('/login')
 
 
-
-    
     return (
         <div className="container-header">
+            <img className="header-burger" src={burger}/>
             <div className="container-img">
                 <img src={logo} />
             </div>

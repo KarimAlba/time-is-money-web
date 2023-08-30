@@ -105,11 +105,13 @@
     left: 139px;
     top: 563px;
 }
-.legal-entiti-block1 label[for="pass"]{
+
+.legal-entiti-block1 label[for="pass"] {
     top: 630px;
     left: 160px;
 }
-.legal-entiti-block1 label[for="confirmation-pass"]{
+
+.legal-entiti-block1 label[for="confirmation-pass"] {
     top: 695px;
     left: 130px;
 }
@@ -174,4 +176,69 @@
     color: #eee;
     border-radius: 13px;
     font-size: 15px;
+}
+
+@media (width <=470px) {
+    .form-register-legal-entity {
+        width: 400px;
+        margin-right: 7px;
+        margin-left: 7px;
+    }
+
+    .legal-entiti-block1 input[id="name-of-company"],
+    .legal-entiti-block1 input[id="legal-address"],
+    .legal-entiti-block1 input[id="inn"],
+    .legal-entiti-block1 input[id="checkpoint"],
+    .legal-entiti-block1 input[id="surname"],
+    .legal-entiti-block1 input[id="name"],
+    .legal-entiti-block1 input[id="patronymic"],
+    .legal-entiti-block1 input[id="email"],
+    .legal-entiti-block1 input[id="confirmation-email"],
+    .legal-entiti-block1 input[id="pass"],
+    .legal-entiti-block1 input[id="confirmation-pass"] {
+        margin-left: 170px;
+
+    }
+
+    .form-register-legal-entity button {
+        margin-left: 160px;
+    }
+
+    .legal-entiti-block1 label[for="name-of-company"] {
+        width: 218px;
+        top: 15px;
+        left: 43px;
+    }
+
+    .legal-entiti-block1 label[for="legal-address"] {
+        top: 100px;
+        left: 0;
+    }
+
+    .legal-entiti-block1 label[for="inn"],
+    .legal-entiti-block1 label[for="checkpoint"],
+    .legal-entiti-block1 label[for="name"] {
+        left: 125px;
+    }
+
+    .legal-entiti-block1 label[for="surname"] {
+        width: 218px;
+        top: 282px;
+        left: -20px;
+    }
+    .legal-entiti-block1 label[for="patronymic"]{
+        left: 85px;
+    }
+    .legal-entiti-block1 label[for="email"]{
+        left: 110px;
+    }
+    .legal-entiti-block1 label[for="confirmation-email"]{
+        left: 0;
+    }
+    .legal-entiti-block1 label[for="pass"]{
+        left: 25px;
+    }
+    .legal-entiti-block1 label[for="confirmation-pass"] {
+        left: 0;
+    }
 }

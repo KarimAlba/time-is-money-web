@@ -39,13 +39,14 @@
     margin-left: 260px;
     margin-top: 18px;
 }
+
 .physical-pesrson-block1 label[for="surname"],
 .physical-pesrson-block1 label[for="name"],
 .physical-pesrson-block1 label[for="patronymic"],
 .physical-pesrson-block1 label[for="email"],
 .physical-pesrson-block1 label[for="confirmation-email"],
 .physical-pesrson-block1 label[for="pass"],
-.physical-pesrson-block1 label[for="confirmation-pass"]{
+.physical-pesrson-block1 label[for="confirmation-pass"] {
     cursor: text;
     display: block;
     position: absolute;
@@ -58,27 +59,33 @@
     transition: .2s;
 
 }
-.physical-pesrson-block1 label[for="name"]{
+
+.physical-pesrson-block1 label[for="name"] {
     left: 210px;
     top: 100px;
 }
-.physical-pesrson-block1 label[for="patronymic"]{
+
+.physical-pesrson-block1 label[for="patronymic"] {
     left: 170px;
     top: 170px;
 }
-.physical-pesrson-block1 label[for="email"]{
+
+.physical-pesrson-block1 label[for="email"] {
     left: 193px;
     top: 239px;
 }
-.physical-pesrson-block1 label[for="confirmation-email"]{
+
+.physical-pesrson-block1 label[for="confirmation-email"] {
     left: 87px;
     top: 300px;
 }
-.physical-pesrson-block1 label[for="pass"]{
+
+.physical-pesrson-block1 label[for="pass"] {
     left: 110px;
     top: 362px;
 }
-.physical-pesrson-block1 label[for="confirmation-pass"]{
+
+.physical-pesrson-block1 label[for="confirmation-pass"] {
     top: 430px;
     left: 82px;
 }
@@ -96,82 +103,47 @@
     font-size: 15px;
 }
 
-/* .physical-pesrson-block1 input[id="id_infoPhysical"] {
-    display: block;
-    outline: none;
-    height: calc(3.5rem + -13px);
-    background: transparent;
-    font-size: 15px;
-    border: 1px solid #ffffff;
-    color: #000;
-    text-transform: initial;
-    background-color: rgb(217, 249, 255);
-    margin-left: 295px;
-    margin-top: 5px;
+@media (width <=470px) {
+    .form-register-physical-pesrson {
+        width: 400px;
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+
+    .physical-pesrson-block1 input[id="surname"],
+    .physical-pesrson-block1 input[id="name"],
+    .physical-pesrson-block1 input[id="patronymic"],
+    .physical-pesrson-block1 input[id="email"],
+    .physical-pesrson-block1 input[id="confirmation-email"],
+    .physical-pesrson-block1 input[id="pass"],
+    .physical-pesrson-block1 input[id="confirmation-pass"] {
+        margin-left: 160px;
+    }
+
+    .physical-pesrson-block1 label[for="surname"],
+    .physical-pesrson-block1 label[for="patronymic"],
+    .physical-pesrson-block1 label[for="confirmation-email"],
+    .physical-pesrson-block1 label[for="pass"],
+    .physical-pesrson-block1 label[for="confirmation-pass"]{
+        left: 80px;
+    }
+    .physical-pesrson-block1 label[for="name"]{
+        left: 115px;
+    }
+    .physical-pesrson-block1 label[for="email"]{
+        left: 100px;
+    }
+    .physical-pesrson-block1 label[for="confirmation-email"]{
+        left: -7px;
+    }
+    .physical-pesrson-block1 label[for="pass"]{
+        left: 12px;
+    }
+    .physical-pesrson-block1 label[for="confirmation-pass"]{
+        left: -14px;
+    }
+    .form-register-physical-pesrson button{
+        margin-left: 160px;
+    }
+
 }
-
-.physical-pesrson-block1 label[for="id_infoPhysical1"] {
-    margin-left: 70px;
-    margin-top: 30px;
-    position: absolute;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical2"] {
-    margin-right: 337px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical3"] {
-    margin-right: 218px;
-    margin-top: -20px;
-
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical4"] {
-    margin-right: 218px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical5"] {
-    margin-right: 468px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical6"] {
-    margin-right: 218px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical7"] {
-    margin-right: 250px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical8"] {
-    margin-right: 234px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical9"] {
-    margin-right: 330px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical10"] {
-    margin-right: 310px;
-    margin-top: -20px;
-}
-
-.physical-pesrson-block1 label[for="id_infoPhysical11"] {
-    margin-right: 330px;
-    margin-top: -20px;
-}
-
-
-
-.physical-pesrson-block1 input[id="id_infoPhysical2"] {
-    float: right;
-    position: relative;
-    margin: -25px 10px 0 0;
-    cursor: pointer;
-} */

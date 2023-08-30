@@ -19,10 +19,6 @@ const Login = () => {
             <img src={imgLogin} />
             <div className="form-login">
                 <Outlet />
-                {/* <div className=" ">
-
-                </div> */}
-
             </div>
         </div>
     )

@@ -1,10 +1,4 @@
-/* body {
-  background-size: 57%;
-  background-repeat: no-repeat;
-  background-image: url('./component/imgTimeIsMoney/materik.svg');
-  background-position-x: 81%;
-  background-position-y: 87px;
-} */
+
 
 .App {
   text-align: center;
@@ -209,6 +203,15 @@
   /* border-color: #515151; */
   border: 1px solid #515151;
 
+}
+@media (width<=470px) {
+  .modalChooseService{
+    margin-left: 0;
+    width: 400px;
+  }
+  .animate-label input[id="id_email"]{
+    height: calc(4.5rem + 2px);
+  }
 }
 
 @keyframes App-logo-spin {

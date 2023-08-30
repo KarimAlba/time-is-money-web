@@ -6,7 +6,7 @@
 
 .container-block1 {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .containerImg2 {
@@ -35,7 +35,7 @@
 }
 
 .queue {
-    height: 60vh;
+    height: 75vh;
     position: absolute;
     z-index: 3;
     top: 86px;
@@ -63,10 +63,9 @@
 
 .container-Text2 {
     background: #fff;
-    /* display: flex;
-    text-align: end; */
+    display: flex;
+    text-align: end;
     border-top-left-radius: 20px;
-
     height: 353px;
     border: 1px solid #eee;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
@@ -232,4 +231,105 @@
 .img5 {
     width: 400px;
     margin-right: 150px;
+}
+
+
+@media(width <=470px) {
+    .img3 {
+        width: 275px;
+        margin-left: 94px;
+        margin-top: 67px;
+    }
+
+    .container-Text h5 {
+        font-size: 100px;
+    }
+
+    .queue {
+        height: 50vh;
+        position: static;
+    }
+
+    .container-Text p {
+        margin-top: 70px;
+        color: #00B2F4;
+        margin-left: 10px;
+    }
+
+    .container-Text2 {
+        height: 315px;
+        margin-right: 20px;
+        border-radius: 15px;
+        margin-left: 20px;
+        margin-top: 30px;
+    }
+
+    .container-Text2 p {
+        display: flex;
+        text-align: end;
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 33px;
+    }
+
+    .block2-text1 {
+        width: 380px;
+    }
+
+    .block-info {
+        height: 330px;
+        margin-left: 20px;
+        margin-top: 120px;
+        margin-right: 20px;
+        width: 430px;
+    }
+
+    .img1 {
+        position: relative;
+        top: 79px;
+        left: 20px;
+    }
+
+    .img2 {
+        position: relative;
+        top: -216px;
+        left: 20px;
+    }
+
+    .container-block1 {
+        flex-direction: column;
+    }
+
+    .containerImg2 {
+        position: static;
+    }
+
+    .container-block2 {
+        flex-direction: column;
+    }
+
+    .container-Text {
+        margin-left: 50px;
+    }
+    .container-block3{
+        flex-direction: column;
+    }
+    .container-block3-info1{
+        width: 430px;
+        height: 245px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .container-block3-info2{
+        width: 430px;
+        height: 245px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .img5{
+        width: 300px;
+        margin-top: 30px;
+        margin-left: 20px;
+        margin-right: 0;
+    }
 }

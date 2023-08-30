@@ -11,6 +11,14 @@ import Star from '../imgTimeIsMoney/Star.svg'
 
 const Application = () => {
 
+    const onClickGooglePlay = () => (
+        window.location.assign('https://play.google.com/store/apps/details?id=com.studiovr.timeismoney&pli=1')
+    )
+
+    const onClickAppStore = () => (
+        window.location.assign('https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674')
+    )
+
     return (
         <div className="container-Main-Application">
             <div className="block1">
@@ -19,7 +27,7 @@ const Application = () => {
                 </div>
                 <div className="aplication-text1-block1">
                     <p>
-                        Установите наше приложение из <span>App Store, Google Play</span> или <span>RuStore </span>
+                        Установите наше приложение из <span onClick={() => onClickAppStore()}>App Store </span>,<span onClick={() => onClickGooglePlay()}>Google Play</span>, или <span>RuStore </span>
                         на свой смартфон. Пройдите простую регистрацию и заполните
                         пустые поля в документах. Сделать это вы можете как в ручную,
                         так и автоматически переносом данных из Госуслуг.
