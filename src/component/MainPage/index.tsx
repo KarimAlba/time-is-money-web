@@ -1,11 +1,9 @@
 import React from "react";
 import './style.css';
 import queue from '../imgTimeIsMoney/queue.svg'
-import Ellipse from '../imgTimeIsMoney/Ellipse1.svg'
 import Star from '../imgTimeIsMoney/Star.svg'
 import stroke from '../imgTimeIsMoney/stroke.svg'
 import Phone from '../imgTimeIsMoney/Phone.svg'
-import QR from '../imgTimeIsMoney/QR code.svg'
 import laptop from '../imgTimeIsMoney/laptop.svg'
 
 
@@ -13,21 +11,19 @@ const MainPage = () => {
     return (
         <div className='containerMain'>
             <div className="container-block1">
+                <div className="container-Text">
+                    <h5 > TиМ</h5>
+                    <p>
+                        НОВАЯ ВЕХА
+                        <br />
+                        В ТАЙМ-МЕНЕДЖМЕНТЕ
+                    </p>
+                </div>
                 <div className='containerImg2'>
                     <img src={queue} className="queue" />
-                    <img src={Star} className="star" />
-                    <img src={Ellipse} className="Ellipse" />
-
                 </div>
                 <div >
-                    <div className="container-Text">
-                        <h5 > TиМ</h5>
-                        <p>
-                            НОВАЯ ВЕХА
-                            <br />
-                            В ТАЙМ-МЕНЕДЖМЕНТЕ
-                        </p>
-                    </div>
+
                     <div className='container-Text2'>
                         <p>
                             Рост документооборота в компаниях вынуждает их содержать
@@ -40,7 +36,6 @@ const MainPage = () => {
                             Экономим время, экономим деньги.
                         </p>
                     </div>
-
                 </div>
             </div>
             {/* второй блок */}
@@ -75,7 +70,6 @@ const MainPage = () => {
                 </div>
                 <div>
                     <img src={Phone} className="img3" />
-                    <img src={QR} className="img4" />
                 </div>
             </div>
             {/* третий блок */}
