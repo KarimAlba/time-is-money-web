@@ -42,7 +42,7 @@ li::marker {
 
 .quantity-clients {
     margin-top: 50px;
-    margin-left: -40px;
+    margin-left: 80px;
     background-image: url('../imgTimeIsMoney/materik.svg');
     background-repeat: no-repeat;
 }
@@ -488,9 +488,9 @@ li::marker {
 }
 .ellipse2 {
     position: relative;
-    height: 230px;
-    top: -11px;
-    left: -118px;;
+    height: 202px;
+    top: -1px;
+    left: -18px;
 }
 
 
@@ -550,14 +550,15 @@ li::marker {
     }
 
     .client-6-conteiner1 {
-        width: 330px;
+        max-width: 330px;
         height: auto;
         margin-left: 5px;
     }
 
     .client-6-conteiner1 img {
-        left: 266px;
+        left: 293px;
         height: 65px;
+        top: -61px;
     }
 
     .container-client-6-footer {
@@ -607,10 +608,13 @@ li::marker {
         margin-left: 10%;
     }
 
-    .container-main-Investors h1 {
+    /* .container-main-Investors h1 {
         margin-left: 35px;
-    }
+    } */
 
+    .quantity-clients{
+        margin-left: -40px;
+    }
     .quantity-clients img {
         left: 35%;
 

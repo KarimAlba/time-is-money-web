@@ -27,7 +27,7 @@ function Layout() {
     <>
       <Header />
       <Routes>
-        <Route path="/main" element={<MainPage />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="/application" element={<Application />} />
         <Route path="/Plugin" element={<Plugin />} />
         <Route path="/investors" element={<Investors />} />

@@ -13,9 +13,10 @@ import TiM from '../imgTimeIsMoney/TiM1.svg'
 import plus from '../imgTimeIsMoney/plus1.svg'
 import minus from '../imgTimeIsMoney/minus.svg'
 import schedule from '../imgTimeIsMoney/schedule.svg'
-import men1 from '../imgTimeIsMoney/men1.svg'
 import EllipseMen from '../imgTimeIsMoney/EllipseMen.svg'
 import men2 from '../imgTimeIsMoney/men2.svg'
+import men1 from '../imgTimeIsMoney/men1.svg'
+
 
 const Investors = () => {
 
@@ -403,9 +404,8 @@ const Investors = () => {
                 </div>
                 <div className="container-client-8-content">
                     <div className="client-8-content-block1">
-                        <div style={{ display: "flex" }}>
+                        <div>
                             <img src={men1} className="client-8-content-block1-men" />
-                            <img src={EllipseMen} className="ellipse" />
                         </div>
                         <br />
                         <h2> Вадим Фоменко</h2>
@@ -420,7 +420,7 @@ const Investors = () => {
                         </p>
                     </div>
                     <div className="client-8-content-block1">
-                        <div style={{ display: "flex" }}>
+                        <div >
                             {/* <img src={men1} className="client-8-content-block1-men" /> */}
                             <img src={EllipseMen} className="ellipse2 " />
                         </div>
@@ -437,9 +437,8 @@ const Investors = () => {
                         </p>
                     </div>
                     <div className="client-8-content-block1">
-                        <div style={{ display: "flex" }}>
+                        <div >
                             <img src={men2} className="client-8-content-block1-men" />
-                            <img src={EllipseMen} className="ellipse" />
                         </div>
                         <br />
                         <h2> Сарсаков Абдула</h2>
