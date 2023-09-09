@@ -15,17 +15,30 @@ import Login from './component/Login';
 import PhysicalPerson from './component/Form/PhysicalPerson';
 import Entity from './component/Form/Entity';
 import LoginForm from './component/Form/LoginForm';
+import PersonInfo from './component/PersonInfo';
+import UserPage from './component/User';
+import EditUser from './component/EditUser';
+import UserPlugin from './component/UserPlugin';
 
 function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
+
+  const [isOpenFooter, setIsOpenFooter] = useState<boolean>(true);
 
   const handlePasswordChange = () => {
     setModalVisible(true)
   }
 
+  const handleIsOpenFooter = () => {
+    setIsOpenFooter(true)
+  }
+  const handlePersonInfoMounted = () => {
+    setIsOpenFooter(false)
+  }
+
   return (
     <>
-      <Header />
+      <Header handleIsOpenFooter={handleIsOpenFooter} />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/application" element={<Application />} />
@@ -36,8 +49,16 @@ function Layout() {
           <Route path="physicalPerson" element={<PhysicalPerson />} />
           <Route path="entity" element={<Entity />} />
         </Route>
+        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} />}>
+          <Route path='' element={<UserPlugin/>}/>
+          <Route path="edit-user" element={<EditUser type={1}/>} />
+        </Route>
+
       </Routes>
-      <Footer />
+      {isOpenFooter
+        ? <Footer />
+        : null
+      }
       {
         isModalVisible ? (
           <div className='overlay modalChooseServiceContainer'>

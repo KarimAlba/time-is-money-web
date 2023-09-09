@@ -1,0 +1,44 @@
+.edit-user {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    margin-left: 500px;
+    width: 600px;
+    padding: 0.7rem 1.5rem 35px;
+    border-radius: 0.5rem;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+.edit-user button{
+
+    width: 200px;
+    font-size: 18px;
+    margin-top: 40px;
+    margin-right: 150px;
+    border: 0;
+    height: 36px;
+    background-color:rgb(0, 178, 244);
+    color: #eee;
+    border-radius: 13px;
+}
+.edit-user_data{
+    display: flex;
+    justify-content: space-around;
+}
+.edit-user_data input{
+    display: block;
+    outline: none;
+    width: 250px;
+    height: calc(3.5rem + -8px);
+    background: transparent;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    color: #000;
+    text-transform: initial;
+    box-sizing: border-box;
+    background-color: rgb(217, 249, 255);
+    margin-left: 30px;
+    margin-top: 18px;
+}

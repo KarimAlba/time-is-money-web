@@ -11,7 +11,6 @@ import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const Login = () => {
 
-    // const navigate = useNavigate();
 
     return (
 

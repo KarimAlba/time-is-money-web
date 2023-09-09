@@ -1,28 +1,39 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import './style.css';
 import logo from '../imgTimeIsMoney/logo.svg'
 import { useNavigate } from "react-router-dom";
 import burger from '../imgTimeIsMoney/hamburger.svg'
 import crossBurgerMenu from '../imgTimeIsMoney/crossBurgerMenu.svg'
-const Header = () => {
+
+interface HeaderPropsTypes {
+    handleIsOpenFooter: Function
+}
+const Header = (props: HeaderPropsTypes) => {
+    const {handleIsOpenFooter} = props;
+
     const navigate = useNavigate();
     const toMain = () => {
+        handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/');
     }
     const toApplication = () => {
+        handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/Application');
     }
     const toPlagin = () => {
+        handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/Plugin');
     }
     const toInvestors = () => {
+        handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/investors');
     }
     const toLogin = () => {
+        handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/login');
     }
@@ -33,7 +44,7 @@ const Header = () => {
         <div className="container-header">
             {menuAcvtive
                 ? (<div className="modalBurger">
-                    <img className="header-burger" src={crossBurgerMenu} onClick={() => setMenuActive(false)}/>
+                    <img className="header-burger" src={crossBurgerMenu} onClick={() => setMenuActive(false)} />
                     <div className="menuBurger">
                         <button onClick={toMain}>Главная </button>
                         <button onClick={toApplication}>Приложение</button>
@@ -60,3 +71,7 @@ const Header = () => {
     )
 }
 export default Header;
+
+function handleIsOpenFooter() {
+    throw new Error("Function not implemented.");
+}

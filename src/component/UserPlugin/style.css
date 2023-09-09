@@ -1,0 +1,9 @@
+.plugins {
+    margin-left: 25%;
+    text-align: center;
+}
+.plugins h2{
+    font-weight: normal;
+    font-family: Arial;
+    line-height: 23px;
+}

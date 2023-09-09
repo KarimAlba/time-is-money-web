@@ -1,0 +1,36 @@
+.plugin-modal {
+    display: flex;
+    flex-flow: column;
+    width: 650px;
+    height: 200px;
+    background: rgba(0, 178, 244, 0.18);
+    border-radius: 15px;
+    align-items: center;
+    margin-left: 270px;
+    font-family: Arial;
+    line-height: 23px;
+}
+
+.plugin-modal h3 {
+    margin: 10px 0;
+    font-weight:400 ;
+    font-size: 20px;
+    font-family: Arial;
+    line-height: 23px;
+}
+
+.plugin-modal button {
+    width: 200px;
+    font-size: 18px;
+    margin-top: 17px;
+    border: 0;
+    height: 36px;
+    background-color: rgb(0, 178, 244);
+    color: #eee;
+    border-radius: 13px;
+}
+.plugin-modal input{
+    width: 430px;
+    height: 30px;
+    border: 0;
+}
