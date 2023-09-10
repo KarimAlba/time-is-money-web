@@ -4,7 +4,7 @@ import RunningMan from "../imgTimeIsMoney/RunningMan.svg"
 import StepList from "../step/stepList";
 import star from '../imgTimeIsMoney/Star.svg'
 
-const Plugin = () => {
+const PluginPage = () => {
     return (
         <div className="container-main-plugin">
             <div className="block1-plugin">
@@ -51,4 +51,6 @@ const Plugin = () => {
         </div>
     )
 }
-export default Plugin;
+
+export default PluginPage
+;

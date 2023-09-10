@@ -5,9 +5,15 @@ import Star from '../imgTimeIsMoney/Star.svg'
 import stroke from '../imgTimeIsMoney/stroke.svg'
 import Phone from '../imgTimeIsMoney/Phone.svg'
 import laptop from '../imgTimeIsMoney/laptop.svg'
+import { useNavigate } from "react-router-dom";
 
 
 const MainPage = () => {
+    const navigate = useNavigate();
+
+    const toApplication = () => navigate('/Application');
+    const toPluginPage = () => navigate('/PluginPage');
+
     return (
         <div className='containerMain'>
             <div className="container-block1">
@@ -49,7 +55,7 @@ const MainPage = () => {
                         </div>
                         <div>
                             <p>
-                                <span>Мобильного приложения</span>, где пользователи хранят
+                                <span onClick={toApplication}>Мобильного приложения</span>, где пользователи хранят
                                 свои персональные данные и другую значимую
                                 информацию.
                             </p>
@@ -62,7 +68,7 @@ const MainPage = () => {
                         </div>
                         <div>
                             <p>
-                                <span>Плагина</span>, для текстового редактора, с помощью
+                                <span onClick={toPluginPage}>Плагина</span>, для текстового редактора, с помощью
                                 которого операторы готовят шаблоны документов
                             </p>
                         </div>

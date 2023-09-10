@@ -1,7 +1,11 @@
 import React from "react"
 import './style.css';
+import { useNavigate } from "react-router-dom";
 
 const Entity = () => {
+    const navigate = useNavigate();
+
+    const toLogin = () => navigate('/Login');
     return (
         <div className="form-register-legal-entity">
             <div className="legal-entiti-block1">
@@ -107,7 +111,7 @@ const Entity = () => {
                     htmlFor="confirmation-pass"
                 >подтвердите пароль</label>
             </div>
-            <button> РЕГИСТРАЦИЯ</button>
+            <button onClick={toLogin}> РЕГИСТРАЦИЯ</button>
         </div>
     )
 }

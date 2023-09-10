@@ -5,7 +5,7 @@ import Header from './component/Header';
 import MainPage from './component/MainPage';
 import Footer from './component/Footer';
 import Application from './component/Application';
-import Plugin from './component/Plugin';
+import Plugin from './component/PluginPage';
 import StepItem from './component/step/StepItem';
 import screen1 from './component/imgTimeIsMoney/screen1.svg';
 import stroke from './component/imgTimeIsMoney/stroke.svg'
@@ -18,7 +18,9 @@ import LoginForm from './component/Form/LoginForm';
 import PersonInfo from './component/PersonInfo';
 import UserPage from './component/User';
 import EditUser from './component/EditUser';
-import UserPlugin from './component/UserPlugin';
+import UserPlugin from './component/UserPLugin';
+import PluginPage from './component/PluginPage';
+
 
 function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
@@ -42,7 +44,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/application" element={<Application />} />
-        <Route path="/Plugin" element={<Plugin />} />
+        <Route path="/PluginPage" element={<PluginPage />} />
         <Route path="/investors" element={<Investors />} />
         <Route path="login" element={<Login />} >
           <Route path='' element={<LoginForm showModal={handlePasswordChange} />} />
@@ -50,8 +52,8 @@ function Layout() {
           <Route path="entity" element={<Entity />} />
         </Route>
         <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} />}>
-          <Route path='' element={<UserPlugin/>}/>
-          <Route path="edit-user" element={<EditUser type={1}/>} />
+          <Route path='' element={<UserPlugin />} />
+          <Route path="edit-user" element={<EditUser type={1} />} />
         </Route>
 
       </Routes>
