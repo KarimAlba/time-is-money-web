@@ -1,28 +1,24 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-import Header from './component/Header';
-import MainPage from './component/MainPage';
-import Footer from './component/Footer';
-import Application from './component/Application';
-import Plugin from './component/Plugin';
-import StepItem from './component/step/StepItem';
-import screen1 from './component/imgTimeIsMoney/screen1.svg';
-import stroke from './component/imgTimeIsMoney/stroke.svg'
-import StepList from './component/step/stepList';
-import Investors from './component/Investors';
-import Login from './component/Login';
-import PhysicalPerson from './component/Form/PhysicalPerson';
-import Entity from './component/Form/Entity';
-import LoginForm from './component/Form/LoginForm';
-import PersonInfo from './component/PersonInfo';
-import UserPage from './component/User';
-import EditUser from './component/EditUser';
-import UserPlugin from './component/UserPlugin';
+import Header from './components/Header';
+import MainPage from './views/MainPage';
+import Footer from './components/Footer';
+import Application from './views/Application';
+import Plugin from './views/Plugin';
+import screen1 from './assets/imgTimeIsMoney/screen1.svg'
+import stroke from './assets/imgTimeIsMoney/stroke.svg'
+import Investors from './views/Investors';
+import Login from './views/Login';
+import PhysicalPerson from './components/Form/PhysicalPerson';
+import Entity from './components/Form/Entity';
+import LoginForm from './components/Form/LoginForm';
+import UserPage from './views/User';
+import EditUser from './components/EditUser';
+import UserPlugin from './components/UserPlugin';
 
 function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
-
   const [isOpenFooter, setIsOpenFooter] = useState<boolean>(true);
 
   const handlePasswordChange = () => {
@@ -97,6 +93,7 @@ function Layout() {
     </>
   )
 }
+
 function App() {
   return (
     <BrowserRouter>
