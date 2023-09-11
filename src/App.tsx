@@ -1,14 +1,11 @@
 import { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
-<<<<<<< HEAD
 import Header from './components/Header';
 import MainPage from './views/MainPage';
 import Footer from './components/Footer';
 import Application from './views/Application';
-import Plugin from './views/Plugin';
-import screen1 from './assets/imgTimeIsMoney/screen1.svg'
-import stroke from './assets/imgTimeIsMoney/stroke.svg'
+import PluginPage from './views/Plugin';
 import Investors from './views/Investors';
 import Login from './views/Login';
 import PhysicalPerson from './components/Form/PhysicalPerson';
@@ -17,28 +14,6 @@ import LoginForm from './components/Form/LoginForm';
 import UserPage from './views/User';
 import EditUser from './components/EditUser';
 import UserPlugin from './components/UserPlugin';
-=======
-import Header from './component/Header';
-import MainPage from './component/MainPage';
-import Footer from './component/Footer';
-import Application from './component/Application';
-import Plugin from './component/PluginPage';
-import StepItem from './component/step/StepItem';
-import screen1 from './component/imgTimeIsMoney/screen1.svg';
-import stroke from './component/imgTimeIsMoney/stroke.svg'
-import StepList from './component/step/stepList';
-import Investors from './component/Investors';
-import Login from './component/Login';
-import PhysicalPerson from './component/Form/PhysicalPerson';
-import Entity from './component/Form/Entity';
-import LoginForm from './component/Form/LoginForm';
-import PersonInfo from './component/PersonInfo';
-import UserPage from './component/User';
-import EditUser from './component/EditUser';
-import UserPlugin from './component/UserPLugin';
-import PluginPage from './component/PluginPage';
-
->>>>>>> FD-1
 
 function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
@@ -59,7 +34,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/application" element={<Application />} />
-        <Route path="/PluginPage" element={<PluginPage />} />
+        <Route path="/PluginPage" element={<PluginPage/>} />
         <Route path="/investors" element={<Investors />} />
         <Route path="login" element={<Login />} >
           <Route path='' element={<LoginForm showModal={handlePasswordChange} />} />
@@ -109,8 +84,6 @@ function Layout() {
           </div>
         ) : null
       }
-
-
     </>
   )
 }

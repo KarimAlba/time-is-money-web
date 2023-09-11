@@ -51,9 +51,4 @@ const PluginPage = () => {
     )
 }
 
-<<<<<<<< HEAD:src/views/Plugin/index.tsx
-export default Plugin;
-========
-export default PluginPage
-;
->>>>>>>> FD-1:src/component/PluginPage/index.tsx
+export default PluginPage;
