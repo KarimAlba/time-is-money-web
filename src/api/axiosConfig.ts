@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 const baseUrl = 'http://89.108.70.120:8080';
 

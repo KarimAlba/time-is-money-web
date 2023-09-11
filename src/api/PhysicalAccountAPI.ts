@@ -1,5 +1,5 @@
+import { AxiosResponse } from "axios";
 import axiosConfig from "./axiosConfig";
-import { AxiosResponse } from 'axios'
 
 class PhysicalAccountAPI{
     public static registration(body: any): Promise<AxiosResponse<any | any>> {
