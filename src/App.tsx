@@ -34,7 +34,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/application" element={<Application />} />
-        <Route path="/PluginPage" element={<PluginPage/>} />
+        <Route path="/PluginPage" element={<PluginPage />} />
         <Route path="/investors" element={<Investors />} />
         <Route path="login" element={<Login />} >
           <Route path='' element={<LoginForm showModal={handlePasswordChange} />} />
@@ -84,6 +84,8 @@ function Layout() {
           </div>
         ) : null
       }
+
+
     </>
   )
 }
