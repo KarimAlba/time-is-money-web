@@ -25,7 +25,7 @@ const Header = (props: HeaderPropsTypes) => {
     const toPlagin = () => {
         handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
-        navigate('/Plugin');
+        navigate('/PluginPage');
     }
     const toInvestors = () => {
         handleIsOpenFooter()

@@ -10,8 +10,17 @@
     border: 1px solid #eee;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     text-align: center;
+
 }
-.edit-user button{
+
+.edit-user h5 {
+    font-weight: 400;
+    font-size: 20px;
+    font-family: Arial;
+    line-height: 21.77px;
+}
+
+.edit-user button {
 
     width: 200px;
     font-size: 18px;
@@ -19,15 +28,17 @@
     margin-right: 150px;
     border: 0;
     height: 36px;
-    background-color:rgb(0, 178, 244);
+    background-color: rgb(0, 178, 244);
     color: #eee;
     border-radius: 13px;
 }
-.edit-user_data{
+
+.edit-user_data {
     display: flex;
     justify-content: space-around;
 }
-.edit-user_data input{
+
+.edit-user_data input {
     display: block;
     outline: none;
     width: 250px;
