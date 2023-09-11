@@ -17,7 +17,7 @@ import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
 
 const Investors = () => {
-
+//dasdas
     return (
         <div className="container-main-Investors">
             <div>
