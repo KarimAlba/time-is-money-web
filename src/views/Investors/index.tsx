@@ -22,14 +22,14 @@ const Investors = () => {
         <div className="container-main-Investors">
             <div>
                 <h1>Целевой рынок</h1>
-                <p style={{ marginLeft: '50px' }}>наши потанцеальные клиенты - это:</p>
+                <p style={{ marginLeft: '50px' }}>Наши потенциальные клиенты - это:</p>
                 <div
                     className="container-clients-investor">
                     <div className="container-client-1">
                         <li>банки , </li>
-                        <li> натариусы,</li>
-                        <li>стаматалогии,</li>
-                        <li>диогностические
+                        <li>нотариусы,</li>
+                        <li>стоматологии,</li>
+                        <li>диагностические
                             <br />
                             центры,
                         </li>
@@ -39,34 +39,33 @@ const Investors = () => {
                             магазины,
                         </li>
                         <li>автосалоны,</li>
-                        <li>прокатные канторы,</li>
+                        <li>прокатные конторы,</li>
                     </div>
                     <div className="container-client-1">
                         <li>
                             страховые
-                            кампании ,
+                            компании ,
                         </li>
-                        <li> гостиница,</li>
+                        <li> гостиницы,</li>
                         <li>
                             салоны мобильной
                             связи,
                         </li>
-                        <li>часные клиники </li>
-                        <li>МФЦ,</li>
+                        <li>частные клиники </li>
                         <li>риэлторы</li>
                         <p>и многие другие,
                             <br />
                             кто ценит свое время
                             <br />
-                            и аремя своих клиентов
+                            и время своих клиентов
                         </p>
                     </div>
                     <div
                         className="quantity-clients">
                         <img src={Elipsestar} />
-                        <h1><span style={{marginRight:40}}>свыше</span>  200 000</h1>
+                        <h1><span style={{ marginRight: 40 }}>свыше</span>  200 000</h1>
                         <p>
-                            наших потанциальных
+                            наших потенциальных
                             <br />
                             клиентов в одной только
                             <br />
@@ -80,44 +79,49 @@ const Investors = () => {
                     <h1>Бизнес-Модель</h1>
                     <div className="business-model">
                         <img src={ElipseStar2} />
-                        <p>Распростаранение плагина через сайт
+                        <p>Распространение плагина через сайт
                             <br />
-                            по подписке 1000 руб.месяц.
+                            по подписке 1000 руб.месяц.<span>*</span>
                         </p>
                         <button>time-money.shop.ru</button>
                     </div>
                 </div>
-                <div className="container-client-3">
-                    <div>
-                        <img src={One} />
-                        <p>1 год продаж</p>
-                        <h2>10 000</h2>
-                        <p>скачиваний плагина</p>
+                <div className='container_sales'>
+                    <div className="container-client-3">
+                        <div>
+                            <img src={One} />
+                            <p>1 год продаж</p>
+                            <h2>10 000</h2>
+                            <p>скачиваний плагина</p>
+                        </div>
+                        <span >
+                            ___________
+                        </span>
+                        <div>
+                            <img src={One} />
+                            <p>2 год продаж</p>
+                            <h2>65 000</h2>
+                            <p>скачиваний плагина</p>
+                        </div>
+                        <span >
+                            ___________
+                        </span>
+                        <div>
+                            <img src={One} />
+                            <p>3 год продаж</p>
+                            <h2>180 000</h2>
+                            <p>
+                                планируемое число
+                                <br />
+                                пользователей плагина
+                                <br />
+                                к концу третьего года
+                            </p>
+                        </div>
                     </div>
-                    <span >
-                        ___________
-                    </span>
-                    <div>
-                        <img src={One} />
-                        <p>2 год продаж</p>
-                        <h2>65 000</h2>
-                        <p>скачиваний плагина</p>
-                    </div>
-                    <span >
-                        ___________
-                    </span>
-                    <div>
-                        <img src={One} />
-                        <p>3 год продаж</p>
-                        <h2>180 000</h2>
-                        <p>
-                            планируемое число
-                            <br />
-                            пользователей плагина
-                            <br />
-                            к концу третьего года
-                        </p>
-                    </div>
+                    <p>
+                        <span>*</span>для первых подписчиков на период 6 месяцев стоимость 100 руб. в месяц
+                    </p>
                 </div>
                 <div className="container-client-4">
                     <div className="container-clirnt-4-heder">

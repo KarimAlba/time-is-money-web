@@ -53,7 +53,7 @@ li::marker {
     display: flex;
     justify-content: center;
     margin: 0;
-    margin-left:125px;
+    margin-left: 125px;
 }
 
 .quantity-clients p {
@@ -112,6 +112,10 @@ li::marker {
     height: 175px;
     border-radius: 15px;
 }
+.business-model span{
+    color:#00B2F4 ;
+    font-size: 40px;
+}
 
 .business-model button {
     cursor: pointer;
@@ -122,11 +126,23 @@ li::marker {
     height: 30px;
     width: 201px;
     border: 0;
+    cursor: pointer;
 }
 
 .container-client-3 {
     display: flex;
     flex-direction: row;
+}
+
+.container_sales p {
+    margin-left: 60px;
+    margin-top: 0;
+    font-style: italic;
+}
+
+.container_sales span {
+    color: #00B2F4;
+    font-size: 40px;
 }
 
 .container-client-3 img {
@@ -137,6 +153,7 @@ li::marker {
 }
 
 .container-client-3 p {
+    font-style: initial;
     margin-left: 75px;
     margin-top: 7px;
     font-size: 20px
@@ -199,7 +216,8 @@ li::marker {
     height: 130px;
     border-radius: 15px;
 }
-.client-4-footer-container p{
+
+.client-4-footer-container p {
     padding: 10px;
 }
 
@@ -486,6 +504,7 @@ li::marker {
     top: -15px;
     left: -50%;
 }
+
 .ellipse2 {
     position: relative;
     height: 202px;
@@ -498,7 +517,8 @@ li::marker {
     .container-clients-investor {
         flex-direction: column;
     }
-    body{
+
+    body {
         background-image: none;
     }
 
@@ -612,9 +632,10 @@ li::marker {
         margin-left: 35px;
     } */
 
-    .quantity-clients{
+    .quantity-clients {
         margin-left: -40px;
     }
+
     .quantity-clients img {
         left: 35%;
 

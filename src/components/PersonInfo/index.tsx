@@ -14,6 +14,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [isDownload, setIsDownload] = useState<boolean>(false)
     const [templateCount, setTemplateCount] = useState<boolean>(false)
     const [templateCount2, setTemplateCount2] = useState<boolean>(false)
+    const [templateCount3, setTemplateCount3] = useState<boolean>(false)
+
 
     const { handleIsOpenFooter, handleOpenPlugin } = props;
 
@@ -29,6 +31,9 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const handleTemplateClick = () => setTemplateCount(!templateCount);
 
     const handleTemplateClick2 = () => setTemplateCount2(!templateCount2);
+
+    const handleTemplateClick3 = () => setTemplateCount3(!templateCount3);
+
 
     const handleDownload = () => {
         handleOpenPlugin(isDownload);
@@ -70,7 +75,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         {templateCount
                             ? (<div>
                                 {pluginsOwners.map(item =>
-                                    <div key={item} className="statistic_point">
+                                    <div key={item} className="select_point">
                                         <p key={item + 1}>{item}</p>
                                         <span key={item + 2} >40</span>
                                     </div>
@@ -87,13 +92,12 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                 ? <img src={ArrowDownIcon} />
                                 : <img src={ArrowIcon} />
                             }
-                            {/* <img src={ArrowIcon} /> */}
                             <p>заполненных приложений:</p>
                         </div>
                         {templateCount2
                             ? (<div>
                                 {pluginsOwners.map(item =>
-                                    <div key={item} className="statistic_point">
+                                    <div key={item} className="select_point">
                                         <p key={item + 1}>{item}</p>
                                         <span key={item + 2} >200</span>
                                     </div>
@@ -103,9 +107,27 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             : null
                         }
                     </div>
-                    <div className="statistic_point">
-                        <img src={ArrowIcon} />
-                        <p>QR-code действителен до:</p>
+                    <div
+                        onClick={handleTemplateClick3}
+                        className="statistic_point">
+                        <div style={{ display: 'flex' }}>
+                            {templateCount3
+                                ? <img src={ArrowDownIcon} />
+                                : <img src={ArrowIcon} />
+                            }
+                            <p>QR-code действителен до:</p>
+                        </div>
+                        {templateCount3
+                            ? (<div>
+                                {pluginsOwners.map(item =>
+                                    <div key={item} className="select_point">
+                                        <p key={item + 1}>{item}</p>
+                                        <span key={item + 2} >12.03.2025</span>
+                                    </div>
+                                )}
+                            </div>)
+                            : null
+                        }
                     </div>
                 </div>
             </div>

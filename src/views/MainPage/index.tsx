@@ -4,8 +4,15 @@ import Star from '../../assets/imgTimeIsMoney/Star.svg'
 import stroke from '../../assets/imgTimeIsMoney/stroke.svg'
 import Phone from '../../assets/imgTimeIsMoney/Phone.svg'
 import laptop from '../../assets/imgTimeIsMoney/laptop.svg'
+import { useNavigate } from 'react-router';
 
 const MainPage = () => {
+    const navigate = useNavigate();
+    const toApplication = () => navigate('/application');
+    const toPluginPage = () => navigate('/PluginPage');
+    const toLogin = () => navigate('/login');
+
+
     return (
         <div className='containerMain'>
             <div className="container-block1">
@@ -47,7 +54,7 @@ const MainPage = () => {
                         </div>
                         <div>
                             <p>
-                                <span>Мобильного приложения</span>, где пользователи хранят
+                                <span onClick={toApplication}>Мобильного приложения</span>, где пользователи хранят
                                 свои персональные данные и другую значимую
                                 информацию.
                             </p>
@@ -60,7 +67,7 @@ const MainPage = () => {
                         </div>
                         <div>
                             <p>
-                                <span>Плагина</span>, для текстового редактора, с помощью
+                                <span onClick={toPluginPage}>Плагина</span>, для текстового редактора, с помощью
                                 которого операторы готовят шаблоны документов
                             </p>
                         </div>
@@ -89,7 +96,7 @@ const MainPage = () => {
                             <img src={Star} />
                             <p>
                                 После регистрации на нашем сайте, в
-                                <span> личном кабинете</span>, вам будет доступно
+                                <span onClick={toLogin}> личном кабинете</span>, вам будет доступно
                                 большое количество готовых шаблонов,
                                 которые вы сможете сами заполнить в
                                 один клик.
