@@ -15,9 +15,9 @@ import schedule from '../../assets/imgTimeIsMoney/schedule.svg';
 import EllipseMen from '../../assets/imgTimeIsMoney/EllipseMen.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
-
+//test
 const Investors = () => {
-
+console.log("test")
     return (
         <div className="container-main-Investors">
             <div>
