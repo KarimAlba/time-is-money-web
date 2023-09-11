@@ -1,6 +1,7 @@
 import { useState } from "react"
 import './style.css';
 import { useLocation, useNavigate } from "react-router-dom";
+import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
 
 interface AuthorizationPropsTypes {
     showModal: Function;
@@ -11,7 +12,6 @@ interface ModalRegisterPropsTypes {
 }
 
 function ModalRegister(props: ModalRegisterPropsTypes) {
-
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -41,10 +41,30 @@ function ModalRegister(props: ModalRegisterPropsTypes) {
     )
 }
 const LoginForm = (props: AuthorizationPropsTypes) => {
-
     const [isVisible, setIsVisible] = useState<boolean>(false)
-
     const { showModal } = props;
+    const navigate = useNavigate();
+
+    const exampleValue = {
+        email: "shol@mail.ru",
+        password: "sholochov",
+        ownerWorkStation: true
+    }
+
+    const sendRequest = (data: any) => {
+        PhysicalAccountAPI.clientAutorization(data)
+            .then(response => {
+                if(response.status < 400) {
+                    navigate('/user');
+                    console.log(response);
+                }
+            })
+            .catch(error => console.log(error));
+    }
+
+    const handleComeCLick = () => {
+        sendRequest(exampleValue);
+    }
 
     return (
         <>
@@ -62,7 +82,6 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     <label
                         htmlFor="id_email"
                     >e-mail:</label>
-
                     <input
                         type='password'
                         id='pass'
@@ -73,15 +92,13 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     >
                         пароль:
                     </label>
-
                 </div>
-                <button>
+                <button onClick={handleComeCLick}>
                     ВОЙТИ
                 </button>
                 <span className="passwordRecovery"
                     onClick={() => {
                         showModal()
-
                     }}
                 >
                     Забыли пароль?
