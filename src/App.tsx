@@ -24,19 +24,16 @@ import PluginPage from './component/PluginPage';
 
 function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
-
   const [isOpenFooter, setIsOpenFooter] = useState<boolean>(true);
+  const [isOpenPlugin, setIsOpenPlugin] = useState<boolean>(false);
 
-  const handlePasswordChange = () => {
-    setModalVisible(true)
-  }
+  const handlePasswordChange = () => setModalVisible(true);
 
-  const handleIsOpenFooter = () => {
-    setIsOpenFooter(true)
-  }
-  const handlePersonInfoMounted = () => {
-    setIsOpenFooter(false)
-  }
+  const handleIsOpenFooter = () => setIsOpenFooter(true);
+
+  const handlePersonInfoMounted = () => setIsOpenFooter(false);
+
+  const handleOpenPlugin = (value: boolean) => setIsOpenPlugin(value);
 
   return (
     <>
@@ -51,8 +48,8 @@ function Layout() {
           <Route path="physicalPerson" element={<PhysicalPerson />} />
           <Route path="entity" element={<Entity />} />
         </Route>
-        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} />}>
-          <Route path='' element={<UserPlugin />} />
+        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} handleOpenPlugin={handleOpenPlugin} />}>
+          <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin} />} />
           <Route path="edit-user" element={<EditUser type={1} />} />
         </Route>
 

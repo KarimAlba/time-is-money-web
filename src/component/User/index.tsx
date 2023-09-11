@@ -5,17 +5,21 @@ import { Outlet } from "react-router-dom";
 
 interface UserPagePropsTypes {
     handlePersonInfoMounted: Function;
+    handleOpenPlugin: Function;
 }
 
 
 const UserPage = (props: UserPagePropsTypes) => {
+    const { handlePersonInfoMounted, handleOpenPlugin } = props;
 
-    const {  handlePersonInfoMounted } = props;
+    const setOpenPlugin = (value:boolean) => { 
+        handleOpenPlugin(value)
+    }
 
     return (
         <div>
-            <PersonInfo handleIsOpenFooter={handlePersonInfoMounted} />
-            <Outlet/>
+            <PersonInfo handleIsOpenFooter={handlePersonInfoMounted} handleOpenPlugin={setOpenPlugin} />
+            <Outlet />
         </div>
     )
 }

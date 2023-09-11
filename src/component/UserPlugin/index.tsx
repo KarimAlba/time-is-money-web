@@ -2,13 +2,20 @@ import './style.css';
 import { useState, useEffect } from 'react';
 import CreatePluginModal from '../CreatePluginModal';
 
-const UserPlugin = () => {
-    const [isOpen, setIsOpen] = useState<boolean>(true);
+interface UserPluginPropsTypes {
+    isOpenProps: boolean;
+}
+const UserPlugin = (props: UserPluginPropsTypes) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
 
+    const { isOpenProps } = props;
+    useEffect(() => {
+        setIsOpen(isOpenProps)
+    },[])
     return (
         <div className="plugins">
             <h2>ВАШИ ПЛАГИНЫ:</h2>
-            {isOpen
+            {isOpenProps
                 ? <CreatePluginModal />
                 : null
             }
