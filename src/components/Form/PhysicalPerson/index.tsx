@@ -1,6 +1,34 @@
 import './style.css';
+import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
+import { useNavigate } from 'react-router-dom';
 
 const PhysicalPerson = () => {
+    const navigate = useNavigate();
+    const exampleClient = {
+        lastname: 'Test1',
+        name: "Test1",
+        patronymic: "Test1",
+        email: "test1@mail.ru",
+        password: "test1",
+        confirmEmail: "test1@mail.ru",
+        confirmPassword: "test1"
+    }
+
+    const sendRequest = () => {
+        PhysicalAccountAPI.registration(exampleClient)
+            .then(response => {
+                console.log(response);
+                if (response.status < 400) {
+                    navigate('/login')
+                }
+            })
+            .catch(error => console.log(error))
+    }
+
+    const handleRegClick = () => {
+        sendRequest()
+    }
+
     return (
         <div className="form-register-physical-pesrson">
             <div className="physical-pesrson-block1">
@@ -56,7 +84,7 @@ const PhysicalPerson = () => {
                     htmlFor="confirmation-pass"
                 > Подтвердите пароль </label>
             </div>
-            <button> РЕГИСТРАЦИЯ </button>
+            <button onClick={handleRegClick}> РЕГИСТРАЦИЯ </button>
         </div>
     )
 }
