@@ -7,15 +7,11 @@ interface UserPagePropsTypes {
 }
 
 const UserPage = (props: UserPagePropsTypes) => {
-<<<<<<< HEAD:src/views/User/index.tsx
-    const {  handlePersonInfoMounted } = props;
-=======
     const { handlePersonInfoMounted, handleOpenPlugin } = props;
 
     const setOpenPlugin = (value:boolean) => { 
         handleOpenPlugin(value)
     }
->>>>>>> FD-1:src/component/User/index.tsx
 
     return (
         <div>
