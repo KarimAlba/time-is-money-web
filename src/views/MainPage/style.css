@@ -130,6 +130,7 @@
 
 .block2-text1 span {
     color: #00B2F4;
+    cursor: pointer;
 
 }
 
@@ -147,6 +148,7 @@
 
 .block-text2 span {
     color: #00B2F4;
+    cursor: pointer;
 }
 
 .block-text2 p {

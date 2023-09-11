@@ -7,18 +7,32 @@ import { Link } from 'react-router-dom';
 
 interface PersonInfoPropsTypes {
     handleIsOpenFooter: Function
+    handleOpenPlugin: Function;
 }
 
 const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [isDownload, setIsDownload] = useState<boolean>(false)
     const [templateCount, setTemplateCount] = useState<boolean>(false)
-    const { handleIsOpenFooter } = props;
+    const [templateCount2, setTemplateCount2] = useState<boolean>(false)
+
+    const { handleIsOpenFooter, handleOpenPlugin } = props;
 
     const pluginsOwners = ['плагин Светланы', 'плагин Сергея'];
 
-    const handleCheckBox = () => setIsDownload(!isDownload);
+    const handleCheckBox = () => {
+        setIsDownload(!isDownload);
+        if (isDownload) {
+            handleOpenPlugin(false);
+        }
+    }
 
     const handleTemplateClick = () => setTemplateCount(!templateCount);
+
+    const handleTemplateClick2 = () => setTemplateCount2(!templateCount2);
+
+    const handleDownload = () => {
+        handleOpenPlugin(isDownload);
+    }
 
     useEffect(() => {
         handleIsOpenFooter();
@@ -46,11 +60,13 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         onClick={handleTemplateClick}
                         className="statistic_point"
                     >
-                        {templateCount
-                            ? <img src={ArrowDownIcon} />
-                            : <img src={ArrowIcon} />
-                        }
-                        <p>заполненных шаблонов:</p>
+                        <div style={{ display: 'flex' }}>
+                            {templateCount
+                                ? <img src={ArrowDownIcon} />
+                                : <img src={ArrowIcon} />
+                            }
+                            <p>заполненных шаблонов:</p>
+                        </div>
                         {templateCount
                             ? (<div>
                                 {pluginsOwners.map(item =>
@@ -63,9 +79,29 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             : null
                         }
                     </div>
-                    <div className="statistic_point">
-                        <img src={ArrowIcon} />
-                        <p>заполненных приложений:</p>
+                    <div
+                        onClick={handleTemplateClick2}
+                        className="statistic_point">
+                        <div style={{ display: 'flex' }}>
+                            {templateCount2
+                                ? <img src={ArrowDownIcon} />
+                                : <img src={ArrowIcon} />
+                            }
+                            {/* <img src={ArrowIcon} /> */}
+                            <p>заполненных приложений:</p>
+                        </div>
+                        {templateCount2
+                            ? (<div>
+                                {pluginsOwners.map(item =>
+                                    <div key={item} className="statistic_point">
+                                        <p key={item + 1}>{item}</p>
+                                        <span key={item + 2} >200</span>
+                                    </div>
+
+                                )}
+                            </div>)
+                            : null
+                        }
                     </div>
                     <div className="statistic_point">
                         <img src={ArrowIcon} />
@@ -74,7 +110,9 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                 </div>
             </div>
             <div className="person-info_license">
-                <button className="download-button"
+                <button
+                    onClick={handleDownload}
+                    className="download-button"
                     style={isDownload
                         ? { backgroundColor: '#00b2f4' }
                         : { backgroundColor: '#00b2f447' }

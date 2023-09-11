@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+<<<<<<< HEAD
 import Header from './components/Header';
 import MainPage from './views/MainPage';
 import Footer from './components/Footer';
@@ -16,21 +17,41 @@ import LoginForm from './components/Form/LoginForm';
 import UserPage from './views/User';
 import EditUser from './components/EditUser';
 import UserPlugin from './components/UserPlugin';
+=======
+import Header from './component/Header';
+import MainPage from './component/MainPage';
+import Footer from './component/Footer';
+import Application from './component/Application';
+import Plugin from './component/PluginPage';
+import StepItem from './component/step/StepItem';
+import screen1 from './component/imgTimeIsMoney/screen1.svg';
+import stroke from './component/imgTimeIsMoney/stroke.svg'
+import StepList from './component/step/stepList';
+import Investors from './component/Investors';
+import Login from './component/Login';
+import PhysicalPerson from './component/Form/PhysicalPerson';
+import Entity from './component/Form/Entity';
+import LoginForm from './component/Form/LoginForm';
+import PersonInfo from './component/PersonInfo';
+import UserPage from './component/User';
+import EditUser from './component/EditUser';
+import UserPlugin from './component/UserPLugin';
+import PluginPage from './component/PluginPage';
+
+>>>>>>> FD-1
 
 function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
   const [isOpenFooter, setIsOpenFooter] = useState<boolean>(true);
+  const [isOpenPlugin, setIsOpenPlugin] = useState<boolean>(false);
 
-  const handlePasswordChange = () => {
-    setModalVisible(true)
-  }
+  const handlePasswordChange = () => setModalVisible(true);
 
-  const handleIsOpenFooter = () => {
-    setIsOpenFooter(true)
-  }
-  const handlePersonInfoMounted = () => {
-    setIsOpenFooter(false)
-  }
+  const handleIsOpenFooter = () => setIsOpenFooter(true);
+
+  const handlePersonInfoMounted = () => setIsOpenFooter(false);
+
+  const handleOpenPlugin = (value: boolean) => setIsOpenPlugin(value);
 
   return (
     <>
@@ -38,16 +59,16 @@ function Layout() {
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/application" element={<Application />} />
-        <Route path="/Plugin" element={<Plugin />} />
+        <Route path="/PluginPage" element={<PluginPage />} />
         <Route path="/investors" element={<Investors />} />
         <Route path="login" element={<Login />} >
           <Route path='' element={<LoginForm showModal={handlePasswordChange} />} />
           <Route path="physicalPerson" element={<PhysicalPerson />} />
           <Route path="entity" element={<Entity />} />
         </Route>
-        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} />}>
-          <Route path='' element={<UserPlugin/>}/>
-          <Route path="edit-user" element={<EditUser type={1}/>} />
+        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} handleOpenPlugin={handleOpenPlugin} />}>
+          <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin} />} />
+          <Route path="edit-user" element={<EditUser type={1} />} />
         </Route>
 
       </Routes>

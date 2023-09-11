@@ -28,7 +28,7 @@ const PhysicalPerson = () => {
     const handleRegClick = () => {
         sendRequest()
     }
-
+    
     return (
         <div className="form-register-physical-pesrson">
             <div className="physical-pesrson-block1">
