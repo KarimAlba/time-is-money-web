@@ -2,6 +2,7 @@ import { useState } from "react"
 import './style.css';
 import { useLocation, useNavigate } from "react-router-dom";
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
+import IUserAuth from "../../../models/request/IUserAuth";
 
 interface AuthorizationPropsTypes {
     showModal: Function;
@@ -41,18 +42,23 @@ function ModalRegister(props: ModalRegisterPropsTypes) {
     )
 }
 const LoginForm = (props: AuthorizationPropsTypes) => {
-    const [isVisible, setIsVisible] = useState<boolean>(false)
     const { showModal } = props;
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+    const [userEmail, setUserEmail] = useState<string>('');
+    const [userPassword, setUserPassword] = useState<string>('');
+
     const navigate = useNavigate();
 
-    const exampleValue = {
-        email: "shol@mail.ru",
-        password: "sholochov",
-        ownerWorkStation: true
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUserEmail(e.target.value);
     }
 
-    const sendRequest = (data: any) => {
-        PhysicalAccountAPI.clientAutorization(data)
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setUserPassword(e.target.value);
+    }
+
+    const sendRequest = (user: IUserAuth) => {
+        PhysicalAccountAPI.clientAutorization(user)
             .then(response => {
                 if(response.status < 400) {
                     navigate('/user');
@@ -63,7 +69,16 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
     }
 
     const handleComeCLick = () => {
-        sendRequest(exampleValue);
+        if (!userEmail && !userPassword) {
+            return
+        } else {
+            const user = {
+                email: "cap212@mail.ru",
+                password: "capAmerica1",
+                workStationOwner: true
+            }
+            sendRequest(user);
+        }
     }
 
     return (
@@ -78,24 +93,24 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                         id='id_email'
                         required
                         maxLength={254}
+                        onInput={handleEmailChange}
                     />
-                    <label
-                        htmlFor="id_email"
-                    >e-mail:</label>
+                    <label htmlFor="id_email">e-mail:</label>
+
                     <input
                         type='password'
                         id='pass'
                         required
+                        onInput={handlePasswordChange}
                     />
-                    <label
-                        htmlFor="pass"
-                    >
-                        пароль:
-                    </label>
+                    <label htmlFor="pass">пароль:</label>
+
                 </div>
+
                 <button onClick={handleComeCLick}>
                     ВОЙТИ
                 </button>
+
                 <span className="passwordRecovery"
                     onClick={() => {
                         showModal()

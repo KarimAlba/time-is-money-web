@@ -1,8 +1,8 @@
 import './style.css';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
-import IPhysicalRegistrationRequest from '../../../models/request/PhysicalRegistrationRequest';
+import { useState, useEffect } from 'react';
+import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
 
 const PhysicalPerson = () => {
     const navigate = useNavigate();
