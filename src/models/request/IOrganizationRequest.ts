@@ -1,11 +1,7 @@
+import ISupervisorRequest from "./ISupervisorRequest";
+
 interface IOrganizationRequest{
-    // "request": {
-    //     "lastname": "string",
-    //     "name": "string",
-    //     "patronymic": "string",
-    //     "email": "string",
-    //     "password": "stringst"
-    //   },
+    request: ISupervisorRequest;
     type: string;
     name: string;
     address: string;

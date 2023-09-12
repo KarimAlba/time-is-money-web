@@ -10,35 +10,42 @@ interface HeaderPropsTypes {
 }
 const Header = (props: HeaderPropsTypes) => {
     const {handleIsOpenFooter} = props;
+    const [menuAcvtive, setMenuActive] = useState<boolean>(false);
+
+    const [currentBtn, setCurrentBtn] = useState<string>('Главная'); 
 
     const navigate = useNavigate();
+
     const toMain = () => {
         handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/');
+        setCurrentBtn('Главная');
     }
     const toApplication = () => {
         handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/Application');
+        setCurrentBtn('Приложение');
     }
     const toPlagin = () => {
         handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/PluginPage');
+        setCurrentBtn('Плагин');
     }
     const toInvestors = () => {
         handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/investors');
+        setCurrentBtn('Инвесторам');
     }
     const toLogin = () => {
         handleIsOpenFooter()
         if (menuAcvtive) setMenuActive(false)
         navigate('/login');
+        setCurrentBtn('Вход');
     }
-
-    const [menuAcvtive, setMenuActive] = useState<boolean>(false)
 
     return (
         <div className="container-header">
@@ -46,14 +53,53 @@ const Header = (props: HeaderPropsTypes) => {
                 ? (<div className="modalBurger">
                     <img className="header-burger" src={crossBurgerMenu} onClick={() => setMenuActive(false)} />
                     <div className="menuBurger">
-                        <button onClick={toMain}>Главная </button>
-                        <button onClick={toApplication}>Приложение</button>
-                        <button onClick={toPlagin}>Плагин</button>
-                        <button onClick={toInvestors}>Инвесторам</button>
-                        <button onClick={toLogin}>Вход </button>
+                        <button 
+                            onClick={toMain}
+                            style={currentBtn === 'Главная'
+                                ? {color: '#00B2F4'}
+                                : {color: 'rgba(0, 0, 0, 1)'}
+                            }
+                        >
+                            ГЛАВНАЯ
+                        </button>
+                        <button 
+                            onClick={toApplication}
+                            style={currentBtn === 'Приложение'
+                                ? {color: '#00B2F4'}
+                                : {color: 'rgba(0, 0, 0, 1)'}  
+                            }
+                        >
+                            ПРИЛОЖЕНИЕ
+                        </button>
+                        <button 
+                            onClick={toPlagin}
+                            style={currentBtn === 'Плагин'
+                                ? {color: '#00B2F4'}
+                                : {color: 'rgba(0, 0, 0, 1)'}  
+                            }
+                        >
+                            ПЛАГИН
+                        </button>
+                        <button 
+                            onClick={toInvestors}
+                            style={currentBtn === 'Инвесторам'
+                                ? {color: '#00B2F4'}
+                                : {color: 'rgba(0, 0, 0, 1)'}
+                            }
+                        >
+                            ИНВЕСТОРАМ
+                        </button>
+                        <button 
+                            onClick={toLogin}
+                            style={currentBtn === 'Вход'
+                                ? {color: '#00B2F4'}
+                                : {color: 'rgba(0, 0, 0, 1)'} 
+                            }
+                        >
+                            ВХОД 
+                        </button>
                     </div>
                 </div>)
-
                 : <img className="header-burger" src={burger} onClick={() => setMenuActive(true)} />
             }
 
@@ -61,11 +107,51 @@ const Header = (props: HeaderPropsTypes) => {
                 <img src={logo} />
             </div>
             <div className="button-container">
-                <button onClick={toMain}>Главная </button>
-                <button onClick={toApplication}>Приложение</button>
-                <button onClick={toPlagin}>Плагин</button>
-                <button onClick={toInvestors}>Инвесторам</button>
-                <button onClick={toLogin}>Вход </button>
+                <button 
+                    onClick={toMain}
+                    style={currentBtn === 'Главная'
+                        ? {color: '#00B2F4'}
+                        : {color: 'rgba(0, 0, 0, 1)'} 
+                    }
+                >
+                    ГЛАВНАЯ
+                </button>
+                <button 
+                    onClick={toApplication}
+                    style={currentBtn === 'Приложение'
+                        ? {color: '#00B2F4'}
+                        : {color: 'rgba(0, 0, 0, 1)'} 
+                    }
+                >
+                    ПРИЛОЖЕНИЕ
+                </button>
+                <button 
+                    onClick={toPlagin}
+                    style={currentBtn === 'Плагин'
+                        ? {color: '#00B2F4'}
+                        : {color: 'rgba(0, 0, 0, 1)'} 
+                    }
+                >
+                    ПЛАГИН
+                </button>
+                <button 
+                    onClick={toInvestors}
+                    style={currentBtn === 'Инвесторам'
+                        ? {color: '#00B2F4'}
+                        : {color: 'rgba(0, 0, 0, 1)'} 
+                    }
+                >
+                    ИНВЕСТОРАМ
+                </button>
+                <button 
+                    onClick={toLogin}
+                    style={currentBtn === 'Вход'
+                        ? {color: '#00B2F4'}
+                        : {color: 'rgba(0, 0, 0, 1)'} 
+                    }
+                >
+                    ВХОД
+                </button>
             </div>
         </div>
     )
