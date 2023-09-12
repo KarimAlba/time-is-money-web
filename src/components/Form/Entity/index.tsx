@@ -1,5 +1,6 @@
 import './style.css';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import OrganizationAPI from '../../../api/OrganizationAPI';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
 
@@ -15,6 +16,8 @@ const Entity = () => {
     const [confirmEmail, setConfirmEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [confirmPassword, setConfirmPassword] = useState<string>('');
+
+    const navigate = useNavigate();
 
     const handleOrgNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setOrgName(e.target.value);
@@ -58,6 +61,51 @@ const Entity = () => {
 
     const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setConfirmPassword(e.target.value);
+    }
+
+    const sendRequest = (org: IOrganizationRequest) => {
+        OrganizationAPI.registration(org)
+            .then(response => {
+                console.log(response);
+                if (response.status < 400) {
+                    navigate('/login')
+                }
+            })
+            .catch(error => console.log(error))
+    }
+
+    const prepareOrganization = () => {
+        if (!orgName && !orgAddress && !orgINN 
+            && !orgKPP && !orgDirSurname && !orgDirName
+            && !orgDirPatronymic && !email && !confirmEmail
+            && !password && !confirmPassword
+        ) {
+            return 
+        } else {
+            const organization = {
+                request: {
+                    lastname: orgDirSurname,
+                    name: orgDirName,
+                    patronymic: orgDirPatronymic,
+                    email: email,
+                    password: password
+                },
+                type: 'test',
+                name: orgName,
+                address: orgAddress,
+                inn: orgINN,
+                kpp: orgKPP,
+                confirmPassword: confirmPassword,
+                confirmEmail: confirmEmail,
+            }
+
+            return organization;
+        }
+    }
+
+    const handleRegClick = () => {
+        const organization = prepareOrganization();
+        if (organization) sendRequest(organization);
     }
 
     return (
@@ -175,7 +223,11 @@ const Entity = () => {
                 </label>
 
             </div>
-            <button>РЕГИСТРАЦИЯ</button>
+
+            <button onClick={handleRegClick}>
+                РЕГИСТРАЦИЯ
+            </button>
+
         </div>
     )
 }

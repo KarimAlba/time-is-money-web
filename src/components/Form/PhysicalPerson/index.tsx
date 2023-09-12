@@ -88,7 +88,6 @@ const PhysicalPerson = () => {
 
     const handleRegClick = () => {
         const user = prepareUser();
-        console.log(user)
         if (user) sendRequest(user);
     }
     
