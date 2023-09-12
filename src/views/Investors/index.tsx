@@ -15,7 +15,11 @@ import schedule from '../../assets/imgTimeIsMoney/schedule.svg';
 import EllipseMen from '../../assets/imgTimeIsMoney/EllipseMen.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
+import { useNavigate } from 'react-router';
 const Investors = () => {
+    const navigate = useNavigate();
+
+    const toLogin = () => navigate('/login');
     return (
         <div className="container-main-Investors">
             <div>
@@ -81,7 +85,7 @@ const Investors = () => {
                             <br />
                             по подписке 1000 руб.месяц.<span>*</span>
                         </p>
-                        <button>time-money.shop.ru</button>
+                        <button onClick={toLogin}>time-money.shop.ru</button>
                     </div>
                 </div>
                 <div className='container_sales'>
@@ -283,7 +287,7 @@ const Investors = () => {
                         </div>
                         <div className="client-6-block2">
                             <p>
-                                требуемый обем инвестиций
+                                требуемый обЪём инвестиций
                                 <br />
                                 до периуда самоокупаемости
                             </p>

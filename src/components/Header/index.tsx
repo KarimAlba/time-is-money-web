@@ -14,35 +14,35 @@ const Header = (props: HeaderPropsTypes) => {
     const navigate = useNavigate();
     const toMain = () => {
         handleIsOpenFooter()
-        if (menuAcvtive) setMenuActive(false)
+        if (menuActive) setMenuActive(false)
         navigate('/');
     }
     const toApplication = () => {
         handleIsOpenFooter()
-        if (menuAcvtive) setMenuActive(false)
+        if (menuActive) setMenuActive(false)
         navigate('/Application');
     }
     const toPlagin = () => {
         handleIsOpenFooter()
-        if (menuAcvtive) setMenuActive(false)
+        if (menuActive) setMenuActive(false)
         navigate('/PluginPage');
     }
     const toInvestors = () => {
         handleIsOpenFooter()
-        if (menuAcvtive) setMenuActive(false)
+        if (menuActive) setMenuActive(false)
         navigate('/investors');
     }
     const toLogin = () => {
         handleIsOpenFooter()
-        if (menuAcvtive) setMenuActive(false)
+        if (menuActive) setMenuActive(false)
         navigate('/login');
     }
 
-    const [menuAcvtive, setMenuActive] = useState<boolean>(false)
+    const [menuActive, setMenuActive] = useState<boolean>(false)
 
     return (
         <div className="container-header">
-            {menuAcvtive
+            {menuActive
                 ? (<div className="modalBurger">
                     <img className="header-burger" src={crossBurgerMenu} onClick={() => setMenuActive(false)} />
                     <div className="menuBurger">

@@ -139,7 +139,7 @@ const PhysicalPerson = () => {
                 <label htmlFor="pass">Создайте пароль</label>
 
                 <input
-                    type="passwird"
+                    type="password"
                     id="confirmation-pass"
                     onInput={handleConfirmPasswordChange}
                 />
