@@ -1,9 +1,10 @@
 import { AxiosResponse } from "axios";
 import axiosConfig from "./axiosConfig";
+import IPhysicalRegistrationRequest from "../models/request/PhysicalRegistrationRequest";
 
 class PhysicalAccountAPI{
-    public static registration(body: any): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.post("/user/registration/", {...body});
+    public static registration(body: IPhysicalRegistrationRequest): Promise<AxiosResponse<any | any>> {
+        return axiosConfig.post("/user/pc-client/registration/", {...body});
     }
 
     public static clientAutorization(body: any): Promise<AxiosResponse<any | any>> {
