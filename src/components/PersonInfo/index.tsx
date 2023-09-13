@@ -12,6 +12,13 @@ interface PersonInfoPropsTypes {
 
 const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [isDownload, setIsDownload] = useState<boolean>(false)
+    const [name, setName] = useState<string>('');
+    const [lastname, setLastname] = useState<string>('');
+    const [patronymic, setPatronymic] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
+    const [expirationAt, setExpirationAt] = useState<string>('');
+
     const [templateCount, setTemplateCount] = useState<boolean>(false)
     const [templateCount2, setTemplateCount2] = useState<boolean>(false)
     const [templateCount3, setTemplateCount3] = useState<boolean>(false)
@@ -39,21 +46,44 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         handleOpenPlugin(isDownload);
     }
 
+    const getDataFromlocalStorage = () => {
+        if (String(localStorage.getItem('name'))) {
+            setName(String(localStorage.getItem('name')));
+        }
+
+        if (String(localStorage.getItem('email'))) {
+            setEmail(String(localStorage.getItem('email')));
+        }
+
+        if (String(localStorage.getItem('lastname'))) {
+            setLastname(String(localStorage.getItem('lastname')));
+        }
+
+        if (String(localStorage.getItem('patronymic'))) {
+            setPatronymic(String(localStorage.getItem('patronymic')));
+        }
+
+        if (String(localStorage.getItem('expirationAt'))) {
+            setExpirationAt(String(localStorage.getItem('expirationAt')));
+        }
+    }
+
     useEffect(() => {
         handleIsOpenFooter();
+        getDataFromlocalStorage();
     }, [])
 
     return (
         <div className="person-info">
             <div className="person-info_title">
-                <p>Иванов Иван Иванович</p>
-                <span>post345@mail.com</span>
+                <p>{`${lastname} ${name} ${patronymic}`}</p>
+                <span>{email}</span>
                 <Link to='edit-user'>Редактировать данные</Link>
             </div>
             <div className="person-info_statistic">
                 <div className="statistic_point">
                     <p>дата регистрации:</p>
-                    <span>22.02.2023</span>
+                    <span>{(new Date(expirationAt)).toLocaleDateString()}</span>
                 </div>
                 <div className="statistic_point">
                     <p>скачено плагинов:</p>
