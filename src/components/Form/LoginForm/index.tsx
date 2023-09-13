@@ -1,8 +1,10 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import './style.css';
 import { useLocation, useNavigate } from "react-router-dom";
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
 import IUserAuth from "../../../models/request/IUserAuth";
+import IEntityResponse from "../../../models/response/IEntityResponse";
+import ITokenReponse from "../../../models/response/ITokenResponse";
 
 interface AuthorizationPropsTypes {
     showModal: Function;
@@ -18,7 +20,6 @@ function ModalRegister(props: ModalRegisterPropsTypes) {
 
     const toPhysicalPerson = () => navigate('physicalPerson');
     const toEntity = () => navigate('entity');
-
 
     const { isVisible } = props;
 
@@ -62,6 +63,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
             .then(response => {
                 if(response.status < 400) {
                     navigate('/user');
+                    fillLocalStorage(response.data.entity, response.data.tokenResponse);
                     console.log(response);
                 }
             })
@@ -73,13 +75,31 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
             return
         } else {
             const user = {
-                email: "cap212@mail.ru",
-                password: "capAmerica1",
+                email: userEmail,
+                password: userPassword,
                 workStationOwner: true
             }
             sendRequest(user);
         }
     }
+
+    const fillLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
+        localStorage.setItem('email', entity.email);
+        localStorage.setItem('id', String(entity.id));
+        localStorage.setItem('lastname', entity.lastname);
+        localStorage.setItem('name', String(entity.name));
+        localStorage.setItem('patronymic', entity.patronymic);
+        localStorage.setItem('phoneNumber', String(entity.phoneNumber));
+
+        localStorage.setItem('expirationAt', String(tokenResp.expirationAt));
+        localStorage.setItem('token', tokenResp.token);
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            navigate('/user');
+        }
+    }, []);
 
     return (
         <>
