@@ -70,24 +70,25 @@
     }
 
     .block1-plugin img {
-        max-height: 370px;
+        max-height: 300px;
         margin-left: 10px;
     }
 
     .block1-plugin-text1 {
         height: 580px;
         width: 300px;
-        margin-left: 25px;
+        margin-left: 10px;
         margin-top: 30px;
         border-radius: 15px;
+        padding: 25px;
     }
-
+/* 
     .block2-plugin h2 {
         margin-left: 30px;
-    }
+    } */
 
     .container-step img {
-        max-height: 230px;
+        max-height: 190px;
         margin-left: 0px;
     }
 
@@ -96,7 +97,11 @@
     }
 
     .step-text {
-        max-width: 390px;
+        max-width: 300px;
+    }
+    .step-text p{
+        width: initial;
+        margin-left: 0px;
     }
 
     .step-text img {
@@ -106,6 +111,6 @@
     /* .step-text p {} */
 
     .block2-plugin-text {
-        max-width: 325px;
+        max-width: 260px;
     }
 }
