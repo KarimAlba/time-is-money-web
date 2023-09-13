@@ -1,14 +1,13 @@
-import ISupervisorRequest from "./ISupervisorRequest";
-
 interface IOrganizationRequest{
-    request: ISupervisorRequest;
-    type: string;
+    lastname: string;
     name: string;
+    patronymic: string;
+    email: string;
+    password: string;
+    organizationName: string;
     address: string;
     inn: string;
     kpp: string;
-    confirmPassword: string;
-    confirmEmail: string;
 }
 
 export default IOrganizationRequest;

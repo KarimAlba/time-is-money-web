@@ -32,23 +32,23 @@ function Layout() {
     <>
       <Header handleIsOpenFooter={handleIsOpenFooter} />
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/application" element={<Application />} />
-        <Route path="/PluginPage" element={<PluginPage />} />
-        <Route path="/investors" element={<Investors />} />
-        <Route path="login" element={<Login />} >
-          <Route path='' element={<LoginForm showModal={handlePasswordChange} />} />
-          <Route path="physicalPerson" element={<PhysicalPerson />} />
-          <Route path="entity" element={<Entity />} />
+        <Route path="/" element={<MainPage/>} />
+        <Route path="/application" element={<Application/>}/>
+        <Route path="/PluginPage" element={<PluginPage/>}/>
+        <Route path="/investors" element={<Investors/>}/>
+        <Route path="login" element={<Login/>} >
+          <Route path='' element={<LoginForm showModal={handlePasswordChange}/>} />
+          <Route path="physicalPerson" element={<PhysicalPerson/>}/>
+          <Route path="entity" element={<Entity/>}/>
         </Route>
-        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} handleOpenPlugin={handleOpenPlugin} />}>
-          <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin} />} />
-          <Route path="edit-user" element={<EditUser type={1} />} />
+        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} handleOpenPlugin={handleOpenPlugin}/>}>
+          <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin}/>}/>
+          <Route path="edit-user" element={<EditUser/>}/>
         </Route>
 
       </Routes>
       {isOpenFooter
-        ? <Footer />
+        ? <Footer/>
         : null
       }
       {
@@ -79,7 +79,7 @@ function Layout() {
                   Отправить
                 </button>
               </div>
-              <Outlet />
+              <Outlet/>
             </div>
           </div>
         ) : null

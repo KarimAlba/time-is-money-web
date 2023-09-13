@@ -5,6 +5,7 @@ import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
 import IUserAuth from "../../../models/request/IUserAuth";
 import IEntityResponse from "../../../models/response/IEntityResponse";
 import ITokenReponse from "../../../models/response/ITokenResponse";
+import axios from "axios";
 
 interface AuthorizationPropsTypes {
     showModal: Function;
@@ -63,7 +64,12 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
             .then(response => {
                 if(response.status < 400) {
                     navigate('/user');
-                    fillLocalStorage(response.data.entity, response.data.tokenResponse);
+                    console.log(response.data);
+                    if (response.data.entity.inn) {
+                        fillOrganizationLocalStorage(response.data.entity, response.data.tokenResponse);
+                    } else {
+                        fillPhysicalLocalStorage(response.data.entity, response.data.tokenResponse);
+                    }
                     console.log(response);
                 }
             })
@@ -83,7 +89,8 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         }
     }
 
-    const fillLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
+    const fillPhysicalLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
+        localStorage.setItem('createdAt', entity.createdAt);
         localStorage.setItem('email', entity.email);
         localStorage.setItem('id', String(entity.id));
         localStorage.setItem('lastname', entity.lastname);
@@ -91,7 +98,18 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         localStorage.setItem('patronymic', entity.patronymic);
         localStorage.setItem('phoneNumber', String(entity.phoneNumber));
 
-        localStorage.setItem('expirationAt', String(tokenResp.expirationAt));
+        localStorage.setItem('token', tokenResp.token);
+    }
+
+    const fillOrganizationLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
+        localStorage.setItem('createdAt', entity.createdAt);
+        localStorage.setItem('email', entity.email);
+        localStorage.setItem('id', String(entity.id));
+        localStorage.setItem('lastname', entity.lastname);
+        localStorage.setItem('name', String(entity.name));
+        localStorage.setItem('patronymic', entity.patronymic);
+        localStorage.setItem('phoneNumber', String(entity.phoneNumber));
+
         localStorage.setItem('token', tokenResp.token);
     }
 

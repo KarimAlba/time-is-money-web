@@ -1,5 +1,5 @@
 import './style.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import OrganizationAPI from '../../../api/OrganizationAPI';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
@@ -66,7 +66,6 @@ const Entity = () => {
     const sendRequest = (org: IOrganizationRequest) => {
         OrganizationAPI.registration(org)
             .then(response => {
-                console.log(response);
                 if (response.status < 400) {
                     navigate('/login')
                 }
@@ -83,20 +82,15 @@ const Entity = () => {
             return 
         } else {
             const organization = {
-                request: {
-                    lastname: orgDirSurname,
-                    name: orgDirName,
-                    patronymic: orgDirPatronymic,
-                    email: email,
-                    password: password
-                },
-                type: 'test',
-                name: orgName,
+                lastname: orgDirSurname,
+                name: orgDirName,
+                patronymic: orgDirPatronymic,
+                email: email,
+                password: password,
+                organizationName: orgName,
                 address: orgAddress,
                 inn: orgINN,
                 kpp: orgKPP,
-                confirmPassword: confirmPassword,
-                confirmEmail: confirmEmail,
             }
 
             return organization;
@@ -107,6 +101,10 @@ const Entity = () => {
         const organization = prepareOrganization();
         if (organization) sendRequest(organization);
     }
+
+    useEffect(() => {
+        localStorage.clear();
+    }, []);
 
     return (
         <div className="form-register-legal-entity">

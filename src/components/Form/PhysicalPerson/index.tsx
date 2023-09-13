@@ -46,7 +46,7 @@ const PhysicalPerson = () => {
     const sendRequest = (user: IPhysicalRegistrationRequest) => {
         PhysicalAccountAPI.registration(user)
             .then(response => {
-                console.log(response);
+                localStorage.clear();
                 if (response.status < 400) {
                     navigate('/login')
                 }

@@ -1,4 +1,5 @@
 interface IEntityResponse{
+    createdAt: string;
     email: string;
     id: number;
     lastname: string;

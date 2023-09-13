@@ -17,7 +17,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [patronymic, setPatronymic] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [expirationAt, setExpirationAt] = useState<string>('');
+    const [createdAt, setCreatedAt] = useState<string>('');
 
     const [templateCount, setTemplateCount] = useState<boolean>(false)
     const [templateCount2, setTemplateCount2] = useState<boolean>(false)
@@ -63,8 +63,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
             setPatronymic(String(localStorage.getItem('patronymic')));
         }
 
-        if (String(localStorage.getItem('expirationAt'))) {
-            setExpirationAt(String(localStorage.getItem('expirationAt')));
+        if (String(localStorage.getItem('createdAt'))) {
+            setCreatedAt(String(localStorage.getItem('createdAt')));
         }
     }
 
@@ -83,7 +83,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
             <div className="person-info_statistic">
                 <div className="statistic_point">
                     <p>дата регистрации:</p>
-                    <span>{(new Date(expirationAt)).toLocaleDateString()}</span>
+                    <span>{(new Date(createdAt)).toLocaleDateString()}</span>
                 </div>
                 <div className="statistic_point">
                     <p>скачено плагинов:</p>

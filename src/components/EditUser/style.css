@@ -1,16 +1,16 @@
 .edit-user {
-    display: flex;
-    align-items: end;
-    flex-direction: column;
+    margin-top: 20px;
     margin-left: 500px;
     width: 600px;
     padding: 0.7rem 1.5rem 35px;
+    display: flex;
+    align-items: end;
+    flex-direction: column;
     border-radius: 0.5rem;
     background: #fff;
     border: 1px solid #eee;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     text-align: center;
-
 }
 
 .edit-user h5 {
@@ -21,7 +21,6 @@
 }
 
 .edit-user button {
-
     width: 200px;
     font-size: 18px;
     margin-top: 40px;
