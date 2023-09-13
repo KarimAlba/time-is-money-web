@@ -22,6 +22,10 @@
     font-size: 14px;
     box-shadow: 8px 10px 5px 2px rgba(105, 105, 106, 0.2)
 }
+.button-container button:focus {
+    vertical-align: middle;
+    color: #00B2F4;
+}
 
 .container-img {
     margin-left: 35%;
@@ -54,7 +58,7 @@
     .header-burger {
         display: block;
         position: relative;
-        left: 75%;
+        left: 80%;
         width: 50px;
     }
 

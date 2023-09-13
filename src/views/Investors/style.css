@@ -524,15 +524,16 @@ li::marker {
 
     .container-client-1 {
         margin-top: 30px;
-        margin-left: 50px;
+        margin-left: 30px;
     }
 
     .business-model {
-        width: 320px;
+        width: 300px;
     }
 
     .business-model img {
         left: 265px;
+        height: 60px;
     }
 
     .media-scroll-client-5 {
@@ -570,13 +571,13 @@ li::marker {
     }
 
     .client-6-conteiner1 {
-        max-width: 330px;
+        max-width: 300px;
         height: auto;
         margin-left: 5px;
     }
 
     .client-6-conteiner1 img {
-        left: 293px;
+        left: 264px;
         height: 65px;
         top: -61px;
     }
@@ -591,7 +592,7 @@ li::marker {
 
     .client-6-container3,
     .client-6-conteiner2 {
-        /* width: 345px; */
+        width: 310px;
         margin-left: 5px;
     }
 
@@ -600,7 +601,7 @@ li::marker {
     }
 
     .client-7-content-block1 {
-        width: 360px;
+        width: 278px;
         padding: 20px;
         height: auto;
     }
@@ -610,9 +611,9 @@ li::marker {
     }
 
     .container-client-7-content img {
-        left: 310px;
-        top: 95px;
-        width: 100px;
+        left: 285px;
+        top: 57px;
+        width:60px;
     }
 
     .client-7-content-block2 {
@@ -625,12 +626,12 @@ li::marker {
     }
 
     .container-client-8-header img {
-        margin-left: 10%;
+        margin-left: 5%;
     }
 
-    /* .container-main-Investors h1 {
-        margin-left: 35px;
-    } */
+    .container-main-Investors h1 {
+        margin-left: 0px;
+    }
 
     .quantity-clients {
         margin-left: -40px;
@@ -664,7 +665,7 @@ li::marker {
     }
 
     .client-8-content-block1 {
-        margin-left: 25px;
+        margin-left: 0px;
     }
 
     .container-client-8 p {
@@ -683,7 +684,7 @@ li::marker {
 
     .ellipse2 {
         position: relative;
-        height: 192px;
+        height: 170px;
         top: -11px;
         left: 0;
     }
@@ -712,5 +713,12 @@ li::marker {
 
     .client-5-content-container {
         width: 200px;
+    }
+    .client-6-block5 h1, .client-6-block3 h1{
+        font-size: 50px;
+    }
+    .client-6-block1 h1{
+        font-size: 50px;
+
     }
 }

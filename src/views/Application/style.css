@@ -134,11 +134,13 @@
     }
 
     .aplication-text1-block1 {
-        width: 60%;
+        width: 66%;
         margin-left: 20px;
         margin-top: 45px;
         border-radius: 15px;
         margin-right: 20px;
+        text-align: initial;
+        padding: 44px;
     }
 
     .text1,
@@ -169,13 +171,13 @@
         width: 295px;
         height: 325px;
         margin-right: 203px;
-        margin-left: -95px;
+        margin-left: -140px;
 
     }
 
     .container-mobile-phone-screen img {
         width: 278px;
-        margin: 17%;
+        margin: 10%;
         margin-top: -5px;
     }
 
