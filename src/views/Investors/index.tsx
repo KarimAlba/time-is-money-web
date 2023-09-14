@@ -24,7 +24,7 @@ const Investors = () => {
         <div className="container-main-Investors">
             <div>
                 <h1>Целевой рынок</h1>
-                <p style={{ marginLeft: '50px' }}>Наши потенциальные клиенты - это:</p>
+                <p style={{ marginLeft: '30px' }}>Наши потенциальные клиенты - это:</p>
                 <div
                     className="container-clients-investor">
                     <div className="container-client-1">
