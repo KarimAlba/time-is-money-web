@@ -547,7 +547,7 @@ li::marker {
 
     .container-client-4-content img {
         height: 100px;
-        margin-left: -255px;
+        margin-left: 0px;
     }
 
     .client-4-footer-container p {
@@ -631,7 +631,7 @@ li::marker {
     }
 
     .container-main-Investors h1 {
-        margin-left: 0px;
+        margin-left: 10px;
     }
 
     .quantity-clients {
@@ -697,6 +697,7 @@ li::marker {
 
     .container-client-4-content {
         flex-direction: column;
+        align-items: center;
     }
 
     .container-client5-content {
@@ -704,6 +705,9 @@ li::marker {
     }
 
     .content-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 50px;
     }
 
