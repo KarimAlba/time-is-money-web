@@ -258,7 +258,7 @@
         width: 295px;
         height: 325px;
         margin-right: 203px;
-        margin-left: -140px;
+        margin-left: -116px;
 
     }
 
@@ -274,4 +274,10 @@
     .bloc3-text img{
         margin-top: -15px;
     }
+}
+@media (width<=400px) {
+    .bloc3-text{
+        margin-left: -140px;
+    }
+    
 }

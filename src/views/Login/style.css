@@ -199,6 +199,7 @@ textarea:valid+label {
 
     .ContainerLogin img {
         position: static;
+        display: none;
         height: 40vh;
         width: 75vw;
         margin-left: 116px;
@@ -210,24 +211,37 @@ textarea:valid+label {
     }
 
     .block-Login1 {
-        width: 400px;
-        margin-left: 7px;
+        width: 300px;
+        margin-left: 45px;
     }
 
     .block-Login1 button {
-        margin-left: 100px;
+        margin-left: 50px;
     }
 
     .animateContainer input[id="id_email"],
     .animateContainer input[id="pass"] {
-        margin-left: 95px;
+        margin-left: 50px;
+        width: 70%;
     }
 
     .animateContainer label[for="id_email"],
     .animateContainer label[for="pass"] {
-        left: 35px
+        left: -3px
     }
-    .animateContainer label[for="pass"]{
-        left: 30px;
+
+    .animateContainer label[for="pass"] {
+        left: -13px;
+    }
+}
+
+@media (width<=400px) {
+    .block-Login1 {
+        width: 300px;
+        margin-left: 13px;
+    }
+
+    .block-Login1 button {
+        margin-left: 55px;
     }
 }

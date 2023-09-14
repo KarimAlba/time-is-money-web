@@ -65,6 +65,7 @@
 
 @media (width <= 900px) {
     .block1-plugin {
+        align-items: center;
         flex-direction: column;
     }
 
@@ -90,7 +91,7 @@
     .block1-plugin-text1 {
         height: 580px;
         width: 300px;
-        margin-left: 10px;
+        margin-left: 0px;
         margin-top: 30px;
         border-radius: 15px;
         padding: 25px;
