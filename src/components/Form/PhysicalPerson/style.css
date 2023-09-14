@@ -105,8 +105,8 @@
 
 @media (width <=470px) {
     .form-register-physical-pesrson {
-        width: 400px;
-        margin-left: 7px;
+        width: 300px;
+        margin-left: 40px;
         margin-right: 7px;
     }
 
@@ -117,33 +117,62 @@
     .physical-pesrson-block1 input[id="confirmation-email"],
     .physical-pesrson-block1 input[id="pass"],
     .physical-pesrson-block1 input[id="confirmation-pass"] {
-        margin-left: 160px;
+        margin-left: 25px;
+        width: 90%;
+        margin-top: 35px;
     }
 
-    .physical-pesrson-block1 label[for="surname"],
-    .physical-pesrson-block1 label[for="patronymic"],
+    .physical-pesrson-block1 label[for="surname"] {
+        left: 30px;
+        top: 7px;
+    }
+
+    .physical-pesrson-block1 label[for="patronymic"] {
+        left: 30px;
+        top: 176px;
+    }
+
     .physical-pesrson-block1 label[for="confirmation-email"],
     .physical-pesrson-block1 label[for="pass"],
-    .physical-pesrson-block1 label[for="confirmation-pass"]{
+    .physical-pesrson-block1 label[for="confirmation-pass"] {
         left: 80px;
     }
-    .physical-pesrson-block1 label[for="name"]{
-        left: 115px;
-    }
-    .physical-pesrson-block1 label[for="email"]{
-        left: 100px;
-    }
-    .physical-pesrson-block1 label[for="confirmation-email"]{
-        left: -7px;
-    }
-    .physical-pesrson-block1 label[for="pass"]{
-        left: 12px;
-    }
-    .physical-pesrson-block1 label[for="confirmation-pass"]{
-        left: -14px;
-    }
-    .form-register-physical-pesrson button{
-        margin-left: 160px;
+
+    .physical-pesrson-block1 label[for="name"] {
+        left: 30px;
+        top: 93px;
     }
 
+    .physical-pesrson-block1 label[for="email"] {
+        left: 30px;
+        top: 257px
+    }
+
+    .physical-pesrson-block1 label[for="confirmation-email"] {
+        left: 30px;
+        top: 340px;
+    }
+
+    .physical-pesrson-block1 label[for="pass"] {
+        left: 30px;
+        top: 427px;
+    }
+
+    .physical-pesrson-block1 label[for="confirmation-pass"] {
+        left: 30px;
+        top: 505px;
+    }
+
+    .form-register-physical-pesrson button {
+        margin-left: 60px;
+    }
+
+}
+
+@media (width <=400px) {
+    .form-register-physical-pesrson {
+        width: 300px;
+        margin-left: 13px;
+        margin-right: 7px;
+    }
 }

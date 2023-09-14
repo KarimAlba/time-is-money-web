@@ -224,6 +224,23 @@ button{
   }
 }
 
+@media (width <=400px) {
+  .animate-label input[id="id_email"]{
+    width: 100%;
+  }
+  .modalChooseService{
+    width: 340px;
+  }
+  .animate-label label[for="id_email"]{
+    left: 30px;
+    font-size: 14px;
+  }
+  .animate-label input[id="id_email"]:valid+label[for="id_email"],
+  .animate-label input[id="id_email"]:focus+label[for="id_email"] {
+    font-size: 14px;
+    top: 20px;
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

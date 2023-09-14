@@ -112,8 +112,9 @@ li::marker {
     height: 175px;
     border-radius: 15px;
 }
-.business-model span{
-    color:#00B2F4 ;
+
+.business-model span {
+    color: #00B2F4;
     font-size: 40px;
 }
 
@@ -546,7 +547,7 @@ li::marker {
 
     .container-client-4-content img {
         height: 100px;
-        margin-left: -255px;
+        margin-left: 0px;
     }
 
     .client-4-footer-container p {
@@ -577,9 +578,9 @@ li::marker {
     }
 
     .client-6-conteiner1 img {
-        left: 264px;
-        height: 65px;
-        top: -61px;
+        left: 266px;
+        height: 60px;
+        top: -63px;
     }
 
     .container-client-6-footer {
@@ -613,7 +614,7 @@ li::marker {
     .container-client-7-content img {
         left: 285px;
         top: 57px;
-        width:60px;
+        width: 60px;
     }
 
     .client-7-content-block2 {
@@ -630,7 +631,7 @@ li::marker {
     }
 
     .container-main-Investors h1 {
-        margin-left: 20px;
+        margin-left: 10px;
     }
 
     .quantity-clients {
@@ -696,6 +697,7 @@ li::marker {
 
     .container-client-4-content {
         flex-direction: column;
+        align-items: center;
     }
 
     .container-client5-content {
@@ -703,6 +705,9 @@ li::marker {
     }
 
     .content-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-bottom: 50px;
     }
 
@@ -714,10 +719,13 @@ li::marker {
     .client-5-content-container {
         width: 200px;
     }
-    .client-6-block5 h1, .client-6-block3 h1{
+
+    .client-6-block5 h1,
+    .client-6-block3 h1 {
         font-size: 50px;
     }
-    .client-6-block1 h1{
+
+    .client-6-block1 h1 {
         font-size: 50px;
 
     }

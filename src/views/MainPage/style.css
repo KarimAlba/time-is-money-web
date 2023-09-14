@@ -35,7 +35,7 @@
 }
 
 .queue {
-    height: 75vh;
+    height: 70 vh;
     position: absolute;
     z-index: 3;
     top: 86px;
@@ -238,6 +238,10 @@
 
 
 @media(width <=470px) {
+
+    .container-block3-info{
+        align-items: center;
+    }
     .img3 {
         width: 240px;
         margin-left: 35px;
@@ -249,7 +253,7 @@
     }
 
     .queue {
-        height: 37vh;
+        height: 45vh;
         position: static;
     }
 
@@ -330,6 +334,7 @@
 
     .container-block2 {
         flex-direction: column;
+        align-items: center;
     }
 
     .container-Text {
@@ -363,5 +368,11 @@
         margin-top: 30px;
         margin-left: 20px;
         margin-right: 0;
+    }
+
+}
+@media(width <=400px) {
+    .queue{
+        height: 33vh;
     }
 }
