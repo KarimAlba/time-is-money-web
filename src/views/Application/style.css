@@ -8,7 +8,6 @@
     display: flex;
     flex-direction: row;
     margin-top: 177px;
-
 }
 
 .block1 img {
@@ -25,7 +24,6 @@
     margin-left: 30px;
     padding: 74px;
     text-align: justify;
-
 }
 
 .aplication-text1-block1 span {
@@ -49,7 +47,6 @@
 .container-mobile-phone-screen {
     display: flex;
     flex-direction: row;
-
 }
 
 .container-mobile-phone-screen img {
@@ -93,7 +90,6 @@
 /* блок 3 */
 .Aplication-contauner-block3 {
     padding: 150px;
-
 }
 
 .Aplication-contauner-block3 img {
@@ -110,7 +106,6 @@
     border-radius: 15px;
     text-align: end;
     padding: 30px;
-
 }
 
 .bloc3-text img {
@@ -121,6 +116,100 @@
 .text1 p {
     margin-top: 50px;
     text-align: end;
+}
+
+@media(width <= 980px) {
+    .block1 {
+        margin-top: 20px;
+    }
+
+    .block1 img {
+        margin-top: 50px;
+        width: 90%;
+    }
+
+    .aplication-text1-block1{
+        padding: 10px;
+    }
+
+    .container-mobile-phone-screen img {
+        width: 30%;
+        margin: 2%;
+    }
+
+    .Aplication-contauner-block3 {
+        margin-top:20px;
+        padding: 10px;
+    }
+    
+    .Aplication-contauner-block3 img {
+        width: 250px;
+        margin: 0 0 0 10px;
+    }
+
+    .bloc3-text {
+        margin: 0 5% 0 5%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .container-info-screen {
+        flex-direction: column;
+    }
+
+    .container-info-screen {
+        margin: 0 2% 0 2%;
+    }
+    
+    .block-one {
+        width: 65%;
+        margin: 20px 0 0 15%;
+        padding: 10px;
+    }
+    
+    .block-one img{
+        position: relative;
+        left: -30px;
+        top: 23px;
+        height: 50px;
+    }
+    
+    .block-one h1 {
+        margin-left: 15px;
+    }
+    
+    .block-one p {
+        text-align: end;
+        margin: 10px 15px 5px 0;
+    }
+}
+
+@media(width <= 670px) {
+    .block1 {
+        margin-top: 50px;
+        flex-flow: column;
+    }
+
+    .block1 img {
+        margin-top: 0px;
+        width: 90%;
+    }
+
+    .Aplication-contauner-block3 {
+        flex-direction: column;
+    }
+
+    .Aplication-contauner-block3 img {
+        width: 60%;
+        margin: 0 0 0 20%;
+    }
+}
+
+@media(width <= 600px) {
+    .block1 img {
+        margin-top: 80px;
+        width: 90%;
+    }
 }
 
 @media(width <=470px) {
@@ -144,8 +233,6 @@
     }
 
     .text1,
-    .Aplication-contauner-block3,
-    .container-info-screen,
     .container-mobile-phone-screen {
         flex-direction: column;
     }

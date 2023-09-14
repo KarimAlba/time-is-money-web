@@ -12,7 +12,6 @@ import TiM from '../../assets/imgTimeIsMoney/TiM1.svg';
 import plus from '../../assets/imgTimeIsMoney/plus1.svg';
 import minus from '../../assets/imgTimeIsMoney/minus.svg';
 import schedule from '../../assets/imgTimeIsMoney/schedule.svg';
-import EllipseMen from '../../assets/imgTimeIsMoney/EllipseMen.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
 import { useNavigate } from 'react-router';
@@ -31,13 +30,13 @@ const Investors = (props: InvestorsPropsTypes) => {
     useEffect(() => {
         handleCurrentBtnChange('Инвесторам')
     }, []);
+
     return (
         <div className="container-main-Investors">
             <div>
                 <h1>Целевой рынок</h1>
                 <p style={{ marginLeft: '50px' }}>Наши потенциальные клиенты - это:</p>
-                <div
-                    className="container-clients-investor">
+                <div className="container-clients-investor">
                     <div className="container-client-1">
                         <li>банки , </li>
                         <li>нотариусы,</li>
@@ -73,8 +72,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             и время своих клиентов
                         </p>
                     </div>
-                    <div
-                        className="quantity-clients">
+                    <div className="quantity-clients">
                         <img src={Elipsestar} />
                         <h1><span style={{ marginRight: 40 }}>свыше</span>  200 000</h1>
                         <p>
@@ -137,7 +135,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                     </p>
                 </div>
                 <div className="container-client-4">
-                    <div className="container-clirnt-4-heder">
+                    <div className="client-header">
                         <h1>Маркетинг</h1>
                         <img src={logo} />
                     </div>
@@ -154,7 +152,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <img src={icon4} />
                             <div className="client-4-footer-container">
                                 <p>
-                                    Льготный периуд
+                                    Льготный период
                                     <br />
                                     для первых
                                     <br />
@@ -210,7 +208,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                         <div className="container-client-5-icon">
                             <img src={MyDocuments} />
                             <div>
-                                <p>мобильное приложение </p>
+                                <p>мобильное приложение</p>
                                 <h3 style={{ margin: 0 }}>«Документы»</h3>
                             </div>
                         </div>
@@ -281,9 +279,9 @@ const Investors = (props: InvestorsPropsTypes) => {
                 </div>
             </div>
             <div className="container-client-6">
-                <div className="container-client-6-heder">
-                    <h1>Итвестиции</h1>
-                    <img src={logo} />
+                <div className="client-header">
+                    <h1>Инвестиции</h1>
+                    <img src={logo}/>
                 </div>
                 <div className="client-6-conteiner1">
                     <img src={ElipseStar2} />
@@ -354,7 +352,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                 </div>
             </div>
             <div className="container-client-7">
-                <div className="container-client-7-header">
+                <div className="client-header">
                     <h1>
                         Показатели экономической
                         <br />
@@ -411,7 +409,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                 </div>
             </div>
             <div className="container-client-8">
-                <div className="container-client-8-header">
+                <div className="client-header">
                     <h1>Наша команда</h1>
                     <img src={logo} />
                 </div>
@@ -432,23 +430,23 @@ const Investors = (props: InvestorsPropsTypes) => {
                             Connecting» г.Мюнхен
                         </p>
                     </div>
-                    <div className="client-8-content-block1">
+                    {/* <div className="client-8-content-block1">
                         <div >
-                            {/* <img src={men1} className="client-8-content-block1-men" /> */}
+                            <img src={men1} className="client-8-content-block1-men" />
                             <img src={EllipseMen} className="ellipse2 " />
                         </div>
                         <br />
-                        {/* <h2> Вадим Фоменко</h2> */}
+                        <h2> Вадим Фоменко</h2>
                         <p>
-                            {/* Главный фаундер,
+                            Главный фаундер,
                                 <br />
                                 генеральный директор
                                 <br />
                                 IT-компании «Stein
                                 <br />
-                                Connecting» г.Мюнхен */}
+                                Connecting» г.Мюнхен 
                         </p>
-                    </div>
+                    </div> */}
                     <div className="client-8-content-block1">
                         <div >
                             <img src={men2} className="client-8-content-block1-men" />

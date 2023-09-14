@@ -112,9 +112,7 @@ const Application = (props: ApplicationPropsTypes) => {
                         которые вы можете самостоятельно заполнить
                         с помощю нашего приложения.
                     </p>
-
                 </div>
-
             </div>
         </div>
     )

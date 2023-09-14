@@ -5,7 +5,6 @@ import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
 import IUserAuth from "../../../models/request/IUserAuth";
 import IEntityResponse from "../../../models/response/IEntityResponse";
 import ITokenReponse from "../../../models/response/ITokenResponse";
-import axios from "axios";
 
 interface AuthorizationPropsTypes {
     showModal: Function;

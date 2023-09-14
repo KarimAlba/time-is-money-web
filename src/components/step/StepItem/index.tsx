@@ -6,7 +6,7 @@ const StepItem = (props: StepModel) => {
 
     return (
         <div className="container-step">
-            <img src={props.photoUrl} />
+            <img src={props.photoUrl} className='screen'/>
             <div className="step-text">
                 <h1>{props.number}</h1>
                 <img src={stroke}/>
