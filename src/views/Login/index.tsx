@@ -1,10 +1,20 @@
 import './style.css';
 import { Outlet } from "react-router-dom";
-import imgLogin from '../../assets/imgTimeIsMoney/imgLogin.svg';
+import imgLogin from '../../assets/imgTimeIsMoney/imgLogin.svg';import { useEffect } from 'react';
 
-const Login = () => {
+interface LoginPropsTypes{
+    handleCurrentBtnChange: Function;
+}
+
+
+const Login = (props: LoginPropsTypes) => {
+    const { handleCurrentBtnChange } = props;
+
+    useEffect(() => {
+        handleCurrentBtnChange('Вход')
+    }, []);
+    
     return (
-
         <div className="ContainerLogin">
             <img src={imgLogin} />
             <div className="form-login">

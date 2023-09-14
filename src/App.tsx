@@ -19,6 +19,7 @@ function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
   const [isOpenFooter, setIsOpenFooter] = useState<boolean>(true);
   const [isOpenPlugin, setIsOpenPlugin] = useState<boolean>(false);
+  const [currentBtn, setCurrentBtn] = useState<string>('Главная');
 
   const handlePasswordChange = () => setModalVisible(true);
 
@@ -28,20 +29,27 @@ function Layout() {
 
   const handleOpenPlugin = (value: boolean) => setIsOpenPlugin(value);
 
+  const handleCurrentBtnChange = (value: string) => setCurrentBtn(value); 
+
   return (
     <>
-      <Header handleIsOpenFooter={handleIsOpenFooter} />
+      <Header handleIsOpenFooter={handleIsOpenFooter} currentBtnProp={currentBtn}/>
       <Routes>
-        <Route path="/" element={<MainPage/>} />
-        <Route path="/application" element={<Application/>}/>
-        <Route path="/PluginPage" element={<PluginPage/>}/>
-        <Route path="/investors" element={<Investors/>}/>
-        <Route path="login" element={<Login/>} >
+        <Route path="/" element={<MainPage handleCurrentBtnChange={handleCurrentBtnChange}/>} />
+        <Route path="/application" element={<Application handleCurrentBtnChange={handleCurrentBtnChange}/>}/>
+        <Route path="/PluginPage" element={<PluginPage handleCurrentBtnChange={handleCurrentBtnChange}/>}/>
+        <Route path="/investors" element={<Investors handleCurrentBtnChange={handleCurrentBtnChange}/>}/>
+        <Route path="login" element={<Login handleCurrentBtnChange={handleCurrentBtnChange}/>} >
           <Route path='' element={<LoginForm showModal={handlePasswordChange}/>} />
           <Route path="physicalPerson" element={<PhysicalPerson/>}/>
           <Route path="entity" element={<Entity/>}/>
         </Route>
-        <Route path='user' element={<UserPage handlePersonInfoMounted={handlePersonInfoMounted} handleOpenPlugin={handleOpenPlugin}/>}>
+        <Route path='user' element={
+            <UserPage 
+              handlePersonInfoMounted={handlePersonInfoMounted} 
+              handleOpenPlugin={handleOpenPlugin}/>
+            } 
+          >
           <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin}/>}/>
           <Route path="edit-user" element={<EditUser/>}/>
         </Route>

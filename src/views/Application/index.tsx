@@ -6,9 +6,14 @@ import photoAplication from '../../assets/imgTimeIsMoney/photoAplication.svg';
 import one from '../../assets/imgTimeIsMoney/stroke.svg';
 import screenQr from '../../assets/imgTimeIsMoney/screenQrCode.svg';
 import Star from '../../assets/imgTimeIsMoney/Star.svg';
+import { useEffect } from 'react';
 
+interface ApplicationPropsTypes{
+    handleCurrentBtnChange: Function;
+}
 
-const Application = () => {
+const Application = (props: ApplicationPropsTypes) => {
+    const { handleCurrentBtnChange } = props;
 
     const onClickGooglePlay = () => (
         window.location.assign('https://play.google.com/store/apps/details?id=com.studiovr.timeismoney')
@@ -17,6 +22,10 @@ const Application = () => {
     const onClickAppStore = () => (
         window.location.assign('https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674')
     )
+
+    useEffect(() => {
+        handleCurrentBtnChange('Приложение')
+    }, []);
 
     return (
         <div className="container-Main-Application">

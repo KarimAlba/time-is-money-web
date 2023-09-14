@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import './style.css';
 import logo from '../../assets/imgTimeIsMoney/logo.svg'
 import { useNavigate } from "react-router-dom";
@@ -6,10 +6,12 @@ import burger from '../../assets/imgTimeIsMoney/hamburger.svg'
 import crossBurgerMenu from '../../assets/imgTimeIsMoney/crossBurgerMenu.svg'
 
 interface HeaderPropsTypes {
-    handleIsOpenFooter: Function
+    handleIsOpenFooter: Function;
+    currentBtnProp?: string;
 }
+
 const Header = (props: HeaderPropsTypes) => {
-    const {handleIsOpenFooter} = props;
+    const { handleIsOpenFooter, currentBtnProp } = props;
     const [menuActive, setMenuActive] = useState<boolean>(false);
     const [currentBtn, setCurrentBtn] = useState<string>('Главная'); 
 
@@ -19,32 +21,33 @@ const Header = (props: HeaderPropsTypes) => {
         handleIsOpenFooter()
         if (menuActive) setMenuActive(false)
         navigate('/');
-        setCurrentBtn('Главная');
     }
     const toApplication = () => {
         handleIsOpenFooter()
         if (menuActive) setMenuActive(false)
         navigate('/Application');
-        setCurrentBtn('Приложение');
     }
     const toPlagin = () => {
         handleIsOpenFooter()
         if (menuActive) setMenuActive(false)
         navigate('/PluginPage');
-        setCurrentBtn('Плагин');
     }
     const toInvestors = () => {
         handleIsOpenFooter()
         if (menuActive) setMenuActive(false)
         navigate('/investors');
-        setCurrentBtn('Инвесторам');
     }
     const toLogin = () => {
         handleIsOpenFooter()
         if (menuActive) setMenuActive(false)
         navigate('/login');
-        setCurrentBtn('Вход');
     }
+
+    useEffect(() => {
+        if (currentBtnProp) {
+            setCurrentBtn(currentBtnProp);
+        }
+    }, [currentBtnProp])
 
     return (
         <div className="container-header">

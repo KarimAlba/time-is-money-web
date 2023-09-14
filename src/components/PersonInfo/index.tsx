@@ -23,10 +23,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [templateCount2, setTemplateCount2] = useState<boolean>(false)
     const [templateCount3, setTemplateCount3] = useState<boolean>(false)
 
-
     const { handleIsOpenFooter, handleOpenPlugin } = props;
-
-    const pluginsOwners = ['плагин Светланы', 'плагин Сергея'];
 
     const handleCheckBox = () => {
         setIsDownload(!isDownload);
@@ -103,13 +100,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             <p>заполненных шаблонов:</p>
                         </div>
                         {templateCount
-                            ? (<div>
-                                {pluginsOwners.map(item =>
-                                    <div key={item} className="select_point">
-                                        <p key={item + 1}>{item}</p>
-                                        <span key={item + 2} >40</span>
-                                    </div>
-                                )}
+                            ? (<div className="select_point">
+                                <p>В разработке</p>
                             </div>)
                             : null
                         }
@@ -125,14 +117,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             <p>заполненных приложений:</p>
                         </div>
                         {templateCount2
-                            ? (<div>
-                                {pluginsOwners.map(item =>
-                                    <div key={item} className="select_point">
-                                        <p key={item + 1}>{item}</p>
-                                        <span key={item + 2} >200</span>
-                                    </div>
-
-                                )}
+                            ? (<div className="select_point">
+                                <p>В разработке</p>
                             </div>)
                             : null
                         }
@@ -148,13 +134,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             <p>QR-code действителен до:</p>
                         </div>
                         {templateCount3
-                            ? (<div>
-                                {pluginsOwners.map(item =>
-                                    <div key={item} className="select_point">
-                                        <p key={item + 1}>{item}</p>
-                                        <span key={item + 2} >12.03.2025</span>
-                                    </div>
-                                )}
+                            ? (<div className="select_point">
+                                <p>В разработке</p>
                             </div>)
                             : null
                         }

@@ -2,8 +2,19 @@ import './style.css';
 import RunningMan from "../../assets/imgTimeIsMoney/RunningMan.svg"
 import StepList from "../../components/step/stepList";
 import star from '../../assets/imgTimeIsMoney/Star.svg'
+import { useEffect } from 'react';
 
-const PluginPage = () => {
+interface PluginPagePropsTypes{
+    handleCurrentBtnChange: Function;
+}
+
+const PluginPage = (props: PluginPagePropsTypes) => {
+    const { handleCurrentBtnChange } = props;
+
+    useEffect(() => {
+        handleCurrentBtnChange('Плагин')
+    }, []);
+
     return (
         <div className="container-main-plugin">
             <div className="block1-plugin">

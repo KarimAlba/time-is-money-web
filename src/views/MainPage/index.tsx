@@ -5,30 +5,36 @@ import stroke from '../../assets/imgTimeIsMoney/stroke.svg'
 import Phone from '../../assets/imgTimeIsMoney/Phone.svg'
 import laptop from '../../assets/imgTimeIsMoney/laptop.svg'
 import { useNavigate } from 'react-router';
+import { useEffect } from 'react';
 
-const MainPage = () => {
+interface MainPagePropsTypes{
+    handleCurrentBtnChange: Function;
+}
+
+const MainPage = (props: MainPagePropsTypes) => {
+    const { handleCurrentBtnChange } = props;
     const navigate = useNavigate();
     const toApplication = () => navigate('/application');
     const toPluginPage = () => navigate('/PluginPage');
     const toLogin = () => navigate('/login');
 
+    useEffect(() => {
+        handleCurrentBtnChange('Главная')
+    }, []);
 
     return (
         <div className='containerMain'>
             <div className="container-block1">
                 <div className="container-Text">
-                    <h5 > TиМ</h5>
+                    <h5>TиМ</h5>
                     <p>
                         НОВАЯ ВЕХА
                         <br />
                         В ТАЙМ-МЕНЕДЖМЕНТЕ
                     </p>
                 </div>
-                <div className='containerImg2'>
-                    <img src={queue} className="queue" />
-                </div>
-                <div >
-
+                <div className="documents">
+                    <img src={queue} className="queue"/>
                     <div className='container-Text2'>
                         <p>
                             Рост документооборота в компаниях вынуждает их содержать
@@ -60,10 +66,10 @@ const MainPage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="block-text2">
+                    <div className="block2-text1">
                         <div>
                             <h1>2</h1>
-                            <img src={stroke} className="img2" />
+                            <img src={stroke} className="img1" />
                         </div>
                         <div>
                             <p>
@@ -91,8 +97,8 @@ const MainPage = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="container-block3-info2">
-                        <div className="info2-text2">
+                    <div className="container-block3-info1">
+                        <div className="info1-text1">
                             <img src={Star} />
                             <p>
                                 После регистрации на нашем сайте, в

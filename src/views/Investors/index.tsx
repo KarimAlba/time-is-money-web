@@ -16,10 +16,21 @@ import EllipseMen from '../../assets/imgTimeIsMoney/EllipseMen.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
 import { useNavigate } from 'react-router';
-const Investors = () => {
+import { useEffect } from 'react';
+
+interface InvestorsPropsTypes{
+    handleCurrentBtnChange: Function;
+}
+
+const Investors = (props: InvestorsPropsTypes) => {
+    const { handleCurrentBtnChange } = props;
     const navigate = useNavigate();
 
     const toLogin = () => navigate('/login');
+
+    useEffect(() => {
+        handleCurrentBtnChange('Инвесторам')
+    }, []);
     return (
         <div className="container-main-Investors">
             <div>

@@ -22,6 +22,7 @@
     font-size: 14px;
     box-shadow: 8px 10px 5px 2px rgba(105, 105, 106, 0.2)
 }
+
 .button-container button:focus {
     vertical-align: middle;
     color: #00B2F4;
@@ -41,14 +42,34 @@
     display: none;
 }
 
-@media(width <=470px) {
+@media(width <=1170px) {
+    .container-img {
+        margin-left: 2%;
+    }
+}
+
+@media(width <=780px) {
     .container-img {
         margin-left: 0%;
     }
 
-    .container-img img {
-        width: 65px;
-        height: auto;
+    .button-container button {
+        cursor: pointer;
+        width: 80px;
+        height: 30px;
+        font-size: 10px;
+    }
+}
+
+@media(width <=590px) {
+    .container-img {
+        display: none;
+    }
+}
+
+@media(width <=470px) {
+    .container-img {
+        display: block;
     }
 
     .button-container {

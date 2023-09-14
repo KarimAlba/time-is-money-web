@@ -58,6 +58,7 @@
 
 .statistic_point p {
     margin: 0;
+    float: right;
 }
 
 .statistic_value .statistic_point {
