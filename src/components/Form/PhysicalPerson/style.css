@@ -103,6 +103,93 @@
     font-size: 15px;
 }
 
+@media (width <=1360px) {
+    .form-register-physical-pesrson {
+        width: 643px;
+    }
+}
+
+@media (width <=1150px) {
+    .form-login {
+        left: 35%;
+    }
+}
+
+@media (width <=1000px) {
+    .form-login {
+        left: 20%;
+    }
+}
+
+@media (width <=870px) {
+    .form-login {
+        left: 12%;
+    }
+
+    .form-register-physical-pesrson {
+        width: 600px;
+    }
+
+    .physical-pesrson-block1 input[id="surname"],
+    .physical-pesrson-block1 input[id="name"],
+    .physical-pesrson-block1 input[id="patronymic"],
+    .physical-pesrson-block1 input[id="email"],
+    .physical-pesrson-block1 input[id="confirmation-email"],
+    .physical-pesrson-block1 input[id="pass"],
+    .physical-pesrson-block1 input[id="confirmation-pass"] {
+        margin-left: 180px;
+    }
+
+    .physical-pesrson-block1 label[for="surname"] {
+        left: 95px;
+        top: 40px;
+    }
+
+    .physical-pesrson-block1 label[for="name"] {
+        left: 132px;
+        top: 105px;
+    }
+
+    .physical-pesrson-block1 label[for="patronymic"] {
+        left: 95px;
+        top: 170px;
+    }
+
+    .physical-pesrson-block1 label[for="email"] {
+        left: 120px;
+        top: 235px;
+    }
+
+    .physical-pesrson-block1 label[for="confirmation-email"] {
+        left: 15px;
+    }
+
+    .physical-pesrson-block1 label[for="pass"] {
+        left: 35px;
+    }
+
+    .physical-pesrson-block1 label[for="confirmation-pass"] {
+        left: 5px;
+        top: 430px;
+    }
+    .form-register-physical-pesrson button{
+        margin-left: 245px;
+    }
+}
+@media (width <=700px) {
+    .form-register-physical-pesrson{
+        width: 490px;
+    }
+    .form-login{
+        left: 15%;
+    }
+}
+@media (width <=580px) {
+    .form-login{
+        left: 4%;
+    }
+}
+
 @media (width <=470px) {
     .form-register-physical-pesrson {
         width: 300px;
