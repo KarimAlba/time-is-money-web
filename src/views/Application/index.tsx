@@ -1,7 +1,7 @@
 import './style.css';
-import mobilePhoneScreen1 from '../../assets/imgTimeIsMoney/mobilePhoneScreen1.svg';
-import mobilePhoneScreen2 from '../../assets/imgTimeIsMoney/mobilePhoneScreen2.svg';
-import mobilePhoneScreen3 from '../../assets/imgTimeIsMoney/mobilePhoneScreen3.svg';
+import mobilePhoneScreen1 from '../../assets/images/phone1.png';
+import mobilePhoneScreen2 from '../../assets/images/phone2.png';
+import mobilePhoneScreen3 from '../../assets/images/phone3.png';
 import photoAplication from '../../assets/imgTimeIsMoney/photoAplication.svg';
 import one from '../../assets/imgTimeIsMoney/stroke.svg';
 import screenQr from '../../assets/imgTimeIsMoney/screenQrCode.svg';
