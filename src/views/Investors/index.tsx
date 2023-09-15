@@ -296,9 +296,9 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </div>
                         <div className="client-6-block2">
                             <p>
-                                требуемый обЪём инвестиций
+                                требуемый объём инвестиций
                                 <br />
-                                до периуда самоокупаемости
+                                до периода самоокупаемости
                             </p>
                         </div>
                     </div>
@@ -352,7 +352,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                 </div>
             </div>
             <div className="container-client-7">
-                <div className="client-header">
+                <div className="client-header economic_effect">
                     <h1>
                         Показатели экономической
                         <br />
