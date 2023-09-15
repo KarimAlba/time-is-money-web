@@ -1,8 +1,6 @@
 import './style.css';
-import { useState, useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
 import PhysicalAccountAPI from '../../api/PhysicalAccountAPI';
-import IEditUserRequest from '../../models/request/IEditUserRequest';
 
 const EditUser = () => {
     const [type, setType] = useState<number>(1);
@@ -34,28 +32,28 @@ const EditUser = () => {
         setConfirmEmail(e.target.value);
     }
 
-    const getDataPhysical = () => {
-        if (String(localStorage.getItem('id'))) {
-            setId(String(localStorage.getItem('id')));
-        }
+    // const getDataPhysical = () => {
+    //     if (String(localStorage.getItem('id'))) {
+    //         setId(String(localStorage.getItem('id')));
+    //     }
 
-        if (String(localStorage.getItem('name'))) {
-            setName(String(localStorage.getItem('name')));
-        }
+    //     if (String(localStorage.getItem('name'))) {
+    //         setName(String(localStorage.getItem('name')));
+    //     }
 
-        if (String(localStorage.getItem('email'))) {
-            setEmail(String(localStorage.getItem('email')));
-            setConfirmEmail(String(localStorage.getItem('email')));
-        }
+    //     if (String(localStorage.getItem('email'))) {
+    //         setEmail(String(localStorage.getItem('email')));
+    //         setConfirmEmail(String(localStorage.getItem('email')));
+    //     }
 
-        if (String(localStorage.getItem('lastname'))) {
-            setLastname(String(localStorage.getItem('lastname')));
-        }
+    //     if (String(localStorage.getItem('lastname'))) {
+    //         setLastname(String(localStorage.getItem('lastname')));
+    //     }
 
-        if (String(localStorage.getItem('patronymic'))) {
-            setPatronymic(String(localStorage.getItem('patronymic')));
-        }
-    }
+    //     if (String(localStorage.getItem('patronymic'))) {
+    //         setPatronymic(String(localStorage.getItem('patronymic')));
+    //     }
+    // }
 
     const handleAccessPhysical = () => {
         if (!lastname && !name && !patronymic
@@ -212,15 +210,6 @@ const organizationBlock = <div>
             ПОДТВЕРДИТЬ 
         </button>
     </div>
-
-    useEffect(() => {
-        if (localStorage.getItem('inn')) {
-            setType(0);
-        } else {
-            setType(1);
-        }
-        getDataPhysical();
-    }, [])
 
     return (
         <div className="edit-user">

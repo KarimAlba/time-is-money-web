@@ -42,6 +42,7 @@ function ModalRegister(props: ModalRegisterPropsTypes) {
         </>
     )
 }
+
 const LoginForm = (props: AuthorizationPropsTypes) => {
     const { showModal } = props;
     const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -64,12 +65,14 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                 if(response.status < 400) {
                     navigate('/user');
                     console.log(response.data);
-                    if (response.data.entity.inn) {
-                        fillOrganizationLocalStorage(response.data.entity, response.data.tokenResponse);
-                    } else {
-                        fillPhysicalLocalStorage(response.data.entity, response.data.tokenResponse);
-                    }
-                    console.log(response);
+                    localStorage.setItem('token', response.data.tokenResponse.token);
+                    localStorage.setItem('id', String(response.data.entity.id));
+                    // if (response.data.entity.inn) {
+                    //     fillOrganizationLocalStorage(response.data.entity, response.data.tokenResponse);
+                    // } else {
+                    //     fillPhysicalLocalStorage(response.data.entity, response.data.tokenResponse);
+                    // }
+                    // console.log(response);
                 }
             })
             .catch(error => console.log(error));
@@ -88,29 +91,29 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         }
     }
 
-    const fillPhysicalLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
-        localStorage.setItem('createdAt', entity.createdAt);
-        localStorage.setItem('email', entity.email);
-        localStorage.setItem('id', String(entity.id));
-        localStorage.setItem('lastname', entity.lastname);
-        localStorage.setItem('name', String(entity.name));
-        localStorage.setItem('patronymic', entity.patronymic);
-        localStorage.setItem('phoneNumber', String(entity.phoneNumber));
+    // const fillPhysicalLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
+    //     localStorage.setItem('createdAt', entity.createdAt);
+    //     localStorage.setItem('email', entity.email);
+    //     localStorage.setItem('id', String(entity.id));
+    //     localStorage.setItem('lastname', entity.lastname);
+    //     localStorage.setItem('name', String(entity.name));
+    //     localStorage.setItem('patronymic', entity.patronymic);
+    //     localStorage.setItem('phoneNumber', String(entity.phoneNumber));
 
-        localStorage.setItem('token', tokenResp.token);
-    }
+    //     localStorage.setItem('token', tokenResp.token);
+    // }
 
-    const fillOrganizationLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
-        localStorage.setItem('createdAt', entity.createdAt);
-        localStorage.setItem('email', entity.email);
-        localStorage.setItem('id', String(entity.id));
-        localStorage.setItem('lastname', entity.lastname);
-        localStorage.setItem('name', String(entity.name));
-        localStorage.setItem('patronymic', entity.patronymic);
-        localStorage.setItem('phoneNumber', String(entity.phoneNumber));
+    // const fillOrganizationLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
+    //     localStorage.setItem('createdAt', entity.createdAt);
+    //     localStorage.setItem('email', entity.email);
+    //     localStorage.setItem('id', String(entity.id));
+    //     localStorage.setItem('lastname', entity.lastname);
+    //     localStorage.setItem('name', String(entity.name));
+    //     localStorage.setItem('patronymic', entity.patronymic);
+    //     localStorage.setItem('phoneNumber', String(entity.phoneNumber));
 
-        localStorage.setItem('token', tokenResp.token);
-    }
+    //     localStorage.setItem('token', tokenResp.token);
+    // }
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
