@@ -178,6 +178,172 @@
     font-size: 15px;
 }
 
+@media (width <=1250px) {
+    .form-login {
+        left: 15%;
+    }
+
+    .form-register-legal-entity {
+        width: 730px;
+    }
+}
+
+@media (width <=1100px) {
+    .form-register-legal-entity {
+        width: 650px;
+    }
+
+    .legal-entiti-block1 input[id="name-of-company"],
+    .legal-entiti-block1 input[id="legal-address"],
+    .legal-entiti-block1 input[id="inn"],
+    .legal-entiti-block1 input[id="checkpoint"],
+    .legal-entiti-block1 input[id="surname"],
+    .legal-entiti-block1 input[id="name"],
+    .legal-entiti-block1 input[id="patronymic"],
+    .legal-entiti-block1 input[id="email"],
+    .legal-entiti-block1 input[id="confirmation-email"],
+    .legal-entiti-block1 input[id="pass"],
+    .legal-entiti-block1 input[id="confirmation-pass"] {
+        margin-left: 250px;
+    }
+
+    .legal-entiti-block1 label[for="name-of-company"] {
+        left: 20px;
+    }
+
+    .legal-entiti-block1 label[for="legal-address"] {
+        left: 80px;
+    }
+
+    .legal-entiti-block1 label[for="inn"] {
+        left: 205px;
+    }
+
+    .legal-entiti-block1 label[for="checkpoint"] {
+        left: 205px;
+
+    }
+
+    .legal-entiti-block1 label[for="surname"] {
+        left: 60px;
+        width: 192px;
+        top: 280px;
+    }
+
+    .legal-entiti-block1 label[for="name"] {
+        left: 205px;
+    }
+
+    .legal-entiti-block1 label[for="patronymic"] {
+        left: 170px;
+    }
+
+    .legal-entiti-block1 label[for="email"] {
+        left: 195px;
+    }
+
+    .legal-entiti-block1 label[for="confirmation-email"] {
+        left: 85px;
+    }
+
+    .legal-entiti-block1 label[for="pass"] {
+        left: 105px;
+    }
+
+    .legal-entiti-block1 label[for="confirmation-pass"] {
+        left: 80px;
+    }
+}
+
+@media (width <=980px) {
+    .form-login {
+        left: 5%;
+    }
+}
+
+
+@media (width <=770px) {
+    .form-login {
+        left: 20%;
+    }
+
+    .form-register-legal-entity {
+        width: 400px;
+    }
+
+    .legal-entiti-block1 input[id="name-of-company"],
+    .legal-entiti-block1 input[id="legal-address"],
+    .legal-entiti-block1 input[id="inn"],
+    .legal-entiti-block1 input[id="checkpoint"],
+    .legal-entiti-block1 input[id="surname"],
+    .legal-entiti-block1 input[id="name"],
+    .legal-entiti-block1 input[id="patronymic"],
+    .legal-entiti-block1 input[id="email"],
+    .legal-entiti-block1 input[id="confirmation-email"],
+    .legal-entiti-block1 input[id="pass"],
+    .legal-entiti-block1 input[id="confirmation-pass"] {
+        margin-left: 177px;
+    }
+
+    .legal-entiti-block1 label[for="name-of-company"] {
+        left: 55px;
+        width: 0px;
+        top: 20px;
+    }
+
+    .legal-entiti-block1 label[for="legal-address"] {
+        left: 13px;
+    }
+
+    .legal-entiti-block1 label[for="inn"],
+    .legal-entiti-block1 label[for="checkpoint"] {
+        left: 140px;
+    }
+
+    .legal-entiti-block1 label[for="surname"] {
+        left: -5px;
+    }
+
+    .legal-entiti-block1 label[for="name"] {
+        left: 140px;
+    }
+
+    .legal-entiti-block1 label[for="patronymic"] {
+        left: 100px;
+    }
+
+    .legal-entiti-block1 label[for="email"] {
+        left: 125px;
+    }
+
+    .legal-entiti-block1 label[for="confirmation-email"] {
+        left: 20px;
+    }
+
+    .legal-entiti-block1 label[for="pass"] {
+        left: 40px;
+    }
+
+    .legal-entiti-block1 label[for="confirmation-pass"] {
+        left: 15px;
+    }
+
+    .form-register-legal-entity button {
+        margin-left: 200px;
+    }
+}
+
+@media (width <=580px) {
+ .form-login{
+    left: 12%;
+ }
+}
+@media (width <= 500px) {
+    .form-login{
+        left: 3%;
+    }
+}
+
 @media (width <=470px) {
     .form-register-legal-entity {
         width: 300px;
@@ -207,7 +373,7 @@
 
     .legal-entiti-block1 label[for="name-of-company"] {
         /* width: 218px; */
-        top: 20px;
+        top: 0px;
         left: 30px;
     }
 

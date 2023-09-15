@@ -215,7 +215,7 @@
 @media(width <=470px) {
     .block1 img {
         width: 300px;
-        margin-top: -85px;
+        margin-top: 30px;
     }
 
     .block1 {
@@ -277,7 +277,11 @@
 }
 @media (width<=400px) {
     .bloc3-text{
-        margin-left: -140px;
+        margin-left: 20px;
+    }
+    .block-one img{
+        left: -34px;
+        top: 22px;
     }
     
 }

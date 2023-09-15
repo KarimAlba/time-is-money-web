@@ -1,4 +1,4 @@
-.container-Footer{
+.container-Footer {
     display: flex;
     flex-direction: row;
 }
@@ -8,12 +8,20 @@
     margin: auto;
     margin-top: 75px;
 }
-.Footer h4{
+
+.Footer h4 {
     text-align: center;
     font-family: revert;
     font-weight: 500;
 }
-.span{
+
+.span {
     color: #00B2F4;
     border-top: 1px solid #00B2F4;
+}
+
+@media (width<=590px) {
+    .Footer{
+        margin-top: 135px;
+    }
 }
