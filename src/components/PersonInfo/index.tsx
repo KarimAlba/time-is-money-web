@@ -4,6 +4,8 @@ import ArrowIcon from '../../assets/imgTimeIsMoney/arrow-icon.svg'
 import DoneIcon from '../../assets/imgTimeIsMoney/done-icon.svg'
 import ArrowDownIcon from '../../assets/imgTimeIsMoney/arrow-down-icon.svg'
 import { Link } from 'react-router-dom';
+import ClientAccountAPI from "../../api/ClientAccountingAPI";
+import IEntityResponse from "../../models/response/IEntityResponse";
 
 interface PersonInfoPropsTypes {
     handleIsOpenFooter: Function
@@ -43,31 +45,52 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         handleOpenPlugin(isDownload);
     }
 
-    const getDataFromlocalStorage = () => {
-        if (String(localStorage.getItem('name'))) {
-            setName(String(localStorage.getItem('name')));
-        }
+    // const getDataFromlocalStorage = () => {
+    //     if (String(localStorage.getItem('name'))) {
+    //         setName(String(localStorage.getItem('name')));
+    //     }
 
-        if (String(localStorage.getItem('email'))) {
-            setEmail(String(localStorage.getItem('email')));
-        }
+    //     if (String(localStorage.getItem('email'))) {
+    //         setEmail(String(localStorage.getItem('email')));
+    //     }
 
-        if (String(localStorage.getItem('lastname'))) {
-            setLastname(String(localStorage.getItem('lastname')));
-        }
+    //     if (String(localStorage.getItem('lastname'))) {
+    //         setLastname(String(localStorage.getItem('lastname')));
+    //     }
 
-        if (String(localStorage.getItem('patronymic'))) {
-            setPatronymic(String(localStorage.getItem('patronymic')));
-        }
+    //     if (String(localStorage.getItem('patronymic'))) {
+    //         setPatronymic(String(localStorage.getItem('patronymic')));
+    //     }
 
-        if (String(localStorage.getItem('createdAt'))) {
-            setCreatedAt(String(localStorage.getItem('createdAt')));
-        }
+    //     if (String(localStorage.getItem('createdAt'))) {
+    //         setCreatedAt(String(localStorage.getItem('createdAt')));
+    //     }
+    // }
+
+    const handleMounted = () => {
+        ClientAccountAPI.getClientData()
+            .then(response => {
+                console.log(response)
+                complieteFields(response.data)
+            })
+            .catch(error => console.log(error))
+    }
+
+    const complieteFields = (entity: IEntityResponse) => {
+        setLastname(entity.lastname);
+        setName(entity.name);
+        setEmail(entity.email);
+        setPatronymic(entity.patronymic);
+        setCreatedAt(entity.createdAt);
     }
 
     useEffect(() => {
+        if (localStorage.getItem('token')) {
+            console.log(String(localStorage.getItem('token')));
+            handleMounted();
+        }
         handleIsOpenFooter();
-        getDataFromlocalStorage();
+        // getDataFromlocalStorage();
     }, [])
 
     return (

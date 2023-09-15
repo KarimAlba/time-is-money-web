@@ -3,7 +3,7 @@ interface IEntityResponse{
     email: string;
     id: number;
     lastname: string;
-    name: string | null;
+    name: string;
     patronymic: string;
     phoneNumber?: string | null;
 }
