@@ -191,6 +191,11 @@ textarea:valid+label {
     line-height: 30px;
     cursor: pointer;
 }
+@media (width <= 1600px) {
+    .ContainerLogin img{
+        height: 50vh;
+    }
+}
 
 @media (width <=1360px) {
     .block-Login1 {

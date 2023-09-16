@@ -180,7 +180,7 @@
 
 @media (width <=1250px) {
     .form-login {
-        left: 15%;
+        left: 25%;
     }
 
     .form-register-legal-entity {
@@ -257,14 +257,14 @@
 
 @media (width <=980px) {
     .form-login {
-        left: 5%;
+        left: 25%;
     }
 }
 
 
 @media (width <=770px) {
     .form-login {
-        left: 20%;
+        left: 11%;
     }
 
     .form-register-legal-entity {
@@ -335,12 +335,15 @@
 
 @media (width <=580px) {
  .form-login{
-    left: 12%;
+    left: 15%;
+    top: 140px;
  }
 }
 @media (width <= 500px) {
     .form-login{
         left: 3%;
+        top: 140px;
+
     }
 }
 
