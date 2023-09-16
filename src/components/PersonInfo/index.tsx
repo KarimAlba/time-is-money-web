@@ -13,7 +13,8 @@ interface PersonInfoPropsTypes {
 }
 
 const PersonInfo = (props: PersonInfoPropsTypes) => {
-    const [isDownload, setIsDownload] = useState<boolean>(false)
+    const [isDownload, setIsDownload] = useState<boolean>(false);
+    const [title, setTitle] = useState<string>('');
     const [name, setName] = useState<string>('');
     const [lastname, setLastname] = useState<string>('');
     const [patronymic, setPatronymic] = useState<string>('');
@@ -45,33 +46,12 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         handleOpenPlugin(isDownload);
     }
 
-    // const getDataFromlocalStorage = () => {
-    //     if (String(localStorage.getItem('name'))) {
-    //         setName(String(localStorage.getItem('name')));
-    //     }
-
-    //     if (String(localStorage.getItem('email'))) {
-    //         setEmail(String(localStorage.getItem('email')));
-    //     }
-
-    //     if (String(localStorage.getItem('lastname'))) {
-    //         setLastname(String(localStorage.getItem('lastname')));
-    //     }
-
-    //     if (String(localStorage.getItem('patronymic'))) {
-    //         setPatronymic(String(localStorage.getItem('patronymic')));
-    //     }
-
-    //     if (String(localStorage.getItem('createdAt'))) {
-    //         setCreatedAt(String(localStorage.getItem('createdAt')));
-    //     }
-    // }
-
     const handleMounted = () => {
         ClientAccountAPI.getClientData()
             .then(response => {
                 console.log(response)
-                complieteFields(response.data)
+                complieteFields(response.data);
+                fillLocalStorage(response.data);
             })
             .catch(error => console.log(error))
     }
@@ -82,21 +62,32 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         setEmail(entity.email);
         setPatronymic(entity.patronymic);
         setCreatedAt(entity.createdAt);
+        if (localStorage.getItem('organizationName')) {
+            setTitle(String(localStorage.getItem('organizationName')));
+        } else {
+            setTitle(`${entity.lastname}  ${entity.name}  ${entity.patronymic}`);
+        }
+    }
+
+    const fillLocalStorage = (entity: IEntityResponse) => {
+        localStorage.setItem('lastname', entity.lastname);
+        localStorage.setItem('name', entity.name);
+        localStorage.setItem('email', entity.email);
+        localStorage.setItem('patronymic', entity.patronymic);
+        localStorage.setItem('createdAt', entity.createdAt);
     }
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
-            console.log(String(localStorage.getItem('token')));
             handleMounted();
         }
         handleIsOpenFooter();
-        // getDataFromlocalStorage();
     }, [])
 
     return (
         <div className="person-info">
             <div className="person-info_title">
-                <p>{`${lastname} ${name} ${patronymic}`}</p>
+                <p>{title}</p>
                 <span>{email}</span>
                 <Link to='edit-user'>Редактировать данные</Link>
             </div>

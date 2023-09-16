@@ -41,6 +41,7 @@ const Header = (props: HeaderPropsTypes) => {
         handleIsOpenFooter()
         if (menuActive) setMenuActive(false)
         navigate('/login');
+        localStorage.clear();
     }
 
     useEffect(() => {

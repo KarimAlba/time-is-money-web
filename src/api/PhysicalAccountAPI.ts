@@ -13,9 +13,8 @@ class PhysicalAccountAPI{
         return axiosConfig.post('/user/pc-client/auth', {...body});
     }
 
-    public static edit(id: string, body: IEditUserRequest): Promise<AxiosResponse<any | any>> {
-        console.log(axiosConfig.defaults.headers)
-        return axiosConfig.patch(`/user/${id}`, {...body});
+    public static edit(body: IEditUserRequest): Promise<AxiosResponse<any | any>> {
+        return axiosConfig.patch('/user/{id}', {...body});
     }
 }
 

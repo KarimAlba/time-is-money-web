@@ -64,15 +64,12 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
             .then(response => {
                 if(response.status < 400) {
                     navigate('/user');
-                    console.log(response.data);
                     localStorage.setItem('token', response.data.tokenResponse.token);
-                    localStorage.setItem('id', String(response.data.entity.id));
-                    // if (response.data.entity.inn) {
-                    //     fillOrganizationLocalStorage(response.data.entity, response.data.tokenResponse);
-                    // } else {
-                    //     fillPhysicalLocalStorage(response.data.entity, response.data.tokenResponse);
-                    // }
-                    // console.log(response);
+                    if (response.data.entity.inn) {
+                        fillOrganizationLocalStorage(response.data.entity);
+                    } else {
+                        localStorage.setItem('id', String(response.data.entity.id));
+                    }
                 }
             })
             .catch(error => console.log(error));
@@ -91,29 +88,13 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         }
     }
 
-    // const fillPhysicalLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
-    //     localStorage.setItem('createdAt', entity.createdAt);
-    //     localStorage.setItem('email', entity.email);
-    //     localStorage.setItem('id', String(entity.id));
-    //     localStorage.setItem('lastname', entity.lastname);
-    //     localStorage.setItem('name', String(entity.name));
-    //     localStorage.setItem('patronymic', entity.patronymic);
-    //     localStorage.setItem('phoneNumber', String(entity.phoneNumber));
-
-    //     localStorage.setItem('token', tokenResp.token);
-    // }
-
-    // const fillOrganizationLocalStorage = (entity: IEntityResponse, tokenResp: ITokenReponse) => {
-    //     localStorage.setItem('createdAt', entity.createdAt);
-    //     localStorage.setItem('email', entity.email);
-    //     localStorage.setItem('id', String(entity.id));
-    //     localStorage.setItem('lastname', entity.lastname);
-    //     localStorage.setItem('name', String(entity.name));
-    //     localStorage.setItem('patronymic', entity.patronymic);
-    //     localStorage.setItem('phoneNumber', String(entity.phoneNumber));
-
-    //     localStorage.setItem('token', tokenResp.token);
-    // }
+    const fillOrganizationLocalStorage = (entity: any) => {
+        localStorage.setItem('organizationName', entity.organizationName);
+        localStorage.setItem('organizationAddress', entity.organizationAddress);
+        localStorage.setItem('id', String(entity.userId));
+        localStorage.setItem('inn', entity.inn);
+        localStorage.setItem('kpp', String(entity.kpp));
+    }
 
     useEffect(() => {
         if (localStorage.getItem('token')) {
