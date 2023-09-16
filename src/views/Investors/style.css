@@ -49,7 +49,8 @@ li::marker {
     margin: 0;
     display: flex;
     justify-content: center;
-    font-size: 60px;
+    font-size: 50px;
+    margin-left: 91px;
     color: #00B2F4;
 }
 
@@ -70,10 +71,11 @@ li::marker {
 
 .quantity-clients img {
     position: absolute;
-    left: 10px;
-    top: -60px;
-    height: 80px;
+    left: 87px;
+    top: -46px;
+    height: 60px;
 }
+
 
 .container-client-2 {
     display: flex;
@@ -107,8 +109,9 @@ li::marker {
     height: 175px;
     border-radius: 15px;
 }
-.business-model span{
-    color:#00B2F4 ;
+
+.business-model span {
+    color: #00B2F4;
     font-size: 40px;
 }
 
@@ -170,7 +173,7 @@ li::marker {
     border-top: 3px solid #00B2F4;
 }
 
-.client-header{
+.client-header {
     margin-top: 150px;
     display: flex;
     justify-content: space-between;
@@ -213,9 +216,10 @@ li::marker {
 .client-header {
     display: flex;
     flex-direction: row;
-    margin:0 20px;
+    margin: 0 20px;
 }
-.client-header img{
+
+.client-header img {
     width: 70px;
 }
 
@@ -225,7 +229,7 @@ li::marker {
 }
 
 .container-client5-content,
-.container-client-5-icon{
+.container-client-5-icon {
     display: flex;
 }
 
@@ -341,6 +345,10 @@ li::marker {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
 }
+.client-6-conteiner2 p {
+   margin-left: 10px;
+}
+
 
 .client-6-block5 h1,
 .client-6-block3 h1 {
@@ -358,14 +366,15 @@ li::marker {
     color: #00B2F4
 }
 
-.client-6-block4 p{
+.client-6-block4 p {
     margin-top: 15px;
-    margin-left: 20px;
+    margin-left: 40px;
+    width: 180px;
 }
 
-.client-6-block3, 
-.client-6-block4{
-    width: 60%;
+.client-6-block3,
+.client-6-block4 {
+    width: 30%;
     height: auto;
 }
 
@@ -470,17 +479,17 @@ li::marker {
     left: -18px;
 }
 
-@media(width <= 910px) {
-    .container-clients-investor{
+@media(width <=910px) {
+    .container-clients-investor {
         flex-flow: column;
     }
 
-    .container-client-1{
-        margin:20px 0 0 25%;
+    .container-client-1 {
+        margin: 20px 0 0 25%;
         width: 50%;
     }
 
-    .quantity-clients{
+    .quantity-clients {
         margin: 70px auto 0 auto;
     }
 
@@ -488,7 +497,7 @@ li::marker {
         display: flex;
         flex-direction: column;
     }
-    
+
     .client4-content {
         display: flex;
         justify-content: space-around;
@@ -500,13 +509,13 @@ li::marker {
         min-height: 130px;
         height: auto;
     }
-    
+
     .client-4-footer-container p {
         padding: 10px;
         text-align: center;
     }
 
-    .container-client-4-content img{
+    .container-client-4-content img {
         margin-top: 50px auto;
     }
 
@@ -515,62 +524,64 @@ li::marker {
         flex-direction: row;
         margin-left: 20px;
     }
-    
+
     .container-client-5 {
         margin-top: 80px;
     }
 
-    .content-block{
+    .content-block {
         margin: auto;
         display: flex;
+        flex-direction: column;
         justify-content: space-around;
     }
-    
-    .container-client5-content{
-        flex-flow: column;
+
+    .container-client5-content {
+        flex-flow: wrap;
     }
-    
+
     .client-5-content-container {
         width: calc(100% + 10px);
         padding: 20px 10px 20px 20px;
     }
 
-    .container-client-5-icon{
+    .container-client-5-icon {
         margin: 20px 20px 0 0;
         width: calc(70% + 50px);
-    }    
+    }
 
-    .client-6-conteiner2{
+    .client-6-conteiner2 {
         flex-flow: column;
     }
 
-    .container-client-7-content{
+    .container-client-7-content {
         flex-flow: column;
     }
 
     .client-7-content-block1,
-    .client-7-content-block2{
+    .client-7-content-block2 {
         margin: auto;
     }
 
-    .container-client-7-content img:first-child{
+    .container-client-7-content img:first-child {
         display: none;
-    }   
+    }
 }
 
-@media(width <= 600px) {
-    .quantity-clients{
-        margin: 50px 0 0 auto;
+@media(width <=600px) {
+    .quantity-clients {
+        margin: 147px 0 0 auto;
         width: 80%;
+        margin-left: 38px;
     }
 
-    .container-client-2{
+    .container-client-2 {
         margin: 50px 0 0 10px;
         width: 70%;
         padding: 0;
     }
 
-    .business-model{
+    .business-model {
         position: relative;
         margin: auto;
         width: 100%;
@@ -581,35 +592,36 @@ li::marker {
 
     .business-model img {
         position: absolute;
-        top: -30px;
+        top: -36px;
+        height: 70px;
         left: 85%;
     }
 
-    .business-model button{
+    .business-model button {
         margin: auto;
         width: 70%;
         height: 40px;
         font-size: 18px;
     }
 
-    .container-main-Investors{
+    .container-main-Investors {
         margin-top: 120px;
     }
 
-    .container_sales{
+    .container_sales {
         display: none;
     }
 
-    .container-client-6-footer{
+    .container-client-6-footer {
         flex-flow: column;
     }
 
-    .container-client-6{
+    .container-client-6 {
         margin: auto;
         width: 80%;
     }
 
-    .client-6-conteiner1{
+    .client-6-conteiner1 {
         position: relative;
         margin: 80px 0 0 0;
         width: 100%;
@@ -626,33 +638,33 @@ li::marker {
     }
 
     .client-6-conteiner2,
-    .client-6-container3{
+    .client-6-container3 {
         margin: 15px auto;
         width: 90%;
         height: auto;
     }
 
-    .client-7-content-block2 img{
+    .client-7-content-block2 img {
         margin: auto;
         width: 90%;
     }
 }
 
-@media(width <= 500px) {
-    .content-block{
+@media(width <=500px) {
+    .content-block {
         flex-flow: column;
     }
 
     .client-6-conteiner1 h1,
     .client-6-conteiner2 h1,
-    .client-6-container3 h1{
+    .client-6-container3 h1 {
         margin: 0;
         font-size: 70px;
     }
 
     .client-6-block1,
     .client-6-block3,
-    .client-6-block5{
+    .client-6-block5 {
         margin: 20px 0 10px 0;
         width: 20%;
         height: auto;
@@ -662,19 +674,18 @@ li::marker {
         text-align: center;
     }
 
-    .economic_effect{
+    .economic_effect {
         margin: 20px 0;
         font-size: 15px;
     }
 
     .container-client-7-content,
-    .client-7-content-block1{
+    .client-7-content-block1 {
         margin: auto;
         width: 80%;
     }
 
-    .container-client-8-content{
+    .container-client-8-content {
         flex-flow: column;
     }
 }
-

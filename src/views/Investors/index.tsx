@@ -337,7 +337,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                                         руб
                                     </p>
                                 </div>
-                                <div className="client-6-block4">
+                                <div className="client-6-block6">
                                     <p>
                                         затраты
                                         <br />
