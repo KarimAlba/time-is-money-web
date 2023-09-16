@@ -63,13 +63,13 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         PhysicalAccountAPI.clientAutorization(user)
             .then(response => {
                 if(response.status < 400) {
-                    navigate('/user');
                     localStorage.setItem('token', response.data.tokenResponse.token);
                     if (response.data.entity.inn) {
                         fillOrganizationLocalStorage(response.data.entity);
                     } else {
                         localStorage.setItem('id', String(response.data.entity.id));
                     }
+                    navigate('/user');
                 }
             })
             .catch(error => console.log(error));

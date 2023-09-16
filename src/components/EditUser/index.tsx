@@ -35,8 +35,6 @@ const EditUser = () => {
     
     const handleOrgAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => setOrgAddress(e.target.value);
 
-    const handleOrgINNChange = (e: React.ChangeEvent<HTMLInputElement>) => setOrgINN(e.target.value);
-
     const handleOrgKPPChange = (e: React.ChangeEvent<HTMLInputElement>) => setOrgKPP(e.target.value);
 
     const getData = () => {
@@ -202,7 +200,6 @@ const organizationBlock =
             <input 
                 type="text" 
                 defaultValue={orgINN ? orgINN : ''}
-                onInput={handleOrgINNChange}
             />
         </div>
         <div className="edit-user_data">
