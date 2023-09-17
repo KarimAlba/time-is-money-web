@@ -45,9 +45,11 @@ function Layout() {
           <Route path="entity" element={<Entity/>}/>
         </Route>
         <Route path='user' element={
-            <UserPage 
-              handlePersonInfoMounted={handlePersonInfoMounted} 
-              handleOpenPlugin={handleOpenPlugin}/>
+              <UserPage 
+                handlePersonInfoMounted={handlePersonInfoMounted} 
+                handleOpenPlugin={handleOpenPlugin}
+                handleCurrentBtnChange={handleCurrentBtnChange}
+              />
             } 
           >
           <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin}/>}/>
