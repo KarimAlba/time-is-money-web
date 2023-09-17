@@ -15,12 +15,6 @@ interface ModalRegisterPropsTypes {
     isVisible: Boolean;
 }
 
-interface ErrorPopupProps {
-    error: string;
-    onClose: () => void;
-}
-
-
 function ModalRegister(props: ModalRegisterPropsTypes) {
 
     const location = useLocation();
