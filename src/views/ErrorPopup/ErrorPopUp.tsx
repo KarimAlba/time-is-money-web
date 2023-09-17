@@ -15,7 +15,7 @@ const ErrorPopup: React.FC<ErrorPopupProps> = ({ error, onClose }) => {
 
       const timer = setTimeout(() => {
         onClose(); // Закрываем popup спустя 4 секунды
-      }, 5000);
+      }, 4000);
   
       return () => {
         clearTimeout(timer); // Очищаем таймер при размонтировании компонента

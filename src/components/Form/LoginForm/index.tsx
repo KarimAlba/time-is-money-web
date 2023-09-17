@@ -72,7 +72,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
     const isPasswordValid = (password: string) => {
         // Регулярное выражение для проверки пароля
         // Пароль должен содержать хотя бы 8 символов, включая цифры, буквы верхнего и нижнего регистра
-        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}$/;
         return passwordRegex.test(password);
     };
 
