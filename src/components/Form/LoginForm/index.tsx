@@ -93,7 +93,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         localStorage.setItem('organizationAddress', entity.organizationAddress);
         localStorage.setItem('id', String(entity.userId));
         localStorage.setItem('inn', entity.inn);
-        localStorage.setItem('kpp', String(entity.kpp));
+        localStorage.setItem('kpp', entity.kpp);
     }
 
     useEffect(() => {

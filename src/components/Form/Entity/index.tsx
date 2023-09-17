@@ -67,7 +67,8 @@ const Entity = () => {
         OrganizationAPI.registration(org)
             .then(response => {
                 if (response.status < 400) {
-                    navigate('/login')
+                    navigate('/login');
+                    localStorage.clear();
                 }
             })
             .catch(error => console.log(error))

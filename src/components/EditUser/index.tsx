@@ -90,7 +90,7 @@ const EditUser = () => {
                 patronymic: patronymic,
                 email: email
             }
-            console.log(edittedUser);
+
             PhysicalAccountAPI.edit(edittedUser)
                 .then(response => {
                     console.log(response);
@@ -119,7 +119,7 @@ const EditUser = () => {
                 inn: orgINN,
                 kpp: orgKPP,
             }
-            console.log(edittedOrg);
+
             OrganizationAPI.edit(edittedOrg)
                 .then(response => {
                     console.log(response);
