@@ -129,6 +129,7 @@
 @media(width <= 980px) {
     .block1 {
         margin-top: 20px;
+        margin-top: 160px;
     }
 
     .block1 img {
