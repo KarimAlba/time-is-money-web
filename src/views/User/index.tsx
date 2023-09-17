@@ -1,7 +1,5 @@
 import PersonInfo from "../../components/PersonInfo";
 import { Outlet } from "react-router-dom";
-import {useEffect} from 'react';
-import axios from "axios";
 
 interface UserPagePropsTypes {
     handlePersonInfoMounted: Function;
@@ -14,10 +12,6 @@ const UserPage = (props: UserPagePropsTypes) => {
     const setOpenPlugin = (value:boolean) => { 
         handleOpenPlugin(value)
     }
-
-    useEffect(() => {
-        console.log(axios.defaults.headers.common)
-    }, []);
 
     return (
         <div>

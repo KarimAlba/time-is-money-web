@@ -41,8 +41,7 @@ const Header = (props: HeaderPropsTypes) => {
         handleIsOpenFooter()
         if (menuActive) setMenuActive(false)
         navigate('/login');
-        localStorage.removeItem('token');
-        localStorage.removeItem('id');
+        localStorage.clear();
     }
 
     useEffect(() => {
