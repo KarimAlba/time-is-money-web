@@ -121,6 +121,8 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     <input
                         type='password'
                         id='pass'
+                        minLength={8}
+                        maxLength={512}
                         required
                         onInput={handlePasswordChange}
                     />
