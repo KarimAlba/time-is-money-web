@@ -214,6 +214,46 @@ button{
   border: 1px solid #515151;
 
 }
+
+
+@media (width<=1300px){
+  .modalChooseService{
+    margin-left: 500px;
+    width: 700px;
+  }
+}
+@media (width<=1200px){
+  .modalChooseService{
+    margin-left: 330px;
+    width: 700px;
+  }
+}
+@media (width<=1000px){
+  .modalChooseService{
+    margin-left: 230px;
+    width: 600px;
+  }
+}
+@media (width<=830px){
+  .modalChooseService{
+    margin-left: 130px;
+    width: 540px;
+  }
+}
+
+@media (width<=600px){
+  .modalChooseService{
+    margin-left: 30px;
+    width: 465px;
+  }
+  .animate-label input[id="id_email"]{
+    width: 95%;
+  }
+  .animate-label label[for="id_email"]{
+    left: 35px;
+  }
+}
+
 @media (width<=470px) {
   .modalChooseService{
     margin-left: 0;

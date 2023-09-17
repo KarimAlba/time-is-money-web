@@ -14,7 +14,7 @@
 
 .plugin-modal h3 {
     margin: 10px 0;
-    font-weight:400 ;
+    font-weight: 400;
     font-size: 20px;
     font-family: Arial;
     line-height: 23px;
@@ -30,8 +30,58 @@
     color: #eee;
     border-radius: 13px;
 }
-.plugin-modal input{
+
+.plugin-modal input {
     width: 430px;
     height: 30px;
     border: 0;
+}
+
+@media (width <=1200px) {
+    .plugin-modal {
+        margin-left: 120px;
+    }
+}
+
+@media (width <=1000px) {
+    .plugin-modal {
+        width: 475px;
+    }
+}
+
+@media (width <=800px) {
+    .plugin-modal input{
+        width: 250px;
+    }
+    .plugin-modal{
+        width: 350px;
+        margin-left: 100px;
+        height: 220px;
+    }
+}
+@media (width <= 650px) {
+    .plugin-modal{
+        width: 450px;
+    }
+    .plugin-modal input {
+        width: 350px;
+    }
+    
+}
+@media (width <= 500px) {
+    .plugin-modal{
+        margin-left: 15px;
+    }
+}
+
+@media (width <=470px) {
+    .plugin-modal {
+        width: 360px;
+        height: 225px;
+        margin-left: 4px;
+    }
+
+    .plugin-modal input {
+        width: 290px;
+    }
 }

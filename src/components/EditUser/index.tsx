@@ -133,7 +133,7 @@ const EditUser = () => {
         }
     }
 
-    const physicalBlock = <div>
+    const physicalBlock = <div  style={{marginLeft:'-13px'}}>
             <div className="edit-user_data">
                 <h5>Фамилия</h5>
                 <input 
@@ -180,7 +180,7 @@ const EditUser = () => {
         </div>
 
 const organizationBlock = 
-    <div>
+    <div style={{marginLeft:'-13px'}}>
         <div className="edit-user_data">
             <h5>Наименование организации</h5>
             <input 

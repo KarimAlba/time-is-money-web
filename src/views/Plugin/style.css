@@ -7,7 +7,7 @@
 .block1-plugin {
     display: flex;
     flex-direction: row;
-    margin-top: 40px;
+    margin-top: 160px;
 }
 
 .block1-plugin img {
@@ -73,6 +73,9 @@
         margin:20px 0 0 20%;
         width: 70%;
         padding: 20px;
+    }
+    .block2-plugin-text{
+        width: 400px;
     }
 }
 

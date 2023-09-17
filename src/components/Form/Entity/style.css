@@ -257,7 +257,8 @@
 
 @media (width <=980px) {
     .form-login {
-        left: 25%;
+        left: 5%;
+        top: 100px;
     }
 }
 

@@ -39,17 +39,20 @@
     justify-content: start;
     border-bottom: 3px solid rgba(3, 43, 144, 0.18);
 }
-.select_point{
+
+.select_point {
     display: flex;
     justify-content: space-between;
     margin-left: 40px;
 }
+
 .statistic_point {
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
 }
-.statistic_select{
+
+.statistic_select {
     margin: 10px 0;
     display: flex;
     flex-direction: column;
@@ -104,7 +107,7 @@ a {
     justify-content: start;
 }
 
-.checkbox-button{
+.checkbox-button {
     width: 70px;
     margin-top: 56px;
     margin-right: 10px;
@@ -112,29 +115,79 @@ a {
     border: 1px solid black;
     background-color: #fff;
 }
-@media (width <=470px) {
-    .heder-house{
+
+.heder-house {
+    display: none;
+}
+
+@media (width <=870px) {
+    .person-info {
+        width: 250px;
+    }
+}
+
+@media (width <=650px) {
+    .heder-house {
+        cursor: pointer;
         display: block;
         position: relative;
-        left: 3%;
-        top: -67px;
-        width: 40px;
+        left: 5%;
+        top: -43px;
+        width: 36px;
     }
-    .heder-cross{
+
+    .heder-cross {
         display: block;
         position: relative;
         left: 0%;
-        width: 50px;
+        width: 45px;
     }
-    .modalHouse{
+
+    .modalHouse {
         position: fixed;
         top: 0;
         left: 0;
-        width: 300px;
+        width: 250px;
         height: 100%;
         background-color: rgba(0, 178, 244, 0.18);
+        backdrop-filter: blur(60px);
     }
-    .person-info{
+
+    .person-info {
+        display: none;
+    }
+}
+
+
+
+@media (width <=470px) {
+    .heder-house {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        left: 5%;
+        top: -43px;
+        width: 36px;
+    }
+
+    .heder-cross {
+        display: block;
+        position: relative;
+        left: 0%;
+        width: 45px;
+    }
+
+    .modalHouse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100%;
+        background-color: rgba(0, 178, 244, 0.18);
+        backdrop-filter: blur(60px);
+    }
+
+    .person-info {
         display: none;
     }
 }
