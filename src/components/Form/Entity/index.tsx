@@ -1,8 +1,9 @@
 import './style.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import OrganizationAPI from '../../../api/OrganizationAPI';
+import SuccessPopup from "../../ui/SuccessPopup/index";
 import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
+import OrganizationAPI from '../../../api/OrganizationAPI';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
 
 const Entity = () => {
@@ -20,6 +21,8 @@ const Entity = () => {
 
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
     const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
+
+    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
@@ -80,10 +83,11 @@ const Entity = () => {
     const sendRequest = (org: IOrganizationRequest) => {
         OrganizationAPI.registration(org)
             .then(response => {
-                if (response.status < 400) {
+                setIsSuccessPopupVisible(true);
+                setTimeout(() => {
                     navigate('/login');
-                    localStorage.clear();
-                }
+                }, 1000);
+                localStorage.clear();
             })
             .catch(error => {
                 setErrorMessages(["Проверьте правильность заполненных полей"]);
@@ -295,6 +299,13 @@ const Entity = () => {
                     onClose={() => setIsErrorPopupVisible(false)} 
                 />
             )}
+            {isSuccessPopupVisible
+                ? <SuccessPopup 
+                    message={'Успешно зарегистрированы'} 
+                    onClose={() => setIsSuccessPopupVisible(false)} 
+                />
+                : null
+            }
 
         </div>
     )

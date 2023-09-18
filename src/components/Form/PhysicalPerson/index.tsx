@@ -1,6 +1,7 @@
 import './style.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import SuccessPopup from "../../ui/SuccessPopup/index";
 import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
@@ -17,6 +18,8 @@ const PhysicalPerson = () => {
 
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
     const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
+
+    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
     const isEmailValid = (email: string) => {
         const emailRegex = /@../;
@@ -61,9 +64,10 @@ const PhysicalPerson = () => {
         PhysicalAccountAPI.registration(user)
             .then(response => {
                 localStorage.clear();
-                if (response.status < 400) {
-                    navigate('/login')
-                }
+                setIsSuccessPopupVisible(true);
+                setTimeout(() => {
+                    navigate('/login');
+                }, 1000)
             })
             .catch(error => {
                 setErrorMessages(["Проверьте правильность заполненных полей"]);
@@ -202,6 +206,13 @@ const PhysicalPerson = () => {
                     onClose={() => setIsErrorPopupVisible(false)} 
                 />
             )}
+            {isSuccessPopupVisible
+                ? <SuccessPopup 
+                    message={'Успешно зарегистрированы'} 
+                    onClose={() => setIsSuccessPopupVisible(false)} 
+                />
+                : null
+            }
         </div>
     )
 }
