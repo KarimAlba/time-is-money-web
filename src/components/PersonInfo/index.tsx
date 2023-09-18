@@ -126,7 +126,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                 <span>{(new Date(createdAt)).toLocaleDateString()}</span>
                             </div>
                             <div className="statistic_point">
-                                <p>скачено плагинов:</p>
+                                <p>скачано плагинов:</p>
                                 <span>0</span>
                             </div>
                             <div className="statistic_value">
@@ -252,7 +252,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         <span>{(new Date(createdAt)).toLocaleDateString()}</span>
                     </div>
                     <div className="statistic_point">
-                        <p>скачено плагинов:</p>
+                        <p>скачано плагинов:</p>
                         <span>0</span>
                     </div>
                     <div className="statistic_value">

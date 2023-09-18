@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react"
 import './style.css';
+import { useState, useEffect } from "react"
+import SuccessPopup from "../../ui/SuccessPopup/index";
+import ErrorPopup from "../../ui/ErrorPopup/ErrorPopUp";
+import IUserAuth from "../../../models/request/IUserAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
-import IUserAuth from "../../../models/request/IUserAuth";
-import IEntityResponse from "../../../models/response/IEntityResponse";
-import ITokenReponse from "../../../models/response/ITokenResponse";
-import ErrorPopup from "../../../views/ErrorPopup/ErrorPopUp";
 
 interface AuthorizationPropsTypes {
     showModal: Function;
@@ -49,10 +48,9 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const [userEmail, setUserEmail] = useState<string>("");
     const [userPassword, setUserPassword] = useState<string>("");
-    const [emailError, setEmailError] = useState("");
-    const [passwordError, setPasswordError] = useState("");
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState(false);
 
     const navigate = useNavigate();
 
@@ -67,47 +65,26 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         return passwordRegex.test(password);
     };
 
-    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const email = e.target.value;
-        setUserEmail(email);
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => setUserEmail(e.target.value);
 
-        if (!isEmailValid(email)) {
-            setEmailError("Некорректный email");
-        } else {
-            // setEmailError("");
-        }
-    };
-
-    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const password = e.target.value;
-        setUserPassword(password);
-
-        if (!isPasswordValid(password)) {
-            setPasswordError(
-                "Пароль должен содержать хотя бы 9 символов, включая цифры, буквы верхнего и нижнего регистра"
-            );
-        } else {
-            // setPasswordError("");
-        }
-    };
+    const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => setUserPassword(e.target.value);
 
     const sendRequest = (user: IUserAuth) => {
         PhysicalAccountAPI.clientAutorization(user)
             .then(response => {
-                if (response.status < 400) {
-                    localStorage.setItem('token', response.data.tokenResponse.token);
-                    if (response.data.entity.inn) {
-                        fillOrganizationLocalStorage(response.data.entity);
-                    } else {
-                        localStorage.setItem('id', String(response.data.entity.id));
-                    }
-                    navigate('/user');
+                setIsSuccessPopupVisible(true);
+                localStorage.setItem('token', response.data.tokenResponse.token);
+                if (response.data.entity.inn) {
+                    fillOrganizationLocalStorage(response.data.entity);
                 } else {
-                    setErrorMessage("Некорректный email или пароль");
-                    setIsErrorPopupVisible(true);
+                    localStorage.setItem('id', String(response.data.entity.id));
                 }
+                navigate('/user');
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                setErrorMessage("Некорректный email или пароль");
+                setIsErrorPopupVisible(true);
+            });
     }
 
     const handleComeClick = () => {
@@ -181,7 +158,16 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     Нет аккаунта? Зарегистрируйтесь!
                 </span>
                 {isErrorPopupVisible && (
-                    <ErrorPopup error={errorMessage} onClose={() => setIsErrorPopupVisible(false)} />
+                    <ErrorPopup 
+                        error={errorMessage} 
+                        onClose={() => setIsErrorPopupVisible(false)}
+                    />
+                )}
+                {isSuccessPopupVisible && (
+                    <SuccessPopup 
+                        message={'Успешно авторизованы'} 
+                        onClose={() => setIsSuccessPopupVisible(false)} 
+                    />
                 )}
                 <ModalRegister isVisible={isVisible} />
 

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import './ErrorPopUp.css'
 
 interface ErrorPopupProps {
-  error: string;
+  error?: string;
+  errorArray?: string[] | [];
   onClose: () => void;
 }
 
-const ErrorPopup: React.FC<ErrorPopupProps> = ({ error, onClose }) => {
+const ErrorPopup = (props: ErrorPopupProps) => {
+  const { error, onClose, errorArray } = props;
 
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
 
@@ -24,8 +26,20 @@ const ErrorPopup: React.FC<ErrorPopupProps> = ({ error, onClose }) => {
   
     return (
       <div className={`error-popup ${isErrorPopupVisible ? 'show' : ''}`}>
-      <p>{error}</p>
-        <button onClick={onClose}>x</button>
+        {errorArray && errorArray.length >= 1
+          ? <div>
+            {errorArray.map((item, index) => 
+              <p key={item}>{`${index + 1}) ${item}`}</p>
+            )}
+          </div> 
+          : <p>{error}</p>
+        }
+        <button 
+          onClick={onClose}
+          className="close-btn"
+        >
+          x
+        </button>
       </div>
     );
   };

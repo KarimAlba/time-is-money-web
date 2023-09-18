@@ -90,7 +90,7 @@
     left: 82px;
 }
 
-.form-register-physical-pesrson button {
+.reg-btn{
     width: 200px;
     font-size: 18px;
     margin-top: 25px;
@@ -172,7 +172,7 @@
         left: 5px;
         top: 430px;
     }
-    .form-register-physical-pesrson button{
+    .reg-btn{
         margin-left: 245px;
     }
 }
@@ -250,7 +250,7 @@
         top: 505px;
     }
 
-    .form-register-physical-pesrson button {
+    .reg-btn{
         margin-left: 60px;
     }
 

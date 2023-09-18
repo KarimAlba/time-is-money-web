@@ -20,7 +20,7 @@
     line-height: 21.77px;
 }
 
-.edit-user button {
+.access-btn{
     width: 200px;
     font-size: 18px;
     margin-top: 40px;
@@ -83,7 +83,7 @@
         margin-bottom: 0;
         margin-left: 30px;
     }
-    .edit-user button{
+    .access-btn{
         margin-left: 40px;
     }
 }
@@ -111,7 +111,6 @@
         margin-top: 20px;
         padding: 0.7rem 1.5rem 35px;
         display: flex;
-        /* align-items: end; */
         flex-direction: initial;
         border-radius: 0.5rem;
         background: #fff;

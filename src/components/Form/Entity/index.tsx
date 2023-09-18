@@ -2,6 +2,7 @@ import './style.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import OrganizationAPI from '../../../api/OrganizationAPI';
+import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
 
 const Entity = () => {
@@ -17,7 +18,20 @@ const Entity = () => {
     const [password, setPassword] = useState<string>('');
     const [confirmPassword, setConfirmPassword] = useState<string>('');
 
+    const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
+    const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
+
     const navigate = useNavigate();
+
+    const isEmailValid = (email: string) => {
+        const emailRegex = /@../;
+        return emailRegex.test(email);
+    };
+
+    const isPasswordValid = (password: string) => {
+        const passwordRegex = /(?=.*[0-9]){9,512}/;
+        return passwordRegex.test(password);
+    };
 
     const handleOrgNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setOrgName(e.target.value);
@@ -71,16 +85,71 @@ const Entity = () => {
                     localStorage.clear();
                 }
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setErrorMessages(["Проверьте правильность заполненных полей"]);
+                setIsErrorPopupVisible(true);
+            })
+    }
+
+    const validation = () => {
+        const copy = [];
+
+        if (!orgName) {
+            copy.push('Поле "Наименование организации" не должно быть пустым')
+        }
+
+        if (!orgAddress) {
+            copy.push('Поле "Адрес" не должно быть пустым')
+        }
+
+        if (orgINN.length !== 10) {
+            copy.push('Поле "ИНН" должно состоять из 10 цифр')
+        }
+
+        if (orgKPP.length !== 9) {
+            copy.push('Поле "КПП" должно состоять из 9 цифр')
+        }
+
+        if (!orgDirSurname) {
+            copy.push('Поле "Фамилия" не должно быть пустым')
+        }
+
+        if (!orgDirName) {
+            copy.push('Поле "Имя" не должно быть пустым')
+        }
+
+        if (!orgDirPatronymic) {
+            copy.push('Поле "Отчество" не должно быть пустым')
+        }
+
+        if (!isEmailValid(email)) {
+            copy.push('Некорректный email')
+        }
+
+        if (email !== confirmEmail) {
+            copy.push('Адреса почты не совпадают')
+        }
+
+        if (!isPasswordValid(password)) {
+            copy.push(
+                "Пароль должен содержать хотя бы 9 символов, включая цифры, буквы верхнего и нижнего регистра"
+            );
+        } 
+
+        if (password !== confirmPassword) {
+            copy.push('Пароли не совпадают')
+        }
+
+        setErrorMessages(copy);
+        return copy;
     }
 
     const prepareOrganization = () => {
-        if (!orgName && !orgAddress && !orgINN 
-            && !orgKPP && !orgDirSurname && !orgDirName
-            && !orgDirPatronymic && !email && !confirmEmail
-            && !password && !confirmPassword
-        ) {
-            return 
+        const errors = validation();
+
+        if (errors.length > 0) {
+            setIsErrorPopupVisible(true);
+            return 0;
         } else {
             const organization = {
                 lastname: orgDirSurname,
@@ -99,13 +168,10 @@ const Entity = () => {
     }
 
     const handleRegClick = () => {
+        localStorage.clear();
         const organization = prepareOrganization();
         if (organization) sendRequest(organization);
     }
-
-    useEffect(() => {
-        localStorage.clear();
-    }, []);
 
     return (
         <div className="form-register-legal-entity">
@@ -115,7 +181,6 @@ const Entity = () => {
                     id='name-of-company'
                     required
                     onInput={handleOrgNameChange}
-                    maxLength={254}
                 />
                 <label htmlFor="name-of-company">
                     Наименование огранизации
@@ -125,7 +190,6 @@ const Entity = () => {
                     type='text'
                     id='legal-address'
                     required
-                    maxLength={254}
                     onInput={handleOrgAddressChange}
                 />
                 <label htmlFor="legal-address">
@@ -136,7 +200,7 @@ const Entity = () => {
                     type='text'
                     id='inn'
                     required
-                    maxLength={254}
+                    maxLength={10}
                     onInput={handleOrgINNChange}
                 />
                 <label htmlFor="inn">ИНН</label>
@@ -145,7 +209,7 @@ const Entity = () => {
                     type='text'
                     id='checkpoint'
                     required
-                    maxLength={254}
+                    maxLength={9}
                     onInput={handleOrgKPPChange}
                 />
                 <label htmlFor="checkpoint">КПП</label>
@@ -154,7 +218,6 @@ const Entity = () => {
                     type='text'
                     id='surname'
                     required
-                    maxLength={254}
                     onInput={handleOrgSurnameChange}
                 />
                 <label htmlFor="surname">
@@ -165,7 +228,6 @@ const Entity = () => {
                     type='text'
                     id='name'
                     required
-                    maxLength={254}
                     onInput={handleOrgDirName}
                 />
                 <label htmlFor="name">Имя</label>
@@ -174,7 +236,6 @@ const Entity = () => {
                     type='text'
                     id='patronymic'
                     required
-                    maxLength={254}
                     onInput={handleOrgDirPatronymic}
                 />
                 <label htmlFor="patronymic">Отчество</label> 
@@ -183,7 +244,6 @@ const Entity = () => {
                     type='text'
                     id='email'
                     required
-                    maxLength={254}
                     onInput={handleEmailChange}
                 />
                 <label htmlFor="email">e-mail</label>
@@ -192,7 +252,6 @@ const Entity = () => {
                     type='text'
                     id='confirmation-email'
                     required
-                    maxLength={254}
                     onInput={handleConfirmEmailChange}
                 />
                 <label htmlFor="confirmation-email">
@@ -223,9 +282,19 @@ const Entity = () => {
 
             </div>
 
-            <button onClick={handleRegClick}>
+            <button 
+                onClick={handleRegClick}
+                className='reg-btn'
+            >
                 РЕГИСТРАЦИЯ
             </button>
+
+            {isErrorPopupVisible && (
+                <ErrorPopup 
+                    errorArray={errorMessages} 
+                    onClose={() => setIsErrorPopupVisible(false)} 
+                />
+            )}
 
         </div>
     )

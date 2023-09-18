@@ -6,7 +6,6 @@ interface LoginPropsTypes{
     handleCurrentBtnChange: Function;
 }
 
-
 const Login = (props: LoginPropsTypes) => {
     const { handleCurrentBtnChange } = props;
 
