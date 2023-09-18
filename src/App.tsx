@@ -70,7 +70,7 @@ function Layout() {
                   onClick={() => setModalVisible(false)}
                   className='spanCross'
                 >×</span>
-                <h5 className='h5'>Востановление пароля</h5>
+                <h5 className='h5'>Восстановление пароля</h5>
               </div>
               <div className='animate-label'>
                 <input
