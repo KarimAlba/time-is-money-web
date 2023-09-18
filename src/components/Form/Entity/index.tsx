@@ -106,11 +106,11 @@ const Entity = () => {
             copy.push('Поле "Адрес" не должно быть пустым')
         }
 
-        if (orgINN.length !== 10) {
+        if (orgINN.length !== 10 || String(+orgINN ^ 0) !== orgINN) {
             copy.push('Поле "ИНН" должно состоять из 10 цифр')
         }
 
-        if (orgKPP.length !== 9) {
+        if (orgKPP.length !== 9 || String(+orgKPP ^ 0) !== orgKPP) {
             copy.push('Поле "КПП" должно состоять из 9 цифр')
         }
 

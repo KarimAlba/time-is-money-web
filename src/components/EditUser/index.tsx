@@ -135,7 +135,7 @@ const EditUser = () => {
                 copy.push('Поле "Адрес" не должно быть пустым')
             }
     
-            if (orgKPP.length !== 9) {
+            if (orgKPP.length !== 9 || String(+orgKPP ^ 0) !== orgKPP) {
                 copy.push('Поле "КПП" должно состоять из 9 цифр')
             }
         }
