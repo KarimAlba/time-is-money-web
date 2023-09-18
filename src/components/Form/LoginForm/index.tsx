@@ -5,6 +5,7 @@ import ErrorPopup from "../../ui/ErrorPopup/ErrorPopUp";
 import IUserAuth from "../../../models/request/IUserAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
+import axios from 'axios';
 
 interface AuthorizationPropsTypes {
     showModal: Function;
@@ -48,9 +49,9 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
     const [userEmail, setUserEmail] = useState<string>("");
     const [userPassword, setUserPassword] = useState<string>("");
-    const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
-    const [errorMessage, setErrorMessage] = useState("");
-    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState(false);
+    const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
+    const [errorMessage, setErrorMessage] = useState<string>("");
+    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
@@ -72,14 +73,18 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
     const sendRequest = (user: IUserAuth) => {
         PhysicalAccountAPI.clientAutorization(user)
             .then(response => {
+                localStorage.clear();
                 setIsSuccessPopupVisible(true);
                 localStorage.setItem('token', response.data.tokenResponse.token);
+                axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.tokenResponse.token}`
                 if (response.data.entity.inn) {
                     fillOrganizationLocalStorage(response.data.entity);
                 } else {
                     localStorage.setItem('id', String(response.data.entity.id));
                 }
-                navigate('/user');
+                setTimeout(() => {
+                    navigate('/user');
+                }, 1000);
             })
             .catch(error => {
                 setErrorMessage("Некорректный email или пароль");
@@ -124,7 +129,6 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                         type="text"
                         id="id_email"
                         required
-                        maxLength={254}
                         onInput={handleEmailChange}
                     />
                     <label htmlFor="id_email">e-mail:</label>
@@ -163,12 +167,13 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                         onClose={() => setIsErrorPopupVisible(false)}
                     />
                 )}
-                {isSuccessPopupVisible && (
-                    <SuccessPopup 
+                {isSuccessPopupVisible
+                    ? <SuccessPopup 
                         message={'Успешно авторизованы'} 
                         onClose={() => setIsSuccessPopupVisible(false)} 
                     />
-                )}
+                    : null
+                }
                 <ModalRegister isVisible={isVisible} />
 
             </div>

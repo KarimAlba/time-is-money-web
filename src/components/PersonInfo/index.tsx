@@ -56,7 +56,6 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const handleMounted = () => {
         ClientAccountAPI.getClientData()
             .then(response => {
-                console.log(response)
                 complieteFields(response.data);
                 fillLocalStorage(response.data);
             })
@@ -102,12 +101,6 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         }
         handleIsOpenFooter();
     }, [])
-
-    useEffect(() => {
-        if (localStorage.getItem('token')) {
-            handleMounted();
-        }
-    }, [id])
 
     return (
         <div>
@@ -357,7 +350,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     : { color: 'black' }
                                 }
                             >
-                             плагином
+                                плагином
                             </span>
                         </p>
                     </div>

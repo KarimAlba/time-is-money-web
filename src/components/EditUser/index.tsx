@@ -1,8 +1,9 @@
 import './style.css';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import OrganizationAPI from '../../api/OrganizationAPI';
+import SuccessPopup from '../ui/SuccessPopup';
 import ErrorPopup from '../ui/ErrorPopup/ErrorPopUp';
+import OrganizationAPI from '../../api/OrganizationAPI';
 import PhysicalAccountAPI from '../../api/PhysicalAccountAPI';
 
 const EditUser = () => {
@@ -22,6 +23,8 @@ const EditUser = () => {
 
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
     const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
+
+    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
     const navigate = useNavigate();
 
@@ -108,10 +111,10 @@ const EditUser = () => {
 
             PhysicalAccountAPI.edit(edittedUser)
                 .then(response => {
-                    console.log(response);
-                    if (response.status < 400) {
-                        navigate('/login')
-                    }
+                    setIsSuccessPopupVisible(true);
+                    setTimeout(() => {
+                        navigate('/login');
+                    }, 1000)
                 })
                 .catch(error => {
                     setErrorMessages(["Проверьте правильность заполненных полей"]);
@@ -181,10 +184,10 @@ const EditUser = () => {
 
             OrganizationAPI.edit(edittedOrg)
                 .then(response => {
-                    console.log(response);
-                    if (response.status < 400) {
-                        navigate('/login')
-                    }
+                    setIsSuccessPopupVisible(true);
+                    setTimeout(() => {
+                        navigate('/login');
+                    }, 1000)
                 })
                 .catch(error => {
                     setErrorMessages(["Проверьте правильность заполненных полей"]);
@@ -346,6 +349,13 @@ const organizationBlock =
                     onClose={() => setIsErrorPopupVisible(false)} 
                 />
             )}
+            {isSuccessPopupVisible
+                ? <SuccessPopup 
+                    message={'Успешно зарегистрированы'} 
+                    onClose={() => setIsSuccessPopupVisible(false)} 
+                />
+                : null
+            }
         </div>
     )
 }
