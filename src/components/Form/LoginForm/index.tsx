@@ -134,8 +134,12 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     <label htmlFor="id_email">e-mail:</label>
 
                     <input
-                        type="password"
-                        id="pass"
+                        type='password'
+                        id='pass'
+                        minLength={8}
+                        maxLength={512}
+
+
                         required
                         onInput={handlePasswordChange}
                     />

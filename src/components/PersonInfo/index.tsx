@@ -224,7 +224,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                             : { color: 'black' }
                                         }
                                     >
-                                      плагином
+                                       &nbsp; плагином
                                     </span>
                                 </p>
                             </div>
@@ -350,7 +350,11 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     : { color: 'black' }
                                 }
                             >
+
                                 плагином
+
+                                &nbsp;плагином
+
                             </span>
                         </p>
                     </div>

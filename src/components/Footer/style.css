@@ -25,9 +25,19 @@
         margin-top: 196px;
     }
 }
+@media (width <=1300px) {
+    .Footer {
+        margin-top: 20px;
+    }
+}
 
 @media (width<=590px) {
     .Footer {
         margin-top: 295px;
+    }
+}
+@media (width<=480px) {
+    .Footer {
+        margin-top: 100px;
     }
 }
