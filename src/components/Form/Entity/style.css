@@ -116,56 +116,7 @@
     left: 130px;
 }
 
-/* .legal-person-block1 input[id="id_Entity"] {
-    display: block;
-    outline: none;
-    height: calc(3.5rem + -13px);
-    background: transparent;
-    font-size: 15px;
-    border: 1px solid #ffffff;
-    color: #000;
-    text-transform: initial;
-    background-color: rgb(217, 249, 255);
-    margin-left: 295px;
-    margin-top: 5px;
-}
-
-.legal-person-block1 label[for="id_Entity"] {
-    margin-right: 260px;
-    margin-top: -20px;
-}
-
-.legal-person-block1 label[for="id_Entity2"] {
-    margin-right: 226px;
-    margin-top: -20px;
-}
-
-.legal-person-block1 label[for="id_Entity3"] {
-    margin-right: 260px;
-    margin-top: -20px;
-}
-
-.legal-person-block1 label[for="id_Entity4"] {
-    margin-right: 235px;
-    margin-top: -20px;
-}
-
-.legal-person-block1 label[for="id_Entity5"] {
-    margin-right: 333px;
-    margin-top: -20px;
-}
-
-.legal-person-block1 label[for="id_Entity6"] {
-    margin-right: 315px;
-    margin-top: -20px;
-}
-
-.legal-person-block1 label[for="id_Entity7"] {
-    margin-right: 345px;
-    margin-top: -20px;
-} */
-
-.form-register-legal-entity button {
+.reg-btn{
     width: 200px;
     font-size: 18px;
     margin-top: 25px;
@@ -329,7 +280,7 @@
         left: 15px;
     }
 
-    .form-register-legal-entity button {
+    .reg-btn{
         margin-left: 200px;
     }
 }
@@ -371,7 +322,7 @@
         margin-top: 50px;
     }
 
-    .form-register-legal-entity button {
+    .reg-btn{
         margin-left: 60px;
     }
 

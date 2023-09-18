@@ -1,7 +1,8 @@
 import './style.css';
-import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
-import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
+import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
 
 const PhysicalPerson = () => {
@@ -13,7 +14,20 @@ const PhysicalPerson = () => {
     const [userPassword, setUserPassword] = useState<string>('');
     const [userConfirmEmail, setUserConfirmEmail] = useState<string>('');
     const [userConfirmPassword, setUserConfirmPassword] = useState<string>('');
-    const [goodValidation, setGoodValidation] = useState<boolean>(false);
+
+    const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
+    const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
+
+    const isEmailValid = (email: string) => {
+        const emailRegex = /@../;
+        return emailRegex.test(email);
+    };
+
+    const isPasswordValid = (password: string) => {
+        const passwordRegex = /(?=.*[0-9]){9,512}/;
+        return passwordRegex.test(password);
+    };
+
 
     const handleSurnameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserSurname(e.target.value);
@@ -51,27 +65,56 @@ const PhysicalPerson = () => {
                     navigate('/login')
                 }
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                setErrorMessages(["Проверьте правильность заполненных полей"]);
+                setIsErrorPopupVisible(true);
+            })
     }
 
-    // const validation = () => {
-    //     if (!userSurname && !userName && !userPatronymic 
-    //         && !userEmail && !userPassword && !userConfirmEmail
-    //         && !userConfirmPassword
-    //     ) {
-    //         setGoodValidation(false);
-    //     } else {
-    //         setGoodValidation(true);
-    //     }
-    // }
+    const validation = () => {
+        const copy = [];
+
+        if (!userName) {
+            copy.push('Поле "Имя" не должно быть пустым')
+        }
+
+        if (!userSurname) {
+            copy.push('Поле "Фамилия" не должно быть пустым')
+        }
+
+        if (!userPatronymic) {
+            copy.push('Поле "Отчество" не должно быть пустым')
+        }
+
+        if (!isEmailValid(userEmail)) {
+            copy.push('Некорректный email')
+        }
+
+        if (userEmail !== userConfirmEmail) {
+            copy.push('Адреса почты не совпадают')
+        }
+
+        if (!isPasswordValid(userPassword)) {
+            copy.push(
+                "Пароль должен содержать хотя бы 9 символов, включая цифры, буквы верхнего и нижнего регистра"
+            );
+        } 
+
+        if (userPassword !== userConfirmPassword) {
+            copy.push('Пароли не совпадают')
+        }
+
+        setErrorMessages(copy);
+        return copy;
+    }
 
     const prepareUser = () => {
-        if (!userSurname && !userName && !userPatronymic 
-            && !userEmail && !userPassword && !userConfirmEmail
-            && !userConfirmPassword
-        ) {
-            return 
+        const errors = validation();
+        if (errors.length > 0) {
+            setIsErrorPopupVisible(true);
+            return 0;
         } else {
+            setIsErrorPopupVisible(false);
             const user = {
                 lastname: userSurname,
                 name: userName,
@@ -87,6 +130,7 @@ const PhysicalPerson = () => {
     }
 
     const handleRegClick = () => {
+        localStorage.clear();
         const user = prepareUser();
         if (user) sendRequest(user);
     }
@@ -94,7 +138,6 @@ const PhysicalPerson = () => {
     return (
         <div className="form-register-physical-pesrson">
             <div className="physical-pesrson-block1">
-
                 <input
                     type="text"
                     id="surname"
@@ -146,9 +189,19 @@ const PhysicalPerson = () => {
 
             </div>
 
-            <button onClick={handleRegClick}>
+            <button 
+                onClick={handleRegClick}
+                className='reg-btn'
+            >
                 РЕГИСТРАЦИЯ
             </button>
+
+            {isErrorPopupVisible && (
+                <ErrorPopup 
+                    errorArray={errorMessages} 
+                    onClose={() => setIsErrorPopupVisible(false)} 
+                />
+            )}
         </div>
     )
 }

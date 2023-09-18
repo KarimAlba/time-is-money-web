@@ -2,6 +2,7 @@ import './style.css';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import OrganizationAPI from '../../api/OrganizationAPI';
+import ErrorPopup from '../ui/ErrorPopup/ErrorPopUp';
 import PhysicalAccountAPI from '../../api/PhysicalAccountAPI';
 
 const EditUser = () => {
@@ -19,7 +20,20 @@ const EditUser = () => {
     const [orgINN, setOrgINN] = useState<string>('');
     const [orgKPP, setOrgKPP] = useState<string>('');
 
+    const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
+    const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
+
     const navigate = useNavigate();
+
+    const isEmailValid = (email: string) => {
+        const emailRegex = /@../;
+        return emailRegex.test(email);
+    };
+
+    const isPasswordValid = (password: string) => {
+        const passwordRegex = /(?=.*[0-9]){9,512}/;
+        return passwordRegex.test(password);
+    };
 
     const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setLastname(e.target.value);
 
@@ -79,10 +93,11 @@ const EditUser = () => {
     }
 
     const handleAccessPhysical = () => {
-        if (!lastname && !name && !patronymic
-            && !email && !confirmEmail
-        ) {
-            return
+        const errors = validation();
+
+        if (errors.length > 0) {
+            setIsErrorPopupVisible(true);
+            return 0;
         } else {
             const edittedUser = {
                 lastname: lastname,
@@ -98,16 +113,60 @@ const EditUser = () => {
                         navigate('/login')
                     }
                 })
-                .catch(error => console.log(error))
+                .catch(error => {
+                    setErrorMessages(["Проверьте правильность заполненных полей"]);
+                    setIsErrorPopupVisible(true);
+                })
         }
     }
 
+    const validation = () => {
+        const copy = [];
+
+        if (!type) {
+            if (!orgName) {
+                copy.push('Поле "Наименование организации" не должно быть пустым')
+            }
+    
+            if (!orgAddress) {
+                copy.push('Поле "Адрес" не должно быть пустым')
+            }
+    
+            if (orgKPP.length !== 9) {
+                copy.push('Поле "КПП" должно состоять из 9 цифр')
+            }
+        }
+
+        if (!name) {
+            copy.push('Поле "Фамилия" не должно быть пустым')
+        }
+
+        if (!lastname) {
+            copy.push('Поле "Имя" не должно быть пустым')
+        }
+
+        if (!patronymic) {
+            copy.push('Поле "Отчество" не должно быть пустым')
+        }
+
+        if (!isEmailValid(email)) {
+            copy.push('Некорректный email')
+        }
+
+        if (email !== confirmEmail) {
+            copy.push('Адреса почты не совпадают')
+        }
+
+        setErrorMessages(copy);
+        return copy;
+    }
+
     const handleAccessOrganization = () => {
-        if (!lastname && !name && !patronymic
-            && !email && !confirmEmail && !orgAddress
-            && !orgINN && !orgKPP
-        ) {
-            return
+        const errors = validation();
+
+        if (errors.length > 0) {
+            setIsErrorPopupVisible(true);
+            return 0;
         } else {
             const edittedOrg = {
                 lastname: lastname,
@@ -127,7 +186,10 @@ const EditUser = () => {
                         navigate('/login')
                     }
                 })
-                .catch(error => console.log(error))
+                .catch(error => {
+                    setErrorMessages(["Проверьте правильность заполненных полей"]);
+                    setIsErrorPopupVisible(true);
+                })
         }
     }
 
@@ -172,7 +234,10 @@ const EditUser = () => {
                     onInput={handleConfirmEmailChange}
                 />
             </div>
-            <button onClick={handleAccessPhysical}>
+            <button 
+                onClick={handleAccessPhysical}
+                className='access-btn'
+            >
                 ПОДТВЕРДИТЬ 
             </button>
         </div>
@@ -199,6 +264,7 @@ const organizationBlock =
             <h5>ИНН</h5>
             <input 
                 type="text" 
+                disabled
                 defaultValue={orgINN ? orgINN : ''}
             />
         </div>
@@ -250,7 +316,10 @@ const organizationBlock =
                 onInput={handleConfirmEmailChange}
             />
         </div>
-        <button onClick={handleAccessOrganization}>
+        <button 
+            onClick={handleAccessOrganization}
+            className='access-btn'
+        >
             ПОДТВЕРДИТЬ 
         </button>
     </div>
@@ -271,6 +340,12 @@ const organizationBlock =
                 ? physicalBlock
                 : organizationBlock
             }
+            {isErrorPopupVisible && (
+                <ErrorPopup 
+                    errorArray={errorMessages} 
+                    onClose={() => setIsErrorPopupVisible(false)} 
+                />
+            )}
         </div>
     )
 }
