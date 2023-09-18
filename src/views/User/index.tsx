@@ -1,17 +1,23 @@
-import PersonInfo from "../../components/PersonInfo";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
+import PersonInfo from "../../components/PersonInfo";
 
 interface UserPagePropsTypes {
     handlePersonInfoMounted: Function;
     handleOpenPlugin: Function;
+    handleCurrentBtnChange: Function;
 }
 
 const UserPage = (props: UserPagePropsTypes) => {
-    const { handlePersonInfoMounted, handleOpenPlugin } = props;
+    const { handlePersonInfoMounted, handleOpenPlugin, handleCurrentBtnChange } = props;
 
     const setOpenPlugin = (value:boolean) => { 
         handleOpenPlugin(value)
     }
+
+    useEffect(() => {
+        handleCurrentBtnChange('Вход');
+    }, []);
 
     return (
         <div>

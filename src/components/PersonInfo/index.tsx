@@ -25,6 +25,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [password, setPassword] = useState<string>('');
     const [createdAt, setCreatedAt] = useState<string>('');
 
+    const [id, setId] = useState<string>('');
+
     const [templateCount, setTemplateCount] = useState<boolean>(false)
     const [templateCount2, setTemplateCount2] = useState<boolean>(false)
     const [templateCount3, setTemplateCount3] = useState<boolean>(false)
@@ -75,6 +77,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     }
 
     const fillLocalStorage = (entity: IEntityResponse) => {
+        clearLocalStorage();
         localStorage.setItem('lastname', entity.lastname);
         localStorage.setItem('name', entity.name);
         localStorage.setItem('email', entity.email);
@@ -82,12 +85,29 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         localStorage.setItem('createdAt', entity.createdAt);
     }
 
+    const clearLocalStorage = () => {
+        localStorage.removeItem('lastname');
+        localStorage.removeItem('name');
+        localStorage.removeItem('email');
+        localStorage.removeItem('patronymic');
+        localStorage.removeItem('createdAt');
+    }
+
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
+            handleMounted();
+            if (localStorage.getItem('id')) {
+                setId(String(localStorage.getItem('id')))
+            }
+        }
+        handleIsOpenFooter();
+    }, [])
+
     useEffect(() => {
         if (localStorage.getItem('token')) {
             handleMounted();
         }
-        handleIsOpenFooter();
-    }, [])
+    }, [id])
 
     return (
         <div>
@@ -106,7 +126,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                 <span>{(new Date(createdAt)).toLocaleDateString()}</span>
                             </div>
                             <div className="statistic_point">
-                                <p>скачено плагинов:</p>
+                                <p>скачано плагинов:</p>
                                 <span>0</span>
                             </div>
                             <div className="statistic_value">

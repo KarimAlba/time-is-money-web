@@ -35,8 +35,6 @@ const EditUser = () => {
     
     const handleOrgAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => setOrgAddress(e.target.value);
 
-    const handleOrgINNChange = (e: React.ChangeEvent<HTMLInputElement>) => setOrgINN(e.target.value);
-
     const handleOrgKPPChange = (e: React.ChangeEvent<HTMLInputElement>) => setOrgKPP(e.target.value);
 
     const getData = () => {
@@ -92,7 +90,7 @@ const EditUser = () => {
                 patronymic: patronymic,
                 email: email
             }
-            console.log(edittedUser);
+
             PhysicalAccountAPI.edit(edittedUser)
                 .then(response => {
                     console.log(response);
@@ -121,7 +119,7 @@ const EditUser = () => {
                 inn: orgINN,
                 kpp: orgKPP,
             }
-            console.log(edittedOrg);
+
             OrganizationAPI.edit(edittedOrg)
                 .then(response => {
                     console.log(response);
@@ -202,7 +200,6 @@ const organizationBlock =
             <input 
                 type="text" 
                 defaultValue={orgINN ? orgINN : ''}
-                onInput={handleOrgINNChange}
             />
         </div>
         <div className="edit-user_data">

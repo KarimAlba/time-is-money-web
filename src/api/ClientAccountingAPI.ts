@@ -3,7 +3,7 @@ import axiosConfig from "./axiosConfig";
 
 class ClientAccountAPI{
     public static getClientData(): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.get('user');
+        return axiosConfig.get('/user');
     }
 }
 

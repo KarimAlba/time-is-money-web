@@ -14,7 +14,7 @@ class PhysicalAccountAPI{
     }
 
     public static edit(body: IEditUserRequest): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.patch('/user/{id}', {...body});
+        return axiosConfig.patch('/user', {...body});
     }
 }
 

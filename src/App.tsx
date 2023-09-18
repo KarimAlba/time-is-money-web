@@ -45,9 +45,11 @@ function Layout() {
           <Route path="entity" element={<Entity/>}/>
         </Route>
         <Route path='user' element={
-            <UserPage 
-              handlePersonInfoMounted={handlePersonInfoMounted} 
-              handleOpenPlugin={handleOpenPlugin}/>
+              <UserPage 
+                handlePersonInfoMounted={handlePersonInfoMounted} 
+                handleOpenPlugin={handleOpenPlugin}
+                handleCurrentBtnChange={handleCurrentBtnChange}
+              />
             } 
           >
           <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin}/>}/>
@@ -68,7 +70,7 @@ function Layout() {
                   onClick={() => setModalVisible(false)}
                   className='spanCross'
                 >×</span>
-                <h5 className='h5'>Востановление пароля</h5>
+                <h5 className='h5'>Восстановление пароля</h5>
               </div>
               <div className='animate-label'>
                 <input

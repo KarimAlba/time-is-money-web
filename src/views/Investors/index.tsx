@@ -196,7 +196,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <p>
                                 ограниченный перечень
                                 <br />
-                                данных, нетвозможности
+                                данных, нет возможности
                                 <br />
                                 передачи этих данных
                                 <br />
@@ -225,13 +225,13 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <p>
                                 платное,
                                 <br />
-                                нет возможностеи
+                                нет возможности
                                 <br />
                                 получения данных из
                                 <br />
                                 Госуслуг,нет функции
                                 <br />
-                                переноса данных В
+                                переноса данных в
                                 <br />
                                 шаблоны
                             </p>
@@ -264,15 +264,6 @@ const Investors = (props: InvestorsPropsTypes) => {
                                 не на сервирах, а мобильных
                                 <br />
                                 устройствах пользователей
-                            </p>
-                            <p>
-                                ограниченный перечень
-                                <br />
-                                данных, нетвозможности
-                                <br />
-                                передачи этих данных
-                                <br />
-                                в шаблоны документов
                             </p>
                         </div>
                     </div>
@@ -364,19 +355,19 @@ const Investors = (props: InvestorsPropsTypes) => {
                     <img src={ElipseStar2} />
                     <div className="client-7-content-block1">
                         <li>
-                            необходимые инвистиции:
+                            Необходимые инвистиции:
                             <br />
                             <span>60 000 000 руб.</span>
                         </li>
                         <br />
                         <li>
-                            чистая приведенная стоимость (NPV)
+                            Чистая приведенная стоимость (NPV)
                             <br />
                             <span>50 000 000 руб.</span>
                         </li>
                         <br />
                         <li>
-                            внутренняя нормарентабельности
+                            внутренняя норма рентабельности
                             <br />
                             <span> <span
                                 style={{ marginLeft: 0, color: 'black' }}
@@ -389,7 +380,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </li>
                         <br />
                         <li>
-                            дисконтированый период
+                            Дисконтированный период
                             <br />
                             <span> <span
                                 style={{ marginLeft: 0, color: 'black' }}
@@ -401,7 +392,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                         <img src={schedule} />
                         <div className="client-7-content-block2-textBootom">
                             <span>_____</span>
-                            <p>Чистый денежнеый поток</p>
+                            <p>Чистый денежный поток</p>
                             <span style={{ borderTop: '3px solid black' }}>_____</span>
                             <p>Дисконтированный чистый денежный поток</p>
                         </div>
@@ -427,7 +418,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <br />
                             IT-компании «Stein
                             <br />
-                            Connecting» г.Мюнхен
+                            Connecting» г. Мюнхен
                         </p>
                     </div>
                     {/* <div className="client-8-content-block1">
