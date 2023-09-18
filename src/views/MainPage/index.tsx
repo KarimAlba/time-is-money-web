@@ -7,7 +7,7 @@ import laptop from '../../assets/imgTimeIsMoney/laptop.svg'
 import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
 
-interface MainPagePropsTypes{
+interface MainPagePropsTypes {
     handleCurrentBtnChange: Function;
 }
 
@@ -34,7 +34,7 @@ const MainPage = (props: MainPagePropsTypes) => {
                     </p>
                 </div>
                 <div className="documents">
-                    <img src={queue} className="queue"/>
+                    <img src={queue} className="queue" />
                     <div className='container-Text2'>
                         <p>
                             Рост документооборота в компаниях вынуждает их содержать

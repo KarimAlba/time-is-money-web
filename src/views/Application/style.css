@@ -117,16 +117,122 @@
     margin-top: 50px;
     text-align: end;
 }
-@media (width <= 1200px) {
-    .Aplication-contauner-block3 img {
-        width: 250px;
+
+@media (width <=1600px) {
+    .aplication-text1-block1 {
+        width: 100%;
+        background: #fff;
+        border: 1px solid #eee;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+        border-top-left-radius: 20px;
+        margin-left: 30px;
+        padding: 74px;
+        text-align: justify;
     }
+
     .container-mobile-phone-screen img {
-        margin: 6%;
+        width: 300px;
+        margin: 7%;
+    }
+
+    .bloc3-text {
+        margin-right: 50px;
+    }
+
+}
+
+@media (width <=1450px) {
+    .block1 img {
+        width: 530px;
+    }
+
+    .container-mobile-phone-screen img {
+        width: 277px;
+    }
+
+    .block-one p {
+        text-align: end;
+        margin-top: 49px;
+        width: 205px;
+    }
+
+}
+
+@media (width <=1300px) {
+    .container-mobile-phone-screen img {
+        width: 260px;
+    }
+
+    .container-info-screen {
+        margin-left: 5px;
+    }
+
+    .block1 img {
+        width: 470px;
+    }
+
+    .aplication-text1-block1 {
+        background: #fff;
+        border: 1px solid #eee;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
+        border-top-left-radius: 20px;
+        padding: 74px;
+        text-align: justify;
+        margin-left: calc(0% + 20px);
+    }
+
+    .block-one {
+        width: 22%;
+    }
+
+    .bloc3-text {
+        margin-left: 130px;
     }
 }
 
-@media(width <= 980px) {
+@media (width <=1200px) {
+    .Aplication-contauner-block3 img {
+        width: 300px;
+    }
+
+    .container-mobile-phone-screen img {
+        margin: 5%;
+    }
+
+    .block1 img {
+        width: 420px;
+    }
+
+    .block-one {
+        width: 22%;
+        margin-left: 3%;
+    }
+
+    .Aplication-contauner-block3 {
+        padding: 75px;
+    }
+
+    .bloc3-text img {
+        margin: 0;
+    }
+}
+
+@media (width <=1000px) {
+    .aplication-text1-block1 {
+        margin-left: calc(0% + 17px);
+        margin-right: 0%;
+    }
+
+    .container-mobile-phone-screen img {
+        margin: 3%;
+    }
+
+    .bloc3-text {
+        margin-left: 80px;
+    }
+}
+
+@media(width <=980px) {
     .block1 {
         margin-top: 20px;
         margin-top: 160px;
@@ -137,7 +243,7 @@
         width: 90%;
     }
 
-    .aplication-text1-block1{
+    .aplication-text1-block1 {
         padding: 10px;
         width: 92%;
     }
@@ -148,10 +254,10 @@
     }
 
     .Aplication-contauner-block3 {
-        margin-top:20px;
+        margin-top: 20px;
         padding: 10px;
     }
-    
+
     .Aplication-contauner-block3 img {
         width: 250px;
         margin: 0 0 0 10px;
@@ -170,39 +276,77 @@
     .container-info-screen {
         margin: 0 2% 0 2%;
     }
-    
+
     .block-one {
-        width: 65%;
-        margin: 20px 0 0 15%;
+        width: 46%;
+        margin: 20px 0 0 26%;
         padding: 10px;
     }
-    
-    .block-one img{
+
+    .block-one img {
         position: relative;
         left: -34px;
         top: 23px;
         height: 50px;
     }
-    
+
     .block-one h1 {
         margin-left: 15px;
     }
-    
+
     .block-one p {
         text-align: end;
         margin: 10px 15px 5px 0;
     }
 }
 
-@media(width <= 670px) {
+@media (width <=800px) {
+    .container-mobile-phone-screen img {
+        margin: 1%;
+    }
+
+    .block1 img {
+        margin-top: 50px;
+        width: 87%;
+        margin-left: 20px;
+    }
+
+    .block-one {
+        width: 46%;
+        margin: 20px 0 0 26%;
+        padding: 10px;
+    }
+
+    .Aplication-contauner-block3 {
+        flex-direction: column;
+        width: 250px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bloc3-text {
+        margin: 30px 5% 0 -50%;
+        height: auto;
+        padding: 10px;
+        width: 500px;
+    }
+
+    .container-mobile-phone-screen {
+        margin-top: 100px;
+    }
+}
+
+@media(width <=670px) {
     .block1 {
         margin-top: 50px;
         flex-flow: column;
     }
 
     .block1 img {
-        margin-top: 0px;
-        width: 90%;
+        margin-top: 70px;
+        width: 70%;
+        margin-left: 105px;
     }
 
     .Aplication-contauner-block3 {
@@ -210,17 +354,34 @@
     }
 
     .Aplication-contauner-block3 img {
-        width: 60%;
-        margin: 0 0 0 20%;
+        width: 80%;
+        margin: 0 0 0 7%;
+    }
+
+    .aplication-text1-block1 {
+        padding: 18px;
+        margin-top: 20px;
+    }
+
+    .block-one {
+        width: 63%;
+        margin: 19px 0 0 20%;
+        padding: 10px;
+    }
+
+    .bloc3-text {
+        width: 450px;
+        margin: 30px 5% 0 -36%;
     }
 }
 
-@media(width <= 600px) {
+@media(width <=600px) {
     .block1 img {
-        margin: 80px 0 0 10%;
-        width: 80%;
+        margin: 30px 0 0 25%;
+        width: 60%;
     }
-    .bloc3-text img{
+
+    .bloc3-text img {
         width: 60%;
         margin: 0;
     }
@@ -231,13 +392,42 @@
         margin-right: 0;
     }
 
-    .container-mobile-phone-screen{
+    .container-mobile-phone-screen {
         flex-direction: column;
     }
 
-    .container-mobile-phone-screen img{
+    .container-mobile-phone-screen img {
         margin: auto;
+        width: 50%;
+    }
+
+    .block-one {
         width: 70%;
+        margin: 19px 0 0 15%;
+    }
+    .Aplication-contauner-block3 img{
+        margin: 0 0 0 19%;
+    }
+    .Aplication-contauner-block3{
+        margin-top: 80px;
+    }
+}
+
+@media (width <= 480px) {
+    .Aplication-contauner-block3 img{
+        margin: 0 0 0 0%;
+        width: 260px;
+    }
+    .bloc3-text{
+        width: 410px;
+        margin: 30px 5% 0 -36%;
+    }
+}
+
+@media (width <=400px) {
+    .bloc3-text{
+        width: 350px;
+        margin: 30px 5% 0 -25%;
     }
 }
 
