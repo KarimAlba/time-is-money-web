@@ -58,15 +58,12 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
 
 
     const isEmailValid = (email: string) => {
-        // Регулярное выражение для проверки электронной почты
-        const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+        const emailRegex = /@../;
         return emailRegex.test(email);
     };
 
     const isPasswordValid = (password: string) => {
-        // Регулярное выражение для проверки пароля
-        // Пароль должен содержать хотя бы 8 символов, включая цифры, буквы верхнего и нижнего регистра
-        const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{9,}$/;
+        const passwordRegex = /(?=.*[0-9]){9,512}/;
         return passwordRegex.test(password);
     };
 
@@ -76,7 +73,6 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
 
         if (!isEmailValid(email)) {
             setEmailError("Некорректный email");
-
         } else {
             setEmailError("");
         }
@@ -90,7 +86,6 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
             setPasswordError(
                 "Пароль должен содержать хотя бы 8 символов, включая цифры, буквы верхнего и нижнего регистра"
             );
-
         } else {
             setPasswordError("");
         }
@@ -107,6 +102,9 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                         localStorage.setItem('id', String(response.data.entity.id));
                     }
                     navigate('/user');
+                } else {
+                    setErrorMessage("Некорректный email или пароль");
+                    setIsErrorPopupVisible(true);
                 }
             })
             .catch(error => console.log(error));
@@ -114,7 +112,6 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
 
     const handleComeClick = () => {
         if (!isEmailValid(userEmail) || !isPasswordValid(userPassword)) {
-            // Отобразить сообщение об ошибке
             setErrorMessage("Некорректный email или пароль");
             setIsErrorPopupVisible(true);
         } else {
