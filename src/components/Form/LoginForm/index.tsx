@@ -74,7 +74,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         if (!isEmailValid(email)) {
             setEmailError("Некорректный email");
         } else {
-            setEmailError("");
+            // setEmailError("");
         }
     };
 
@@ -84,10 +84,10 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
 
         if (!isPasswordValid(password)) {
             setPasswordError(
-                "Пароль должен содержать хотя бы 8 символов, включая цифры, буквы верхнего и нижнего регистра"
+                "Пароль должен содержать хотя бы 9 символов, включая цифры, буквы верхнего и нижнего регистра"
             );
         } else {
-            setPasswordError("");
+            // setPasswordError("");
         }
     };
 
