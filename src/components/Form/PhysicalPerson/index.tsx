@@ -22,7 +22,7 @@ const PhysicalPerson = () => {
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
     const isEmailValid = (email: string) => {
-        const emailRegex = /@../;
+        const emailRegex = /\w+@\w+\.\w+/;
         return emailRegex.test(email);
     };
 
