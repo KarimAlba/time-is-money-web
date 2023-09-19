@@ -17,7 +17,7 @@ import men1 from '../../assets/imgTimeIsMoney/men1.svg';
 import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
 
-interface InvestorsPropsTypes{
+interface InvestorsPropsTypes {
     handleCurrentBtnChange: Function;
 }
 
@@ -35,7 +35,7 @@ const Investors = (props: InvestorsPropsTypes) => {
         <div className="container-main-Investors">
             <div>
                 <h1>Целевой рынок</h1>
-                <p style={{ marginLeft: '30px' }}>Наши потенциальные клиенты - это:</p>
+                <p style={{ marginLeft: '60px' }}>Наши потенциальные клиенты - это:</p>
                 <div className="container-clients-investor">
                     <div className="container-client-1">
                         <li>банки , </li>
@@ -48,7 +48,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                         <li>МФЦ,</li>
                         <li>мебельные
                             <br />
-                            магазины,
+                            &nbsp; &nbsp; магазины,
                         </li>
                         <li>автосалоны,</li>
                         <li>прокатные конторы,</li>
@@ -61,6 +61,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                         <li> гостиницы,</li>
                         <li>
                             салоны мобильной
+                            <br />
                             связи,
                         </li>
                         <li>частные клиники </li>
@@ -209,7 +210,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <img src={MyDocuments} />
                             <div>
                                 <p>мобильное приложение</p>
-                                <h3 style={{ margin: 0 }}>«Документы»</h3>
+                                <h3 style={{ margin: 0,fontSize:18 }}>«Документы»</h3>
                             </div>
                         </div>
                         <div className="client-5-content-container">
@@ -272,7 +273,7 @@ const Investors = (props: InvestorsPropsTypes) => {
             <div className="container-client-6">
                 <div className="client-header">
                     <h1>Инвестиции</h1>
-                    <img src={logo}/>
+                    <img src={logo} />
                 </div>
                 <div className="client-6-conteiner1">
                     <img src={ElipseStar2} />
@@ -361,7 +362,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </li>
                         <br />
                         <li>
-                            Чистая приведенная стоимость (NPV)
+                            Чистая приведенная стоимость (NPV)<span style={{ fontSize: '40px' }}>*</span>
                             <br />
                             <span>50 000 000 руб.</span>
                         </li>

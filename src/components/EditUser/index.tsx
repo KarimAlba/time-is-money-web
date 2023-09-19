@@ -275,7 +275,7 @@ const organizationBlock =
             />
         </div>
         <div className="edit-user_data">
-            <h5>Руководитель организации:   Фамилия</h5>
+            <h5>Руководитель организации: Фамилия</h5>
             <input 
                 type="text" 
                 defaultValue={lastname ? lastname : ''}

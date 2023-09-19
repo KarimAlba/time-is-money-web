@@ -22,7 +22,7 @@
 
 @media (width <=1600px) {
     .Footer {
-        margin-top: 196px;
+        margin-top: 70px;
     }
 }
 @media (width <=1300px) {
@@ -34,6 +34,11 @@
 @media (width<=590px) {
     .Footer {
         margin-top: 295px;
+    }
+}
+@media (width<=550px) {
+    .Footer {
+        margin-top: 100px;
     }
 }
 @media (width<=480px) {
