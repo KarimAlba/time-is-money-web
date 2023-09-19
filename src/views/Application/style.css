@@ -430,4 +430,10 @@
         margin: 30px 5% 0 -25%;
     }
 }
+@media (width <=390px) {
+    .bloc3-text{
+        width: 333px;
+        margin: 30px 5% 0 -21%;
+    }
+}
 
