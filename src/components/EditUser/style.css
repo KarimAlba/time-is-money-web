@@ -20,7 +20,7 @@
     line-height: 21.77px;
 }
 
-.access-btn{
+.access-btn {
     width: 200px;
     font-size: 18px;
     margin-top: 40px;
@@ -64,7 +64,7 @@
     .edit-user {
         margin-left: 390px;
         width: 450px;
-        margin-top: 110px;    
+        margin-top: 110px;
     }
 }
 
@@ -76,26 +76,31 @@
         flex-direction: initial;
         text-align: start;
     }
-    .edit-user_data{
+
+    .edit-user_data {
         flex-direction: column;
     }
-    .edit-user h5{
+
+    .edit-user h5 {
         margin-bottom: 0;
         margin-left: 30px;
     }
-    .access-btn{
+
+    .access-btn {
         margin-left: 40px;
     }
 }
-@media (width <= 650PX) {
-    .edit-user{
+
+@media (width <=650PX) {
+    .edit-user {
         margin-left: 60px;
     }
 }
 
-@media (width <= 570px) {
-    .edit-user{
-        margin-left: 23px;
+@media (width <=570px) {
+    .edit-user {
+        margin-left: 50px;
+        width: 295px;
     }
 }
 
@@ -124,7 +129,7 @@
         margin-left: 0;
     }
 
-    .edit-user_data{
+    .edit-user_data {
         flex-direction: column;
         width: 300px;
     }
