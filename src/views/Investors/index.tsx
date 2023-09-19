@@ -25,6 +25,7 @@ interface InvestorsPropsTypes {
 const Investors = (props: InvestorsPropsTypes) => {
     const { handleCurrentBtnChange } = props;
     const navigate = useNavigate();
+    const toApplication = () => navigate('/application');
 
     const toLogin = () => navigate('/login');
 
@@ -210,7 +211,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                         <div className="container-client-5-icon">
                             <img src={MyDocuments} />
                             <div>
-                                <p>мобильное приложение</p>
+                                <p onClick={toApplication}>мобильное приложение</p>
                                 <h3 style={{ margin: 0, fontSize: 18 }}>«Документы»</h3>
                             </div>
                         </div>
