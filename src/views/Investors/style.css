@@ -237,7 +237,8 @@ li::marker {
 
 .container-client-5-icon p {
     margin: 0;
-    color: #00B2F4
+    color: #00B2F4;
+    cursor :pointer;
 }
 .content-block{
     margin: auto;
