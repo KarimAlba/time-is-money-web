@@ -62,7 +62,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
     };
 
     const isPasswordValid = (password: string) => {
-        const passwordRegex = /(?=.*[0-9]){9,512}/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
         return passwordRegex.test(password);
     };
 

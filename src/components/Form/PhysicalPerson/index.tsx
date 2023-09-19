@@ -27,10 +27,9 @@ const PhysicalPerson = () => {
     };
 
     const isPasswordValid = (password: string) => {
-        const passwordRegex = /(?=.*[0-9]){9,512}/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
         return passwordRegex.test(password);
     };
-
 
     const handleSurnameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserSurname(e.target.value);
@@ -100,7 +99,7 @@ const PhysicalPerson = () => {
 
         if (!isPasswordValid(userPassword)) {
             copy.push(
-                "Пароль должен содержать хотя бы 9 символов, включая цифры, буквы верхнего и нижнего регистра"
+                "Пароль должен содержать не менее 8 символов, одну строчную и прописную буквы английского алфавита и спец символы"
             );
         } 
 
