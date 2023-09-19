@@ -287,14 +287,14 @@
 
 @media (width <=580px) {
  .form-login{
-    left: 15%;
-    top: 140px;
+    left: 7%;
+    top: 41px;
  }
 }
 @media (width <= 500px) {
     .form-login{
         left: 3%;
-        top: 140px;
+        top: 55px;
 
     }
 }
