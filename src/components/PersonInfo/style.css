@@ -122,7 +122,7 @@ a {
 
 @media (width <=870px) {
     .person-info {
-        width: 250px;
+        width: 285px;
     }
 }
 
@@ -147,7 +147,7 @@ a {
         position: fixed;
         top: 0;
         left: 0;
-        width: 250px;
+        width: 285px;
         height: 100%;
         background-color: rgba(0, 178, 244, 0.18);
         backdrop-filter: blur(60px);
@@ -179,10 +179,11 @@ a {
         position: fixed;
         top: 0;
         left: 0;
-        width: 250px;
+        width: 285px;
         height: 100%;
         background-color: rgba(0, 178, 244, 0.18);
         backdrop-filter: blur(60px);
+        overflow-y: scroll;
     }
 
     .person-info {

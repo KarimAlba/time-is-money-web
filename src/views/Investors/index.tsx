@@ -14,6 +14,7 @@ import minus from '../../assets/imgTimeIsMoney/minus.svg';
 import schedule from '../../assets/imgTimeIsMoney/schedule.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
+import ElipseMen from '../../assets/imgTimeIsMoney/EllipseMen.svg'
 import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
 
@@ -210,7 +211,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <img src={MyDocuments} />
                             <div>
                                 <p>мобильное приложение</p>
-                                <h3 style={{ margin: 0,fontSize:18 }}>«Документы»</h3>
+                                <h3 style={{ margin: 0, fontSize: 18 }}>«Документы»</h3>
                             </div>
                         </div>
                         <div className="client-5-content-container">
@@ -422,10 +423,11 @@ const Investors = (props: InvestorsPropsTypes) => {
                             Connecting» г. Мюнхен
                         </p>
                     </div>
+                    <img src={ElipseMen} className="ellipse2 " />
+
                     {/* <div className="client-8-content-block1">
                         <div >
                             <img src={men1} className="client-8-content-block1-men" />
-                            <img src={EllipseMen} className="ellipse2 " />
                         </div>
                         <br />
                         <h2> Вадим Фоменко</h2>
