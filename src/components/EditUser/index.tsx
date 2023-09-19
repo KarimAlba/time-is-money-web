@@ -346,7 +346,7 @@ const organizationBlock =
             )}
             {isSuccessPopupVisible
                 ? <SuccessPopup 
-                    message={'Успешно зарегистрированы'} 
+                    message={'Успешно обновлено'} 
                     onClose={() => setIsSuccessPopupVisible(false)} 
                 />
                 : null
