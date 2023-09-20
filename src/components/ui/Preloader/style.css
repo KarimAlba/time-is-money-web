@@ -1,0 +1,31 @@
+.preloader {
+    margin: 200px auto;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    animation: rotating 1s linear infinite;
+}
+  
+.preloader::before {
+    content: '';
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+    background-image: url('../../../assets/imgTimeIsMoney/TiM1.svg');
+    background-size: 130px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+  
+@keyframes rotating {
+    from {
+        transform: rotate(360deg);   
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}

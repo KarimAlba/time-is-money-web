@@ -32,7 +32,7 @@ const Entity = () => {
     };
 
     const isPasswordValid = (password: string) => {
-        const passwordRegex = /(?=.*[0-9]){9,512}/;
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
         return passwordRegex.test(password);
     };
 
@@ -48,7 +48,7 @@ const Entity = () => {
         setOrgINN(e.target.value);
     }
 
-        const handleOrgKPPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleOrgKPPChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setOrgKPP(e.target.value);
     }
 
@@ -106,11 +106,11 @@ const Entity = () => {
             copy.push('Поле "Адрес" не должно быть пустым')
         }
 
-        if (orgINN.length !== 10) {
+        if (orgINN.length !== 10 || String(+orgINN ^ 0) !== orgINN) {
             copy.push('Поле "ИНН" должно состоять из 10 цифр')
         }
 
-        if (orgKPP.length !== 9) {
+        if (orgKPP.length !== 9 || String(+orgKPP ^ 0) !== orgKPP) {
             copy.push('Поле "КПП" должно состоять из 9 цифр')
         }
 
@@ -136,7 +136,7 @@ const Entity = () => {
 
         if (!isPasswordValid(password)) {
             copy.push(
-                "Пароль должен содержать хотя бы 9 символов, включая цифры, буквы верхнего и нижнего регистра"
+                "Пароль должен содержать не менее 8 символов, одну строчную и прописную буквы английского алфавита и спец символы"
             );
         } 
 

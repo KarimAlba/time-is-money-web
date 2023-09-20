@@ -33,11 +33,6 @@ const EditUser = () => {
         return emailRegex.test(email);
     };
 
-    const isPasswordValid = (password: string) => {
-        const passwordRegex = /(?=.*[0-9]){9,512}/;
-        return passwordRegex.test(password);
-    };
-
     const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setLastname(e.target.value);
 
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
@@ -135,7 +130,7 @@ const EditUser = () => {
                 copy.push('Поле "Адрес" не должно быть пустым')
             }
     
-            if (orgKPP.length !== 9) {
+            if (orgKPP.length !== 9 || String(+orgKPP ^ 0) !== orgKPP) {
                 copy.push('Поле "КПП" должно состоять из 9 цифр')
             }
         }
@@ -351,7 +346,7 @@ const organizationBlock =
             )}
             {isSuccessPopupVisible
                 ? <SuccessPopup 
-                    message={'Успешно зарегистрированы'} 
+                    message={'Успешно обновлено'} 
                     onClose={() => setIsSuccessPopupVisible(false)} 
                 />
                 : null

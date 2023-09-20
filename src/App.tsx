@@ -1,19 +1,22 @@
 import { useState } from 'react';
 import './App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import Preloader from './components/ui/Preloader';
+import { lazy, Suspense } from 'react';
 import Header from './components/Header';
-import MainPage from './views/MainPage';
 import Footer from './components/Footer';
-import Application from './views/Application';
-import PluginPage from './views/Plugin';
-import Investors from './views/Investors';
-import Login from './views/Login';
 import PhysicalPerson from './components/Form/PhysicalPerson';
 import Entity from './components/Form/Entity';
-import LoginForm from './components/Form/LoginForm';
-import UserPage from './views/User';
 import EditUser from './components/EditUser';
 import UserPlugin from './components/UserPlugin';
+import Login from './views/Login';
+
+const MainPage = lazy(() => import("./views/MainPage"));
+const Application = lazy(() => import("./views/Application"));
+const PluginPage = lazy(() => import("./views/Plugin"));
+const Investors = lazy(() => import("./views/Investors"));
+const LoginForm = lazy(() => import("./components/Form/LoginForm"));
+const UserPage = lazy(() => import("./views/User"));
 
 function Layout() {
   const [isModalVisible, setModalVisible] = useState<boolean>(false);
@@ -35,21 +38,58 @@ function Layout() {
     <>
       <Header handleIsOpenFooter={handleIsOpenFooter} currentBtnProp={currentBtn}/>
       <Routes>
-        <Route path="/" element={<MainPage handleCurrentBtnChange={handleCurrentBtnChange}/>} />
-        <Route path="/application" element={<Application handleCurrentBtnChange={handleCurrentBtnChange}/>}/>
-        <Route path="/PluginPage" element={<PluginPage handleCurrentBtnChange={handleCurrentBtnChange}/>}/>
-        <Route path="/investors" element={<Investors handleCurrentBtnChange={handleCurrentBtnChange}/>}/>
+        <Route 
+          path="/" 
+          element={
+            <Suspense fallback={<Preloader/>}>
+              <MainPage handleCurrentBtnChange={handleCurrentBtnChange}/>
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/application" 
+          element={
+            <Suspense fallback={<Preloader/>}>
+              <Application handleCurrentBtnChange={handleCurrentBtnChange}/>
+            </Suspense>
+          }
+        />
+        <Route 
+          path="/PluginPage" 
+          element={
+            <Suspense fallback={<Preloader/>}>
+              <PluginPage handleCurrentBtnChange={handleCurrentBtnChange}/>
+            </Suspense>
+          }
+        />
+        <Route 
+          path="/investors" 
+          element={
+            <Suspense fallback={<Preloader/>}>
+              <Investors handleCurrentBtnChange={handleCurrentBtnChange}/>
+            </Suspense>
+          }
+        />
         <Route path="login" element={<Login handleCurrentBtnChange={handleCurrentBtnChange}/>} >
-          <Route path='' element={<LoginForm showModal={handlePasswordChange}/>} />
+          <Route 
+            path='' 
+            element={
+              <Suspense fallback={<Preloader/>}>
+                <LoginForm showModal={handlePasswordChange}/>
+              </Suspense>
+            } 
+          />
           <Route path="physicalPerson" element={<PhysicalPerson/>}/>
           <Route path="entity" element={<Entity/>}/>
         </Route>
         <Route path='user' element={
-              <UserPage 
-                handlePersonInfoMounted={handlePersonInfoMounted} 
-                handleOpenPlugin={handleOpenPlugin}
-                handleCurrentBtnChange={handleCurrentBtnChange}
-              />
+              <Suspense fallback={<Preloader/>}>
+                <UserPage 
+                  handlePersonInfoMounted={handlePersonInfoMounted} 
+                  handleOpenPlugin={handleOpenPlugin}
+                  handleCurrentBtnChange={handleCurrentBtnChange}
+                />
+              </Suspense>
             } 
           >
           <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin}/>}/>

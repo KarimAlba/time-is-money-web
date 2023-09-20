@@ -17,8 +17,6 @@
 
 .block1-plugin-text1 {
     background: #fff;
-    /* display: flex;
-    text-align: end; */
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     border: 1px solid #eee;
@@ -45,7 +43,6 @@
 
 .block2-plugin-text {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
-    width: 700px;
     border-radius: 10px;
     padding: 30px;
     margin-top: 50px;
@@ -153,7 +150,7 @@
 
 }
 
-@media (width <=600px) {
+@media (width <=620px) {
     .block1-plugin img {
         margin-top: -50px;
     }
@@ -170,20 +167,13 @@
     }
 
     .block1-plugin-text1 {
-        height: 580px;
         border-radius: 15px;
         padding: 25px;
         margin: 5vh 0 0 8%;
         width: 80%;
     }
 
-    /* 
-    .block2-plugin h2 {
-        margin-left: 30px;
-    } */
-
     .container-step img {
-        /* max-height: 190px; */
         margin-left: 0px;
     }
 
@@ -208,7 +198,7 @@
     /* .step-text p {} */
 
     .block2-plugin-text {
-        width: 350px;
+        width: 300px;
     }
 
     .container-step .screen {
@@ -219,8 +209,8 @@
 
 @media (width <=390px) {
     .block1-plugin-text1 {
-        height: 700px;
-        width: 79%;
+        height: 773px;
+        width: 73%;
 
     }
 
