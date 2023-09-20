@@ -20,7 +20,7 @@ const steps = [
         photoUrl: screen2,
         text: 'Справа от пустых полей находиться кнопка с помощью которой вы' +
             ' будете вставлять тэги с нужной информацией (например: фамилия,' +
-            'имя, отчество) в шаблон документа.'
+            ' имя, отчество) в шаблон документа.'
     },
     {
         number: 3,
@@ -35,7 +35,7 @@ const steps = [
             ' QR-код и нажмите синюю кнопку "Запросить". Информация из ' +
             ' документа появится вначале в нашем плагине, после проверки' +
             ' достоверности данных вы можете внести их в документ,' +
-            ' нажав кнопку "Вставить" '
+            ' нажав кнопку "Вставить".'
     },
     {
         number: 5,
@@ -54,7 +54,12 @@ const StepList = () => {
         <div style={{ display: "flex", flexDirection: "column" }}>
             {
                 stepModels.map(step => {
-                    return (<StepItem photoUrl={step.photoUrl} number={step.number} text={step.text} />)
+                    return (<StepItem 
+                        photoUrl={step.photoUrl} 
+                        number={step.number} 
+                        text={step.text} 
+                        key={step.number}
+                    />)
                 })
             }
         </div>
