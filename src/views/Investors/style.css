@@ -6,14 +6,6 @@ body {
     background-position-y: 87px;
 }
 
-.container-main-Investors {
-    font-family: Arial, sans-serif;
-    font-size: 19px;
-    font-weight: 400;
-    line-height: 32px;
-    letter-spacing: 0em;
-}
-
 .container-main-Investors h1 {
     /* margin-left: 20px; */
 }
@@ -1068,4 +1060,39 @@ li::marker {
     .client-7-content-block2 img{
         margin-left: -13px;
     }
+    .quantity-clients img{
+        left: 75px;
+    }
+    .quantity-clients{
+        margin-left: 60px;
+    }
+    .client-6-block2 p{
+        margin-left: 35px;
+    }
+    .client-6-conteiner1 img{
+        left: 84%;
+    }
+    .client-6-block4 p{
+        margin-left: 50px;
+    }
+    .client-6-footer p{
+        margin-left: 37px;
+    }
+    .client-7-content-block1{
+        margin-left: -15px;
+    }
+    .client-7-content-block2-textBootom{
+        margin-left: -20px;
+    }
+    .business-model{
+        height: 207px;
+    }
+     .quantity-clients p{
+        margin-left: -20px;
+        font-size: 23px;
+    }
+    .container-client-8-content{
+        margin-left: -60px;
+    }
 }
+

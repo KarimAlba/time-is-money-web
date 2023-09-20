@@ -16,6 +16,15 @@
   }
 }
 
+@media (width <=480px) {
+  * {
+    font-size: 21px;
+  }
+}
+
+
+
+
 a,
 button {
   cursor: pointer;
