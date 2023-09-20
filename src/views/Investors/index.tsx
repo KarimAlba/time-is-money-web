@@ -14,7 +14,6 @@ import minus from '../../assets/imgTimeIsMoney/minus.svg';
 import schedule from '../../assets/imgTimeIsMoney/schedule.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
-import ElipseMen from '../../assets/imgTimeIsMoney/EllipseMen.svg'
 import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
 
@@ -30,7 +29,7 @@ const Investors = (props: InvestorsPropsTypes) => {
     const toLogin = () => navigate('/login');
 
     useEffect(() => {
-        handleCurrentBtnChange('Инвесторам')
+        handleCurrentBtnChange('Инвесторам');
     }, []);
 
     return (
@@ -39,23 +38,23 @@ const Investors = (props: InvestorsPropsTypes) => {
                 <h1>Целевой рынок</h1>
                 <p style={{ marginLeft: '60px' }}>Наши потенциальные клиенты:</p>
                 <div className="container-clients-investor">
-                    <div className="container-client-1">
+                    <ul className="container-client-1">
                         <li>банки; </li>
                         <li>нотариусы;</li>
                         <li>стоматологии;</li>
-                        <li>диагностические
-                            <br />
-                            центры;
+                        <li>диагностические центры;</li>
+                        <li>
+                            {document.body.clientWidth < 500
+                                ? 'многофунк-' + 'циональные центры "МФЦ";'
+                                : 'многофункциональные центры "МФЦ";'
+                            }
                         </li>
-                        <li>Многофункциональный центр "МФЦ";</li>
-                        <li>мебельные
-                            <br />
-                            &nbsp; &nbsp; магазины;
+                        <li>мебельные магазины;
                         </li>
                         <li>автосалоны;</li>
                         <li>прокатные конторы;</li>
-                    </div>
-                    <div className="container-client-1">
+                    </ul>
+                    <ul className="container-client-1">
                         <li>
                             страховые
                             компании;
@@ -74,18 +73,21 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <br />
                             и время своих клиентов
                         </p>
-                    </div>
+                    </ul>
                     <div className="quantity-clients">
-                        <img src={Elipsestar} />
-                        <h1><span style={{ marginRight: 40 }}>свыше</span>  200 000</h1>
-                        <p>
+                        <div className='statistic-result'>
+                            <img src={Elipsestar} />
+                            <h2>200 000</h2>
+                        </div>
+                        <p> 
+                            свыше
+                            <br/>
                             наших потенциальных
-                            <br />
+                            <br/>
                             клиентов в одной только
                             <br />
                             Москве и Московской области
                         </p>
-
                     </div>
 
                 </div>
@@ -94,7 +96,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                     <div className="business-model">
                         <img src={ElipseStar2} />
                         <p>Распространение плагина через сайт
-                            <br />
+                            <br/>
                             по подписке 1000 руб.месяц.<span>*</span>
                         </p>
                         <button onClick={toLogin}>time-money.shop.ru</button>
@@ -133,7 +135,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             </p>
                         </div>
                     </div>
-                    <p>
+                    <p className='client3-condition'>
                         <span>*</span>для первых подписчиков на период 6 месяцев стоимость 100 руб. в месяц
                     </p>
                 </div>
@@ -187,24 +189,28 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <h3>Госуслуги</h3>
                         </div>
                         <div className="client-5-content-container">
-                            <img src={plus} />
-                            <p>
-                                данные хранятся
-                                <br />
-                                на хорошо защищенных
-                                <br />
-                                государством серверах
-                            </p>
-                            <img src={minus} />
-                            <p>
-                                ограниченный перечень
-                                <br />
-                                данных, нет возможности
-                                <br />
-                                передачи этих данных
-                                <br />
-                                в шаблоны документов
-                            </p>
+                            <div className='difference'>
+                                <img src={plus} />
+                                <p>
+                                    данные хранятся
+                                    <br />
+                                    на хорошо защищенных
+                                    <br />
+                                    государством серверах
+                                </p>
+                            </div>
+                            <div className='difference'>
+                                <img src={minus} />
+                                <p>
+                                    ограниченный перечень
+                                    <br />
+                                    данных, нет возможности
+                                    <br />
+                                    передачи этих данных
+                                    <br />
+                                    в шаблоны документов
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="content-block">
@@ -212,32 +218,36 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <img src={MyDocuments} />
                             <div>
                                 <p onClick={toApplication}>мобильное приложение</p>
-                                <h3 style={{ margin: 0, fontSize: 18 }}>«Документы»</h3>
+                                <h3 style={{ marginTop: 0}}>«Документы»</h3>
                             </div>
                         </div>
                         <div className="client-5-content-container">
-                            <img src={plus} />
-                            <p>
-                                удобный интерфейс,
-                                <br />
-                                широкий перечень
-                                <br />
-                                хранимых документов
-                            </p>
-                            <img src={minus} />
-                            <p>
-                                платное,
-                                <br />
-                                нет возможности
-                                <br />
-                                получения данных из
-                                <br />
-                                Госуслуг,нет функции
-                                <br />
-                                переноса данных в
-                                <br />
-                                шаблоны
-                            </p>
+                            <div className='difference'>
+                                <img src={plus} />
+                                <p>
+                                    удобный интерфейс,
+                                    <br />
+                                    широкий перечень
+                                    <br />
+                                    хранимых документов
+                                </p>
+                            </div>
+                            <div className='difference'>
+                                <img src={minus} />
+                                <p>
+                                    платное,
+                                    <br />
+                                    нет возможности
+                                    <br />
+                                    получения данных из
+                                    <br />
+                                    Госуслуг,нет функции
+                                    <br />
+                                    переноса данных в
+                                    <br />
+                                    шаблоны
+                                </p>
+                            </div>
                         </div>
                     </div>
                     <div className="content-block">
@@ -246,28 +256,40 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <h3>ТиМ</h3>
                         </div>
                         <div className="client-5-content-container">
-                            <img src={plus} />
-                            <p>
-                                удобный интерфейс,
-                                <br />
-                                широкий перечень хранимых
-                                <br />
-                                документов, возможность
-                                <br />
-                                передачи данных, с согласия
-                                <br />
-                                пользователя, в шаблоны
-                                <br />
-                                документов,отсутствие
-                                <br />
-                                риска утечки данных
-                                <br />
-                                поскольку они храняться
-                                <br />
-                                не на сервирах, а мобильных
-                                <br />
-                                устройствах пользователей
-                            </p>
+                            <div className='difference'>
+                                <img src={plus}/>
+                                <p>
+                                    удобный интерфейс,
+                                </p>
+                            </div>
+                            <div className='difference'>
+                                <img src={plus}/>
+                                <p>
+                                    широкий перечень хранимых
+                                    <br />
+                                    документов, возможность
+                                    <br />
+                                    передачи данных, с согласия
+                                    <br />
+                                    пользователя, в шаблоны
+                                    <br />
+                                    документов,
+                                </p>
+                            </div>
+                            <div className='difference'>
+                                <img src={plus}/>
+                                <p>
+                                    отсутствие
+                                    <br />
+                                    риска утечки данных
+                                    <br />
+                                    поскольку они храняться
+                                    <br />
+                                    не на сервирах, а мобильных
+                                    <br />
+                                    устройствах пользователей
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -302,7 +324,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                     <div className="container-client-6-footer">
                         <div className="client-6-conteiner2">
                             <div style={{ display: "flex" }}>
-                                <div className="client-6-block3">
+                                <div className="client-6-block1">
                                     <h1>24</h1>
                                     <p>
                                         млн.
@@ -310,20 +332,20 @@ const Investors = (props: InvestorsPropsTypes) => {
                                         руб
                                     </p>
                                 </div>
-                                <div className="client-6-block4">
+                                <div className="client-6-block2">
                                     <p>
-                                        доработка продукта
+                                        доработка продукта и
                                         <br />
-                                        и поддержание его
+                                        поддержание его
                                         <br />
                                         работоспособности
                                     </p>
                                 </div>
                             </div>
                         </div>
-                        <div className="client-6-container3">
+                        <div className="client-6-conteiner2">
                             <div style={{ display: "flex" }}>
-                                <div className="client-6-block5">
+                                <div className="client-6-block1">
                                     <h1>36</h1>
                                     <p>
                                         млн.
@@ -331,7 +353,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                                         руб
                                     </p>
                                 </div>
-                                <div className="client-6-block6">
+                                <div className="client-6-block2">
                                     <p>
                                         затраты
                                         <br />
@@ -348,48 +370,48 @@ const Investors = (props: InvestorsPropsTypes) => {
             <div className="container-client-7">
                 <div className="client-header economic_effect">
                     <h1>
-                        Показатели экономической
-                        <br />
-                        эффективности
+                        Показатели экономической 
+                        <br/>эффективности
                     </h1>
                     <img src={logo} />
                 </div>
                 <div className="container-client-7-content">
                     <img src={ElipseStar2} />
-                    <div className="client-7-content-block1">
+                    <ul className="client-7-content-block1">
                         <li>
-                            Необходимые инвистиции:
-                            <br />
+                            Необходимые инвестиции:
+                            <br/>
                             <span>60 000 000 руб.</span>
                         </li>
                         <br />
                         <li>
-                            Чистая приведенная стоимость (NPV)<span style={{ fontSize: '40px' }}>*</span>
-                            <br />
+                            Чистая приведенная стоимость (NPV)
+                            <span style={{ fontSize: '40px' }}>*</span>
+                            <br/>
                             <span>50 000 000 руб.</span>
                         </li>
                         <br />
                         <li>
-                            внутренняя норма рентабельности
-                            <br />
-                            <span> <span
-                                style={{ marginLeft: 0, color: 'black' }}
-                            >(IRR):</span>73%.</span>
+                            внутренняя норма рентабельности (IRR):
+                            <br/>
+                            <span> 
+                                73%.
+                            </span>
                         </li>
                         <br />
                         <li>
                             период окупаемости:
+                            <br/>
                             <span style={{ margin: 0 }}>38 месяцев.</span>
                         </li>
-                        <br />
                         <li>
-                            Дисконтированный период
-                            <br />
-                            <span> <span
-                                style={{ marginLeft: 0, color: 'black' }}
-                            >окупаемости:</span>41 месяцев.</span>
+                            Дисконтированный период окупаемости:
+                            <br/>
+                            <span>
+                                41 месяцев.
+                            </span>
                         </li>
-                    </div>
+                    </ul>
                     <div className="client-7-content-block2">
                         <p>денежные потоки накоплинным итогом, руб.</p>
                         <img src={schedule} />
@@ -424,9 +446,9 @@ const Investors = (props: InvestorsPropsTypes) => {
                             Connecting» г. Мюнхен
                         </p>
                     </div>
-                    <img src={ElipseMen} className="ellipse2 " />
+                    {/* <img src={ElipseMen} className="ellipse2 " />
 
-                    {/* <div className="client-8-content-block1">
+                    <div className="client-8-content-block1">
                         <div >
                             <img src={men1} className="client-8-content-block1-men" />
                         </div>
@@ -453,7 +475,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <br />
                             Юридическая консалтинговая
                             <br />
-                            компания «Юрконсал  тЪ»
+                            компания «ЮрконсалтЪ»
                         </p>
                     </div>
                 </div>
