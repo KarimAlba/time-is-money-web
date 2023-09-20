@@ -37,37 +37,37 @@ const Investors = (props: InvestorsPropsTypes) => {
         <div className="container-main-Investors">
             <div>
                 <h1>Целевой рынок</h1>
-                <p style={{ marginLeft: '60px' }}>Наши потенциальные клиенты - это:</p>
+                <p style={{ marginLeft: '60px' }}>Наши потенциальные клиенты:</p>
                 <div className="container-clients-investor">
                     <div className="container-client-1">
-                        <li>банки , </li>
-                        <li>нотариусы,</li>
-                        <li>стоматологии,</li>
+                        <li>банки; </li>
+                        <li>нотариусы;</li>
+                        <li>стоматологии;</li>
                         <li>диагностические
                             <br />
-                            центры,
+                            центры;
                         </li>
-                        <li>МФЦ,</li>
+                        <li>Многофункциональный центр "МФЦ";</li>
                         <li>мебельные
                             <br />
-                            &nbsp; &nbsp; магазины,
+                            &nbsp; &nbsp; магазины;
                         </li>
-                        <li>автосалоны,</li>
-                        <li>прокатные конторы,</li>
+                        <li>автосалоны;</li>
+                        <li>прокатные конторы;</li>
                     </div>
                     <div className="container-client-1">
                         <li>
                             страховые
-                            компании ,
+                            компании;
                         </li>
-                        <li> гостиницы,</li>
+                        <li> гостиницы;</li>
                         <li>
                             салоны мобильной
                             <br />
-                            связи,
+                            связи;
                         </li>
-                        <li>частные клиники </li>
-                        <li>риэлторы</li>
+                        <li>частные клиники;</li>
+                        <li>риэлторы.</li>
                         <p>и многие другие,
                             <br />
                             кто ценит свое время
@@ -453,7 +453,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <br />
                             Юридическая консалтинговая
                             <br />
-                            компания «ЮрконсальтЪ»
+                            компания «Юрконсал  тЪ»
                         </p>
                     </div>
                 </div>
