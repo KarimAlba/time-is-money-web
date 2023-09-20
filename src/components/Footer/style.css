@@ -20,6 +20,11 @@
     border-top: 1px solid #00B2F4;
 }
 
+.Footer h4 a{
+    color: black;
+    text-decoration: none;
+}
+
 @media (width <=1600px) {
     .Footer {
         margin-top: 200px;

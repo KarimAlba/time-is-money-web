@@ -268,14 +268,12 @@ body {
     }
 }
 
-@media (width <=1300px) {
+@media (width <= 1300px) {
     .queue {
         width: 615px;
         height: 630px;
         top: 29px;
     }
-
-
 
     .container-Text2 p {
         margin-right: 20px;
@@ -296,7 +294,6 @@ body {
         border: 1px solid #eee;
     }
 
-
     .img3 {
         margin-left: 150px;
     }
@@ -307,7 +304,7 @@ body {
     }
 }
 
-@media (width <=1200px) {
+@media (width <= 1200px) {
     .queue {
         width: 565px;
         top: 35px;
@@ -327,7 +324,7 @@ body {
     }
 }
 
-@media (width <=1100px) {
+@media (width <= 1100px) {
     .queue {
         width: 520px;
         top: 35px;
@@ -336,8 +333,6 @@ body {
     .container-Text {
         margin-left: 340px;
     }
-
-
 
     .container-Text2 {
         padding: 40px 10px;
@@ -363,7 +358,6 @@ body {
         width: 400px
     }
 
-
     .container-Text h5 {
         font-size: 110px;
     }
@@ -377,7 +371,7 @@ body {
     }
 }
 
-@media (width <=1000px) {
+@media (width <= 1000px) {
     .queue {
         width: 485px;
         top: 90px;
@@ -398,9 +392,6 @@ body {
         margin-top: 16%;
     }
 
-
-
-
     .img3 {
         width: 300px;
     }
@@ -418,7 +409,7 @@ body {
     }
 }
 
-@media(width <=980px) {
+@media(width <= 980px) {
     .container-Text {
         margin-left: 355px;
     }
@@ -427,7 +418,6 @@ body {
     .container-Text h5 {
         font-size: 90px;
     }
-
 
     .queue {
         top: 105px;
@@ -448,8 +438,6 @@ body {
         width: 75%;
     }
 
-
-
     .container-block3-info1 {
         margin: 20px 15%;
         width: 85%;
@@ -461,7 +449,7 @@ body {
     }
 }
 
-@media (width <=900px) {
+@media (width <= 900px) {
     .queue {
         top: 230px;
         width: 440px;
@@ -486,7 +474,7 @@ body {
     }
 }
 
-@media (width <=850px) {
+@media (width <= 850px){
     .queue {
         top: 125px;
         width: 413px;
@@ -507,14 +495,13 @@ body {
     }
 }
 
-@media (width <=800px) {
+@media (width <= 800px) {
     .queue {
         width: 390px;
     }
-
 }
 
-@media(width <=780px) {
+@media(width <= 780px) {
     .documents {
         display: flex;
         justify-content: space-around;
@@ -543,7 +530,6 @@ body {
         width: 100%;
     }
 
-
     .container-block2 {
         flex-flow: column;
     }
@@ -565,10 +551,9 @@ body {
         width: 400px;
         margin-left: 24%;
     }
-
 }
 
-@media(width <=600px) {
+@media(width <= 600px) {
     .container-Text {
         margin: auto;
         margin-top: 50px;
@@ -589,16 +574,19 @@ body {
     }
 
     .container-Text2 {
-        margin: 35vh 0px 0px 12%;
-        width: 84%;
-        margin-right: 40px;
+        margin: 35vh 0px 0px 3%;
+        width: 95%;
+        margin-right: 10px;
+
+    }
+
+    .container-Text2 p{
+        margin: 0 15px 0 0px;
     }
 
     .img3 {
         margin: 30px 0 30px 24%;
     }
-
-
 }
 
 @media (width <=480px) {

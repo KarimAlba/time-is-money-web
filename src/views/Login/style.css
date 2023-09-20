@@ -1,6 +1,5 @@
 .ContainerLogin {
     display: flex;
-
 }
 
 .ContainerLogin img {
@@ -38,6 +37,7 @@
     width: 750px;
     margin-right: 15px;
     margin-top: 55px;
+    box-sizing: border-box;
 }
 
 .block-Login1 h3 {

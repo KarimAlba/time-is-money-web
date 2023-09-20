@@ -6,9 +6,11 @@ const Footer = () => {
             <div className="Footer">
                 <div className="span"></div>
                 <h4>
-                    ООО «ТИМ», ОГРН 1235000074990, ИНН 5027317533, e-mail: info@time-money.shop
+                    ООО «ТИМ», ОГРН 1235000074990, ИНН 5027317533, <a href="mailto:info@time-money.shop">e-mail: info@time-money.shop,</a>
                     <br />
-                    тел:8 800 000 00 00
+                    <a href='tel:+78000000000'>
+                        тел:8 800 000 00 00
+                    </a>
                 </h4>
             </div>
         </div>

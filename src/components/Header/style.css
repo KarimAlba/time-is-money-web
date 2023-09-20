@@ -42,15 +42,6 @@
     display: none;
 }
 
-
-
-/* @media(width <=1160px) {
-    .container-img img {
-        margin-left: 290px;
-        width: 80px;
-        height: 80px;
-    }
-} */
 @media (width <= 1600px) {
     .button-container button{
         font-weight: 700;
@@ -68,6 +59,13 @@
         margin-left: 20%;
     }
 }
+
+@media(width <=1150px) {
+    .button-container {
+        right: 20px;
+    }
+}
+
 @media(width <=1000px) {
     .button-container button {
         Width: 95px;
@@ -75,8 +73,14 @@
         height: 33px;
     }
 
+    .container-img{
+        margin-left: 20px;
+    }
+
     .container-img img {
-        display: none;
+        width: 70px;
+        height: 70px;
+        margin-top: 10px;
     }
 }
 
@@ -85,26 +89,6 @@
         Width: 90px;
         font-size: 10px;
         height: 35px;
-    }
-}
-
-/* @media(width <=980px) {
-    .container-img img {
-        display: none;
-    }
-} */
-
-@media(width <=870px) {
-    .container-img img {
-        width: 85px;
-        height: 85px;
-    }
-}
-
-@media(width <=770px) {
-    .container-img img {
-        width: 150px;
-        height: 80px;
     }
 }
 
@@ -161,18 +145,6 @@
 
 }
 
-@media(width <=1150px) {
-    .button-container {
-        right: 20px;
-    }
-}
-
-@media(width <=1170px) {
-    .container-img {
-        margin-left: 2%;
-    }
-}
-
 @media(width <=820px) {
     .button-container {
         right: 10px;
@@ -186,10 +158,6 @@
 }
 
 @media(width <=780px) {
-    .container-img {
-        margin-left: 0%;
-    }
-
     .button-container button {
         cursor: pointer;
         width: 75px;
@@ -197,53 +165,8 @@
         font-size: 9px;
         margin: 6px;
     }
-}
 
-@media(width <=590px) {
-    .container-img {
-        display: none;
-    }
-
-    .button-container {
-        right: 45px;
-    }
-}
-
-@media (width<=550px) {
-    .button-container {
-        right: 25px;
-    }
-
-    .button-container button {
-        width: 70px;
-        font-size: 9px;
-    }
-}
-
-@media(width <=700px) {
-    .button-container {
-        top: -20px;
-    }
-}
-
-@media(width <=770px) {
-    .button-container {
-        right: 10px;
-    }
-}
-
-@media(width <=490px) {
-    .button-container {
-        right: 10px;
-    }
-}
-
-@media(width <=470px) {
-    .container-img {
-        display: block;
-    }
-
-    .container-img img {
+    .container-img{
         display: none;
     }
 
@@ -252,10 +175,9 @@
     }
 
     .header-burger {
-        display: block;
-        position: relative;
-        left: 80%;
+        left: 90%;
         width: 50px;
+        display: block;
     }
 
     .modalBurger {
@@ -272,9 +194,8 @@
     .menuBurger {
         display: flex;
         flex-direction: column;
-        margin-top: 100PX;
-        margin-left: 50PX;
-        z-index: 11;
+        margin-top: 100px;
+        margin-left: 50px;
     }
 
     .menuBurger button {
@@ -289,5 +210,12 @@
         font-family: 'Arial';
         font-size: 14px;
         box-shadow: 8px 10px 5px 2px rgba(105, 105, 106, 0.2)
+    }
+}
+
+@media (width <= 550px) {
+    .header-burger {
+        left: 80%;
+        width: 50px;
     }
 }

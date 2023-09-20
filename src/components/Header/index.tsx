@@ -54,7 +54,17 @@ const Header = (props: HeaderPropsTypes) => {
         <div className="container-header">
             {menuActive
                 ? (<div className="modalBurger">
-                    <img className="header-burger" src={crossBurgerMenu} onClick={() => setMenuActive(false)} />
+                    <img 
+                        className="header-burger" 
+                        src={logo} 
+                        style={{left: '0px'}}
+                    />
+                    <img 
+                        className="header-burger" 
+                        src={crossBurgerMenu} 
+                        onClick={() => setMenuActive(false)}
+                        style={{left: '180px', top: '-50px'}} 
+                    />
                     <div className="menuBurger">
                         <button 
                             onClick={toMain}
@@ -103,7 +113,10 @@ const Header = (props: HeaderPropsTypes) => {
                         </button>
                     </div>
                 </div>)
-                : <img className="header-burger" src={burger} onClick={() => setMenuActive(true)} />
+                : <img 
+                    className="header-burger" 
+                    src={burger} onClick={() => setMenuActive(true)} 
+                />
             }
 
             <div className="container-img">
