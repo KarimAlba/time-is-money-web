@@ -88,14 +88,10 @@ button {
 }
 
 .modalChooseService {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  pointer-events: auto; */
   border-radius: 5px;
-  margin-left: 550px;
+  margin: auto;
   width: 750px;
-  height: 270px;
+  height: auto;
   background-color: white;
 }
 
@@ -141,7 +137,7 @@ button {
   display: block;
   outline: none;
   width: 80%;
-  height: calc(3.5rem + 2px);
+  height: calc(2.5rem + -12px);
   background: transparent;
   padding-left: 14px;
   padding-top: 20px;
@@ -282,7 +278,7 @@ button {
   }
 
   .animate-label input[id="id_email"] {
-    height: calc(4.5rem + 2px);
+    height: calc(2.5rem + 2px);
   }
 }
 
