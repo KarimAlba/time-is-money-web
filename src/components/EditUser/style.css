@@ -41,7 +41,7 @@
     display: block;
     outline: none;
     width: 250px;
-    height: calc(3.5rem + -8px);
+    height: calc(2.5rem + -12px);
     background: transparent;
     font-size: 15px;
     border: 1px solid #ffffff;
