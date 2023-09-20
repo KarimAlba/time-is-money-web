@@ -281,7 +281,7 @@ const Entity = () => {
                     onInput={handleConfirmPasswordChange}
                 />
                 <label htmlFor="confirmation-pass">
-                    подтвердите пароль
+                    Подтвердите пароль
                 </label>
 
             </div>

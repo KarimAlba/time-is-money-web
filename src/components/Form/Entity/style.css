@@ -32,7 +32,7 @@
     display: block;
     outline: none;
     width: 60%;
-    height: calc(3.5rem + -8px);
+    height: calc(2.5rem + -12px);
     background: transparent;
     font-size: 15px;
     border: 1px solid #ffffff;
@@ -58,7 +58,7 @@
     display: block;
     position: absolute;
     left: 70px;
-    top: 38px;
+    top: 45px;
     text-align: left;
     font-size: 17px;
     color: #000;
@@ -67,56 +67,56 @@
 }
 
 .legal-entiti-block1 label[for="legal-address"] {
-    top: 105px;
-    left: 135px;
+    top: 125px;
+    left: 130px;
 }
 
 .legal-entiti-block1 label[for="inn"] {
     left: 257px;
-    top: 170px;
+    top: 200px;
 }
 
 .legal-entiti-block1 label[for="checkpoint"] {
-    top: 235px;
+    top: 273px;
     left: 257px;
 }
 
 .legal-entiti-block1 label[for="surname"] {
-    top: 300px;
-    left: -6px;
+    top: 347px;
+    left: -3px;
 }
 
 .legal-entiti-block1 label[for="name"] {
-    top: 368px;
-    left: 257px;
+    top: 420px;
+    left: 260px;
 }
 
 .legal-entiti-block1 label[for="patronymic"] {
-    top: 435px;
+    top: 495px;
     left: 220px;
 }
 
 .legal-entiti-block1 label[for="email"] {
-    top: 500px;
-    left: 245px;
+    top: 567px;
+    left: 248px;
 }
 
 .legal-entiti-block1 label[for="confirmation-email"] {
     left: 139px;
-    top: 563px;
+    top: 640px;
 }
 
 .legal-entiti-block1 label[for="pass"] {
-    top: 630px;
+    top: 714px;
     left: 160px;
 }
 
 .legal-entiti-block1 label[for="confirmation-pass"] {
-    top: 695px;
-    left: 130px;
+    top: 787px;
+    left: 136px;
 }
 
-.reg-btn{
+.reg-btn {
     width: 200px;
     font-size: 18px;
     margin-top: 25px;
@@ -280,19 +280,20 @@
         left: 15px;
     }
 
-    .reg-btn{
+    .reg-btn {
         margin-left: 200px;
     }
 }
 
 @media (width <=580px) {
- .form-login{
-    left: 7%;
-    top: 41px;
- }
+    .form-login {
+        left: 7%;
+        top: 41px;
+    }
 }
-@media (width <= 500px) {
-    .form-login{
+
+@media (width <=500px) {
+    .form-login {
         left: 3%;
         top: 55px;
 
@@ -322,65 +323,65 @@
         margin-top: 50px;
     }
 
-    .reg-btn{
+    .reg-btn {
         margin-left: 60px;
     }
 
     .legal-entiti-block1 label[for="name-of-company"] {
         /* width: 218px; */
-        top: 0px;
-        left: 30px;
+        top: -5px;
+        left: 27px;
     }
 
     .legal-entiti-block1 label[for="legal-address"] {
-        top: 120px;
-        left: 30px;
+        top: 116px;
+        left: 27px;
     }
 
     .legal-entiti-block1 label[for="inn"] {
-        left: 30px;
-        top: 220px;
+        left: 27px;
+        top: 210px;
     }
 
     .legal-entiti-block1 label[for="checkpoint"] {
-        left: 30px;
-        top: 320px;
+        left: 27px;
+        top: 302px;
     }
 
     .legal-entiti-block1 label[for="name"] {
-        left: 30px;
-        top: 515px;
+        left: 27px;
+        top: 482px;
     }
 
     .legal-entiti-block1 label[for="surname"] {
         width: 218px;
-        top: 392px;
-        left: 30px;
+        top: 360px;
+        left: 27px;
     }
 
     .legal-entiti-block1 label[for="patronymic"] {
-        left: 30px;
-        top: 610px;
+        left: 27px;
+        top: 572px;    
     }
 
     .legal-entiti-block1 label[for="email"] {
-        left: 30px;
-        top: 710px;
+        left: 27px;
+        top: 662px;
     }
 
     .legal-entiti-block1 label[for="confirmation-email"] {
-        left: 30px;
-        top: 810px;
+        left: 26px;
+        top: 750px;
     }
 
     .legal-entiti-block1 label[for="pass"] {
-        left: 30px;
-        top: 910px;
+        left: 27px;
+        top: 842px;
     }
 
     .legal-entiti-block1 label[for="confirmation-pass"] {
-        left: 30px;
-        top: 1005px;
+        left: 27px;
+        top: 931px;
     }
 
 }

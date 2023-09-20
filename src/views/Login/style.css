@@ -172,7 +172,7 @@ textarea:valid+label {
 
 .modal-choice-registration {
     width: 310px;
-    height: 100px;
+    height: 125px;
     background-color: white;
     border-color: #515151;
     border: 1px solid #515151;
@@ -183,6 +183,7 @@ textarea:valid+label {
 .modal-choice-registration p {
     text-align: center;
     margin-top: 0;
+    font-size: 23px;
 }
 
 .modal-choice-registration span {

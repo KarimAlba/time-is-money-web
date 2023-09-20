@@ -28,7 +28,7 @@
     display: block;
     outline: none;
     width: 60%;
-    height: calc(3.5rem + -8px);
+    height: calc(2.5rem + -12px);
     background: transparent;
     font-size: 15px;
     border: 1px solid #ffffff;
@@ -51,7 +51,7 @@
     display: block;
     position: absolute;
     left: 172px;
-    top: 38px;
+    top: 50px;
     text-align: left;
     font-size: 17px;
     color: #000;
@@ -62,31 +62,31 @@
 
 .physical-pesrson-block1 label[for="name"] {
     left: 210px;
-    top: 100px;
+    top: 120px;
 }
 
 .physical-pesrson-block1 label[for="patronymic"] {
     left: 170px;
-    top: 170px;
+    top: 195px;
 }
 
 .physical-pesrson-block1 label[for="email"] {
     left: 193px;
-    top: 239px;
+    top: 270px;
 }
 
 .physical-pesrson-block1 label[for="confirmation-email"] {
     left: 87px;
-    top: 300px;
+    top: 340px;
 }
 
 .physical-pesrson-block1 label[for="pass"] {
     left: 110px;
-    top: 362px;
+    top: 415px;
 }
 
 .physical-pesrson-block1 label[for="confirmation-pass"] {
-    top: 430px;
+    top: 485px;
     left: 82px;
 }
 
@@ -216,7 +216,7 @@
 
     .physical-pesrson-block1 label[for="patronymic"] {
         left: 30px;
-        top: 176px;
+        top: 155px;
     }
 
     .physical-pesrson-block1 label[for="confirmation-email"],
@@ -227,27 +227,27 @@
 
     .physical-pesrson-block1 label[for="name"] {
         left: 30px;
-        top: 93px;
+        top: 80px;
     }
 
     .physical-pesrson-block1 label[for="email"] {
         left: 30px;
-        top: 257px
+        top: 228px
     }
 
     .physical-pesrson-block1 label[for="confirmation-email"] {
         left: 30px;
-        top: 340px;
+        top: 305px;
     }
 
     .physical-pesrson-block1 label[for="pass"] {
         left: 30px;
-        top: 427px;
+        top: 380px;
     }
 
     .physical-pesrson-block1 label[for="confirmation-pass"] {
         left: 30px;
-        top: 505px;
+        top: 455px;
     }
 
     .reg-btn{
