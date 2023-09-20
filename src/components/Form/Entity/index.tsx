@@ -27,7 +27,7 @@ const Entity = () => {
     const navigate = useNavigate();
 
     const isEmailValid = (email: string) => {
-        const emailRegex = /\w+@\w+\.\w+/;
+        const emailRegex = /@../;
         return emailRegex.test(email);
     };
 
