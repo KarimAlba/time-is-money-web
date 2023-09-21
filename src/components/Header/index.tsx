@@ -119,9 +119,13 @@ const Header = (props: HeaderPropsTypes) => {
                 />
             }
 
-            <div className="container-img">
-                <img src={logo} />
-            </div>
+            {currentBtn === 'Вход'
+                ? null
+                : (<div className="container-img">
+                    <img src={logo}/>
+                </div>)
+
+            }
             <div className="button-container">
                 <button 
                     onClick={toMain}
