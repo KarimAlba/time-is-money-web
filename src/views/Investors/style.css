@@ -23,7 +23,7 @@ body {
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
 }
 
-li{
+li {
     margin: 10px;
 }
 
@@ -41,14 +41,14 @@ li::marker {
     background-repeat: no-repeat;
 }
 
-.statistic-result{
+.statistic-result {
     position: absolute;
     top: -50px;
     left: 0;
     margin-left: 91px;
 }
 
-.statistic-result h2{
+.statistic-result h2 {
     font-size: 50px;
     color: #00B2F4;
 }
@@ -137,7 +137,7 @@ li::marker {
     font-size: 20px
 }
 
-.client3-condition{
+.client3-condition {
     margin: 20px 0 0 60px;
 }
 
@@ -178,7 +178,7 @@ li::marker {
 }
 
 .client-4-footer-container {
-    margin:30px 0 0 20px;
+    margin: 30px 0 0 20px;
     width: 250px;
     min-height: 130px;
     border: 1px solid #eee;
@@ -214,13 +214,14 @@ li::marker {
 .container-client-5-icon p {
     margin: 0;
     color: #00B2F4;
-    cursor :pointer;
+    cursor: pointer;
 }
-.content-block{
+
+.content-block {
     margin: 0 auto;
 }
 
-.difference{
+.difference {
     margin: 5px;
     display: flex;
 }
@@ -251,7 +252,7 @@ li::marker {
 }
 
 .client-5-content-container img {
-    margin-top:10px;
+    margin-top: 10px;
     height: 20px;
 }
 
@@ -259,7 +260,7 @@ li::marker {
     margin-top: 200px;
 }
 
-.client-6-conteiner1{
+.client-6-conteiner1 {
     position: relative;
     margin: 30px 0 0 60px;
     width: 500px;
@@ -312,12 +313,11 @@ li::marker {
 }
 
 .client-6-conteiner1 h1,
-.client-6-conteiner2 h1{
+.client-6-conteiner2 h1 {
     margin: 45px 0 0 5px;
 }
 
-.client-6-conteiner1 p
-.client-6-conteiner2 p {
+.client-6-conteiner1 p .client-6-conteiner2 p {
     margin: 20px 15px 0 15px;
 }
 
@@ -335,7 +335,7 @@ li::marker {
 .container-client-7-content img {
     height: 55px;
     position: relative;
-    left: 500px;
+    left: 39%;
     top: 41px;
 }
 
@@ -419,7 +419,7 @@ li::marker {
 }
 
 @media (width <=1600px) {
-    .quantity-clients p{
+    .quantity-clients p {
         font-size: 22px;
     }
 
@@ -436,7 +436,7 @@ li::marker {
     }
 
     li,
-    .container-client-1 p{
+    .container-client-1 p {
         font-size: 20px;
     }
 
@@ -449,7 +449,7 @@ li::marker {
     }
 
     .container-client-7-content img {
-        margin-left: -34px;
+        margin-left: -3%;
     }
 
     .container-client-5-icon {
@@ -460,7 +460,7 @@ li::marker {
         margin-right: 30px;
     }
 
-    .client-6-conteiner2{
+    .client-6-conteiner2 {
         margin: 30px 0 0 10px;
     }
 
@@ -470,13 +470,13 @@ li::marker {
     }
 
     .client-6-conteiner1 h1,
-    .client-6-conteiner2 h1{
+    .client-6-conteiner2 h1 {
         margin: 45px 0 0 0;
         font-size: 65px;
     }
 
     .client-6-conteiner1 p,
-    .client-6-conteiner2 p{
+    .client-6-conteiner2 p {
         margin: 30px 0 0 0;
         font-size: 20px;
     }
@@ -497,12 +497,12 @@ li::marker {
     }
 
     .container-client-7-content img {
-        left: 420px;
+        left: 42%;
     }
 }
 
 @media(width <=910px) {
-    .container-clients-investor{
+    .container-clients-investor {
         display: flex;
         flex-flow: row wrap;
     }
@@ -512,7 +512,7 @@ li::marker {
         max-width: 55%;
     }
 
-    .quantity-clients{
+    .quantity-clients {
         margin: 90px auto 0 auto;
     }
 
@@ -599,9 +599,9 @@ li::marker {
         margin-right: 47px;
     }
 
-    .client-5-content-container p {
+    /* .client-5-content-container p {
         font-size: 17px;
-    }
+    } */
 
     .client-7-content-block2 img {
         height: 390px;
@@ -656,7 +656,7 @@ li::marker {
         margin-left: 41px;
     }
 
-    
+
     .container-client-6-footer {
         flex-direction: column;
     }
@@ -698,12 +698,12 @@ li::marker {
 }
 
 @media(width <=600px) {
-    .container-main-Investors{
+    .container-main-Investors {
         margin-top: 120px;
         padding: 0;
     }
 
-    .container-clients-investor{
+    .container-clients-investor {
         margin: 0;
         padding: 0;
     }
@@ -713,7 +713,7 @@ li::marker {
         width: 95%;
     }
 
-    li{
+    li {
         font-size: 22px;
     }
 
@@ -754,10 +754,10 @@ li::marker {
 
 @media (width <=550px) {
     .business-model {
-        margin:10px auto;
+        margin: 10px auto;
         width: 95%;
     }
-    
+
     .business-model img {
         left: 85%;
         height: 70px;
@@ -780,25 +780,25 @@ li::marker {
         margin-left: 8px;
     }
 
-    .client-6-conteiner1{
+    .client-6-conteiner1 {
         position: relative;
         width: 350px;
-        padding:0 0 0 10px;
+        padding: 0 0 0 10px;
         margin: 10px
     }
-    
+
     .client-6-conteiner1 img {
         display: none;
-    }    
-         
+    }
+
     .client-6-conteiner2 {
         margin: 10px 0 0 -50px;
         width: 300px;
         padding: 10px;
-    } 
-    
+    }
+
     .client-6-conteiner1 h1,
-    .client-6-conteiner2 h1{
+    .client-6-conteiner2 h1 {
         margin-left: -10px;
     }
 
@@ -846,7 +846,8 @@ li::marker {
         flex-flow: column;
 
     }
-    .ellipse2{
+
+    .ellipse2 {
         display: none;
     }
 
@@ -870,25 +871,48 @@ li::marker {
         margin-left: 80px;
     }
 }
-@media (width <=390px) {
-    .container-client-8{
-        margin-left: 0px;
-    }
 
-    .client-7-content-block2 img{
-        margin-left: -13px;
+@media (width<=450px) {
+    .business-model {
+        margin: 10px auto;
+        margin-left: 10px;
+        width: 89%; 
     }
-
-    .client-7-content-block1{
-        margin-left: -15px;
+    .container-main-Investors h1{
+        margin-left: 10px;
+        font-size: 36px;
     }
-
-    .client-7-content-block2-textBootom{
-        margin-left: -20px;
+    .client-6-block1 h1{
+        font-size: 55px;
     }
-
-    .container-client-8-content{
-        margin-left: -60px;
+    .container-client-2{
+        margin: 50px 0 0 0px;
+    }
+    .business-model img{
+        left: 90%;
+        height: 60px;
+        top: -73px;
     }
 }
 
+@media (width <=390px) {
+    .container-client-8 {
+        margin-left: 0px;
+    }
+
+    .client-7-content-block2 img {
+        margin-left: -13px;
+    }
+
+    .client-7-content-block1 {
+        margin-left: -15px;
+    }
+
+    .client-7-content-block2-textBootom {
+        margin-left: -20px;
+    }
+
+    .container-client-8-content {
+        margin-left: -60px;
+    }
+}
