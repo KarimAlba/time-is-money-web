@@ -123,6 +123,10 @@ a {
     .person-info{
         width: 325px;
     }
+    .download-button{
+        width: 235px;
+        height: 45px;
+    }
 }
 @media (width <=980px) {
     .person-info {
