@@ -65,13 +65,15 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <br />
                             связи;
                         </li>
-                        <li>частные клиники;</li>
-                        <li>и риэлторы.</li>
-                        <p>и многие другие,
+                        <li>частные клиники.</li>
+                        {/* <li>и риэлторы.</li> */}
+                        <p> и риелторы ...
+                            <br />
+                            и многие другие,
                             <br />
                             кто ценит свое время
                             <br />
-                            и время своих клиентов
+                            и время своих клиентов.
                         </p>
                     </ul>
                     <div className="quantity-clients">
@@ -79,11 +81,11 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <img src={Elipsestar} />
                             <h2>200 000</h2>
                         </div>
-                        <p> 
+                        <p>
                             свыше
-                            <br/>
+                            <br />
                             наших потенциальных
-                            <br/>
+                            <br />
                             клиентов в одной только
                             <br />
                             Москве и Московской области
@@ -96,7 +98,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                     <div className="business-model">
                         <img src={ElipseStar2} />
                         <p>Распространение плагина через сайт
-                            <br/>
+                            <br />
                             по подписке 1000 руб.месяц.<span>*</span>
                         </p>
                         <button onClick={toLogin}>time-money.shop.ru</button>
@@ -218,7 +220,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             <img src={MyDocuments} />
                             <div>
                                 <p onClick={toApplication}>мобильное приложение</p>
-                                <h3 style={{ marginTop: 0}}>«Документы»</h3>
+                                <h3 style={{ marginTop: 0 }}>«Документы»</h3>
                             </div>
                         </div>
                         <div className="client-5-content-container">
@@ -257,13 +259,13 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </div>
                         <div className="client-5-content-container">
                             <div className='difference'>
-                                <img src={plus}/>
+                                <img src={plus} />
                                 <p>
                                     удобный интерфейс,
                                 </p>
                             </div>
                             <div className='difference'>
-                                <img src={plus}/>
+                                <img src={plus} />
                                 <p>
                                     широкий перечень хранимых
                                     <br />
@@ -277,7 +279,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                                 </p>
                             </div>
                             <div className='difference'>
-                                <img src={plus}/>
+                                <img src={plus} />
                                 <p>
                                     отсутствие
                                     <br />
@@ -370,8 +372,8 @@ const Investors = (props: InvestorsPropsTypes) => {
             <div className="container-client-7">
                 <div className="client-header economic_effect">
                     <h1>
-                        Показатели экономической 
-                        <br/>эффективности
+                        Показатели экономической
+                        <br />эффективности
                     </h1>
                     <img src={logo} />
                 </div>
@@ -380,33 +382,33 @@ const Investors = (props: InvestorsPropsTypes) => {
                     <ul className="client-7-content-block1">
                         <li>
                             Необходимые инвестиции:
-                            <br/>
+                            <br />
                             <span>60 000 000 руб.</span>
                         </li>
                         <br />
                         <li>
                             Чистая приведенная стоимость (NPV)
                             <span style={{ fontSize: '40px' }}>*</span>
-                            <br/>
+                            <br />
                             <span>50 000 000 руб.</span>
                         </li>
                         <br />
                         <li>
                             внутренняя норма рентабельности (IRR):
-                            <br/>
-                            <span> 
+                            <br />
+                            <span>
                                 73%.
                             </span>
                         </li>
                         <br />
                         <li>
                             период окупаемости:
-                            <br/>
+                            <br />
                             <span style={{ margin: 0 }}>38 месяцев.</span>
                         </li>
                         <li>
                             Дисконтированный период окупаемости:
-                            <br/>
+                            <br />
                             <span>
                                 41 месяцев.
                             </span>

@@ -1,5 +1,5 @@
 .edit-user {
-    margin-top: 20px;
+    margin-top: 100px;
     margin-left: 500px;
     width: 600px;
     padding: 0.7rem 1.5rem 35px;
@@ -40,7 +40,7 @@
 .edit-user_data input {
     display: block;
     outline: none;
-    width: 250px;
+    width: 300px;
     height: calc(2.5rem + -12px);
     background: transparent;
     font-size: 15px;

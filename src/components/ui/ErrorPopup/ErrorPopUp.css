@@ -7,21 +7,24 @@
   flex-flow: column;
   text-align: left;
   background-color: white;
-  color: #0188b9;;
+  color: #0188b9;
   padding: 10px;
   border-radius: 8px 0 0 0;
   border: 2px solid #00b2f4;
   transform: translateY(100%);
   transition: transform 0.5s ease-in-out;
 }
-  
+
 .error-popup.show {
   transform: translateY(0);
+  overflow-y: scroll;
+  max-height: 300px;
 }
 
 .error-popup p {
   margin: 10px;
   width: 80%;
+  font-size: 23px;
 }
 
 .close-btn {
@@ -45,4 +48,3 @@
 .close-btn:hover {
   background-color: #0188b9;
 }
-  

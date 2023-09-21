@@ -111,7 +111,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         <div className="person-info_title">
                             <p>{title}</p>
                             <span>{email}</span>
-                            <Link to='edit-user'>Редактировать данные</Link>
+                            <Link onClick={() => setMenuActive(false)}  to='edit-user'>Редактировать данные</Link>
                         </div>
                         <div className="person-info_statistic">
                             <div className="statistic_point">
