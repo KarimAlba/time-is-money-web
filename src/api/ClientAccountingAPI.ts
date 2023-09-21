@@ -3,7 +3,11 @@ import axiosConfig from "./axiosConfig";
 
 class ClientAccountAPI{
     public static getClientData(): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.get('/user');
+        return axiosConfig.get('/api/main/user');
+    }
+
+    public static passwordRecovery(email: string): Promise<AxiosResponse<any | any>> {
+        return axiosConfig.post(`/api/main/user/password-recovery?email=${email}`);
     }
 }
 

@@ -3,13 +3,16 @@ import './App.css';
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
 import Preloader from './components/ui/Preloader';
 import { lazy, Suspense } from 'react';
+import Login from './views/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import PhysicalPerson from './components/Form/PhysicalPerson';
 import Entity from './components/Form/Entity';
 import EditUser from './components/EditUser';
 import UserPlugin from './components/UserPlugin';
-import Login from './views/Login';
+import SuccessPopup from "./components/ui/SuccessPopup";
+import ErrorPopup from "./components/ui/ErrorPopup/ErrorPopUp";
+import ClientAccountAPI from './api/ClientAccountingAPI';
 
 const MainPage = lazy(() => import("./views/MainPage"));
 const Application = lazy(() => import("./views/Application"));
@@ -23,6 +26,10 @@ function Layout() {
   const [isOpenFooter, setIsOpenFooter] = useState<boolean>(true);
   const [isOpenPlugin, setIsOpenPlugin] = useState<boolean>(false);
   const [currentBtn, setCurrentBtn] = useState<string>('Главная');
+  const [email, setEmail] = useState<string>('');
+  const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string>("");
+  const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
   const handlePasswordChange = () => setModalVisible(true);
 
@@ -33,6 +40,36 @@ function Layout() {
   const handleOpenPlugin = (value: boolean) => setIsOpenPlugin(value);
 
   const handleCurrentBtnChange = (value: string) => setCurrentBtn(value); 
+
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value);
+
+  const sendReq = () => {
+    ClientAccountAPI.passwordRecovery(email)
+      .then(response => {
+        setIsErrorPopupVisible(false);
+        setIsSuccessPopupVisible(true);
+      })
+      .catch(error => {
+        setErrorMessage(error.response.data.message);
+        setIsErrorPopupVisible(true);
+      });
+  }
+
+  const isEmailValid = () => {
+    const emailRegex = /@../;
+    return emailRegex.test(email);
+  };
+
+  const handleSendBtnClick = () => {
+    if (isEmailValid()) {
+      setModalVisible(false);
+      sendReq();
+    } else {
+      setErrorMessage("Некорректный email");
+      setIsErrorPopupVisible(true);
+      setIsSuccessPopupVisible(false);
+    }
+  }
 
   return (
     <>
@@ -116,7 +153,9 @@ function Layout() {
                 <input
                   type='text'
                   id='id_email'
-                  required />
+                  onInput={handleEmailChange}
+                  required 
+                />
                 <label
                   htmlFor="id_email">
                   Введите email, указаный при регистрации:
@@ -125,7 +164,8 @@ function Layout() {
               <div className='modalFuter'>
                 <button
                   className='buttonHide'
-                  onClick={() => setModalVisible(false)}>
+                  onClick={handleSendBtnClick}
+                >
                   Отправить
                 </button>
               </div>
@@ -134,7 +174,19 @@ function Layout() {
           </div>
         ) : null
       }
-
+      {isErrorPopupVisible && (
+        <ErrorPopup 
+          error={errorMessage} 
+          onClose={() => setIsErrorPopupVisible(false)}
+        />
+      )}
+      {isSuccessPopupVisible
+        ? <SuccessPopup 
+          message={'Успешно'} 
+          onClose={() => setIsSuccessPopupVisible(false)} 
+        />
+        : null
+      }
 
     </>
   )

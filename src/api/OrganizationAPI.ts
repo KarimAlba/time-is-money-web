@@ -5,11 +5,11 @@ import IOrganizationRequest from "../models/request/IOrganizationRequest";
 
 class OrganizationAPI{
     public static registration(body: IOrganizationRequest): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.post("/organization/registration/", {...body});
+        return axiosConfig.post("/api/main/organization/registration/", {...body});
     }
 
     public static edit(body: IEditOrganizRequest): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.patch("/organization", {...body});
+        return axiosConfig.patch("/api/main/organization", {...body});
     }
 }
 

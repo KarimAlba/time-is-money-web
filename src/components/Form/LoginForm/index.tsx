@@ -16,7 +16,6 @@ interface ModalRegisterPropsTypes {
 }
 
 function ModalRegister(props: ModalRegisterPropsTypes) {
-
     const location = useLocation();
     const navigate = useNavigate();
     const toPhysicalPerson = () => navigate('physicalPerson');

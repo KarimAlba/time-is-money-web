@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'http://89.108.70.120/api/main';
+const baseUrl = 'http://89.108.70.120';
 
 axios.defaults.baseURL = baseUrl;
 
