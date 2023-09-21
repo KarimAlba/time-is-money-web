@@ -53,25 +53,75 @@
     margin-top: 18px;
 }
 
+@media (width<=1600px) {
+    .edit-user {
+        margin-top: 120px;
+        width: 700px;
+        margin-left: 620px;
+    }
+
+    .edit-user h5 {
+        font-size: 25px;
+    }
+}
+
+@media (width <=1400px) {
+    .edit-user {
+        margin-top: 120px;
+        width: 686px;
+        margin-left: 525px;
+    }
+}
+
+@media (width <=1300px) {
+    .edit-user {
+        margin-left: 465px;
+    }
+}
+
+@media (width <=1200px) {
+    .edit-user {
+        margin-left: 416px;
+    }
+}
+
 @media (width <=1100px) {
     .edit-user {
-        margin-left: 382px;
-        width: 520px;
+        margin-left: 390px;
+        margin-top: 110px;
+        width: 600px;
+
+    }
+
+    .edit-user_data input {
+        height: calc(2.5rem + 5px);
+    }
+}
+
+@media (width <=1000px) {
+    .edit-user {
+        margin-left: 341px;
+        margin-top: 110px;
+        width: 582px;
+    }
+
+    .edit-user h5 {
+        font-size: 19px;
     }
 }
 
 @media (width <=980px) {
     .edit-user {
-        margin-left: 390px;
-        width: 450px;
+        margin-left: 316px;
+        width: 582px;
         margin-top: 110px;
     }
 }
 
 @media (width <=900px) {
     .edit-user {
-        margin-left: 337px;
-        width: 400px;
+        margin-left: 400px;
+        width: 345px;
         margin-top: 100px;
         flex-direction: initial;
         text-align: start;
@@ -83,24 +133,41 @@
 
     .edit-user h5 {
         margin-bottom: 0;
-        margin-left: 30px;
+        margin-left: 16px;
     }
 
     .access-btn {
         margin-left: 40px;
     }
+
+    .edit-user_data input {
+        height: calc(3.5rem + -12px);
+        ;
+    }
 }
 
-@media (width <=650PX) {
+@media (width<=800px) {
     .edit-user {
-        margin-left: 60px;
+        margin-left: 357px;
+    }
+}
+
+@media (width<=740px) {
+    .edit-user {
+        margin-left: 318px;
+    }
+}
+
+@media (width <=650px) {
+    .edit-user {
+        margin-left: 95px;
     }
 }
 
 @media (width <=570px) {
     .edit-user {
-        margin-left: 50px;
-        width: 295px;
+        margin-left: 70px;
+        width: 320px;
     }
 }
 
@@ -112,8 +179,8 @@
     }
 
     .edit-user {
-        margin-left: 12px;
-        width: 300px;
+        margin-left: 41px;
+        width: 285px;
         margin-top: 20px;
         padding: 0.7rem 1.5rem 35px;
         display: flex;
@@ -132,5 +199,18 @@
     .edit-user_data {
         flex-direction: column;
         width: 300px;
+    }
+}
+
+@media (width <=400px) {
+    .edit-user {
+        margin-left: 25px;
+    }
+}
+
+@media (width <=350px) {
+    .edit-user {
+        margin-left: 15px;
+        width: 268px;
     }
 }
