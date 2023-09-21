@@ -130,7 +130,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                         required
                         onInput={handleEmailChange}
                     />
-                    <label htmlFor="id_email">e-mail:</label>
+                    <label htmlFor="id_email">e-mail</label>
 
                     <input
                         type='password'
@@ -142,7 +142,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                         required
                         onInput={handlePasswordChange}
                     />
-                    <label htmlFor="pass">пароль:</label>
+                    <label htmlFor="pass">пароль</label>
                 </div>
 
                 <button onClick={handleComeClick}>ВОЙТИ</button>

@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     color: #00b2f4;
-    font-size: 20px;
+    font-size: 23px;
     cursor: pointer;
 
 }
@@ -54,14 +54,16 @@
 .block-Login1 button {
     cursor: pointer;
     width: 200px;
-    font-size: 18px;
+    font-size: 23px;
     margin-top: 25px;
-    margin-left: 275px;
+    /* margin-left: 35%; */
+    margin-left: auto;
+    margin-right: auto;
     border: 0;
     height: 36px;
     background-color: #00b2f4;
     color: #eee;
-    border-radius: 16px;
+    border-radius: 13px;
 }
 
 .block-Login1 span {
@@ -69,7 +71,7 @@
     text-decoration: none;
     background-color: transparent;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 23px;
 }
 
 .animateContainer {
@@ -89,7 +91,9 @@
     text-transform: initial;
     box-sizing: border-box;
     background-color: rgb(217, 249, 255);
-    margin-left: 195px;
+    /* margin-left: 195px; */
+    margin-left: auto;
+    margin-right: auto;
     margin-top: 18px;
 }
 
@@ -98,18 +102,17 @@
     cursor: text;
     display: block;
     position: absolute;
-    left: 120px;
-    top: 25px;
+    left: auto;
+    top: 35px;
     text-align: left;
-    font-size: 17px;
+    /* font-size: 17px; */
     color: #000;
     -webkit-transition: .2s;
     transition: .2s;
 }
 
 .animateContainer label[for="pass"] {
-    top: 95px;
-    left: 112px;
+    top: 105px;
 }
 
 .animateContainer input[id="id_email"]:valid+label[for="id_email"],
@@ -132,7 +135,7 @@
 
 .animateContainer input[id="pass"]:valid+label[for="pass"],
 .animateContainer input[id="pass"]:focus+label[for="pass"] {
-    top: 95px;
+    top: 85px;
     font-size: 17px;
     /* color: #b6b8bf; */
 }
@@ -201,29 +204,23 @@ textarea:valid+label {
 
 @media (width <=1360px) {
     .block-Login1 {
-        width: 550px;
+        width: 610px;
+        /* margin-left: 100px; */
     }
 
     .form-login {
         left: 33%;
     }
 
-    .block-Login1 button {
-        margin-left: 175px;
-    }
 
     .animateContainer input[id="id_email"],
     .animateContainer input[id="pass"] {
-        margin-left: 140px;
+        /* margin-left: 140px; */
+        width: 60%;
     }
 
-    .animateContainer label[for="id_email"] {
-        left: 80px;
-    }
 
-    .animateContainer label[for="pass"] {
-        left: 70px;
-    }
+
 
     .ContainerLogin img {
         height: 64vh;
@@ -231,6 +228,10 @@ textarea:valid+label {
         display: none;
         left: 30px;
     }
+
+    /* .form-login span {
+        margin-left: 150px;
+    } */
 
 }
 
@@ -243,33 +244,48 @@ textarea:valid+label {
 @media (width <=1040px) {
 
     .block-Login1 {
-        width: 450px;
+        width: 540px;
+        /* margin-left: 40px; */
     }
 
-    .animateContainer input[id="id_email"],
-    .animateContainer input[id="pass"] {
-        margin-left: 110px;
-    }
 
-    .animateContainer label[for="id_email"] {
-        left: 55px;
-    }
-
-    .animateContainer label[for="pass"] {
-        left: 45px;
-    }
 
     .block-Login1 button {
         margin-left: 125px;
     }
+
+    /* .form-login span {
+        margin-left: 35px;
+    } */
+
+
 }
 
 @media (width <=1000px) {
     .ContainerLogin img {
         display: none;
     }
+
+    .block-Login1 {
+        margin-top: 130px;
+    }
+
+    /* .form-login span {
+        margin-left: 60px;
+    } */
 }
 
+@media (width <=980px) {
+    .block-Login1 {
+        margin-top: 0;
+        /* margin-left: 170px; */
+    }
+
+    /* .form-login span {
+        margin-left: 175px;
+    } */
+
+}
 
 @media (width <=860px) {
     .form-login {
@@ -289,8 +305,37 @@ textarea:valid+label {
     .form-login {
         left: 10%;
     }
+
+    .block-Login1 {
+        margin-top: 20px;
+        /* margin-left: 100px; */
+    }
+
+    /* .form-login span {
+        margin-left: 110px;
+    } */
+
 }
 
+@media (width <=700px) {
+    .block-Login1 {
+        width: 520px;
+    }
+
+    .animateContainer input[id="id_email"],
+    .animateContainer input[id="pass"] {
+        width: 65%;
+    }
+
+    .animateContainer label[for="id_email"],
+    .animateContainer label[for="pass"] {
+        left: -20px;
+    }
+
+    .block-Login1 h3 {
+        margin-left: 40px;
+    }
+}
 
 @media (width <=650px) {
     .form-login {
@@ -305,25 +350,31 @@ textarea:valid+label {
     }
 
     .block-Login1 {
-        width: 350px;
+        width: 470px;
     }
 
     .block-Login1 button {
-        margin-left: 70px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .animateContainer input[id="id_email"],
     .animateContainer input[id="pass"] {
-        margin-left: 66px;
+        margin-left: auto;
+        margin-right: auto;
         width: 60%;
     }
 
-    .animateContainer label[for="id_email"] {
-        left: 12px;
-    }
 
-    .animateContainer label[for="pass"] {
-        left: 2px;
+
+
+
+    /* .form-login span {
+        margin-left: 17px;
+    } */
+
+    .block-Login1 h3 {
+        margin-left: 0;
     }
 }
 
@@ -352,39 +403,44 @@ textarea:valid+label {
     }
 
     .block-Login1 {
-        width: 300px;
+        width: 370px;
         margin-left: auto;
         margin-right: auto;
     }
 
     .block-Login1 button {
-        margin-left: 50px;
+        width: 60%;
     }
+
+    /* .form-login span{
+        margin-left: 66px;
+    } */
 
     .animateContainer input[id="id_email"],
     .animateContainer input[id="pass"] {
-        margin-left: 50px;
-        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
     }
 
     .animateContainer label[for="id_email"],
     .animateContainer label[for="pass"] {
-        left: -3px
+        top: 27px;
+        font-size: 18px;
+        
     }
 
     .animateContainer label[for="pass"] {
-        left: -13px;
+        top: 85px;
+        left: -28px;
     }
 }
 
 @media (width<=400px) {
     .block-Login1 {
-        width: 300px;
+        width: 345px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .block-Login1 button {
-        margin-left: 55px;
-    }
 }
