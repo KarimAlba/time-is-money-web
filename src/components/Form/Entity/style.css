@@ -116,6 +116,24 @@
     left: 136px;
 }
 
+.eye-image-entity {
+    position: absolute;
+    top: 86%;
+    right: 1%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.confirm-eye-entity {
+    position: absolute;
+    top: 95%;
+    right: 1%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
 .reg-btn {
     width: 200px;
     font-size: 18px;
@@ -142,6 +160,10 @@
 @media (width <=1100px) {
     .form-register-legal-entity {
         width: 650px;
+    }
+    .confirm-eye-entity,
+    .eye-image-entity {
+        right: 4%;
     }
 
     .legal-entiti-block1 input[id="name-of-company"],
@@ -227,7 +249,11 @@
     .form-login {
         left: 11%;
     }
-
+    
+    .confirm-eye-entity,
+    .eye-image-entity {
+        right: 0%;
+    }
     .form-register-legal-entity {
         width: 400px;
     }
@@ -315,6 +341,14 @@
         margin-left: 40px;
         margin-right: 7px;
     }
+    .confirm-eye-entity{
+        right: 5%;
+        top: 96.4%;
+    }
+    .eye-image-entity {
+        right: 5%;
+        top: 87.4%;
+    }
 
     .legal-entiti-block1 input[id="name-of-company"],
     .legal-entiti-block1 input[id="legal-address"],
@@ -370,7 +404,7 @@
 
     .legal-entiti-block1 label[for="patronymic"] {
         left: 27px;
-        top: 572px;    
+        top: 572px;
     }
 
     .legal-entiti-block1 label[for="email"] {

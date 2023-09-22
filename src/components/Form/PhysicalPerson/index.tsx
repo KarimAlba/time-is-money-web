@@ -5,6 +5,8 @@ import SuccessPopup from "../../ui/SuccessPopup/index";
 import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
+import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
 const PhysicalPerson = () => {
     const navigate = useNavigate();
@@ -20,6 +22,10 @@ const PhysicalPerson = () => {
     const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
 
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
+    const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false)
+    const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword)
+    const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] = useState<boolean>(false);
+    const handleConfirmPasswordClick = () => setIsVisibleConfirmPassword(!isVisibleConfirmPassword);
 
     const isEmailValid = (email: string) => {
         const emailRegex = /@../;
@@ -101,7 +107,7 @@ const PhysicalPerson = () => {
             copy.push(
                 "Пароль должен содержать не менее 8 символов, одну строчную и прописную буквы английского алфавита и спец символы"
             );
-        } 
+        }
 
         if (userPassword !== userConfirmPassword) {
             copy.push('Пароли не совпадают')
@@ -137,7 +143,7 @@ const PhysicalPerson = () => {
         const user = prepareUser();
         if (user) sendRequest(user);
     }
-    
+
     return (
         <div className="form-register-physical-pesrson">
             <div className="physical-pesrson-block1">
@@ -154,7 +160,7 @@ const PhysicalPerson = () => {
                     onInput={handleNameChange}
                 />
                 <label htmlFor="name">Имя</label>
-                
+
                 <input
                     type="text"
                     id="patronymic"
@@ -177,22 +183,44 @@ const PhysicalPerson = () => {
                 <label htmlFor="confirmation-email">Подтвердите e-mail</label>
 
                 <input
-                    type="password"
+                    type={isVisiblePassword
+                        ? 'text'
+                        : 'password'
+                    }
                     id="pass"
                     onInput={handlePasswordChange}
+                />
+                <img
+                    src={isVisiblePassword
+                        ? closedEye
+                        : eye
+                    }
+                    onClick={handleEyeClick}
+                    className='eye-image'
                 />
                 <label htmlFor="pass">Создайте пароль</label>
 
                 <input
-                    type="password"
+                    type={isVisibleConfirmPassword
+                        ? 'text'
+                        : 'password'
+                    }
                     id="confirmation-pass"
                     onInput={handleConfirmPasswordChange}
+                />
+                <img
+                    src={isVisibleConfirmPassword
+                        ? closedEye
+                        : eye
+                    }
+                    onClick={handleConfirmPasswordClick}
+                    className='confirm-eye'
                 />
                 <label htmlFor="confirmation-pass">Подтвердите пароль</label>
 
             </div>
 
-            <button 
+            <button
                 onClick={handleRegClick}
                 className='reg-btn'
             >
@@ -200,15 +228,15 @@ const PhysicalPerson = () => {
             </button>
 
             {isErrorPopupVisible && (
-                <ErrorPopup 
-                    errorArray={errorMessages} 
-                    onClose={() => setIsErrorPopupVisible(false)} 
+                <ErrorPopup
+                    errorArray={errorMessages}
+                    onClose={() => setIsErrorPopupVisible(false)}
                 />
             )}
             {isSuccessPopupVisible
-                ? <SuccessPopup 
-                    message={'Успешно зарегистрированы'} 
-                    onClose={() => setIsSuccessPopupVisible(false)} 
+                ? <SuccessPopup
+                    message={'Успешно зарегистрированы'}
+                    onClose={() => setIsSuccessPopupVisible(false)}
                 />
                 : null
             }

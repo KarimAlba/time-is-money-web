@@ -17,6 +17,24 @@
     position: relative;
     margin-top: 60px;
 }
+.eye-image{
+    position: absolute;
+    top: 77%;
+    right: 7%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.confirm-eye{
+    position: absolute;
+    top: 92%;
+    right: 7%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
 
 .physical-pesrson-block1 input[id="surname"],
 .physical-pesrson-block1 input[id="name"],
@@ -103,9 +121,16 @@
     font-size: 15px;
 }
 
+
 @media (width <=1360px) {
     .form-register-physical-pesrson {
         width: 643px;
+    }
+    .confirm-eye{
+        right: 2%;
+    }
+    .eye-image{
+        right: 2%;
     }
 }
 
@@ -124,6 +149,10 @@
 @media (width <=870px) {
     .form-login {
         left: 12%;
+    }
+    .confirm-eye,
+    .eye-image{
+        right: 12%;
     }
 
     .form-register-physical-pesrson {
@@ -185,6 +214,10 @@
     .form-login{
         left: 15%;
     }
+    .confirm-eye,
+    .eye-image{
+        right: 0%;
+    }
 }
 @media (width <=580px) {
     .form-login{
@@ -197,6 +230,14 @@
         width: 300px;
         margin-left: 40px;
         margin-right: 7px;
+    }
+    .confirm-eye{
+        right: 5%;
+        top: 93%;
+    }
+    .eye-image{
+        right: 5%;
+        top: 79%;
     }
 
     .physical-pesrson-block1 input[id="surname"],
