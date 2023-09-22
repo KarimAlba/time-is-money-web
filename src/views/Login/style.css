@@ -432,6 +432,11 @@ textarea:valid+label {
 
     }
 
+    .animateContainer input[id="id_email"]:focus+label[for="id_email"] {
+        font-size: 19px;
+    }
+
+
     .animateContainer label[for="pass"] {
         top: 85px;
         left: -28px;
