@@ -5,6 +5,8 @@ import SuccessPopup from "../../ui/SuccessPopup/index";
 import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
 import OrganizationAPI from '../../../api/OrganizationAPI';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
+import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
 const Entity = () => {
     const [orgName, setOrgName] = useState<string>('');
@@ -23,6 +25,11 @@ const Entity = () => {
     const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
 
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
+
+    const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false)
+    const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword)
+    const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] = useState<boolean>(false);
+    const handleConfirmPasswordClick = () => setIsVisibleConfirmPassword(!isVisibleConfirmPassword);
 
     const navigate = useNavigate();
 
@@ -138,7 +145,7 @@ const Entity = () => {
             copy.push(
                 "Пароль должен содержать не менее 8 символов, одну строчную и прописную буквы английского алфавита и спец символы"
             );
-        } 
+        }
 
         if (password !== confirmPassword) {
             copy.push('Пароли не совпадают')
@@ -242,7 +249,7 @@ const Entity = () => {
                     required
                     onInput={handleOrgDirPatronymic}
                 />
-                <label htmlFor="patronymic">Отчество</label> 
+                <label htmlFor="patronymic">Отчество</label>
 
                 <input
                     type='text'
@@ -260,25 +267,47 @@ const Entity = () => {
                 />
                 <label htmlFor="confirmation-email">
                     Подтвердите  e-mail
-                </label> 
+                </label>
 
                 <input
-                    type='password'
+                    type={isVisiblePassword
+                        ? 'text'
+                        : 'password'
+                    }
                     id='pass'
                     required
                     maxLength={254}
                     onInput={handlePasswordChange}
+                />
+                <img
+                    src={isVisiblePassword
+                        ? closedEye
+                        : eye
+                    }
+                    onClick={handleEyeClick}
+                    className='eye-image-entity'
                 />
                 <label htmlFor="pass">
                     Создайте пароль
                 </label>
 
                 <input
-                    type='password'
+                    type={isVisibleConfirmPassword
+                        ? 'text'
+                        : 'password'
+                    }
                     id='confirmation-pass'
                     required
                     maxLength={254}
                     onInput={handleConfirmPasswordChange}
+                />
+                                <img
+                    src={isVisibleConfirmPassword
+                        ? closedEye
+                        : eye
+                    }
+                    onClick={handleConfirmPasswordClick}
+                    className='confirm-eye-entity '
                 />
                 <label htmlFor="confirmation-pass">
                     Подтвердите пароль
@@ -286,7 +315,7 @@ const Entity = () => {
 
             </div>
 
-            <button 
+            <button
                 onClick={handleRegClick}
                 className='reg-btn'
             >
@@ -294,15 +323,15 @@ const Entity = () => {
             </button>
 
             {isErrorPopupVisible && (
-                <ErrorPopup 
-                    errorArray={errorMessages} 
-                    onClose={() => setIsErrorPopupVisible(false)} 
+                <ErrorPopup
+                    errorArray={errorMessages}
+                    onClose={() => setIsErrorPopupVisible(false)}
                 />
             )}
             {isSuccessPopupVisible
-                ? <SuccessPopup 
-                    message={'Успешно зарегистрированы'} 
-                    onClose={() => setIsSuccessPopupVisible(false)} 
+                ? <SuccessPopup
+                    message={'Успешно зарегистрированы'}
+                    onClose={() => setIsSuccessPopupVisible(false)}
                 />
                 : null
             }

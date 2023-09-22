@@ -1,0 +1,16 @@
+.animateContainer img {
+    position: absolute;
+    top: 106px;
+    right: 27%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+}
+
+@media(width <=470px) {
+    .animateContainer img {
+        top: 81px;
+        right: 15%;
+    }
+}

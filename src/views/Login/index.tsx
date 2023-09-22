@@ -15,7 +15,7 @@ const Login = (props: LoginPropsTypes) => {
     
     return (
         <div className="ContainerLogin">
-            <img src={imgLogin} />
+            <img src={imgLogin} className='laptop-img' />
             <div className="form-login">
                 <Outlet />
             </div>

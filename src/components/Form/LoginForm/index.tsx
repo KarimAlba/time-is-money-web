@@ -6,6 +6,8 @@ import IUserAuth from "../../../models/request/IUserAuth";
 import { useLocation, useNavigate } from "react-router-dom";
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
 import axios from 'axios';
+import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
 interface AuthorizationPropsTypes {
     showModal: Function;
@@ -20,9 +22,7 @@ function ModalRegister(props: ModalRegisterPropsTypes) {
     const navigate = useNavigate();
     const toPhysicalPerson = () => navigate('physicalPerson');
     const toEntity = () => navigate('entity');
-
     const { isVisible } = props;
-
     return (
         <>
             {isVisible
@@ -52,8 +52,10 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
-    const navigate = useNavigate();
+    const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false)
+    const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword)
 
+    const navigate = useNavigate();
 
     const isEmailValid = (email: string) => {
         const emailRegex = /@../;
@@ -133,14 +135,20 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     <label htmlFor="id_email">e-mail</label>
 
                     <input
-                        type='password'
+                        type={isVisiblePassword
+                            ? 'text'
+                            : 'password'
+                        }
                         id='pass'
-                        minLength={8}
-                        maxLength={512}
-
-
                         required
                         onInput={handlePasswordChange}
+                    />
+                    <img
+                        src={isVisiblePassword
+                            ? closedEye
+                            : eye
+                        }
+                        onClick={handleEyeClick}
                     />
                     <label htmlFor="pass">пароль</label>
                 </div>
@@ -165,15 +173,15 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     Нет аккаунта? Зарегистрируйтесь!
                 </span>
                 {isErrorPopupVisible && (
-                    <ErrorPopup 
-                        error={errorMessage} 
+                    <ErrorPopup
+                        error={errorMessage}
                         onClose={() => setIsErrorPopupVisible(false)}
                     />
                 )}
                 {isSuccessPopupVisible
-                    ? <SuccessPopup 
-                        message={'Успешно авторизованы'} 
-                        onClose={() => setIsSuccessPopupVisible(false)} 
+                    ? <SuccessPopup
+                        message={'Успешно авторизованы'}
+                        onClose={() => setIsSuccessPopupVisible(false)}
                     />
                     : null
                 }
