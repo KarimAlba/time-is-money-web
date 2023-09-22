@@ -338,8 +338,8 @@
 @media (width <=470px) {
     .form-register-legal-entity {
         width: 300px;
-        margin-left: 40px;
-        margin-right: 7px;
+        margin-right: auto;
+        margin-left: auto;
     }
     .confirm-eye-entity{
         right: 5%;

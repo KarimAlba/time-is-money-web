@@ -17,7 +17,8 @@
     position: relative;
     margin-top: 60px;
 }
-.eye-image{
+
+.eye-image {
     position: absolute;
     top: 77%;
     right: 7%;
@@ -25,7 +26,8 @@
     height: 30px;
     cursor: pointer;
 }
-.confirm-eye{
+
+.confirm-eye {
     position: absolute;
     top: 92%;
     right: 7%;
@@ -108,7 +110,7 @@
     left: 82px;
 }
 
-.reg-btn{
+.reg-btn {
     width: 200px;
     font-size: 18px;
     margin-top: 25px;
@@ -126,10 +128,12 @@
     .form-register-physical-pesrson {
         width: 643px;
     }
-    .confirm-eye{
+
+    .confirm-eye {
         right: 2%;
     }
-    .eye-image{
+
+    .eye-image {
         right: 2%;
     }
 }
@@ -150,8 +154,9 @@
     .form-login {
         left: 12%;
     }
+
     .confirm-eye,
-    .eye-image{
+    .eye-image {
         right: 12%;
     }
 
@@ -203,24 +208,29 @@
         left: 5px;
         top: 485px;
     }
-    .reg-btn{
+
+    .reg-btn {
         margin-left: 245px;
     }
 }
+
 @media (width <=700px) {
-    .form-register-physical-pesrson{
+    .form-register-physical-pesrson {
         width: 405px;
     }
-    .form-login{
+
+    .form-login {
         left: 15%;
     }
+
     .confirm-eye,
-    .eye-image{
+    .eye-image {
         right: 0%;
     }
 }
+
 @media (width <=580px) {
-    .form-login{
+    .form-login {
         left: 4%;
     }
 }
@@ -228,14 +238,16 @@
 @media (width <=470px) {
     .form-register-physical-pesrson {
         width: 300px;
-        margin-left: 40px;
-        margin-right: 7px;
+        margin-right: auto;
+        margin-left: auto;
     }
-    .confirm-eye{
+
+    .confirm-eye {
         right: 5%;
         top: 93%;
     }
-    .eye-image{
+
+    .eye-image {
         right: 5%;
         top: 79%;
     }
@@ -293,7 +305,7 @@
         top: 455px;
     }
 
-    .reg-btn{
+    .reg-btn {
         margin-left: 60px;
     }
 
