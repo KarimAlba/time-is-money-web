@@ -333,10 +333,10 @@ li::marker {
 }
 
 .container-client-7-content img {
-    height: 55px;
     position: relative;
-    left: 39%;
-    top: 41px;
+    left: 34%;
+    top: 50px;
+    height: 55px;
 }
 
 .client-7-content-block1 {

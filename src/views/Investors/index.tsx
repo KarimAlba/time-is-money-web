@@ -11,7 +11,7 @@ import MyDocuments from '../../assets/imgTimeIsMoney/MyDocuments2.svg';
 import TiM from '../../assets/imgTimeIsMoney/ТиМ2.svg';
 import plus from '../../assets/imgTimeIsMoney/plus1.svg';
 import minus from '../../assets/imgTimeIsMoney/minus.svg';
-import schedule from '../../assets/imgTimeIsMoney/schedule.svg';
+import graphic from '../../assets/images/graphic.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
 import { useNavigate } from 'react-router';
@@ -411,7 +411,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                     </ul>
                     <div className="client-7-content-block2">
                         <p>денежные потоки накоплинным итогом, руб.</p>
-                        <img src={schedule} />
+                        <img src={graphic}/>
                         <div className="client-7-content-block2-textBootom">
                             <span>_____</span>
                             <p>Чистый денежный поток</p>
