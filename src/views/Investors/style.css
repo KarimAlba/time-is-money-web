@@ -1,9 +1,9 @@
 .container-main-Investors {
-    background-size: 57%;
+    background-size: 50%;
     background-repeat: no-repeat;
     background-image: url('../../assets/imgTimeIsMoney/materik.svg');
-    background-position-x: 81%;
-    background-position-y: 87px;
+    background-position-x:99%;
+    background-position-y: -5px;
 }
 
 .container-main-Investors h1 {
