@@ -431,6 +431,7 @@
 
 @media (width <=400px) {
     .form-register-legal-entity {
-        margin-left: 13px
-    }
+        margin-right: auto;
+        margin-left: auto;
+        }
 }
