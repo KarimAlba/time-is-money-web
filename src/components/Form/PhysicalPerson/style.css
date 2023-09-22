@@ -142,35 +142,37 @@
 
     .physical-pesrson-block1 label[for="surname"] {
         left: 95px;
-        top: 40px;
+        top: 47px;
     }
 
     .physical-pesrson-block1 label[for="name"] {
         left: 132px;
-        top: 105px;
+        top: 122px;
     }
 
     .physical-pesrson-block1 label[for="patronymic"] {
         left: 95px;
-        top: 170px;
+        top: 195px;
     }
 
     .physical-pesrson-block1 label[for="email"] {
         left: 120px;
-        top: 235px;
+        top: 265px;
     }
 
     .physical-pesrson-block1 label[for="confirmation-email"] {
         left: 15px;
+        top: 340px;
     }
 
     .physical-pesrson-block1 label[for="pass"] {
         left: 35px;
+        top: 410px;
     }
 
     .physical-pesrson-block1 label[for="confirmation-pass"] {
         left: 5px;
-        top: 430px;
+        top: 485px;
     }
     .reg-btn{
         margin-left: 245px;

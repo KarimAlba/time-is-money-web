@@ -82,7 +82,7 @@
 }
 
 .legal-entiti-block1 label[for="surname"] {
-    top: 347px;
+    top: 340px;
     left: -3px;
 }
 
@@ -164,45 +164,54 @@
 
     .legal-entiti-block1 label[for="legal-address"] {
         left: 80px;
+        top: 120px;
     }
 
     .legal-entiti-block1 label[for="inn"] {
         left: 205px;
+        top: 190px;
     }
 
     .legal-entiti-block1 label[for="checkpoint"] {
         left: 205px;
+        top: 265px;
 
     }
 
     .legal-entiti-block1 label[for="surname"] {
         left: 60px;
         width: 192px;
-        top: 280px;
+        top: 315px;
     }
 
     .legal-entiti-block1 label[for="name"] {
         left: 205px;
+        top: 410px;
     }
 
     .legal-entiti-block1 label[for="patronymic"] {
         left: 170px;
+        top: 485px;
     }
 
     .legal-entiti-block1 label[for="email"] {
         left: 195px;
+        top: 557px;
     }
 
     .legal-entiti-block1 label[for="confirmation-email"] {
         left: 85px;
+        top: 630px;
     }
 
     .legal-entiti-block1 label[for="pass"] {
         left: 105px;
+        top: 705px;
     }
 
     .legal-entiti-block1 label[for="confirmation-pass"] {
         left: 80px;
+        top: 777px;
     }
 }
 
