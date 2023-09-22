@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = 'http://89.108.70.120';
+const baseUrl = 'https://api.time-money.shop/';
 
 axios.defaults.baseURL = baseUrl;
 
