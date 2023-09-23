@@ -575,7 +575,7 @@ li::marker {
     }
 
     .client-5-content-container {
-        width: 78%;
+        width: 90%;
         padding: 20px;
     }
 
@@ -642,6 +642,9 @@ li::marker {
     .container-client-4-content img {
         height: 120px;
     }
+    .container-client5-content{
+        display: inline;
+    }
 
     .client-4-footer-container {
         width: 111%;
@@ -690,6 +693,10 @@ li::marker {
     .container-client5-content {
         margin-left: 30px;
     }
+    .client-7-content-block2 img {
+        height: 345px;
+    }
+
 }
 
 @media(width <=600px) {
@@ -891,6 +898,12 @@ li::marker {
         left: 90%;
         height: 60px;
         top: -73px;
+    }
+    .container-client-1{
+        width: 75%;
+    }
+    .client-8-content-block1{
+        margin-left: 0;
     }
 }
 
