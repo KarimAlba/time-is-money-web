@@ -1,12 +1,13 @@
-import { useEffect, useState } from "react";
 import './style.css';
-import ArrowIcon from '../../assets/imgTimeIsMoney/arrow-icon.svg'
-import DoneIcon from '../../assets/imgTimeIsMoney/done-icon.svg'
-import ArrowDownIcon from '../../assets/imgTimeIsMoney/arrow-down-icon.svg'
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import house from '../../assets/imgTimeIsMoney/house.svg';
 import ClientAccountAPI from "../../api/ClientAccountingAPI";
+import DoneIcon from '../../assets/imgTimeIsMoney/done-icon.svg';
+import ArrowIcon from '../../assets/imgTimeIsMoney/arrow-icon.svg';
 import IEntityResponse from "../../models/response/IEntityResponse";
-import house from '../../assets/imgTimeIsMoney/house.svg'
+import ArrowDownIcon from '../../assets/imgTimeIsMoney/arrow-down-icon.svg'
 import crossBurgerMenu from '../../assets/imgTimeIsMoney/crossBurgerMenu.svg'
 
 
@@ -35,7 +36,10 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
 
     const [menuActive, setMenuActive] = useState<boolean>(false);
 
+    const navigate = useNavigate();
+
     const handleCheckBox = () => {
+        navigate('/user');
         setIsDownload(!isDownload);
         if (isDownload) {
             handleOpenPlugin(false);
@@ -48,9 +52,9 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
 
     const handleTemplateClick3 = () => setTemplateCount3(!templateCount3);
 
-
     const handleDownload = () => {
         handleOpenPlugin(isDownload);
+        navigate('/user');
     }
 
     const handleMounted = () => {
@@ -106,12 +110,21 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         <div>
             {menuActive
                 ? (<div className="modalHouse">
-                    <img className="heder-cross" src={crossBurgerMenu} onClick={() => setMenuActive(false)} />
+                    <img 
+                        className="heder-cross" 
+                        src={crossBurgerMenu} 
+                        onClick={() => setMenuActive(false)} 
+                    />
                     <div className="menuHouse">
                         <div className="person-info_title">
                             <p>{title}</p>
                             <span>{email}</span>
-                            <Link onClick={() => setMenuActive(false)}  to='edit-user'>Редактировать данные</Link>
+                            <Link 
+                                onClick={() => setMenuActive(false)}  
+                                to='edit-user'
+                            >
+                                Редактировать данные
+                            </Link>
                         </div>
                         <div className="person-info_statistic">
                             <div className="statistic_point">
@@ -231,7 +244,11 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         </div>
                     </div>
                 </div>)
-                : <img className="heder-house" src={house} onClick={() => setMenuActive(true)} />
+                : (<img 
+                    className="heder-house" 
+                    src={house}
+                    onClick={() => setMenuActive(true)} 
+                />)
             }
             <div className="person-info">
                 <div className="person-info_title">
