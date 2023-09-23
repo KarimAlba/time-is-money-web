@@ -11,7 +11,7 @@ const UserPlugin = (props: UserPluginPropsTypes) => {
         <div className="plugins">
             <h2>ВАШИ ПЛАГИНЫ:</h2>
             {isOpenProps
-                ? <CreatePluginModal />
+                ? <CreatePluginModal/>
                 : null
             }
         </div>
