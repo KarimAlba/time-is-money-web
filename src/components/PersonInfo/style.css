@@ -191,6 +191,11 @@ a {
         top: -43px;
         width: 36px;
     }
+    .download-button{
+        width: 200px;
+        height: 35px;
+        font-size: 25px;
+    }
 
     .agreement {
         padding: 10px;
