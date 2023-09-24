@@ -54,6 +54,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
 
     const handleDownload = () => {
         handleOpenPlugin(isDownload);
+        setMenuActive(false);
         navigate('/user');
     }
 
