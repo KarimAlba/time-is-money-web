@@ -443,8 +443,10 @@ textarea:valid+label {
     }
 
     .animateContainer img {
-        top: 81px;
-        right: 15%;
+        top: 87px;
+        right: 16%;
+        height: 20px;
+        width: 20px;
     }
 }
 

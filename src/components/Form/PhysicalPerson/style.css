@@ -244,12 +244,16 @@
 
     .confirm-eye {
         right: 5%;
-        top: 93%;
+        top: 80%;
+        width: 20px;
+        height: 20px;
     }
 
     .eye-image {
         right: 5%;
-        top: 79%;
+        top: 94%;
+        width: 20px;
+        height: 20px;
     }
 
     .physical-pesrson-block1 input[id="surname"],
