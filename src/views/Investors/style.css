@@ -712,7 +712,7 @@ li::marker {
 
     .container-client-1 {
         margin: 10px auto;
-        width: 95%;
+        width: 85%;
     }
 
     li {
@@ -786,6 +786,7 @@ li::marker {
         position: relative;
         width: 350px;
         padding: 0 0 0 10px;
+        height: 160px;
         margin: 10px
     }
 
@@ -879,6 +880,11 @@ li::marker {
         margin: 10px auto;
         margin-left: 10px;
         width: 89%;
+    }
+    .client-6-conteiner1 p,
+    .client-6-conteiner2 p {
+        margin: 30px 0 0 0;
+        font-size: 18px;
     }
 
     .container-main-Investors h1 {

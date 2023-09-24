@@ -96,7 +96,8 @@
     .plugin-modal {
         width: 360px;
         height: 260px;
-        margin-left: 4px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .plugin-modal input {

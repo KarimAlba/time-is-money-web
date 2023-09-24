@@ -448,6 +448,10 @@ textarea:valid+label {
         height: 20px;
         width: 20px;
     }
+
+    .animateContainer input[id="id_email"]:valid+label[for="id_email"]{
+        font-size: 19px;
+    }
 }
 
 @media (width<=400px) {
