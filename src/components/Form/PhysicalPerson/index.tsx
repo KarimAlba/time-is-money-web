@@ -68,6 +68,7 @@ const PhysicalPerson = () => {
     const sendRequest = (user: IPhysicalRegistrationRequest) => {
         PhysicalAccountAPI.registration(user)
             .then(response => {
+                const data = (response.data as string);
                 localStorage.clear();
                 setIsSuccessPopupVisible(true);
                 setTimeout(() => {
