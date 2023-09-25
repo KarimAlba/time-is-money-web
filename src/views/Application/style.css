@@ -40,36 +40,32 @@
     color: red;
 }
 
-/* блок2 */
 .text1,
 .Aplication-contauner-block3,
 .container-info-screen,
 .container-mobile-phone-screen {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
 }
 
-.container-mobile-phone-screen img {
-    width: 220px;
-    margin: 9%;
+.screen_container{
+    display: block;
 }
 
-/* .container-info-screen {
-    margin-left: 30px;
-} */
+.screen-img{
+    margin: 20px 10%;
+    max-width: 400px;
+}
 
 .block-one {
+    margin: 0 auto;
+    max-width: 400px;
+    padding-right: 30px;
     display: flex;
-    flex-direction: row;
     background: #fff;
     border: 1px solid #eee;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
-    width: 25%;
-    margin-left: 5%;
-    margin-right: 5%;
     border-radius: 30px;
-    padding-right: 30px;
 }
 
 .block-one img {
@@ -88,7 +84,6 @@
     margin-top: 60px;
 }
 
-/* блок 3 */
 .Aplication-contauner-block3 {
     padding: 150px;
 }
@@ -131,11 +126,6 @@
         text-align: justify;
     }
 
-    .container-mobile-phone-screen img {
-        width: 300px;
-        margin: 7%;
-    }
-
     .bloc3-text {
         margin-right: 50px;
         height: auto;
@@ -149,11 +139,6 @@
     .block-one p{
         margin-top: 45px;
     }
-    .block-one{
-        margin-right: 0%;
-        margin-left: 0;
-    }
-
 }
 
 @media (width <=1450px) {
@@ -161,30 +146,14 @@
         width: 530px;
     }
 
-    .container-mobile-phone-screen img {
-        width: 277px;
-    }
-
     .block-one p {
         text-align: end;
         margin-top: 49px;
     }
-    /* .bloc3-text {
-        height: 450px;
-    } */
-
 }
 
 @media (width <=1300px) {
-    .container-mobile-phone-screen img {
-        width: 260px;
-    }
-
-    .container-info-screen {
-        margin-left: 5px;
-    }
-
-    .block1 img {
+    .block1 img{
         width: 470px;
     }
 
@@ -199,7 +168,7 @@
     }
 
     .block-one {
-        width: 22%;
+        max-width: 300px;
     }
 }
 
@@ -208,17 +177,8 @@
         width: 300px;
     }
 
-    .container-mobile-phone-screen img {
-        margin: 5%;
-    }
-
     .block1 img {
         width: 420px;
-    }
-
-    .block-one {
-        width: 26%;
-        margin-left: 3%;
     }
 
     .Aplication-contauner-block3 {
@@ -234,10 +194,6 @@
     .aplication-text1-block1 {
         margin-left: calc(0% + 17px);
         margin-right: 0%;
-    }
-
-    .container-mobile-phone-screen img {
-        margin: 3%;
     }
 
     .bloc3-text {
@@ -261,11 +217,6 @@
         width: 91%;
     }
 
-    .container-mobile-phone-screen img {
-        width: 30%;
-        margin: 2%;
-    }
-
     .Aplication-contauner-block3 {
         margin-top: 20px;
         padding: 10px;
@@ -283,24 +234,23 @@
     }
 
     .container-info-screen {
+        margin: 0 2% 0 2%;
         flex-direction: column;
     }
 
-    .container-info-screen {
-        margin: 0 2% 0 2%;
+    .screen-img{
+        margin: 20px 30%;
     }
 
     .block-one {
-        width: 46%;
-        margin: 20px 0 0 26%;
+        max-width: 350px;
+        margin: 20px auto;
         padding: 10px;
     }
 
     .block-one img {
-        position: relative;
         left: -30px;
         top: 10px;
-        height: 50px;
     }
 
     .block-one h1 {
@@ -314,10 +264,6 @@
 }
 
 @media (width <=800px) {
-    .container-mobile-phone-screen img {
-        margin: 1%;
-    }
-
     .block1 img {
         margin-top: 50px;
         width: 87%;
@@ -343,10 +289,6 @@
         height: auto;
         padding: 10px;
         width: 500px;
-    }
-
-    .container-mobile-phone-screen {
-        margin-top: 100px;
     }
 }
 
@@ -405,19 +347,15 @@
         margin-right: 0;
     }
 
-    .container-mobile-phone-screen {
-        flex-direction: column;
-    }
-
-    .container-mobile-phone-screen img {
-        margin: auto;
-        width: 50%;
+    .screen-img{
+        margin: 20px 20%;
     }
 
     .block-one {
         width: 70%;
         margin: 19px 0 0 15%;
     }
+
     .Aplication-contauner-block3 img{
         margin: 0 0 0 19%;
     }
@@ -431,6 +369,11 @@
         margin: 0 0 0 0%;
         width: 260px;
     }
+
+    .screen-img{
+        margin: 20px 10%;
+    }
+
     .block-one img{
         top: 5px;
     }
