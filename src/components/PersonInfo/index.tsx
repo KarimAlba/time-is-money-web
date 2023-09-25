@@ -2,14 +2,15 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import WorkStationtAPI from '../../api/WorkStationAPI';
 import house from '../../assets/imgTimeIsMoney/house.svg';
 import ClientAccountAPI from "../../api/ClientAccountingAPI";
 import DoneIcon from '../../assets/imgTimeIsMoney/done-icon.svg';
 import ArrowIcon from '../../assets/imgTimeIsMoney/arrow-icon.svg';
 import IEntityResponse from "../../models/response/IEntityResponse";
-import ArrowDownIcon from '../../assets/imgTimeIsMoney/arrow-down-icon.svg'
-import crossBurgerMenu from '../../assets/imgTimeIsMoney/crossBurgerMenu.svg'
-
+import ArrowDownIcon from '../../assets/imgTimeIsMoney/arrow-down-icon.svg';
+import crossBurgerMenu from '../../assets/imgTimeIsMoney/crossBurgerMenu.svg';
+import IUserStatisticResponse from '../../models/response/IUserStatisticResponse';
 
 interface PersonInfoPropsTypes {
     handleIsOpenFooter: Function
@@ -25,6 +26,11 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     const [createdAt, setCreatedAt] = useState<string>('');
+    const [statistic, setStatistic] = useState<IUserStatisticResponse[] | []>([]);
+
+    const [countApplications, setCountApplications] = useState<string>('');
+    const [countWorkStations, setCountWorkStations] = useState<string>('');
+    const [countProducedDocs, setCountProducedDocs] = useState<string>('');
 
     const [id, setId] = useState<string>('');
 
@@ -97,6 +103,17 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         localStorage.removeItem('createdAt');
     }
 
+    const getUserStatistic = () => {
+        WorkStationtAPI.getStatistic()
+            .then(response => {
+                setStatistic(response.data.statistics);
+                setCountApplications(String(response.data.countFilledApplications));
+                setCountProducedDocs(String(response.data.countProducedDocuments));
+                setCountWorkStations(String(response.data.countWorkStations));
+            })
+            .catch(error => console.log(error))
+    }
+
     useEffect(() => {
         if (localStorage.getItem('token')) {
             handleMounted();
@@ -104,6 +121,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                 setId(String(localStorage.getItem('id')))
             }
         }
+        getUserStatistic();
         handleIsOpenFooter();
     }, [])
 
@@ -134,7 +152,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             </div>
                             <div className="statistic_point">
                                 <p>скачано плагинов:</p>
-                                <span>0</span>
+                                <span>{countWorkStations}</span>
                             </div>
                             <div className="statistic_value">
                                 <p>количество</p>
@@ -147,11 +165,21 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                             ? <img src={ArrowDownIcon} />
                                             : <img src={ArrowIcon} />
                                         }
-                                        <p>заполненных шаблонов:</p>
+                                        <p>заполненных шаблонов: {countProducedDocs}</p>
                                     </div>
                                     {templateCount
                                         ? (<div className="select_point">
-                                            <p>В разработке</p>
+                                            <ul>
+                                                {statistic.map(item => 
+                                                    statistic.length > 0
+                                                        ? (<li 
+                                                            key={item.name + item.expiredAt}
+                                                        >
+                                                            {`Плагин ${item.name}: ${item.producedDocuments}`}
+                                                        </li>)
+                                                        : <li>Данные отсутствуют</li>
+                                                )}
+                                            </ul>
                                         </div>)
                                         : null
                                     }
@@ -164,11 +192,21 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                             ? <img src={ArrowDownIcon} />
                                             : <img src={ArrowIcon} />
                                         }
-                                        <p>заполненных приложений:</p>
+                                        <p>заполненных приложений: {countApplications}</p>
                                     </div>
                                     {templateCount2
                                         ? (<div className="select_point">
-                                            <p>В разработке</p>
+                                            <ul>
+                                                {statistic.map(item => 
+                                                    statistic.length > 0
+                                                        ? (<li 
+                                                            key={item.expiredAt + item.name}
+                                                        >
+                                                            {`Плагин ${item.name}: ${item.filledApplications}`}
+                                                        </li>)
+                                                        : <li>Данные отсутствуют</li>
+                                                )}
+                                            </ul>
                                         </div>)
                                         : null
                                     }
@@ -185,7 +223,17 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     </div>
                                     {templateCount3
                                         ? (<div className="select_point">
-                                            <p>В разработке</p>
+                                                <ul>
+                                                    {statistic.map(item => 
+                                                        statistic.length > 0
+                                                            ? (<li 
+                                                                key={item.name + item.expiredAt}
+                                                            >
+                                                                {`Плагин ${item.name}: ${(new Date(item.expiredAt)).toLocaleDateString()}`}
+                                                            </li>)
+                                                            : <li>Данные отсутствуют</li>
+                                                    )}
+                                                </ul>
                                         </div>)
                                         : null
                                     }
@@ -264,7 +312,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                     </div>
                     <div className="statistic_point">
                         <p>скачано плагинов:</p>
-                        <span>0</span>
+                        <span>{countWorkStations}</span>
                     </div>
                     <div className="statistic_value">
                         <p>количество</p>
@@ -277,11 +325,21 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     ? <img src={ArrowDownIcon} />
                                     : <img src={ArrowIcon} />
                                 }
-                                <p>заполненных шаблонов:</p>
+                                <p>заполненных шаблонов: {countProducedDocs}</p>
                             </div>
                             {templateCount
-                                ? (<div className="select_point">
-                                    <p>В разработке</p>
+                                ? (<div className="select_point">                          
+                                        <ul>
+                                            {statistic.map(item => 
+                                                statistic.length >= 1
+                                                    ? (<li 
+                                                        key={item.name + item.expiredAt}
+                                                    >
+                                                        {`Плагин ${item.name}: ${item.producedDocuments}`}
+                                                    </li>)
+                                                    : <li>Данные отсутствуют</li>
+                                            )}
+                                        </ul>
                                 </div>)
                                 : null
                             }
@@ -294,11 +352,21 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     ? <img src={ArrowDownIcon} />
                                     : <img src={ArrowIcon} />
                                 }
-                                <p>заполненных приложений:</p>
+                                <p>заполненных приложений: {countApplications}</p>
                             </div>
                             {templateCount2
                                 ? (<div className="select_point">
-                                    <p>В разработке</p>
+                                    <ul>
+                                        {statistic.map(item => 
+                                            statistic.length > 0
+                                                ? (<li 
+                                                    key={item.expiredAt + item.name}
+                                                >
+                                                    {`Плагин ${item.name}: ${item.filledApplications}`}
+                                                </li>)
+                                                : <li>Данные отсутствуют</li>
+                                        )}
+                                    </ul>
                                 </div>)
                                 : null
                             }
@@ -315,7 +383,17 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             </div>
                             {templateCount3
                                 ? (<div className="select_point">
-                                    <p>В разработке</p>
+                                        <ul>
+                                            {statistic.map(item => 
+                                                statistic.length > 0
+                                                    ? (<li 
+                                                        key={item.name + item.expiredAt}
+                                                    >
+                                                        {`Плагин ${item.name}: ${(new Date(item.expiredAt)).toLocaleDateString()}`}
+                                                    </li>)
+                                                    : <li>Данные отсутствуют</li>
+                                            )}
+                                        </ul>
                                 </div>)
                                 : null
                             }

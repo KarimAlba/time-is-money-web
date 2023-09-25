@@ -106,6 +106,8 @@ const EditUser = () => {
 
             PhysicalAccountAPI.edit(edittedUser)
                 .then(response => {
+                    localStorage.removeItem('token');
+                    localStorage.setItem('token', response.data.token);
                     setIsSuccessPopupVisible(true);
                     setTimeout(() => {
                         navigate('/login');
