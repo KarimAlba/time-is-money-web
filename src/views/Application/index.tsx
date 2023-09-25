@@ -52,13 +52,12 @@ const Application = (props: ApplicationPropsTypes) => {
                     </div>
                 </div>
             </div>
-            <div >
-                <div className="container-mobile-phone-screen">
-                    <img src={mobilePhoneScreen1} />
-                    <img src={mobilePhoneScreen2} />
-                    <img src={mobilePhoneScreen3} />
-                </div>
-                <div className='container-info-screen'>
+            <div className='container-info-screen'>
+                <div className='screen_container'>
+                    <img 
+                        src={mobilePhoneScreen1} 
+                        className='screen-img'
+                    />
                     <div className="block-one">
                         <h1>1</h1>
                         <img src={one} />
@@ -69,6 +68,12 @@ const Application = (props: ApplicationPropsTypes) => {
                             документ
                         </p>
                     </div>
+                </div>
+                <div className='screen_container'>
+                    <img 
+                        src={mobilePhoneScreen2}
+                        className='screen-img'
+                    />
                     <div className="block-one">
                         <h1>2</h1>
                         <img src={one} />
@@ -78,6 +83,12 @@ const Application = (props: ApplicationPropsTypes) => {
                             “Поделиться” и нажмите ее
                         </p>
                     </div>
+                </div>
+                <div className='screen_container'>
+                    <img 
+                        src={mobilePhoneScreen3}
+                        className='screen-img'
+                    />
                     <div className="block-one">
                         <h1>3</h1>
                         <img src={one} />

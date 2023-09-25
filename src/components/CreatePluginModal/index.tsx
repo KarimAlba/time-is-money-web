@@ -8,7 +8,7 @@ const CreatePluginModal = () => {
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
 
     const sendReq = () => {
-        WorkStationtAPI.searchWS(search)
+        WorkStationtAPI.search(search)
             .then(response => console.log(response))
             .catch(error => console.log(error))
     }
