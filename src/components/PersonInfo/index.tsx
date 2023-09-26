@@ -106,7 +106,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const getUserStatistic = () => {
         WorkStationtAPI.getStatistic()
             .then(response => {
-                setStatistic(response.data.statistics);
+                setStatistic(response.data.workStationResponses);
                 setCountApplications(String(response.data.countFilledApplications));
                 setCountProducedDocs(String(response.data.countProducedDocuments));
                 setCountWorkStations(String(response.data.countWorkStations));

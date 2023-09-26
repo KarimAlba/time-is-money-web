@@ -47,7 +47,9 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                                 <td key={plugin.expiredAt + index + plugin.name}>
                                     <a 
                                         key={plugin.urlQRCode + index + plugin.name}
+                                        href={plugin.urlQRCode}
                                         onClick={() => handleDownloadQR(plugin.id)}
+                                        download
                                     >
                                         СКАЧАТЬ
                                     </a>
