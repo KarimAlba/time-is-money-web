@@ -249,7 +249,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     : { backgroundColor: '#00b2f447' }
                                 }
                             >
-                                скачать
+                                СКАЧАТЬ
                             </button>
                             <div className="agreement">
                                 <button onClick={handleCheckBox} className="checkbox-button">
@@ -409,7 +409,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             : { backgroundColor: '#00b2f447' }
                         }
                     >
-                        скачать
+                        СКАЧАТЬ 
                     </button>
                     <div className="agreement">
                         <button onClick={handleCheckBox} className="checkbox-button">

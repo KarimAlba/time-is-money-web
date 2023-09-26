@@ -32,8 +32,8 @@ const CreatePluginModal = () => {
     }
 
     return (
-        <div className="plugin-modal">
-            <div>
+        <div>
+            <div className="plugin-modal">
                 <h3>СОЗДАНИЕ ПЛАГИНА </h3>
                 <p>Пожалуйста введите имя плагина или его порядковый номер:</p>
                 <input
@@ -42,12 +42,12 @@ const CreatePluginModal = () => {
                 />
                 <button onClick={handleBtnClick}>СКАЧАТЬ</button>
             </div>
-
             {isTableVisible
                 ? <PluginTable plugins={plugins} />
                 : null
             }
         </div>
+
     )
 }
 

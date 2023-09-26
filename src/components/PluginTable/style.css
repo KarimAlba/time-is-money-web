@@ -1,23 +1,49 @@
-.table-container{
+.table-container {
+    width: 700px;
+    margin: auto;
 }
 
-table{
-    margin: 100px 0 0 0;
+table {
+    margin: 100px 0 0 20px;
     border: 2px solid black;
     border-collapse: collapse;
-    font-size: 16px;
 }
 
 th,
-td{
-    width: 100px;
+td {
+    width: 80px;
     padding: 10px;
     box-sizing: border-box;
     border: 2px solid black;
     font-weight: 400;
 }
 
-td a{
+td a {
     text-decoration: none;
     color: rgba(0, 178, 244, 1);
+}
+
+@media (width<=1600px) {
+
+    th,
+    td {
+        width: 80px;
+        font-size: 20px;
+    }
+
+    td a {
+        font-size: 20px;
+    }
+
+}
+@media (width<=1300px) {
+    .table-container{
+        overflow-x: scroll;
+    }
+}
+@media (width<=470px) {
+    .table-container {
+        width: 300px;
+        margin: auto;
+    }
 }
