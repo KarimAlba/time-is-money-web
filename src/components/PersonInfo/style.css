@@ -12,7 +12,7 @@
     width: 0;
 }
 
-.person-info_title {
+.person-info_title {    
     display: flex;
     flex-flow: column;
     justify-content: space-around;
