@@ -9,9 +9,10 @@
 }
 @media (width <= 1000px) {
     .plugins{
-        margin-top: 25%;
+        margin-top: 15%;
     }
 }
+
 @media (width <= 650px) {
     .plugins{
         margin-left: 0%;
@@ -19,7 +20,7 @@
 }
 @media (width <= 470px) {
     .plugins{
-        margin-top: 120px;
+        margin-top: 25px;
         margin-left: 0%;
         text-align: center;
     }

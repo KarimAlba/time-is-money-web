@@ -1,6 +1,7 @@
 .table-container {
-    width: 700px;
     margin: auto;
+    width: 842px;
+    margin-bottom: 50px;
 }
 
 table {
@@ -36,14 +37,55 @@ td a {
     }
 
 }
+
 @media (width<=1300px) {
-    .table-container{
+    .table-container {
+        width: 600px;
+        margin-left: 265px;
         overflow-x: scroll;
     }
 }
-@media (width<=470px) {
+
+@media (width<=1200px) {
     .table-container {
-        width: 300px;
-        margin: auto;
+        width: 640px;
+        margin-left: 110px;
     }
 }
+
+@media (width<=1000px) {
+    .table-container {
+        width: 505px;
+        margin-left: 100px;
+    }
+}
+
+@media (width<=800px) {
+    .table-container {
+        width: 387px;
+        margin-left: 110px;
+    }
+}
+
+@media (width<=650px) {
+    .table-container {
+        width: 471px;
+        margin-left: 72px;
+    }
+}
+
+@media (width<=530px) {
+    .table-container {
+        width: 471px;
+        margin-left: 20px;
+    }
+}
+
+@media (width<=470px) {
+    .table-container {
+        width: 360px;
+        margin: auto;
+        margin-bottom: 50pxs;
+    }
+}
+
