@@ -8,10 +8,14 @@ const CreatePluginModal = () => {
     const [search, setSearch] = useState<string>('');
     const [isTableVisible, setIsTableVisible] = useState<boolean>(false);
     const [plugins, setPlugins] = useState<ISearchedWorkStationResponse[]>([]);
+    const [isNeedRequest, setIsNeedRequest] = useState<boolean>(true);
 
     const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
 
+    const handleNeedRequest = () => setIsNeedRequest(true);
+
     const sendReq = () => {
+        setIsNeedRequest(false);
         WorkStationtAPI.search(search)
             .then(response => {
                 console.log(response);
@@ -31,6 +35,12 @@ const CreatePluginModal = () => {
         setIsTableVisible(false);
     }
 
+    useEffect(() => {
+        if (search) {
+            sendReq();
+        }
+    }, [isNeedRequest]) 
+
     return (
         <div>
             <div className="plugin-modal">
@@ -43,7 +53,7 @@ const CreatePluginModal = () => {
                 <button onClick={handleBtnClick}>СКАЧАТЬ</button>
             </div>
             {isTableVisible
-                ? <PluginTable plugins={plugins} />
+                ? <PluginTable plugins={plugins} handleNeedRequest={handleNeedRequest}/>
                 : null
             }
         </div>
