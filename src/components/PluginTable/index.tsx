@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../models/response/ISearchedWorkStationResponse';
 
-interface IPluginTablePropsTypes{
+interface IPluginTablePropsTypes {
     plugins: ISearchedWorkStationResponse[];
 }
 
@@ -63,14 +63,14 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                 </thead>
                 <tbody>
                     {plugins.length > 0
-                        ? (plugins.map((plugin, index) => 
+                        ? (plugins.map((plugin, index) =>
                             <tr key={plugin.id + index}>
                                 <td key={plugin.name + index}>{plugin.name}</td>
                                 <td key={plugin.id + plugin.name + index}>{plugin.producedDocuments}</td>
                                 <td key={index + plugin.name + plugin.id}>{plugin.filledApplications}</td>
                                 <td key={index + plugin.name + plugin.expiredAt}>{plugin.id}</td>
                                 <td key={plugin.expiredAt + index + plugin.name}>
-                                    <a 
+                                    <a
                                         key={plugin.urlQRCode + index + plugin.name}
                                         onClick={() => handleDownloadQR(plugin.id)}
                                     >
@@ -90,13 +90,13 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                                 </td>
                             </tr>
                         ))
-                        :  (<tr>
-                            <td style={{width: '100%'}}>Ничего не найдено...</td>
+                        : (<tr>
+                            <td colSpan={7} style={{ width: '100%', border: 'none', columnSpan: 'all', textAlign: 'center' }}>Ничего не найдено...</td>
                         </tr>)
                     }
                 </tbody>
             </table>
-        </div>    
+        </div>
     )
 }
 
