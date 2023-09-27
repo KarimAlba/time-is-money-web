@@ -2,6 +2,7 @@ import './style.css';
 import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../models/response/ISearchedWorkStationResponse';
+import IWorkStationUpdateRequest from '../../models/request/IWorkStationUpdateRequest';
 
 interface IPluginTablePropsTypes{
     plugins: ISearchedWorkStationResponse[];
@@ -10,16 +11,48 @@ interface IPluginTablePropsTypes{
 const PluginTable = (props: IPluginTablePropsTypes) => {
     const { plugins } = props;
 
-    const sendReq = (id: number) => {
+    const createImg = (id: number, data: string) => {
+        const blob = new Blob([data], {
+            type: "image/png"
+        });
+        const fileName = `${id}QR-code.png`;
+        const reportUrl = window.URL.createObjectURL(blob);
+        const downloadElement = document.createElement("a");
+        downloadElement.href = reportUrl;
+        downloadElement.download = fileName;
+        document.body.appendChild(downloadElement);
+        downloadElement.click();
+        document.body.removeChild(downloadElement);
+        window.URL.revokeObjectURL(reportUrl);
+    }
+
+    const sendReqQR = (id: number) => {
         WorkStationtAPI.getQRCode(id)
             .then(response => {
-                console.log(response)
+                createImg(id, response.data);
             })
             .catch(error => console.log(error))
     }
 
     const handleDownloadQR = (id: number) => {
-        sendReq(id)
+        sendReqQR(id);
+    }
+
+    const updateWorkStation = (id: number, body: IWorkStationUpdateRequest) => {
+        WorkStationtAPI.update(id, body)
+            .then(response => console.log(response))
+            .catch(error => console.log(error))
+    }
+
+    const handleProlongation = (plugin: ISearchedWorkStationResponse) => {
+        const currentDate = new Date(plugin.expiredAt);
+        const newDate = new Date(currentDate.setDate(currentDate.getDate() + 365)).toLocaleDateString();
+        console.log(newDate)
+        const requestBody = {
+            name: plugin.name,
+            expirationAt: newDate
+        }
+        updateWorkStation(plugin.id, requestBody)
     }
 
     return (
@@ -47,9 +80,7 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                                 <td key={plugin.expiredAt + index + plugin.name}>
                                     <a 
                                         key={plugin.urlQRCode + index + plugin.name}
-                                        href={plugin.urlQRCode}
                                         onClick={() => handleDownloadQR(plugin.id)}
-                                        download
                                     >
                                         СКАЧАТЬ
                                     </a>
@@ -58,7 +89,10 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                                     {(new Date(plugin.expiredAt)).toLocaleDateString()}
                                 </td>
                                 <td key={plugin.ownerId + index + plugin.name}>
-                                    <a href={plugin.urlQRCode + plugin.ownerId}>
+                                    <a 
+                                        key={plugin.urlQRCode + plugin.ownerId}
+                                        onClick={() => handleProlongation(plugin)}
+                                    >
                                         ПРОДЛИТЬ
                                     </a>
                                 </td>
