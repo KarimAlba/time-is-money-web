@@ -20,7 +20,7 @@
 }
 @media (width <= 470px) {
     .plugins{
-        margin-top: 25px;
+        margin-top: 0px;
         margin-left: 0%;
         text-align: center;
     }
