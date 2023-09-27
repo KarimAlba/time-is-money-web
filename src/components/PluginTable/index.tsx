@@ -2,7 +2,6 @@ import './style.css';
 import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../models/response/ISearchedWorkStationResponse';
-import IWorkStationUpdateRequest from '../../models/request/IWorkStationUpdateRequest';
 
 interface IPluginTablePropsTypes{
     plugins: ISearchedWorkStationResponse[];
@@ -38,21 +37,14 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
         sendReqQR(id);
     }
 
-    const updateWorkStation = (id: number, body: IWorkStationUpdateRequest) => {
-        WorkStationtAPI.update(id, body)
-            .then(response => console.log(response))
+    const updateWorkStation = (id: number) => {
+        WorkStationtAPI.prolongation(id)
+            .then(response => window.location.reload())
             .catch(error => console.log(error))
     }
 
-    const handleProlongation = (plugin: ISearchedWorkStationResponse) => {
-        const currentDate = new Date(plugin.expiredAt);
-        const newDate = new Date(currentDate.setDate(currentDate.getDate() + 365)).toLocaleDateString();
-        console.log(newDate)
-        const requestBody = {
-            name: plugin.name,
-            expirationAt: newDate
-        }
-        updateWorkStation(plugin.id, requestBody)
+    const handleProlongation = (id: number) => {
+        updateWorkStation(id);
     }
 
     return (
@@ -91,7 +83,7 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                                 <td key={plugin.ownerId + index + plugin.name}>
                                     <a 
                                         key={plugin.urlQRCode + plugin.ownerId}
-                                        onClick={() => handleProlongation(plugin)}
+                                        onClick={() => handleProlongation(plugin.id)}
                                     >
                                         ПРОДЛИТЬ
                                     </a>
