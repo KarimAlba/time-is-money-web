@@ -5,10 +5,11 @@ import ISearchedWorkStationResponse from '../../models/response/ISearchedWorkSta
 
 interface IPluginTablePropsTypes {
     plugins: ISearchedWorkStationResponse[];
+    handleNeedRequest: Function;
 }
 
 const PluginTable = (props: IPluginTablePropsTypes) => {
-    const { plugins } = props;
+    const { plugins, handleNeedRequest } = props;
 
     const createImg = (id: number, data: string) => {
         const blob = new Blob([data], {
@@ -39,7 +40,7 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
 
     const updateWorkStation = (id: number) => {
         WorkStationtAPI.prolongation(id)
-            .then(response => window.location.reload())
+            .then(response => handleNeedRequest())
             .catch(error => console.log(error))
     }
 
