@@ -9,14 +9,14 @@
   line-height: 23px;
 }
 
-@media (width <=1600px) {
+@media (width <= 1600px) {
   * {
     font-size: 27px;
     line-height: 28px;
   }
 }
 
-@media (width <=480px) {
+@media (width <= 480px) {
   * {
     font-size: 21px;
   }
