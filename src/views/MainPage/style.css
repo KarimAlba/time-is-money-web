@@ -253,7 +253,7 @@ body {
     }
 }
 
-@media (width <=1450px) {
+@media (max-width: 1450px) {
     .queue {
         width: 49%;
     }
@@ -267,7 +267,7 @@ body {
     }
 }
 
-@media (width <= 1300px) {
+@media (max-width: 1300px) {
     .queue {
         width: 615px;
         height: 630px;
@@ -303,7 +303,7 @@ body {
     }
 }
 
-@media (width <= 1200px) {
+@media (max-width: 1200px) {
     .queue {
         width: 565px;
         top: 35px;
@@ -323,7 +323,7 @@ body {
     }
 }
 
-@media (width <= 1100px) {
+@media (max-width: 1100px) {
     .queue {
         width: 520px;
         top: 35px;
@@ -370,7 +370,7 @@ body {
     }
 }
 
-@media (width <= 1000px) {
+@media (max-width: 1000px) {
     .queue {
         width: 485px;
         top: 90px;
@@ -408,7 +408,7 @@ body {
     }
 }
 
-@media(width <= 980px) {
+@media(max-width: 980px) {
     .container-Text {
         margin-left: 355px;
     }
@@ -448,7 +448,7 @@ body {
     }
 }
 
-@media (width <= 900px) {
+@media (max-width: 900px) {
     .queue {
         top: 230px;
         width: 440px;
@@ -473,7 +473,7 @@ body {
     }
 }
 
-@media (width <= 850px){
+@media (max-width: 850px){
     .queue {
         top: 125px;
         width: 413px;
@@ -494,13 +494,13 @@ body {
     }
 }
 
-@media (width <= 800px) {
+@media (max-width: 800px) {
     .queue {
         width: 390px;
     }
 }
 
-@media(width <= 780px) {
+@media(max-width: 780px) {
     .documents {
         display: flex;
         justify-content: space-around;
@@ -552,7 +552,7 @@ body {
     }
 }
 
-@media only screen and (width <= 600px) {
+@media (max-width: 600px) {
     .container-Text {
         margin: auto;
         margin-top: 50px;
@@ -588,7 +588,7 @@ body {
     }
 }
 
-@media only screen and (width <=480px) {
+@media (max-width: 480px) {
     .queue {
         left: 21%;
         width: 65%;
@@ -623,7 +623,7 @@ body {
     }
 }
 
-@media only screen and (width <=400px) {
+@media (max-width: 400px) {
     .queue {
         left: 16%;
         width: 77%
@@ -650,7 +650,7 @@ body {
 
 }
 
-@media only screen and (width <=375px) {
+@media (max-width: 375px) {
     .container-Text p {
         margin: 32px 0 0 10px;
         font-size: initial;
