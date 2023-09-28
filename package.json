@@ -12,6 +12,7 @@
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.16",
     "axios": "^1.5.0",
+    "postcss-cli": "^10.1.0",
     "postcss-loader": "^7.3.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -21,6 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "watch:css": "postcss src/views/MainPage/style.css -r",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -39,9 +41,9 @@
       "not op_mini all"
     ],
     "development": [
-      "last 5 chrome versions",
-      "last 5 firefox versions",
-      "last 5 safari versions"
+      "last 30 chrome versions",
+      "last 30 firefox versions",
+      "last 30 safari versions"
     ]
   }
 }

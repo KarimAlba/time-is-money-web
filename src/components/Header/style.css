@@ -1,6 +1,6 @@
 .container-header {
     display: flex;
-    flex-direction: row;
+    display: -webkit-flex;
 }
 
 .button-container {
@@ -88,12 +88,6 @@
         height: 35px;
     }
 }
-
-/* @media(width <=980px) {
-    .container-img img {
-        display: none;
-    }
-} */
 
 @media(width <=870px) {
     .container-img img {
