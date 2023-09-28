@@ -68,10 +68,6 @@
         font-size: 21px;
         font-weight: 700;
     }
-    .container-img img{
-        width: 150px;
-        height: 200px;
-    }
     .container-img{
         margin-left: 30%
     }
@@ -82,10 +78,6 @@
         height: 60px;
         font-size: 21px;
         font-weight: 700;
-    }
-    .container-img img{
-        width: 150px;
-        height: 200px;
     }
     .container-img{
         margin-left: 30%
@@ -107,6 +99,11 @@
         Height: 50px;
         font-size: 17px;
     }
+    .container-img img{
+        width: 100px;
+        height: 100px;
+    }
+
     .button-container{
         right: 20px;
     }
