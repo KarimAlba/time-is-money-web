@@ -267,7 +267,7 @@ body {
     }
 }
 
-@media (width <= 1300px) {
+@media (width <=1300px) {
     .queue {
         width: 615px;
         height: 630px;
@@ -303,7 +303,7 @@ body {
     }
 }
 
-@media (width <= 1200px) {
+@media (width <=1200px) {
     .queue {
         width: 565px;
         top: 35px;
@@ -323,7 +323,7 @@ body {
     }
 }
 
-@media (width <= 1100px) {
+@media (width <=1100px) {
     .queue {
         width: 520px;
         top: 35px;
@@ -370,7 +370,7 @@ body {
     }
 }
 
-@media (width <= 1000px) {
+@media (width <=1000px) {
     .queue {
         width: 485px;
         top: 90px;
@@ -379,7 +379,8 @@ body {
     .container-Text {
         margin-left: 418px;
     }
-    .containerMain{
+
+    .containerMain {
         margin-top: 70px;
     }
 
@@ -387,7 +388,8 @@ body {
         font-size: 100px;
         margin-top: 17%;
     }
-    .container-Text p{
+
+    .container-Text p {
         margin-top: 16%;
     }
 
@@ -408,7 +410,7 @@ body {
     }
 }
 
-@media(width <= 980px) {
+@media(width <=980px) {
     .container-Text {
         margin-left: 355px;
     }
@@ -448,11 +450,12 @@ body {
     }
 }
 
-@media (width <= 900px) {
+@media (width <=900px) {
     .queue {
         top: 230px;
         width: 440px;
     }
+
     .container-Text {
         margin-left: 265px;
     }
@@ -473,7 +476,7 @@ body {
     }
 }
 
-@media (width <= 850px){
+@media (width <=850px) {
     .queue {
         top: 125px;
         width: 413px;
@@ -494,18 +497,19 @@ body {
     }
 }
 
-@media (width <= 800px) {
+@media (width <=800px) {
     .queue {
         width: 390px;
     }
 }
 
-@media(width <= 780px) {
+@media(width <=780px) {
     .documents {
         display: flex;
         justify-content: space-around;
     }
-    .container-Text{
+
+    .container-Text {
         margin-left: 40px;
     }
 
@@ -552,7 +556,7 @@ body {
     }
 }
 
-@media(width <= 600px) {
+@media(width <=600px) {
     .container-Text {
         margin: auto;
         margin-top: 50px;
@@ -579,7 +583,7 @@ body {
 
     }
 
-    .container-Text2 p{
+    .container-Text2 p {
         margin: 0 15px 0 0px;
     }
 
