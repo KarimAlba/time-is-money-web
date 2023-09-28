@@ -216,6 +216,9 @@ a {
         top: -43px;
         width: 36px;
     }
+    .statistic_value p{
+        font-size: 21px;
+    }
 
     .download-button {
         width: 200px;
