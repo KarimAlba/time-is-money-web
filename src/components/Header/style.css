@@ -40,6 +40,65 @@
 .header-burger {
     display: none;
 }
+@media (width <= 2400px) {
+    .button-container {
+        top: 3%;
+    }
+    .button-container button{
+        width: 220px;
+        height: 70px;
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .container-img img{
+        width: 150px;
+        height: 200px;
+    }
+    .container-img{
+        margin-left: 30%
+    }
+}
+@media (width<=2200px) {
+    .button-container {
+        top: 3%;
+    }
+    .button-container button{
+        width: 200px;
+        height: 60px;
+        font-size: 21px;
+        font-weight: 700;
+    }
+    .container-img img{
+        width: 150px;
+        height: 200px;
+    }
+    .container-img{
+        margin-left: 30%
+    }
+}
+@media (width<=2000px) {
+    .button-container button{
+        width: 200px;
+        height: 60px;
+        font-size: 21px;
+        font-weight: 700;
+    }
+    .container-img img{
+        width: 150px;
+        height: 200px;
+    }
+    .container-img{
+        margin-left: 30%
+    }
+}
+@media (width <=1800px) {
+    .button-container button{
+        width: 160px;
+        height: 50px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+}
 
 @media (width <= 1600px) {
     .button-container button{
