@@ -12,7 +12,7 @@ const PluginPage = (props: PluginPagePropsTypes) => {
     const { handleCurrentBtnChange } = props;
 
     useEffect(() => {
-        handleCurrentBtnChange('Плагин')
+        handleCurrentBtnChange('Плагин');
     }, []);
 
     return (
