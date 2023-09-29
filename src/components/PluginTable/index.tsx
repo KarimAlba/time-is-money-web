@@ -9,6 +9,7 @@ interface IPluginTablePropsTypes {
 }
 
 const PluginTable = (props: IPluginTablePropsTypes) => {
+    const [renderPlugins, setRenderPlugins] = useState<ISearchedWorkStationResponse[]>([]);
     const { plugins, handleNeedRequest } = props;
 
     const createImg = (id: number, data: string) => {
@@ -48,6 +49,11 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
         updateWorkStation(id);
     }
 
+    useEffect(() => {
+        console.log(plugins);
+        setRenderPlugins(plugins);
+    }, [plugins]);
+
     return (
         <div className='table-container'>
             <table>
@@ -63,27 +69,27 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {plugins.length > 0
-                        ? (plugins.map((plugin, index) =>
-                            <tr key={plugin.id + index}>
-                                <td key={plugin.name + index}>{plugin.name}</td>
-                                <td key={plugin.id + plugin.name + index}>{plugin.producedDocuments}</td>
-                                <td key={index + plugin.name + plugin.id}>{plugin.filledApplications}</td>
-                                <td key={index + plugin.name + plugin.expiredAt}>{plugin.id}</td>
-                                <td key={plugin.expiredAt + index + plugin.name}>
+                    {renderPlugins.length > 0
+                        ? (renderPlugins.map((plugin, index) =>
+                            <tr key={plugin.name + index + plugin.urlQRCode}>
+                                <td key={plugin.name + plugin.urlQRCode + index}>{plugin.name}</td>
+                                <td key={plugin.urlQRCode + plugin.name + index}>{plugin.producedDocuments}</td>
+                                <td key={plugin.name}>{plugin.filledApplications}</td>
+                                <td key={plugin.name + plugin.id}>{plugin.id}</td>
+                                <td key={plugin.name + 'a1'}>
                                     <a
-                                        key={plugin.urlQRCode + index + plugin.name}
+                                        key={plugin.name + 'b1'}
                                         onClick={() => handleDownloadQR(plugin.id)}
                                     >
                                         СКАЧАТЬ
                                     </a>
                                 </td>
-                                <td key={index + plugin.ownerId}>
+                                <td key={plugin.name + 'c1'}>
                                     {(new Date(plugin.expiredAt)).toLocaleDateString()}
                                 </td>
-                                <td key={plugin.ownerId + index + plugin.name}>
+                                <td key={plugin.name + 'd1'}>
                                     <a 
-                                        key={plugin.urlQRCode + plugin.ownerId}
+                                        key={plugin.name + plugin.urlQRCode}
                                         onClick={() => handleProlongation(plugin.id)}
                                     >
                                         ПРОДЛИТЬ
@@ -92,7 +98,12 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                             </tr>
                         ))
                         : (<tr>
-                            <td colSpan={7} style={{ width: '100%', border: 'none', columnSpan: 'all', textAlign: 'center' }}>Ничего не найдено...</td>
+                            <td 
+                                colSpan={7} 
+                                style={{ width: '100%', border: 'none', columnSpan: 'all', textAlign: 'center' }}
+                            >
+                                Ничего не найдено...
+                            </td>
                         </tr>)
                     }
                 </tbody>

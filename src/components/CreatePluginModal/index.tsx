@@ -18,7 +18,6 @@ const CreatePluginModal = () => {
         setIsNeedRequest(false);
         WorkStationtAPI.search(search)
             .then(response => {
-                console.log(response);
                 setPlugins(response.data);
                 setIsTableVisible(true);
             })
