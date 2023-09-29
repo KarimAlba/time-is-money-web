@@ -216,7 +216,7 @@ body {
     margin-right: 90px;
 }
 
-@media (width <=2400px) {
+/* @media (width <=2400px) {
     .container-Text {
         margin-left: 51vw;
     }
@@ -393,7 +393,7 @@ body {
         top: 0px;
     }
 
-}
+} */
 
 @media screen and (max-width: 1600px) and (max-device-width: 1600px) {
     .queue {
