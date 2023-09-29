@@ -409,15 +409,9 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </li>
                     </ul>
                     <div className="client-7-content-block2">
-<<<<<<< HEAD
-                        <div style={{ display: 'block' }}>
-                            <p>денежные потоки накоплинным итогом, руб.</p>
-                            <img src={graphic} />
-=======
                         <div style={{display: 'block'}}>
                             <p>денежные потоки накопленным итогом, руб.</p>
                             <img src={graphic}/>
->>>>>>> fd-14
                         </div>
                         <div className="client-7-content-block2-textBootom">
                             <span>_____</span>
