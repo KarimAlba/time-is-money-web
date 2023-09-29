@@ -102,7 +102,7 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
                                 colSpan={7} 
                                 style={{ width: '100%', border: 'none', columnSpan: 'all', textAlign: 'center' }}
                             >
-                                Ничего не найдено...
+                                Ничего нет
                             </td>
                         </tr>)
                     }
