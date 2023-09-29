@@ -29,3 +29,8 @@
 .step-text h1{
     margin: 10px 20px 0 20px;
 }
+@media (width <= 2400px) {
+    .step-text{
+        border-radius: 20px;
+    }
+}

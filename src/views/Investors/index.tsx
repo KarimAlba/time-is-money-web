@@ -38,39 +38,41 @@ const Investors = (props: InvestorsPropsTypes) => {
                 <h1>Целевой рынок</h1>
                 <p style={{ marginLeft: '60px' }}>Наши потенциальные клиенты:</p>
                 <div className="container-clients-investor">
-                    <ul className="container-client-1">
-                        <li>банки; </li>
-                        <li>нотариусы;</li>
-                        <li>стоматологии;</li>
-                        <li>диагностические центры;</li>
-                        <li>{'многофунк'+'циональные центры (МФЦ);'}</li>
-                        <li>мебельные магазины;
-                        </li>
-                        <li>автосалоны;</li>
-                        <li>прокатные конторы;</li>
-                    </ul>
-                    <ul className="container-client-1">
-                        <li>
-                            страховые
-                            компании;
-                        </li>
-                        <li> гостиницы;</li>
-                        <li>
-                            салоны мобильной
-                            <br />
-                            связи;
-                        </li>
-                        <li>частные клиники.</li>
-                        {/* <li>и риэлторы.</li> */}
-                        <p> и риелторы ...
-                            <br />
-                            и многие другие,
-                            <br />
-                            кто ценит свое время
-                            <br />
-                            и время своих клиентов.
-                        </p>
-                    </ul>
+                    {/* <div className='container-block-client-1'> */}
+                        <ul className="container-client-1">
+                            <li>банки; </li>
+                            <li>нотариусы;</li>
+                            <li>стоматологии;</li>
+                            <li>диагностические центры;</li>
+                            <li>{'многофунк' + 'циональные центры (МФЦ);'}</li>
+                            <li>мебельные магазины;
+                            </li>
+                            <li>автосалоны;</li>
+                            <li>прокатные конторы;</li>
+                        </ul>
+                        <ul className="container-client-1">
+                            <li>
+                                страховые
+                                компании;
+                            </li>
+                            <li> гостиницы;</li>
+                            <li>
+                                салоны мобильной
+                                <br />
+                                связи;
+                            </li>
+                            <li>частные клиники.</li>
+                            {/* <li>и риэлторы.</li> */}
+                            <p> и риелторы ...
+                                <br />
+                                и многие другие,
+                                <br />
+                                кто ценит свое время
+                                <br />
+                                и время своих клиентов.
+                            </p>
+                        </ul>
+                    {/* </div> */}
                     <div className="quantity-clients">
                         <div className='statistic-result'>
                             <img src={Elipsestar} />
@@ -410,9 +412,9 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </li>
                     </ul>
                     <div className="client-7-content-block2">
-                        <div style={{display: 'block'}}>
+                        <div style={{ display: 'block' }}>
                             <p>денежные потоки накоплинным итогом, руб.</p>
-                            <img src={graphic}/>
+                            <img src={graphic} />
                         </div>
                         <div className="client-7-content-block2-textBootom">
                             <span>_____</span>
