@@ -206,7 +206,7 @@
     width: auto;
 }
 
-@media screen and (max-width: 2400px) and (max-device-width: 2400px) {
+@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .img1 {
         left: 15px;
         top: -70px;
