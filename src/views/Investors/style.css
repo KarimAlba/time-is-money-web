@@ -64,6 +64,7 @@ li::marker {
     margin: 0;
     display: flex;
     justify-content: center;
+    font-size: 22px;
 }
 
 .container-client-2 {
@@ -115,46 +116,45 @@ li::marker {
     color: #eee;
 }
 
-.container-client-3 {
+.container-client-3{
     display: flex;
-    flex-direction: row;
+    justify-content: start;
 }
 
-.container_sales span {
+.container-client-3 img:nth-child(2n){
+    margin: 55px 80px 0 40px;
+    height: 15%;
+    width: 5px;
+    transform: rotate(90deg);
+}
+
+.container_sales span{
     color: #00B2F4;
     font-size: 40px;
 }
 
-.container-client-3 img {
+.container-client-3 div img{
     position: relative;
     left: 40px;
     top: 60px;
     height: 80px;
 }
 
-.container-client-3 p {
-    margin: 17px 0 0 75px;
-    font-size: 20px
+.container-client-3 p{
+    margin: 10px 0 0 65px;
+    font-size: 25px
 }
 
-.client3-condition {
+.client3-condition{
     margin: 20px 0 0 60px;
 }
 
-.container-client-3 h2 {
+.container-client-3 h2{
     font-size: 35px;
     margin: 0;
     margin-left: 70px;
     margin-top: 40px;
     color: #00B2F4;
-}
-
-.container-client-3 span {
-    color: #fff;
-    width: 150px;
-    margin-top: 114px;
-    margin-left: -26px;
-    border-top: 3px solid #00B2F4;
 }
 
 .container-client-4-content {
@@ -418,12 +418,6 @@ li::marker {
     height: 202px;
 }
 
-@media (width <= 1600px) {
-    .quantity-clients p {
-        font-size: 22px;
-    }
-}
-
 @media (width <= 1270px) {
     .container-client-1 {
         margin-left: 30px;
@@ -485,13 +479,18 @@ li::marker {
     }
 }
 
-@media (width <=1030px) {
+@media (width <= 1090px) {
     .container-main-Investors {
         margin-top: 160px;
     }
 
     .container-client-1 {
         width: 250px;
+    }
+
+    .container-client-3 img:nth-child(2n){
+        margin: 65px 40px 0 10px;
+        height: 90px;
     }
 
     .client-7-content-block2 img {
@@ -517,12 +516,6 @@ li::marker {
 
     .quantity-clients {
         margin: 90px auto 0 auto;
-    }
-
-    .container-client-3 span {
-        width: 75px;
-        margin-top: 109px;
-        margin-left: -55px;
     }
 
     .container-client-3 h2 {
@@ -623,17 +616,12 @@ li::marker {
         margin-left: 5px;
     }
 
-    .container-client-3 span {
-        margin-left: -52px;
-        width: 50px;
-    }
-
     .container_sales p {
         margin-left: 33px;
         font-size: 18px;
     }
 
-    .container-client-3 img {
+    .container-client-3 div img {
         left: 12px;
     }
 }
@@ -668,7 +656,20 @@ li::marker {
     }
 }
 
-@media (width <=730px) {
+@media (width <= 760px) {
+    .container-client-3 img:nth-child(2n){
+        margin: 55px 30px 0 0px;
+        height: 60px;
+        width: 5px;
+        transform: rotate(90deg);
+    }
+
+    .container-client-3 div img{
+        left: 20px;
+        top: 50px;
+        height: 60px;
+    }
+
     .container-client-4-content {
         display: flex;
         flex-direction: column;
@@ -699,7 +700,7 @@ li::marker {
 
 }
 
-@media(width <=600px) {
+@media(max-width: 610px) {
     .container-main-Investors {
         margin-top: 120px;
         padding: 0;
@@ -715,7 +716,7 @@ li::marker {
         width: 85%;
     }
 
-    li {
+    li{
         font-size: 22px;
     }
 
@@ -744,8 +745,44 @@ li::marker {
         font-size: 23px;
     }
 
-    .container_sales {
-        display: none;
+    .container_sales{
+        margin: auto;
+    }
+
+    .container-client-3{
+        flex-flow: column;
+    }
+
+    .container-client-3 img:nth-child(2n){
+        margin: -80px 0 -30px 75px;
+        height: 100px;
+        width: 5px;
+        transform: none;
+    }
+    
+    .container-client-3 div img{
+        position: relative;
+        left: 40px;
+        top: 60px;
+        height: 80px;
+    }
+    
+    .container-client-3 div p{
+        margin: 10px 0 0 75px;
+        font-size: 25px;
+    }
+
+    .container-client-3 div p:last-child{
+        margin: 20px 0 0 125px;
+    }
+
+    .client3-condition{
+        width: 80%;
+    }
+
+    .container-client-3 h2{
+        margin: 40px 0 0 100px;
+        font-size: 45px;
     }
 
     .client-7-content-block2 img {

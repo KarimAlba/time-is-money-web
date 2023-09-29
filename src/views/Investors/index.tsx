@@ -14,6 +14,8 @@ import minus from '../../assets/imgTimeIsMoney/minus.svg';
 import graphic from '../../assets/images/graphic.svg';
 import men2 from '../../assets/imgTimeIsMoney/men2.svg';
 import men1 from '../../assets/imgTimeIsMoney/men1.svg';
+import BlueLine from '../../assets/images/icons/blue-line-icon.svg';
+import DiagrammaEllipse from '../../assets/images/icons/diagramma-ellipse-icon.svg'
 import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
 
@@ -61,7 +63,6 @@ const Investors = (props: InvestorsPropsTypes) => {
                             связи;
                         </li>
                         <li>частные клиники.</li>
-                        {/* <li>и риэлторы.</li> */}
                         <p> и риелторы ...
                             <br />
                             и многие другие,
@@ -102,25 +103,21 @@ const Investors = (props: InvestorsPropsTypes) => {
                 <div className='container_sales'>
                     <div className="container-client-3">
                         <div>
-                            <img src={One} />
+                            <img src={DiagrammaEllipse} />
                             <p>1 год продаж</p>
                             <h2>10 000</h2>
                             <p>скачиваний плагина</p>
                         </div>
-                        <span >
-                            ___________
-                        </span>
+                        <img src={BlueLine} alt='blue line'/>
                         <div>
-                            <img src={One} />
+                            <img src={DiagrammaEllipse} />
                             <p>2 год продаж</p>
                             <h2>65 000</h2>
                             <p>скачиваний плагина</p>
                         </div>
-                        <span >
-                            ___________
-                        </span>
+                        <img src={BlueLine} alt='blue line'/>
                         <div>
-                            <img src={One} />
+                            <img src={DiagrammaEllipse} />
                             <p>3 год продаж</p>
                             <h2>180 000</h2>
                             <p>
@@ -133,7 +130,8 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </div>
                     </div>
                     <p className='client3-condition'>
-                        <span>*</span>для первых подписчиков на период 6 месяцев стоимость 100 руб. в месяц
+                        <span>*</span>
+                        для первых подписчиков на период 6 месяцев стоимость 100 руб. в месяц
                     </p>
                 </div>
                 <div className="container-client-4">
@@ -280,7 +278,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                                     <br />
                                     риска утечки данных
                                     <br />
-                                    поскольку они храняться
+                                    поскольку они хранятся
                                     <br />
                                     не на серверах, а на мобильных
                                     <br />
@@ -368,7 +366,8 @@ const Investors = (props: InvestorsPropsTypes) => {
                 <div className="client-header economic_effect">
                     <h1>
                         Показатели экономической
-                        <br />эффективности
+                        <br />
+                        эффективности
                     </h1>
                     <img src={logo} />
                 </div>
@@ -411,7 +410,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                     </ul>
                     <div className="client-7-content-block2">
                         <div style={{display: 'block'}}>
-                            <p>денежные потоки накоплинным итогом, руб.</p>
+                            <p>денежные потоки накопленным итогом, руб.</p>
                             <img src={graphic}/>
                         </div>
                         <div className="client-7-content-block2-textBootom">
@@ -445,24 +444,6 @@ const Investors = (props: InvestorsPropsTypes) => {
                             Connecting» г. Мюнхен
                         </p>
                     </div>
-                    {/* <img src={ElipseMen} className="ellipse2 " />
-
-                    <div className="client-8-content-block1">
-                        <div >
-                            <img src={men1} className="client-8-content-block1-men" />
-                        </div>
-                        <br />
-                        <h2> Вадим Фоменко</h2>
-                        <p>
-                            Главный фаундер,
-                                <br />
-                                генеральный директор
-                                <br />
-                                IT-компании «Stein
-                                <br />
-                                Connecting» г.Мюнхен 
-                        </p>
-                    </div> */}
                     <div className="client-8-content-block1">
                         <div >
                             <img src={men2} className="client-8-content-block1-men" />
