@@ -64,6 +64,7 @@ li::marker {
     margin: 0;
     display: flex;
     justify-content: center;
+    font-size: 22px;
 }
 
 .container-client-2 {
@@ -115,46 +116,45 @@ li::marker {
     color: #eee;
 }
 
-.container-client-3 {
+.container-client-3{
     display: flex;
-    flex-direction: row;
+    justify-content: start;
 }
 
-.container_sales span {
+.container-client-3 img:nth-child(2n){
+    margin: 55px 80px 0 40px;
+    height: 15%;
+    width: 5px;
+    transform: rotate(90deg);
+}
+
+.container_sales span{
     color: #00B2F4;
     font-size: 40px;
 }
 
-.container-client-3 img {
+.container-client-3 div img{
     position: relative;
     left: 40px;
     top: 60px;
     height: 80px;
 }
 
-.container-client-3 p {
-    margin: 17px 0 0 75px;
-    font-size: 20px
+.container-client-3 p{
+    margin: 10px 0 0 65px;
+    font-size: 25px
 }
 
-.client3-condition {
+.client3-condition{
     margin: 20px 0 0 60px;
 }
 
-.container-client-3 h2 {
+.container-client-3 h2{
     font-size: 35px;
     margin: 0;
     margin-left: 70px;
     margin-top: 40px;
     color: #00B2F4;
-}
-
-.container-client-3 span {
-    color: #fff;
-    width: 150px;
-    margin-top: 114px;
-    margin-left: -26px;
-    border-top: 3px solid #00B2F4;
 }
 
 .container-client-4-content {
@@ -418,7 +418,12 @@ li::marker {
     height: 202px;
 }
 
-/* @media (width<=2400px) {
+@media (width <= 1270px) {
+    .container-client-1 {
+        margin-left: 30px;
+        width: 300px;
+    }
+
     .container-main-Investors h1 {
         font-size: 75px;
         line-height: 60px;
@@ -426,14 +431,217 @@ li::marker {
 
     .container-main-Investors p,
     li,
-    h3 {
-        font-size: 43px;
-        line-height: 55px;
+    .container-client-1 p {
+        font-size: 20px;
+    }
+
+    .quantity-clients {
+        margin-left: 30px;
+    }
+
+    .quantity-clients p {
+        font-size: 20px;
+    }
+
+    .container-client-7-content img {
+        margin-left: -3%;
+    }
+
+    .container-client-5-icon {
+        margin-left: 20px;
+    }
+
+    .client-header img {
+        margin-right: 30px;
+    }
+
+    .client-6-conteiner2 {
+        margin: 30px 0 0 10px;
+    }
+
+    .client-6-conteiner2 {
+        flex-flow: column;
+        width: 46%;
+    }
+
+    .client-6-conteiner1 h1,
+    .client-6-conteiner2 h1 {
+        margin: 45px 0 0 0;
+        font-size: 65px;
+    }
+
+    .client-6-conteiner1 p,
+    .client-6-conteiner2 p {
+        margin: 30px 0 0 0;
+        font-size: 20px;
+    }
+
+    .container-client-7-content img:first-child {
+        display: none;
+    }
+}
+
+@media (width <= 1090px) {
+    .container-main-Investors {
+        margin-top: 160px;
     }
 
     .container-client-1 {
-        width: 500px;
-        height: 700px;
+        width: 250px;
+    }
+
+    .container-client-3 img:nth-child(2n){
+        margin: 65px 40px 0 10px;
+        height: 90px;
+    }
+
+    .client-7-content-block2 img {
+        height: 333px;
+        margin-left: 15px;
+    }
+
+    .container-client-7-content img {
+        left: 42%;
+    }
+}
+
+@media(width <=910px) {
+    .container-clients-investor {
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    .container-client-1 {
+        margin: 10px auto;
+        width: 55%;
+    }
+
+    .quantity-clients {
+        margin: 90px auto 0 auto;
+    }
+
+    .container-client-3 h2 {
+        margin-left: 55px;
+    }
+
+    .container-client-3 p {
+        margin-left: 57px;
+        margin-top: 7px;
+        font-size: 19px;
+    }
+
+    .client-4-footer-container {
+        margin: 15px auto;
+        width: 100%;
+        min-height: 130px;
+        height: auto;
+    }
+
+    .client-4-footer-container p {
+        padding: 10px;
+        text-align: start;
+    }
+
+    .container-client-4-content img {
+        margin-top: 50px;
+        height: 125px;
+    }
+
+    .container-client-5-heder {
+        display: flex;
+        flex-direction: row;
+        margin-left: 20px;
+    }
+
+    .container-client-5 {
+        margin-top: 80px;
+    }
+
+    .content-block {
+        margin: auto;
+        margin-top: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .container-client5-content {
+        margin-left: 50px;
+    }
+
+    .client-5-content-container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .container-client-5-icon {
+        margin: 20px 20px 0 0;
+        width: calc(70% + 50px);
+    }
+
+    .container-client-7-content {
+        flex-flow: column;
+    }
+
+    .client-7-content-block1,
+    .client-7-content-block2 {
+        margin: auto;
+        margin-top: 40px;
+    }
+
+    .client-header img {
+        margin-right: 47px;
+    }
+
+    .client-7-content-block2 img {
+        height: 390px;
+        margin-left: 22px;
+    }
+
+    .container-client-8-content {
+        margin-left: 85px;
+    }
+
+    .container-client-6-footer {
+        margin-left: -29px;
+    }
+
+    .client-header img {
+        margin-right: 30px;
+    }
+
+    .container-client-8-content {
+        margin-left: 0;
+    }
+
+    .container-client-3 {
+        margin-left: 5px;
+    }
+
+    .container_sales p {
+        margin-left: 33px;
+        font-size: 18px;
+    }
+
+    .container-client-3 div img {
+        left: 12px;
+    }
+}
+
+@media (width <=880px) {
+    .container-client-4-content img {
+        height: 120px;
+    }
+    .container-client5-content{
+        display: inline;
+    }
+
+    .client-4-footer-container {
+        width: 111%;
+    }
+
+    .container-main-Investors h1 {
+        margin-left: 41px;
     }
 
 
@@ -444,10 +652,88 @@ li::marker {
 
     }
 
-    .statistic-result img {
-        left: 16px;
-        top: -57px;
-        height: 124px;
+    .client-6-conteiner2 {
+        width: 400px
+    }
+
+    .container-client-6-footer {
+        margin-left: 3px;
+    }
+}
+
+@media (width <= 760px) {
+    .container-client-3 img:nth-child(2n){
+        margin: 55px 30px 0 0px;
+        height: 60px;
+        width: 5px;
+        transform: rotate(90deg);
+    }
+
+    .container-client-3 div img{
+        left: 20px;
+        top: 50px;
+        height: 60px;
+    }
+
+    .container-client-4-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-client-4-content img {
+        height: 170px;
+    }
+
+    .client-4-footer-container {
+        width: 50%;
+    }
+
+    .client-4-footer-container p {
+        text-align: center;
+    }
+
+    .client-5-content-container {
+        width: 92%;
+    }
+
+    .container-client5-content {
+        margin-left: 30px;
+    }
+    .client-7-content-block2 img {
+        height: 345px;
+    }
+
+}
+
+@media(max-width: 610px) {
+    .container-main-Investors {
+        margin-top: 120px;
+        padding: 0;
+    }
+
+    .container-clients-investor {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container-client-1 {
+        margin: 10px auto;
+        width: 85%;
+    }
+
+    li{
+        font-size: 22px;
+    }
+
+    .quantity-clients {
+        margin: 90px auto 0 auto;
+        width: 300px;
+    }
+
+    .container-client-2 {
+        margin: 50px 0 0 10px;
+        width: 100%;
+        padding: 0;
     }
 
     .business-model {
@@ -467,10 +753,44 @@ li::marker {
         font-size: 30px;
     }
 
-    .container-client-3 img {
-        left: 26px;
-        top: 96px;
-        height: 130px;
+    .container_sales{
+        margin: auto;
+    }
+
+    .container-client-3{
+        flex-flow: column;
+    }
+
+    .container-client-3 img:nth-child(2n){
+        margin: -80px 0 -30px 75px;
+        height: 100px;
+        width: 5px;
+        transform: none;
+    }
+    
+    .container-client-3 div img{
+        position: relative;
+        left: 40px;
+        top: 60px;
+        height: 80px;
+    }
+    
+    .container-client-3 div p{
+        margin: 10px 0 0 75px;
+        font-size: 25px;
+    }
+
+    .container-client-3 div p:last-child{
+        margin: 20px 0 0 125px;
+    }
+
+    .client3-condition{
+        width: 80%;
+    }
+
+    .container-client-3 h2{
+        margin: 40px 0 0 100px;
+        font-size: 45px;
     }
 
     .container-client-3 span {
@@ -678,106 +998,68 @@ li::marker {
     .client-8-content-block1-men {
         height: 300px;
     }
-} */
-
-@media (width <=1600px) {
-    .quantity-clients p {
-        font-size: 22px;
-    }
 }
-    /* 
-    .container-main-Investors p,
-    li,
-    h3 {
-        font-size: 27px;
-        line-height: 28px;
-        ;
-    }
 
-    .statistic-result h2 {
-        font-size: 49px;
-        margin-left: 6px;
-        margin-top: 43px;
-    }
-
-    .statistic-result img {
-        left: -20px;
-        top: -10px;
-        height: 60px;
-    }
-
+@media (max-width: 1270px) {
     .container-client-1 {
-        width: 350px;
-        height: 400px;
+        margin-left: 30px;
+        width: 300px;
+    }
+
+    .container-main-Investors h1 {
+        margin-left: 60px;
+    }
+
+    li,
+    .container-client-1 p {
+        font-size: 20px;
+    }
+
+    .quantity-clients {
+        margin-left: 30px;
+    }
+
+    .quantity-clients p {
+        font-size: 20px;
+    }
+
+    .container-client-7-content img {
+        margin-left: -3%;
+    }
+
+    .container-client-5-icon {
+        margin-left: 20px;
+    }
+
+    .client-header img {
+        margin-right: 30px;
+    }
+
+    .client-6-conteiner2 {
+        margin: 30px 0 0 10px;
+    }
+
+    .client-6-conteiner2 {
+        flex-flow: column;
+        width: 46%;
+    }
+
+    .client-6-conteiner1 h1,
+    .client-6-conteiner2 h1 {
+        margin: 45px 0 0 0;
+        font-size: 65px;
+    }
+
+    .client-6-conteiner1 p,
+    .client-6-conteiner2 p {
+        margin: 30px 0 0 0;
+        font-size: 20px;
+    }
+
+    .container-client-7-content img:first-child {
+        display: none;
     }
 }
-
-@media (width <=1400px) {
-    .quantity-clients p {
-        font-size: 22px;
-    }
-} */
-
-    @media (width <=1270px) {
-        .container-client-1 {
-            margin-left: 30px;
-            width: 300px;
-        }
-
-        .container-main-Investors h1 {
-            margin-left: 60px;
-        }
-
-        li,
-        .container-client-1 p {
-            font-size: 20px;
-        }
-
-        .quantity-clients {
-            margin-left: 30px;
-        }
-
-        .quantity-clients p {
-            font-size: 20px;
-        }
-
-        .container-client-7-content img {
-            margin-left: -3%;
-        }
-
-        .container-client-5-icon {
-            margin-left: 20px;
-        }
-
-        .client-header img {
-            margin-right: 30px;
-        }
-
-        .client-6-conteiner2 {
-            margin: 30px 0 0 10px;
-        }
-
-        .client-6-conteiner2 {
-            flex-flow: column;
-            width: 46%;
-        }
-
-        .client-6-conteiner1 h1,
-        .client-6-conteiner2 h1 {
-            margin: 45px 0 0 0;
-            font-size: 65px;
-        }
-
-        .client-6-conteiner1 p,
-        .client-6-conteiner2 p {
-            margin: 30px 0 0 0;
-            font-size: 20px;
-        }
-
-        .container-client-7-content img:first-child {
-            display: none;
-        }
-    }
 
     @media (width <=1030px) {
         .container-main-Investors {
