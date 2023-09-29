@@ -1,7 +1,6 @@
 import './style.css';
 import Elipsestar from '../../assets/imgTimeIsMoney/ElipseStar.svg';
 import ElipseStar2 from "../../assets/imgTimeIsMoney/EllpseStar2.svg";
-import One from "../../assets/imgTimeIsMoney/one.svg";
 import logo from '../../assets/imgTimeIsMoney/logo.svg';
 import icon3 from '../../assets/imgTimeIsMoney/icon3.1.svg';
 import icon4 from '../../assets/imgTimeIsMoney/icon4.1.svg';
