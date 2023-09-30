@@ -2,15 +2,15 @@ import './style.css';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import WorkStationtAPI from '../../api/WorkStationAPI';
-import house from '../../assets/imgTimeIsMoney/house.svg';
-import ClientAccountAPI from "../../api/ClientAccountingAPI";
-import DoneIcon from '../../assets/imgTimeIsMoney/done-icon.svg';
-import ArrowIcon from '../../assets/imgTimeIsMoney/arrow-icon.svg';
-import IEntityResponse from "../../models/response/IEntityResponse";
-import ArrowDownIcon from '../../assets/imgTimeIsMoney/arrow-down-icon.svg';
-import crossBurgerMenu from '../../assets/imgTimeIsMoney/crossBurgerMenu.svg';
-import IUserStatisticResponse from '../../models/response/IUserStatisticResponse';
+import WorkStationtAPI from '../../../api/WorkStationAPI';
+import house from '../../../assets/imgTimeIsMoney/house.svg';
+import ClientAccountAPI from "../../../api/ClientAccountingAPI";
+import DoneIcon from '../../../assets/imgTimeIsMoney/done-icon.svg';
+import ArrowIcon from '../../../assets/imgTimeIsMoney/arrow-icon.svg';
+import IEntityResponse from "../../../models/response/IEntityResponse";
+import ArrowDownIcon from '../../../assets/imgTimeIsMoney/arrow-down-icon.svg';
+import crossBurgerMenu from '../../../assets/imgTimeIsMoney/crossBurgerMenu.svg';
+import IUserStatisticResponse from '../../../models/response/IUserStatisticResponse';
 
 interface PersonInfoPropsTypes {
     handleIsOpenFooter: Function

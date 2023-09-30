@@ -1,4 +1,7 @@
 .form-register-legal-entity {
+    width: 750px;
+    margin-right: 15px;
+    margin-top: 15px;
     display: flex;
     flex-direction: column;
     padding: 0.7rem 1.5rem 35px;
@@ -7,10 +10,6 @@
     border: 1px solid #eee;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     text-align: center;
-    /* height: 300px; */
-    width: 750px;
-    margin-right: 15px;
-    margin-top: 15px;
 }
 
 .legal-entiti-block1 {
@@ -147,7 +146,28 @@
     font-size: 15px;
 }
 
-@media (width <=1250px) {
+@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
+    .form-register-legal-entity {
+        margin-top: 50px;
+    }
+
+    .legal-entiti-block1 input[id="name-of-company"],
+    .legal-entiti-block1 input[id="legal-address"],
+    .legal-entiti-block1 input[id="inn"],
+    .legal-entiti-block1 input[id="checkpoint"],
+    .legal-entiti-block1 input[id="surname"],
+    .legal-entiti-block1 input[id="name"],
+    .legal-entiti-block1 input[id="patronymic"],
+    .legal-entiti-block1 input[id="email"],
+    .legal-entiti-block1 input[id="confirmation-email"],
+    .legal-entiti-block1 input[id="pass"],
+    .legal-entiti-block1 input[id="confirmation-pass"] {
+        width: 450px;
+        height: 58px;
+    }
+}
+
+@media screen and (max-width: 1250px) and (max-device-width: 1250px) {
     .form-login {
         left: 25%;
     }
@@ -157,7 +177,7 @@
     }
 }
 
-@media (width <=1100px) {
+@media screen and (max-width: 1100px) and (max-device-width: 1100px)  {
     .form-register-legal-entity {
         width: 650px;
     }
@@ -238,7 +258,7 @@
     }
 }
 
-@media (width <=980px) {
+@media  screen and (max-width: 980px) and (max-device-width: 980px)  {
     .form-login {
         left: 5%;
         top: 100px;
@@ -246,7 +266,7 @@
 }
 
 
-@media (width <=770px) {
+@media screen and (max-width: 770px) and (max-device-width: 770px) {
     .form-login {
         left: 11%;
     }
@@ -322,14 +342,14 @@
     }
 }
 
-@media (width <=580px) {
+@media screen and (max-width: 580px) and (max-device-width: 580px)  {
     .form-login {
         left: 7%;
         top: 41px;
     }
 }
 
-@media (width <=500px) {
+@media screen and (max-width: 500px) and (max-device-width: 500px) {
     .form-login {
         left: 3%;
         top: 55px;
@@ -337,7 +357,7 @@
     }
 }
 
-@media (width <=470px) {
+@media screen and (max-width: 470px) and (max-device-width: 470px)  {
     .form-register-legal-entity {
         width: 300px;
         margin-right: auto;
@@ -379,7 +399,6 @@
     }
 
     .legal-entiti-block1 label[for="name-of-company"] {
-        /* width: 218px; */
         top: -5px;
         left: 27px;
     }
@@ -437,7 +456,7 @@
 
 }
 
-@media (width <=400px) {
+@media screen and (max-width: 400px) and (max-device-width: 400px)  {
     .form-register-legal-entity {
         margin-right: auto;
         margin-left: auto;

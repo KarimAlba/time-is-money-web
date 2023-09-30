@@ -84,6 +84,7 @@
     outline: none;
     width: 50%;
     height: calc(2.5rem + -12px);
+    max-height: 55px;
     background: transparent;
     font-size: 15px;
     border: 1px solid #ffffff;
@@ -139,7 +140,6 @@
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
 }
-
 
 input:focus+label,
 textarea:valid+label {

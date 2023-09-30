@@ -1,8 +1,8 @@
 import './style.css';
 import { useState, useEffect } from 'react';
-import WorkStationtAPI from '../../api/WorkStationAPI';
+import WorkStationtAPI from '../../../api/WorkStationAPI';
 import PluginTable from '../PluginTable'
-import ISearchedWorkStationResponse from '../../models/response/ISearchedWorkStationResponse';
+import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
 const CreatePluginModal = () => {
     const [search, setSearch] = useState<string>('');
