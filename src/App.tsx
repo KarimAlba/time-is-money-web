@@ -7,12 +7,12 @@ import { useState, lazy, Suspense } from 'react';
 import Preloader from './components/ui/Preloader';
 import UserPlugin from './components/ui/UserPlugin';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import PhysicalPersonRegistration from './components/ui/PhysicalPersonRegistration';
 import OrganizationRegistration from './components/ui/OrganizationRegistration';
+import PhysicalPersonRegistration from './components/ui/PhysicalPersonRegistration';
 
 const UserPage = lazy(() => import("./views/User"));
 const MainPage = lazy(() => import("./views/MainPage"));
-const PluginPage = lazy(() => import("./views/Plugin"));
+const PluginPage = lazy(() => import("./views/PluginPage"));
 const Investors = lazy(() => import("./views/Investors"));
 const Application = lazy(() => import("./views/Application"));
 const LoginForm = lazy(() => import("./components/ui/LoginForm"));
