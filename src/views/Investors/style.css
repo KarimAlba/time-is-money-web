@@ -418,7 +418,43 @@ li::marker {
     height: 202px;
 }
 
-@media (width <= 1270px) {
+@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
+    .container-client-1 {
+        width: 500px;
+    }
+
+    .quantity-clients p {
+        font-size: 35px;
+    }
+
+    .statistic-result {
+        position: absolute;
+        top: -70px;
+        left: 30px;
+        margin-left: 91px;
+    }
+    
+    .statistic-result h2 {
+        font-size: 70px;
+    }
+    
+    .statistic-result img {
+        position: absolute;
+        left: -30px;
+        top: -10px;
+        height: 80px;
+    }
+    
+    .client-4-footer-container {
+        width: 350px;
+    }
+
+    .client-6-conteiner1{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1270px) and (max-device-width: 1270px) {
     .container-client-1 {
         margin-left: 30px;
         width: 300px;
@@ -479,7 +515,7 @@ li::marker {
     }
 }
 
-@media (width <= 1090px) {
+@media screen and (max-width: 1090px) and (max-device-width: 1090px) {
     .container-main-Investors {
         margin-top: 160px;
     }
@@ -503,7 +539,7 @@ li::marker {
     }
 }
 
-@media(width <=910px) {
+@media screen and (max-width: 910px) and (max-device-width: 910px) {
     .container-clients-investor {
         display: flex;
         flex-flow: row wrap;
@@ -626,7 +662,7 @@ li::marker {
     }
 }
 
-@media (width <=880px) {
+@media screen and (max-width: 880px) and (max-device-width: 880px) {
     .container-client-4-content img {
         height: 120px;
     }
@@ -656,7 +692,7 @@ li::marker {
     }
 }
 
-@media (width <= 760px) {
+@media screen and (max-width: 760px) and (max-device-width: 760px) {
     .container-client-3 img:nth-child(2n){
         margin: 55px 30px 0 0px;
         height: 60px;
@@ -700,7 +736,7 @@ li::marker {
 
 }
 
-@media(max-width: 610px) {
+@media screen and (max-width: 610px) and (max-device-width: 610px) {
     .container-main-Investors {
         margin-top: 120px;
         padding: 0;
@@ -791,7 +827,7 @@ li::marker {
     }
 }
 
-@media (width <=550px) {
+@media screen and (max-width: 550px) and (max-device-width: 550px) {
     .business-model {
         margin: 10px auto;
         width: 95%;
@@ -870,7 +906,7 @@ li::marker {
     }
 }
 
-@media(width <=500px) {
+@media screen and (max-width: 500px) and (max-device-width: 500px) {
     .economic_effect {
         margin: 20px 0;
         font-size: 15px;
@@ -912,7 +948,7 @@ li::marker {
     }
 }
 
-@media (width<=450px) {
+@media screen and (max-width: 450px) and (max-device-width: 450px) {
     .business-model {
         margin: 10px auto;
         margin-left: 10px;
@@ -950,7 +986,7 @@ li::marker {
     }
 }
 
-@media (width <=390px) {
+@media screen and (max-width: 390px) and (max-device-width: 390px) {
     .container-client-8 {
         margin-left: 0px;
     }
