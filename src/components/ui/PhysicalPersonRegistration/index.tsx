@@ -1,14 +1,14 @@
 import './style.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SuccessPopup from "../../ui/SuccessPopup/index";
-import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
+import SuccessPopup from "../SuccessPopup/index";
+import ErrorPopup from '../ErrorPopup/ErrorPopUp';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
-const PhysicalPerson = () => {
+const PhysicalPersonRegistration = () => {
     const navigate = useNavigate();
     const [userSurname, setUserSurname] = useState<string>('');
     const [userName, setUserName] = useState<string>('');
@@ -245,4 +245,4 @@ const PhysicalPerson = () => {
     )
 }
 
-export default PhysicalPerson;
+export default PhysicalPersonRegistration;

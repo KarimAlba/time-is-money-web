@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import PersonInfo from "../../components/PersonInfo";
+import PersonInfo from "../../components/ui/PersonInfo";
 
 interface UserPagePropsTypes {
     handlePersonInfoMounted: Function;

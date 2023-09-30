@@ -1,9 +1,6 @@
 .edit-user {
-    margin-top: 100px;
-    /* margin-left: 500px; */
-    margin-right: auto;
-    margin-left: auto;
-    width: 600px;
+    margin: 120px auto 0 auto;
+    width: 720px;
     padding: 0.7rem 1.5rem 35px;
     display: flex;
     align-items: end;
@@ -16,8 +13,9 @@
 }
 
 .edit-user h5 {
+    margin-left: -16px;
+    font-size: 25px;
     font-weight: 400;
-    font-size: 20px;
     font-family: Arial;
     line-height: 21.77px;
 }
@@ -55,20 +53,13 @@
     margin-top: 18px;
 }
 
-@media (width<=1600px) {
-    .edit-user {
-        margin-top: 120px;
-        width: 720px;
-        margin-left: 620px;
-    }
-
-    .edit-user h5 {
-        font-size: 25px;
-        margin-left: -16px;
+@media screen and (min-width: 1900px) and (max-width: 2400px) and (max-device-width: 2400px) {
+    .edit-user{
+        margin-top: 200px;
     }
 }
 
-@media (width <=1400px) {
+@media screen and (max-width: 1400px) and (max-device-width: 1400px) {
     .edit-user {
         margin-top: 120px;
         margin-left: 525px;
@@ -79,7 +70,7 @@
     }
 }
 
-@media (width <=1300px) {
+@media screen and (max-width: 1300px) and (max-device-width: 1300px) {
     .edit-user {
         width: 680px;
         margin-left: 418px;
@@ -89,13 +80,13 @@
     }
 }
 
-@media (width <=1200px) {
+@media screen and (max-width: 1200px) and (max-device-width: 1200px)  {
     .edit-user {
         margin-left: 416px;
     }
 }
 
-@media (width <=1100px) {
+@media screen and (max-width: 1100px) and (max-device-width: 1100px)  {
     .edit-user {
         margin-left: 345px;
         margin-top: 110px;
@@ -110,7 +101,7 @@
     }
 }
 
-@media (width <=1000px) {
+@media screen and (max-width: 1000px) and (max-device-width: 1000px)  {
     .edit-user {
         margin-left: 341px;
         margin-top: 110px;
@@ -122,7 +113,7 @@
     }
 }
 
-@media (width <=980px) {
+@media screen and (max-width: 980px) and (max-device-width: 980px)  {
     .edit-user {
         margin-left: 316px;
         width: 582px;
@@ -133,7 +124,7 @@
     }
 }
 
-@media (width <=900px) {
+@media screen and (max-width: 900px) and (max-device-width: 900px)  {
     .edit-user {
         margin-left: 400px;
         width: 345px;
@@ -157,36 +148,35 @@
 
     .edit-user_data input {
         height: calc(3.5rem + -12px);
-        ;
     }
 }
 
-@media (width<=800px) {
+@media screen and (max-width: 800px) and (max-device-width: 800px) {
     .edit-user {
         margin-left: 357px;
     }
 }
 
-@media (width<=740px) {
+@media screen and (max-width: 740px) and (max-device-width: 740px)  {
     .edit-user {
         margin-left: 318px;
     }
 }
 
-@media (width <=650px) {
+@media screen and (max-width: 650px) and (max-device-width: 650px)  {
     .edit-user {
         margin-left: 95px;
     }
 }
 
-@media (width <=570px) {
+@media screen and (max-width: 570px) and (max-device-width: 570px) {
     .edit-user {
         margin-left: 70px;
         width: 320px;
     }
 }
 
-@media (width <=470px) {
+@media screen and (max-width: 470px) and (max-device-width: 470px) {
     .edit-user h5 {
         width: 300px;
         margin-bottom: 0;
@@ -220,7 +210,7 @@
 
 
 
-@media (width <=350px) {
+@media screen and (max-width: 350px) and (max-device-width: 350px) {
     .edit-user {
         width: 268px;
     }

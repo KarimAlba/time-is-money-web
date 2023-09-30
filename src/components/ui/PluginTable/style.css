@@ -10,35 +10,36 @@ table {
     border-collapse: collapse;
 }
 
- th,
+th,
 td {
     width: 80px;
     padding: 10px;
+    font-size: 20px;
     box-sizing: border-box;
     border: 2px solid black;
     font-weight: 400;
 }
 
 td a {
+    font-size: 20px;
     text-decoration: none;
     color: rgba(0, 178, 244, 1);
 }
 
-@media (width<=1600px) {
+@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
+    .table-container {
+        margin: auto 10%;
+        width: 70%;
+    }
 
     th,
     td {
-        width: 80px;
-        font-size: 20px;
+        width: 120px;
+        font-size: 30px;
     }
-
-    td a {
-        font-size: 20px;
-    }
-
 }
 
-@media (width<=1300px) {
+@media screen and (max-width: 1300px) and (max-device-width: 1300px) {
     .table-container {
         width: 600px;
         margin-left: 265px;
@@ -46,47 +47,46 @@ td a {
     }
 }
 
-@media (width<=1200px) {
+@media screen and (max-width: 1200px) and (max-device-width: 1200px) {
     .table-container {
         width: 640px;
         margin-left: 110px;
     }
 }
 
-@media (width<=1000px) {
+@media screen and (max-width: 1000px) and (max-device-width: 1000px) {
     .table-container {
         width: 505px;
         margin-left: 100px;
     }
 }
 
-@media (width<=800px) {
+@media screen and (max-width: 800px) and (max-device-width: 800px) {
     .table-container {
         width: 387px;
         margin-left: 110px;
     }
 }
 
-@media (width<=650px) {
+@media screen and (max-width: 650px) and (max-device-width: 650px) {
     .table-container {
         width: 471px;
         margin-left: 72px;
     }
 }
 
-@media (width<=530px) {
+@media screen and (max-width: 530px) and (max-device-width: 530px) {
     .table-container {
         width: 471px;
         margin-left: 20px;
     }
 }
 
-@media (width<=470px) {
+@media screen and (max-width: 470px) and (max-device-width: 470px) {
     .table-container {
-        width: 360px;
         margin: auto;
         margin-bottom: 100px;
-
+        width: 360px;
     }
 }
 

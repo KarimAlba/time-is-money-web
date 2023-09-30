@@ -1,5 +1,5 @@
 import { useState } from "react";
-import StepModel from "../StepModel";
+import StepModel from "../../../models/StepModel";
 import StepItem from "../StepItem";
 import screen1 from "../../../assets/imgTimeIsMoney/screen1.svg";
 import screen2 from "../../../assets/imgTimeIsMoney/screen2.svg";

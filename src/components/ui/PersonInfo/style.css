@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 400px;
+    width: 430px;
     height: 100%;
     background-color: rgba(0, 178, 244, 0.18);
     overflow-y: scroll;
@@ -38,7 +38,6 @@
 
 .person-info_statistic {
     padding: 0 20px;
-    /* height: 360px; */
     box-sizing: border-box;
     display: flex;
     flex-flow: column;
@@ -105,7 +104,6 @@
 
 a {
     text-decoration: underline;
-
 }
 
 .agreement {
@@ -126,9 +124,9 @@ a {
     display: none;
 }
 
-@media (width<=1600px) {
-    .statistic_value p {
-        font-size: 25px;
+@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
+    .person-info {
+        width: 600px;
     }
 }
 

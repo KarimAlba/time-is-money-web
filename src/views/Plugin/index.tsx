@@ -1,6 +1,6 @@
 import './style.css';
 import RunningMan from "../../assets/imgTimeIsMoney/RunningMan.svg"
-import StepList from "../../components/step/stepList";
+import StepList from "../../components/ui/stepList";
 import star from '../../assets/imgTimeIsMoney/Star.svg'
 import { useEffect } from 'react';
 

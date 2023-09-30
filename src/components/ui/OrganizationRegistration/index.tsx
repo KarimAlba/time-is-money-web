@@ -1,14 +1,14 @@
 import './style.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SuccessPopup from "../../ui/SuccessPopup/index";
-import ErrorPopup from '../../ui/ErrorPopup/ErrorPopUp';
+import SuccessPopup from "../SuccessPopup/index";
+import ErrorPopup from '../ErrorPopup/ErrorPopUp';
 import OrganizationAPI from '../../../api/OrganizationAPI';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
-const Entity = () => {
+const OrganizationRegistration = () => {
     const [orgName, setOrgName] = useState<string>('');
     const [orgAddress, setOrgAddress] = useState<string>('');
     const [orgINN, setOrgINN] = useState<string>('');
@@ -340,4 +340,4 @@ const Entity = () => {
     )
 }
 
-export default Entity;
+export default OrganizationRegistration;

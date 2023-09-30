@@ -1,6 +1,6 @@
 import './style.css';
 import stroke from '../../../assets/imgTimeIsMoney/stroke.svg'
-import StepModel from "../StepModel";
+import StepModel from "../../../models/StepModel";
 
 const StepItem = (props: StepModel) => {
 

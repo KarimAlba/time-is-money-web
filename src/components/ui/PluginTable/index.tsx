@@ -1,7 +1,7 @@
 import './style.css';
 import { useState, useEffect } from 'react';
-import WorkStationtAPI from '../../api/WorkStationAPI';
-import ISearchedWorkStationResponse from '../../models/response/ISearchedWorkStationResponse';
+import WorkStationtAPI from '../../../api/WorkStationAPI';
+import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
 interface IPluginTablePropsTypes {
     plugins: ISearchedWorkStationResponse[];

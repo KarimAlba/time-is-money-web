@@ -1,17 +1,14 @@
 import './style.css';
+import axios from 'axios';
 import { useState, useEffect } from "react"
-import SuccessPopup from "../../ui/SuccessPopup/index";
-import ErrorPopup from "../../ui/ErrorPopup/ErrorPopUp";
+import SuccessPopup from "../SuccessPopup/index";
+import ErrorPopup from "../ErrorPopup/ErrorPopUp";
 import IUserAuth from "../../../models/request/IUserAuth";
 import { useLocation, useNavigate } from "react-router-dom";
-import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
-import axios from 'axios';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
+import PasswordRecoveryModal from '../PasswordRecoveryModal';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
-
-interface AuthorizationPropsTypes {
-    showModal: Function;
-}
 
 interface ModalRegisterPropsTypes {
     isVisible: Boolean;
@@ -43,9 +40,9 @@ function ModalRegister(props: ModalRegisterPropsTypes) {
     )
 }
 
-const LoginForm = (props: AuthorizationPropsTypes) => {
-    const { showModal } = props;
+const LoginForm = () => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
+    const [isPasswordRecovery, setIsPasswordRecovery] = useState<boolean>(false);
     const [userEmail, setUserEmail] = useState<string>("");
     const [userPassword, setUserPassword] = useState<string>("");
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
@@ -115,6 +112,8 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
         localStorage.setItem('kpp', entity.kpp);
     }
 
+    const getPasswordRecoveryOpenStatus = () => setIsPasswordRecovery(false);
+
     useEffect(() => {
         if (localStorage.getItem('token')) {
             navigate('/user');
@@ -157,9 +156,7 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
 
                 <span
                     className="passwordRecovery"
-                    onClick={() => {
-                        showModal();
-                    }}
+                    onClick={() => setIsPasswordRecovery(true)}
                 >
                     Забыли пароль?
                 </span>
@@ -186,6 +183,11 @@ const LoginForm = (props: AuthorizationPropsTypes) => {
                     : null
                 }
                 <ModalRegister isVisible={isVisible} />
+
+                {isPasswordRecovery
+                    ? <PasswordRecoveryModal setPasswordRecoveryOpenStatus={getPasswordRecoveryOpenStatus}/>
+                    : null
+                }
 
             </div>
         </>

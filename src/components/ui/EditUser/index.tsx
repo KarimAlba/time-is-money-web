@@ -1,10 +1,10 @@
 import './style.css';
+import SuccessPopup from '../SuccessPopup';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import SuccessPopup from '../ui/SuccessPopup';
-import ErrorPopup from '../ui/ErrorPopup/ErrorPopUp';
-import OrganizationAPI from '../../api/OrganizationAPI';
-import PhysicalAccountAPI from '../../api/PhysicalAccountAPI';
+import ErrorPopup from '../ErrorPopup/ErrorPopUp';
+import OrganizationAPI from '../../../api/OrganizationAPI';
+import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 
 const EditUser = () => {
     const [type, setType] = useState<number>(1);
