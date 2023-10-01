@@ -1,0 +1,51 @@
+.congratulations-block{
+    margin: 100px auto;
+    max-width: 700px;
+    height: auto;
+    padding: 20px 30px;
+    border-radius: 0.5rem;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.congratulations-block p{
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+@media screen and (max-width: 1150px) and (max-device-width: 1150px) {
+    .congratulations-block{
+        margin-left: -200px;
+    }
+}
+
+@media screen and (max-width: 870px) and (max-device-width: 870px) {
+    .congratulations-block{
+        margin-left: 20px;
+        max-width: 500px;
+        padding: 20px 10px;
+    }
+
+    .congratulations-block p{
+        font-size: 25px;
+    }
+}
+
+@media screen and (max-width: 650px) and (max-device-width: 650px) {
+    .congratulations-block{
+        margin: 90px auto;
+        max-width: 350px;
+        padding: 20px 10px;
+    }
+
+    .congratulations-block p{
+        font-size: 25px;
+    }
+}

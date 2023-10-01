@@ -3,6 +3,7 @@ import SuccessPopup from '../SuccessPopup';
 import { useState, useEffect } from 'react';
 import ErrorPopup from '../ErrorPopup/ErrorPopUp';
 import ClientAccountAPI from '../../../api/ClientAccountingAPI';
+import CloseIcon from '../../../assets/images/icons/close-icon.svg';
 
 interface PasswordRecoveryModalPropsTypes{
     setPasswordRecoveryOpenStatus: Function;
@@ -51,12 +52,12 @@ const PasswordRecoveryModal = (props: PasswordRecoveryModalPropsTypes) => {
             <div className='overlay modalChooseServiceContainer'>
                 <div className='modalChooseService'>
                     <div className='modalHeder'>
-                        <span
+                        <button
                             onClick={() => setPasswordRecoveryOpenStatus()}
                             className='spanCross'
                         >
-                            ×
-                        </span>
+                            <img src={CloseIcon} alt="close icon"/>
+                        </button>
                         <h5 className='h5'>
                             Восстановление пароля
                         </h5>

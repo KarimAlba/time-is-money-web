@@ -1,0 +1,125 @@
+.recovery-container{
+    margin: 100px auto;
+    max-width: 800px;
+    height: auto;
+    padding: 20px 30px;
+    border-radius: 0.5rem;
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.recovery-container h2{
+    color: #000;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.container_fields{
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: start;
+}
+
+.fields_field{
+    position: relative;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container_fields img{
+    position: absolute;
+    top: 15px;
+    left: 85%;
+    width: 25px;
+}
+
+.fields_field input{
+    width: 60%;
+    height: 55px;
+    padding: 5px;
+    border: 1px solid #ffffff;
+    color: #000;
+    text-transform: initial;
+    box-sizing: border-box;
+    background-color: rgb(217, 249, 255);
+    outline: none;
+}
+
+.fields_field label{
+    margin-top: 5px;
+    width: 30%;
+    max-height: 55px;
+    text-align: left;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.recovery-container button{
+    margin: 20px auto;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background: #00B2F4;
+    color: #fff;
+}
+
+@media screen and (max-width: 1050px) and (max-device-width: 1050px) {
+    .recovery-container{
+        margin-left: -100px;
+    }
+}
+
+@media screen and (max-width: 870px) and (max-device-width: 870px) {
+    .recovery-container{
+        margin: 100px 0;
+        max-width: 370px;
+        height: auto;
+        padding: 10px 10px;
+    }
+
+    .recovery-container h2{
+        font-size: 25px;
+    }
+
+    .fields_field{
+        position: relative;
+        margin: 10px 0 0 10px;
+        display: flex;
+        flex-flow: column;
+        justify-content: start;
+    }
+    
+    .container_fields img{
+        position: absolute;
+        top: 65px;
+        left: 75%;
+    }
+    
+    .fields_field input{
+        width: 90%;
+        height: 55px;
+    }
+    
+    .fields_field label{
+        margin-top: 5px;
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 505px) and (max-device-width: 505px) {
+    .recovery-container{
+        margin-left: 5%;
+    }
+}
