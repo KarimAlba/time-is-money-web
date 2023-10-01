@@ -5,9 +5,9 @@ import SuccessPopup from "../SuccessPopup/index";
 import ErrorPopup from "../ErrorPopup/ErrorPopUp";
 import IUserAuth from "../../../models/request/IUserAuth";
 import { useLocation, useNavigate } from "react-router-dom";
+import PasswordRecoveryModal from '../PasswordRecoveryModal';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
-import PasswordRecoveryModal from '../PasswordRecoveryModal';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
 interface ModalRegisterPropsTypes {
@@ -49,8 +49,8 @@ const LoginForm = () => {
     const [errorMessage, setErrorMessage] = useState<string>("");
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
-    const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false)
-    const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword)
+    const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false);
+    const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword);
 
     const navigate = useNavigate();
 
