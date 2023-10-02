@@ -18,7 +18,7 @@ const PasswordRecoveryModal = (props: PasswordRecoveryModalPropsTypes) => {
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
     const sendReq = () => {
-        ClientAccountAPI.passwordRecovery(email)
+        ClientAccountAPI.sendCode(email)
           .then(response => {
             setIsErrorPopupVisible(false);
             setIsSuccessPopupVisible(true);
