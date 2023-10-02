@@ -6,8 +6,12 @@ class ClientAccountAPI{
         return axiosConfig.get('/api/main/user');
     }
 
-    public static passwordRecovery(email: string): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.post(`/api/main/user/password-recovery?email=${email}`);
+    public static sendCode(email: string): Promise<AxiosResponse<any | any>> {
+        return axiosConfig.post(`/api/main/code/send?recipient=${email}&messageType=RESET_PASSWORD`)
+    }
+
+    public static resetPassword(newPassword: string): Promise<AxiosResponse<any | any>> {
+        return axiosConfig.post(`/api/main/user/password?newPassword=${newPassword}`)
     }
 }
 

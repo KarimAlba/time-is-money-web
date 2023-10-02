@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ErrorPopup from "../ErrorPopup/ErrorPopUp";
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import ClientAccountAPI from '../../../api/ClientAccountingAPI';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
 const CreateNewPasswordPage = () => {
@@ -10,7 +11,7 @@ const CreateNewPasswordPage = () => {
     const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false);
     const [userConfirmPassword, setUserConfirmPassword] = useState<string>("");
     const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] = useState<boolean>(false);
-    const [errorMessage, setErrorMessage] = useState<string>("");
+    const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
 
     const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword);
@@ -23,8 +24,43 @@ const CreateNewPasswordPage = () => {
         return passwordRegex.test(password);
     };
 
+    const sendRequest = () => {
+        ClientAccountAPI.resetPassword(userPassword)
+            .then(response => {
+                if (response.status === 200) {
+                    navigate('/login/successful-recovery');
+                }
+            })
+            .catch(error => console.log(error))
+    }
+
+    const validation = () => {
+        const copy = [];
+
+        if (!isPasswordValid(userPassword)) {
+            copy.push(
+                "Пароль должен содержать не менее 8 символов, одну строчную и прописную буквы английского алфавита и спец символы"
+            );
+        }
+
+        if (userPassword !== userConfirmPassword) {
+            copy.push('Пароли не совпадают')
+        }
+
+        setErrorMessages(copy);
+        return copy;
+    }
+
     const handleNextClick = () => {
-        navigate('/login/successful-recovery');
+        const errors = validation();
+
+        if (errors.length > 0) {
+            setIsErrorPopupVisible(true);
+            return 0;
+        } else {
+            setIsErrorPopupVisible(false);
+            sendRequest();
+        }
     }
 
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => setUserPassword(e.target.value);
@@ -82,11 +118,16 @@ const CreateNewPasswordPage = () => {
                 </div>
             </div>
 
-            <button onClick={handleNextClick}>ДАЛЕЕ</button>
+            <button 
+                onClick={handleNextClick} 
+                className='next-btn'
+            >
+                ДАЛЕЕ
+            </button>
 
             {isErrorPopupVisible && (
                     <ErrorPopup
-                        error={errorMessage}
+                        errorArray={errorMessages}
                         onClose={() => setIsErrorPopupVisible(false)}
                     />
             )}
