@@ -22,6 +22,9 @@ const PasswordRecoveryModal = (props: PasswordRecoveryModalPropsTypes) => {
           .then(response => {
             setIsErrorPopupVisible(false);
             setIsSuccessPopupVisible(true);
+            setTimeout(() => {
+                setPasswordRecoveryOpenStatus();
+            }, 1400);
           })
           .catch(error => {
             setErrorMessage(error.response.data.message);

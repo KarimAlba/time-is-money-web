@@ -21,6 +21,10 @@ class WorkStationtAPI{
     public static prolongation(id: number): Promise<AxiosResponse<any | IErrorResponse>> {
         return axiosConfig.patch(`/api/main/work-station/prolongation?month=1&id=${id}`);
     }
+
+    public static create(name: string): Promise<AxiosResponse<any | IErrorResponse>> {
+        return axiosConfig.post(`/api/main/work-station/create?name=${name}`);
+    }
 }
 
 export default WorkStationtAPI;
