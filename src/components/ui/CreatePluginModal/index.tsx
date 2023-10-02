@@ -1,22 +1,22 @@
 import './style.css';
+import PluginTable from '../PluginTable';
 import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
-import PluginTable from '../PluginTable'
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
 const CreatePluginModal = () => {
-    const [search, setSearch] = useState<string>('');
+    const [name, setName] = useState<string>('');
     const [isTableVisible, setIsTableVisible] = useState<boolean>(false);
     const [plugins, setPlugins] = useState<ISearchedWorkStationResponse[]>([]);
     const [isNeedRequest, setIsNeedRequest] = useState<boolean>(true);
 
-    const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value);
+    const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
 
     const handleNeedRequest = () => setIsNeedRequest(true);
 
     const sendReq = () => {
         setIsNeedRequest(false);
-        WorkStationtAPI.search(search)
+        WorkStationtAPI.create(name)
             .then(response => {
                 setPlugins(response.data);
                 setIsTableVisible(true);
@@ -28,14 +28,14 @@ const CreatePluginModal = () => {
     }
 
     const handleBtnClick = () => {
-        if (search) {
+        if (name) {
             sendReq();
         }
         setIsTableVisible(false);
     }
 
     useEffect(() => {
-        if (search) {
+        if (name) {
             sendReq();
         }
     }, [isNeedRequest]) 
@@ -47,7 +47,7 @@ const CreatePluginModal = () => {
                 <p>Пожалуйста введите имя плагина или его порядковый номер:</p>
                 <input
                     type="text"
-                    onInput={handleSearchChange}
+                    onInput={handleNameChange}
                 />
                 <button onClick={handleBtnClick}>СКАЧАТЬ</button>
             </div>
@@ -56,7 +56,6 @@ const CreatePluginModal = () => {
                 : null
             }
         </div>
-
     )
 }
 
