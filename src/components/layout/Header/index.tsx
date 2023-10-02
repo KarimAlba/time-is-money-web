@@ -118,14 +118,10 @@ const Header = (props: HeaderPropsTypes) => {
                     src={burger} onClick={() => setMenuActive(true)} 
                 />
             }
+            <div className="container-img">
+                <img src={logo}/>
+            </div>
 
-            {currentBtn === 'Вход'
-                ? null
-                : (<div className="container-img">
-                    <img src={logo}/>
-                </div>)
-
-            }
             <div className="button-container">
                 <button 
                     onClick={toMain}

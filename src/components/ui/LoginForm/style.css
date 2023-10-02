@@ -8,7 +8,7 @@
 
 }
 
-@media(width <=470px) {
+@media screen and (max-width: 520px) {
     .animateContainer img {
         top: 81px;
         right: 15%;

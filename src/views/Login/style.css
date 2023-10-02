@@ -5,7 +5,7 @@
 
 .laptop-img {
     position: absolute;
-    top: 90px;
+    top: 200px;
     left: 5%;
     height: 500px;
     z-index: 1;
@@ -191,11 +191,13 @@ textarea:valid+label {
     cursor: pointer;
 }
 
-@media screen and (max-width: 1500px) and (max-device-width: 1500px) {
+@media screen and (max-width: 1490px) and (max-device-width: 1490px) {
     .laptop-img {
-        top: 150px;
-        left: 5%;
-        height: 350px;
+        position: absolute;
+        top: 200px;
+        left: 1%;
+        height: 400px;
+        z-index: 1;
     }
 }
 
@@ -204,20 +206,9 @@ textarea:valid+label {
         width: 610px;
     }
 
-    .form-login {
-        left: 33%;
-    }
-
     .animateContainer input[id="id_email"],
     .animateContainer input[id="pass"] {
         width: 60%;
-    }
-
-    .laptop-img {
-        height: 64vh;
-        width: 50vw;
-        display: none;
-        left: 30px;
     }
 }
 
@@ -235,13 +226,17 @@ textarea:valid+label {
     .block-Login1 button {
         margin-left: 125px;
     }
-}
 
-@media screen and (max-width: 1000px) and (max-device-width: 1000px) {
     .laptop-img {
         display: none;
     }
 
+    .form-login{
+        margin: 0 0 0 -10%;
+    }
+}
+
+@media screen and (max-width: 1000px) and (max-device-width: 1000px) {
     .block-Login1 {
         margin-top: 130px;
     }
@@ -253,27 +248,13 @@ textarea:valid+label {
     }
 }
 
-@media screen and (max-width: 860px) and (max-device-width: 860px) {
-    .form-login {
-        left: 267px;
-    }
-
-    .laptop-img {
-        left: 30px;
-    }
-}
-
 @media screen and (max-width: 800px) and (max-device-width: 800px) {
-    .laptop-img {
-        display: none;
-    }
-
-    .form-login {
-        left: 10%;
-    }
-
     .block-Login1 {
         margin-top: 20px;
+    }
+
+    .form-login{
+        margin: 0 0 0 -25%;
     }
 }
 
@@ -297,16 +278,9 @@ textarea:valid+label {
     }
 }
 
-@media  screen and (max-width: 650px) and (max-device-width: 650px) {
-    .form-login {
-        left: 12%;
-    }
-}
-
 @media  screen and (max-width: 590px) and (max-device-width: 590px) {
-    .form-login {
-        top: 15px;
-        left: 17%;
+    .form-login{
+        margin: 0 0 0 -35%;
     }
 
     .block-Login1 {
@@ -330,34 +304,19 @@ textarea:valid+label {
     }
 }
 
-@media  screen and (max-width: 550px) and (max-device-width: 550px) {
-    .form-login {
-        left: 14%;
-    }
-}
-
-@media  screen and (max-width: 470px) and (max-device-width: 470px) {
+@media  screen and (max-width: 510px) and (max-device-width: 510px) {
     .ContainerLogin {
         flex-direction: column;
     }
 
-    .laptop-img {
-        position: static;
-        display: none;
-        height: 40vh;
-        width: 75vw;
-        margin-left: 116px;
-        margin-top: 40px;
-    }
-
-    .form-login {
-        position: static;
-    }
-
-    .block-Login1 {
+    .block-Login1 {        
+        margin: 0 auto;
         width: 370px;
-        margin-left: auto;
-        margin-right: auto;
+    }
+
+    .form-login{
+        margin: 0 0;
+        left: 0;
     }
 
     .block-Login1 button {
@@ -375,7 +334,6 @@ textarea:valid+label {
     .animateContainer label[for="pass"] {
         top: 27px;
         font-size: 18px;
-
     }
 
     .animateContainer input[id="id_email"]:focus+label[for="id_email"] {

@@ -440,13 +440,14 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             <a>
                                 правилами пользования
                             </a>
+                            <br/>
                             <span
                                 style={isDownload
                                     ? { color: 'rgba(0, 0, 0, 0.3)' }
                                     : { color: 'black' }
                                 }
                             >
-                                &nbsp;плагином
+                                плагином
 
                             </span>
                         </p>

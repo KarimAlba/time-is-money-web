@@ -9,26 +9,21 @@
 }
 
 .button-container button {
-    cursor: pointer;
-    Width: 110px;
-    Height: 40px;
     margin: 10px;
+    width: 110px;
+    height: 50px;
     padding: initial;
     border: 2px solid;
     background-color: rgb(255, 255, 255);
     border-color: #00B2F4;
     font-family: 'Arial';
-    font-size: 14px;
+    font-weight: 700;
     box-shadow: 8px 10px 5px 2px rgba(105, 105, 106, 0.2)
 }
 
 .button-container button:focus {
     vertical-align: middle;
     color: #00B2F4;
-}
-
-.container-img {
-    margin-left: 35%;
 }
 
 .container-img img {
@@ -40,104 +35,92 @@
 .header-burger {
     display: none;
 }
-@media (width <= 2400px) {
+
+@media screen and (max-width: 2400px) and (max-device-width: 2400px) {
     .button-container {
-        top: 3%;
+        top: 40px;
     }
+
     .button-container button{
         width: 220px;
         height: 70px;
         font-size: 25px;
-        font-weight: 700;
     }
-    .container-img img{
-        width: 150px;
-        height: 200px;
+
+    .container-img{
+        margin-left: 30%
+    }
+}
+
+@media screen and (max-width: 2200px) and (max-device-width: 2200px) {
+    .button-container button{
+        width: 200px;
+        height: 60px;
     }
     .container-img{
         margin-left: 30%
     }
 }
-@media (width<=2200px) {
-    .button-container {
-        top: 3%;
-    }
+
+@media screen and (max-width: 2000px) and (max-device-width: 2000px) {
     .button-container button{
         width: 200px;
         height: 60px;
         font-size: 21px;
-        font-weight: 700;
     }
+
     .container-img{
         margin-left: 30%
     }
 }
-@media (width<=2000px) {
-    .button-container button{
-        width: 200px;
-        height: 60px;
-        font-size: 21px;
-        font-weight: 700;
-    }
-    .container-img{
-        margin-left: 30%
-    }
-}
-@media (width <=1800px) {
+
+@media screen and (max-width: 1800px) and (max-device-width: 1800px) {
     .button-container button{
         width: 160px;
         height: 50px;
-        font-size: 18px;
-        font-weight: 700;
+        font-size: 16px;
     }
 }
 
-@media (width <= 1600px) {
+@media screen and (max-width: 1600px) and (max-device-width: 1600px) {
     .button-container button{
-        font-weight: 700;
-        Width: 140px;
-        Height: 50px;
-        font-size: 17px;
-    }
-    .container-img img{
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 50px;
+        font-size: 14px;
     }
 
-    .button-container{
-        right: 20px;
+    .container-img{
+        margin-left: 35%;
     }
 }
 
-@media (Width <= 1450px) {
+@media screen and (max-width: 1450px) and (max-device-width: 1450px) {
     .container-img{
         margin-left: 20%;
     }
 }
-@media(width <=1100px) {
-    .container-img img {
-        margin-left: 60px;
-    }
-    .button-container button{
-        width: 127px;
-    }
-    .button-container button{
-        font-size: 16px;
-    }
+
+@media screen and (max-width: 1100px) and (max-device-width: 1100px) {
+
 }
-@media(width <=1000px) {
+
+@media screen and (max-width: 1000px) and (max-device-width: 1000px) {
     .button-container button {
-        Width: 95px;
+        width: 95px;
         font-size: 12px;
-        height: 33px;
     }
 
-    .container-img img {
-        display: none;
+    .container-img{
+        margin-left: 40px;
+    }
+
+    .container-img img{
+        width: 90px;
+        height: 90px;
     }
 }
 
-@media(width <=900px) {
+@media screen and (max-width: 900px) and (max-device-width: 900px) {
     .button-container button {
         Width: 90px;
         font-size: 10px;
@@ -145,21 +128,37 @@
     }
 }
 
-@media(width <=870px) {
+@media screen and (max-width: 870px) and (max-device-width: 870px) {
     .container-img img {
         width: 85px;
         height: 85px;
     }
+
+    .button-container {
+        right: 10px;
+    }
+
+    .container-img {
+        margin-left: 0%;
+    }
+
+    .button-container button {
+        cursor: pointer;
+        width: 75px;
+        height: 30px;
+        font-size: 9px;
+        margin: 6px;
+    }
 }
 
-@media(width <=770px) {
+@media screen and (max-width: 770px) and (max-device-width: 770px) {
     .container-img img {
         width: 150px;
         height: 80px;
     }
 }
 
-@media(width <=650px) {
+@media screen and (max-width: 650px) and (max-device-width: 650px) {
     .container-img img {
         width: 70px;
         height: 70px;
@@ -191,8 +190,8 @@
     .menuBurger {
         display: flex;
         flex-direction: column;
-        margin-top: 100PX;
-        margin-left: 50PX;
+        margin-top: 100px;
+        margin-left: 50px;
         z-index: 11;
     }
 
@@ -212,61 +211,19 @@
 
 }
 
-@media(width <=1150px) {
-    .button-container {
-        right: 20px;
-    }
-}
-
-@media(width <=1170px) {
-    .container-img {
-        margin-left: 2%;
-    }
-}
-
-@media(width <=820px) {
-    .button-container {
-        right: 10px;
-    }
-
-    .button-container button {
-        Width: 83px;
-        font-size: 9px;
-        height: 31px;
-    }
-}
-
-@media(width <=780px) {
-    .container-img {
-        margin-left: 0%;
-    }
-
-    .button-container button {
-        cursor: pointer;
-        width: 75px;
-        height: 30px;
-        font-size: 9px;
-        margin: 6px;
-    }
-}
-
-@media(width <=770px) {
-    .button-container {
-        right: 10px;
-    }
-}
-
-@media(width <=590px) {
+@media screen and (max-width: 650px) and (max-device-width: 650px){
     .container-img {
         display: none;
     }
+}
 
+@media screen and (max-width: 590px) and (max-device-width: 590px) {
     .button-container {
         right: 45px;
     }
 }
 
-@media (width<=550px) {
+@media screen and (max-width: 550px) and (max-device-width: 550px) {
     .button-container {
         right: 25px;
     }
@@ -277,13 +234,13 @@
     }
 }
 
-@media(width <=490px) {
+@media screen and (max-width: 490px) and (max-device-width: 490px) {
     .button-container {
         right: 10px;
     }
 }
 
-@media(width <=470px) {
+@media screen and (max-width: 470px) and (max-device-width: 470px){
     .container-img {
         display: block;
     }
