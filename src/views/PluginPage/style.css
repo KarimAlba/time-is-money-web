@@ -19,7 +19,7 @@
 }
 
 .block1-plugin-text1 {
-    max-width: 800px;
+    max-width: 750px;
     padding: 20px;
     background: #fff;
     border-top-left-radius: 20px;
@@ -80,6 +80,12 @@
     .block1-plugin-text1 {
         max-width: 1000px;
         padding: 30px;
+    }
+}
+
+@media screen and (max-width: 1780px) and (max-device-width: 1780px) {
+    .block1-plugin img {
+        left: 7%;
     }
 }
 
