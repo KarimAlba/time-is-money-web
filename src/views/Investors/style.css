@@ -1,9 +1,8 @@
 .container-main-Investors {
-    background-size: 50%;
+    background-size: 70%;
     background-repeat: no-repeat;
     background-image: url('../../assets/imgTimeIsMoney/materik.svg');
-    background-position-x:99%;
-    background-position-y: -5px;
+    background-position-x: 40%;
 }
 
 .container-main-Investors h1 {
@@ -17,23 +16,27 @@
 
 .container-client-1 {
     margin-left: 26px;
-    width: 350px;
+    width: 500px;
     border: 1px solid #eee;
     border-radius: 15px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
 }
 
-li {
+.subtitle{
+    margin: 20px 0 0 60px;
+}
+
+li{
     margin: 10px;
 }
 
-li::marker {
+li::marker{
     color: #00B2F4;
     padding-right: 10px;
     text-align: center;
 }
 
-.quantity-clients {
+.quantity-clients{
     position: relative;
     margin-top: 100px;
     margin-left: 80px;
@@ -41,44 +44,43 @@ li::marker {
     background-repeat: no-repeat;
 }
 
-.statistic-result {
+.quantity-clients p{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.statistic-result{
     position: absolute;
     top: -50px;
     left: 0;
     margin-left: 91px;
 }
 
-.statistic-result h2 {
+.statistic-result h2{
     font-size: 50px;
     color: #00B2F4;
 }
 
-.statistic-result img {
+.statistic-result img{
     position: absolute;
     left: -20px;
     top: -10px;
     height: 60px;
 }
 
-.quantity-clients p {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    font-size: 22px;
-}
-
-.container-client-2 {
+.container-client-2{
     display: flex;
     flex-direction: column;
 }
 
-.container-client-2 h1 {
+.container-client-2 h1{
     margin-left: 60px;
     margin-top: 160px;
     font-size: 40px;
 }
 
-.business-model {
+.business-model{
     border: 1px solid #eee;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
     margin-left: 26px;
@@ -87,7 +89,7 @@ li::marker {
     border-radius: 15px;
 }
 
-.business-model img {
+.business-model img{
     height: 100px;
     left: 377px;
     top: -49px;
@@ -96,16 +98,16 @@ li::marker {
     z-index: 1;
 }
 
-.business-model p {
+.business-model p{
     margin: 0;
 }
 
-.business-model span {
+.business-model span{
     color: #00B2F4;
     font-size: 40px;
 }
 
-.business-model button {
+.business-model button{
     margin: 20px 0 20px 5%;
     width: 70%;
     height: 40px;
@@ -201,7 +203,6 @@ li::marker {
     width: 70px;
 }
 
-
 .container-client-5 {
     margin-top: 80px;
 }
@@ -264,9 +265,8 @@ li::marker {
     position: relative;
     margin: 30px 0 0 60px;
     width: 500px;
-    height: 140px;
-    padding-left: 24px;
-    box-sizing: border-box;
+    height: auto;
+    padding: 15px;
     border: 1px solid #eee;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
     border-radius: 15px;
@@ -325,26 +325,34 @@ li::marker {
     margin-top: 200px;
 }
 
-.container-client-8-content,
-.container-client-7-content {
+.container-client-8-content{
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
 }
 
-.container-client-7-content img {
-    position: relative;
-    left: 34%;
-    top: 50px;
-    height: 55px;
+.container-client-7-content{
+    display: flex;
+    justify-content: start;
 }
 
-.client-7-content-block1 {
+.container-client-7-content{
+    position: relative;  
+    width: 100%; 
+}
+
+.container-client-7-content img:first-child {
+    position: absolute;
+    left: 580px;
+    top: 60px;
+    height: 80px;
+}
+
+.client-7-content-block1 { 
+    margin: 30px 0 100px 60px;
+    width: 550px;
+    padding: 45px;
     border: 1px solid #eee;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
-    width: 425px;
-    margin-top: 30px;
-    padding: 45px;
     border-radius: 15px;
 }
 
@@ -420,10 +428,11 @@ li::marker {
 
 @media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .container-client-1 {
-        width: 500px;
+        max-width: 500px;
     }
 
-    .quantity-clients p {
+    .quantity-clients p,
+    .container-client-3 p{
         font-size: 35px;
     }
 
@@ -444,6 +453,10 @@ li::marker {
         top: -10px;
         height: 80px;
     }
+
+    .client3-condition{
+        margin: 60px 0 40px 60px;
+    }
     
     .client-4-footer-container {
         width: 350px;
@@ -451,6 +464,58 @@ li::marker {
 
     .client-6-conteiner1{
         height: auto;
+    }
+}
+
+@media screen and (min-width: 1700px) and (max-width: 2400px) and (max-device-width: 2400px){
+    .container-main-Investors h1{
+        margin: 60px 30px;
+        line-height: 70px;
+        font-size: 65px;
+    }
+
+    .container-client-3 h2{
+        font-size: 60px;
+    }
+
+    .subtitle{
+        margin: 10px 0px 0 30px;
+        font-size: 50px;
+    }
+
+    .client-6-conteiner1{
+        width: 600px;
+    }
+
+    .client-6-conteiner1 img {
+        left: 520px;
+        top: -70px;
+        height: 150px;
+    }
+
+    .container-client-6 h1{
+        font-size: 120px;
+    }
+
+    .client-7-content-block2 img {
+        position: initial;
+        height: 610px;
+    }
+}
+
+@media screen and (max-width: 1470px) and (max-device-width: 1470px) {
+    .container-client-7-content img:first-child {
+        left: 500px;
+        top: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 1370px) and (max-device-width: 1370px){
+    .container-client-7-content img:first-child {
+        left: 400px;
+        top: 40px;
+        height: 60px;
     }
 }
 
@@ -475,10 +540,6 @@ li::marker {
 
     .quantity-clients p {
         font-size: 20px;
-    }
-
-    .container-client-7-content img {
-        margin-left: -3%;
     }
 
     .container-client-5-icon {
@@ -730,10 +791,45 @@ li::marker {
     .container-client5-content {
         margin-left: 30px;
     }
+
+    .container-client-7-content img:first-child {
+        display: block;
+        left: 70%;
+        top: 60px;
+        height: 80px;
+    }
+
     .client-7-content-block2 img {
         height: 345px;
     }
 
+    
+    .container-client-7-content{
+        position: relative;  
+        width: 100%; 
+    }
+
+    .container-client-7-content img:first-child {
+        position: absolute;
+        left: 80%;
+        top: 60px;
+        height: 60px;
+    }
+
+    .client-7-content-block1 { 
+        margin: 30px auto;
+        width: 80%;
+        padding: 15px;
+    }
+
+    .client-7-content-block2 {
+        margin: 15px auto;
+    }
+
+    .client-7-content-block2 img {
+        position: initial;
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 610px) and (max-device-width: 610px) {
@@ -876,6 +972,13 @@ li::marker {
     .client-6-conteiner1 h1,
     .client-6-conteiner2 h1 {
         margin-left: -10px;
+    }
+
+    .container-client-7-content img:first-child {
+        position: absolute;
+        left: 80%;
+        top: 0px;
+        height: 60px;
     }
 
     .client-7-content-block2 img {

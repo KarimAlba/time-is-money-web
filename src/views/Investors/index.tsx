@@ -37,7 +37,7 @@ const Investors = (props: InvestorsPropsTypes) => {
         <div className="container-main-Investors">
             <div>
                 <h1>Целевой рынок</h1>
-                <p style={{ marginLeft: '60px' }}>Наши потенциальные клиенты:</p>
+                <p className='subtitle'>Наши потенциальные клиенты:</p>
                 <div className="container-clients-investor">
                     <ul className="container-client-1">
                         <li>банки; </li>

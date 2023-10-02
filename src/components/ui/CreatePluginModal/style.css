@@ -1,13 +1,12 @@
 .plugin-modal {
-    display: flex;
-    flex-flow: column;
+    margin: 80px auto 0 auto;
     width: 650px;
     height: 265px;
+    display: flex;
+    flex-flow: column;
     background: rgba(0, 178, 244, 0.18);
     border-radius: 15px;
     align-items: center;
-    margin-left: 245px;
-    margin-top: 80px;
     font-family: Arial;
     line-height: 23px;
 }
@@ -40,13 +39,13 @@
     border: 0;
 }
 
-@media (width <=1200px) {
+@media screen and (max-width: 1200px) and (max-device-width: 1200px) {
     .plugin-modal {
         margin-left: 120px;
     }
 }
 
-@media (width <=1000px) {
+@media screen and (max-width: 1000px) and (max-device-width: 1000px) {
     .plugin-modal {
         width: 475px;
     }
@@ -61,7 +60,7 @@
     }
 }
 
-@media (width <=800px) {
+@media screen and (max-width: 800px) and (max-device-width: 800px) {
     .plugin-modal input{
         width: 250px;
     }
@@ -75,7 +74,8 @@
         height: 35px;
     }
 }
-@media (width <= 650px) {
+
+@media screen and (max-width: 650px) and (max-device-width: 650px) {
     .plugin-modal{
         width: 450px;
         margin-left: auto;
@@ -86,13 +86,14 @@
     }
     
 }
-@media (width <= 500px) {
+
+@media screen and (max-width: 500px) and (max-device-width: 500px) {
     .plugin-modal{
         margin-left: 15px;
     }
 }
 
-@media (width <=470px) {
+@media screen and (max-width: 480px) and (max-device-width: 480px) {
     .plugin-modal {
         width: 360px;
         height: 260px;
