@@ -1,8 +1,9 @@
 import './style.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 import ErrorPopup from "../ErrorPopup/ErrorPopUp";
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import ClientAccountAPI from '../../../api/ClientAccountingAPI';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
@@ -18,6 +19,8 @@ const CreateNewPasswordPage = () => {
     const handleConfirmEyeClick = () => setIsVisibleConfirmPassword(!isVisibleConfirmPassword);
 
     const navigate = useNavigate();
+
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const isPasswordValid = (password: string) => {
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
@@ -66,6 +69,11 @@ const CreateNewPasswordPage = () => {
     const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => setUserPassword(e.target.value);
 
     const handleConfirmPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => setUserConfirmPassword(e.target.value);
+
+    useEffect(() => {
+        console.log(searchParams.get('authToken'));
+        axios.defaults.headers.common['Authorization'] = `Bearer ${searchParams.get('authToken')}`
+    }, []);
     
     return (
         <div className='recovery-container'>

@@ -7,18 +7,12 @@ import ISearchedWorkStationResponse from '../../../models/response/ISearchedWork
 const CreatePluginModal = () => {
     const [name, setName] = useState<string>('');
     const [isTableVisible, setIsTableVisible] = useState<boolean>(false);
-    const [plugins, setPlugins] = useState<ISearchedWorkStationResponse[]>([]);
-    const [isNeedRequest, setIsNeedRequest] = useState<boolean>(true);
 
     const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value);
 
-    const handleNeedRequest = () => setIsNeedRequest(true);
-
-    const sendReq = () => {
-        setIsNeedRequest(false);
+    const sendCreateReq = () => {
         WorkStationtAPI.create(name)
             .then(response => {
-                setPlugins(response.data);
                 setIsTableVisible(true);
             })
             .catch(error => {
@@ -29,16 +23,10 @@ const CreatePluginModal = () => {
 
     const handleBtnClick = () => {
         if (name) {
-            sendReq();
+            sendCreateReq();
         }
         setIsTableVisible(false);
     }
-
-    useEffect(() => {
-        if (name) {
-            sendReq();
-        }
-    }, [isNeedRequest]) 
 
     return (
         <div>
@@ -52,7 +40,7 @@ const CreatePluginModal = () => {
                 <button onClick={handleBtnClick}>СКАЧАТЬ</button>
             </div>
             {isTableVisible
-                ? <PluginTable plugins={plugins} handleNeedRequest={handleNeedRequest}/>
+                ? <PluginTable/>
                 : null
             }
         </div>
