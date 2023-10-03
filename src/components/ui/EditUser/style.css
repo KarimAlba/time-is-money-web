@@ -1,5 +1,5 @@
 .edit-user {
-    margin: 120px auto 0 auto;
+    margin: 120px 0 0 650px;
     width: 720px;
     padding: 0.7rem 1.5rem 35px;
     display: flex;
@@ -38,10 +38,11 @@
 }
 
 .edit-user_data input {
-    display: block;
-    outline: none;
+    margin-left: 15px;
+    margin-top: 18px;
     width: 300px;
-    height: calc(2.5rem + -12px);
+    height: 63px;
+    display: block;
     background: transparent;
     font-size: 15px;
     border: 1px solid #ffffff;
@@ -49,17 +50,16 @@
     text-transform: initial;
     box-sizing: border-box;
     background-color: rgb(217, 249, 255);
-    margin-left: 15px;
-    margin-top: 18px;
 }
 
-@media screen and (min-width: 1900px) and (max-width: 2400px) and (max-device-width: 2400px) {
+@media screen and (min-width: 1700px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .edit-user{
         margin-top: 200px;
+        margin-left: 900px;
     }
 }
 
-@media screen and (max-width: 1400px) and (max-device-width: 1400px) {
+@media screen and (max-width: 1460px) and (max-device-width: 1460px) {
     .edit-user {
         margin-top: 120px;
         margin-left: 525px;
@@ -73,16 +73,10 @@
 @media screen and (max-width: 1300px) and (max-device-width: 1300px) {
     .edit-user {
         width: 680px;
-        margin-left: 418px;
+        margin-left: 400px;
     }
     .edit-user_data input{
-        margin-right: -35px;
-    }
-}
 
-@media screen and (max-width: 1200px) and (max-device-width: 1200px)  {
-    .edit-user {
-        margin-left: 416px;
     }
 }
 

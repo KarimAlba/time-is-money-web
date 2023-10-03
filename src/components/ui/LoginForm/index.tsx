@@ -121,7 +121,7 @@ const LoginForm = () => {
     }, []);
 
     return (
-        <>
+        <div className='auth-container'>
             <div className="block-Login1">
                 <h3 className="styleH3">ВХОД</h3>
                 <div className="animateContainer">
@@ -166,6 +166,7 @@ const LoginForm = () => {
                     onClick={() => {
                         setIsVisible(!isVisible);
                     }}
+                    className='reg-link'
                 >
                     Нет аккаунта? Зарегистрируйтесь!
                 </span>
@@ -190,7 +191,7 @@ const LoginForm = () => {
                 }
 
             </div>
-        </>
+        </div>
     );
 };
 

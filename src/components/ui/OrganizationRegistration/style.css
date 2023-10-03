@@ -173,6 +173,10 @@
     }
 
     .form-register-legal-entity {
+        margin-left: -500px;
+    }
+
+    .form-register-legal-entity {
         width: 730px;
     }
 }
@@ -263,21 +267,26 @@
         left: 5%;
         top: 100px;
     }
+
+    .form-register-legal-entity {
+        margin:-100px 0 0 -300px;
+    }
 }
 
 
-@media screen and (max-width: 770px) and (max-device-width: 770px) {
+@media screen and (max-width: 800px) and (max-device-width: 800px) {
     .form-login {
         left: 11%;
     }
 
-    .confirm-eye-entity,
-    .eye-image-entity {
-        right: 0%;
+    .form-register-legal-entity {
+        margin:-100px 0 0 -100px;
+        width: 500px;
     }
 
-    .form-register-legal-entity {
-        width: 400px;
+    .confirm-eye-entity,
+    .eye-image-entity {
+        right: 7%;
     }
 
     .legal-entiti-block1 input[id="name-of-company"],
@@ -347,21 +356,22 @@
         left: 7%;
         top: 41px;
     }
+
+    .form-register-legal-entity {
+        margin:-100px 0 0 -50px;
+        width: 400px;
+    }
 }
 
 @media screen and (max-width: 500px) and (max-device-width: 500px) {
     .form-login {
         left: 3%;
         top: 55px;
-
     }
-}
 
-@media screen and (max-width: 470px) and (max-device-width: 470px)  {
     .form-register-legal-entity {
-        width: 300px;
-        margin-right: auto;
-        margin-left: auto;
+        margin:-100px 0 0 0px;
+        width: 350px;
     }
 
     .confirm-eye-entity {
@@ -395,7 +405,7 @@
     }
 
     .reg-btn {
-        margin-left: 60px;
+        margin: 20px auto;
     }
 
     .legal-entiti-block1 label[for="name-of-company"] {
@@ -410,55 +420,72 @@
 
     .legal-entiti-block1 label[for="inn"] {
         left: 27px;
-        top: 210px;
+        top: 230px;
     }
 
     .legal-entiti-block1 label[for="checkpoint"] {
         left: 27px;
-        top: 302px;
+        top: 335px;
+    }
+
+    
+    .legal-entiti-block1 label[for="surname"] {
+        width: 300px;
+        top: 440px;
+        left: 27px;
     }
 
     .legal-entiti-block1 label[for="name"] {
         left: 27px;
-        top: 482px;
-    }
-
-    .legal-entiti-block1 label[for="surname"] {
-        width: 218px;
-        top: 360px;
-        left: 27px;
+        top: 545px;
     }
 
     .legal-entiti-block1 label[for="patronymic"] {
         left: 27px;
-        top: 572px;
+        top: 650px;
     }
 
     .legal-entiti-block1 label[for="email"] {
         left: 27px;
-        top: 662px;
+        top: 755px;
     }
 
     .legal-entiti-block1 label[for="confirmation-email"] {
         left: 26px;
-        top: 750px;
+        top: 860px;
     }
 
     .legal-entiti-block1 label[for="pass"] {
         left: 27px;
-        top: 842px;
+        top: 965px;
     }
 
     .legal-entiti-block1 label[for="confirmation-pass"] {
         left: 27px;
-        top: 931px;
+        top: 1070px;
     }
-
 }
 
-@media screen and (max-width: 400px) and (max-device-width: 400px)  {
-    .form-register-legal-entity {
-        margin-right: auto;
-        margin-left: auto;
+
+@media screen and (max-width: 480px) and (max-device-width: 480px) {
+    .legal-entiti-block1 input[id="name-of-company"],
+    .legal-entiti-block1 input[id="legal-address"],
+    .legal-entiti-block1 input[id="inn"],
+    .legal-entiti-block1 input[id="checkpoint"],
+    .legal-entiti-block1 input[id="surname"],
+    .legal-entiti-block1 input[id="name"],
+    .legal-entiti-block1 input[id="patronymic"],
+    .legal-entiti-block1 input[id="email"],
+    .legal-entiti-block1 input[id="confirmation-email"],
+    .legal-entiti-block1 input[id="pass"],
+    .legal-entiti-block1 input[id="confirmation-pass"] {
+        height: 55px;
+    }
+}
+
+@media screen and (max-width: 480px) and (max-device-width: 480px){
+    .form-register-legal-entity{
+        width: 300px;
+        margin-left: -20px;
     }
 }

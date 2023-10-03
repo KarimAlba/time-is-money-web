@@ -139,17 +139,29 @@
     .form-login {
         left: 35%;
     }
+
+    .form-register-physical-pesrson{
+        margin-left: -500px;
+    }
 }
 
 @media screen and (max-width: 1000px) and (max-device-width: 1000px) {
     .form-login {
         left: 20%;
     }
+
+    .form-register-physical-pesrson{
+        margin-left: -400px;
+    }
 }
 
 @media screen and (max-width: 870px) and (max-device-width: 870px) {
     .form-login {
         left: 12%;
+    }
+
+    .form-register-physical-pesrson{
+        margin-left: -150px;
     }
 
     .confirm-eye,
@@ -207,7 +219,7 @@
     }
 
     .reg-btn {
-        margin-left: 245px;
+        margin: 20px auto;
     }
 }
 
@@ -230,13 +242,16 @@
     .form-login {
         left: 4%;
     }
+
+    .form-register-physical-pesrson{
+        margin-left: 0px;
+    }
 }
 
 @media screen and (max-width: 470px) and (max-device-width: 470px) {
     .form-register-physical-pesrson {
+        margin-left: -30px;
         width: 300px;
-        margin-right: auto;
-        margin-left: auto;
     }
 
     .confirm-eye {
@@ -314,8 +329,7 @@
 
 @media screen and (max-width: 400px) and (max-device-width: 400px) {
     .form-register-physical-pesrson {
+        margin-left: 0px;
         width: 300px;
-        margin-right: auto;
-        margin-left: auto;
     }
 }
