@@ -3,14 +3,10 @@ import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
-interface IPluginTablePropsTypes {
-    plugins: ISearchedWorkStationResponse[];
-    handleNeedRequest: Function;
-}
-
-const PluginTable = (props: IPluginTablePropsTypes) => {
+const PluginTable = () => {
     const [renderPlugins, setRenderPlugins] = useState<ISearchedWorkStationResponse[]>([]);
-    const { plugins, handleNeedRequest } = props;
+    const [curPage, setCurPage] = useState<number>(0);
+    const [size, setSize] = useState<number>(10);
 
     const createImg = (id: number, data: string) => {
         const blob = new Blob([data], {
@@ -41,7 +37,7 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
 
     const updateWorkStation = (id: number) => {
         WorkStationtAPI.prolongation(id)
-            .then(response => handleNeedRequest())
+            .then(response => getPlugins())
             .catch(error => console.log(error))
     }
 
@@ -49,10 +45,18 @@ const PluginTable = (props: IPluginTablePropsTypes) => {
         updateWorkStation(id);
     }
 
+    const getPlugins = () => {
+        WorkStationtAPI.getPlugins(curPage, size)
+            .then(response => {
+                console.log(response);
+                setRenderPlugins(response.data)
+            })
+            .catch(error => console.log(error))
+    }
+
     useEffect(() => {
-        console.log(plugins);
-        setRenderPlugins(plugins);
-    }, [plugins]);
+        getPlugins();
+    }, []);
 
     return (
         <div className='table-container'>

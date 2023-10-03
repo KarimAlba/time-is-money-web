@@ -4,7 +4,11 @@ import IWorkStationUpdateRequest from "../models/request/IWorkStationUpdateReque
 import IErrorResponse from "../models/response/IErrorResponse";
 
 class WorkStationtAPI{
-    public static search(param: string): Promise<AxiosResponse<any | IErrorResponse>> {
+    public static getPlugins(page: number, size: number): Promise<AxiosResponse<any | IErrorResponse>> {
+        return axiosConfig.get(`/api/main/work-station/find-all?page=${page}&size=${size}`);
+    }
+
+    public static searchBy(param: string): Promise<AxiosResponse<any | IErrorResponse>> {
         return axiosConfig.get(`/api/main/work-station/search-by-id-or-name?searchParam=${param}`);
     }
 
