@@ -14,7 +14,7 @@
 .form-login {
     position: relative;
     z-index: 2;
-    left: 40%;
+    margin-left: 40%;
 }
 
 .form-login span {
@@ -192,6 +192,10 @@ textarea:valid+label {
 }
 
 @media screen and (max-width: 1490px) and (max-device-width: 1490px) {
+    .form-login {
+        margin-left: 35%;
+    }
+
     .laptop-img {
         position: absolute;
         top: 200px;
@@ -209,6 +213,12 @@ textarea:valid+label {
     .animateContainer input[id="id_email"],
     .animateContainer input[id="pass"] {
         width: 60%;
+    }
+}
+
+@media screen and (max-width: 1250px) and (max-device-width: 1250px) {
+    .laptop-img{
+        display: none;
     }
 }
 
@@ -231,7 +241,7 @@ textarea:valid+label {
         display: none;
     }
 
-    .form-login{
+    .auth-container{
         margin: 0 0 0 -10%;
     }
 }
@@ -243,18 +253,34 @@ textarea:valid+label {
 }
 
 @media screen and (max-width: 980px) and (max-device-width: 980px) {
-    .block-Login1 {
-        margin-top: 0;
+    .auth-container {
+        margin: 0 0 0 -30%;
+    }
+
+    .block-Login1{
+        margin: 0;
+    }
+
+    .reg-link{
+        margin: 0 0 0 -150px;
     }
 }
 
 @media screen and (max-width: 800px) and (max-device-width: 800px) {
-    .block-Login1 {
-        margin-top: 20px;
+    .form-login {
+        margin: auto;
     }
 
-    .form-login{
-        margin: 0 0 0 -25%;
+    .auth-container {
+        margin: 0;
+    }
+
+    .block-Login1{
+        margin: 0;
+    }
+
+    .reg-link{
+        margin: 0;
     }
 }
 
@@ -279,10 +305,6 @@ textarea:valid+label {
 }
 
 @media  screen and (max-width: 590px) and (max-device-width: 590px) {
-    .form-login{
-        margin: 0 0 0 -35%;
-    }
-
     .block-Login1 {
         width: 470px;
     }
@@ -314,7 +336,7 @@ textarea:valid+label {
         width: 370px;
     }
 
-    .form-login{
+    .auth-container{
         margin: 0 0;
         left: 0;
     }
