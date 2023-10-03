@@ -220,7 +220,7 @@ a {
         position: fixed;
         top: 0;
         left: 0;
-        width: 300px;
+        width: 330px;
         height: 100%;
         background-color: rgba(0, 178, 244, 0.18);
         backdrop-filter: blur(60px);
@@ -228,6 +228,10 @@ a {
 
     .person-info {
         display: none;
+    }
+
+    .person-info_license {
+        position: inherit;
     }
 }
 

@@ -23,7 +23,7 @@ function ModalRegister(props: ModalRegisterPropsTypes) {
     return (
         <>
             {isVisible
-                ? (<div className=" overlay modal-choice-registration-Container">
+                ? (<div className="overlay modal-choice-registration-Container">
                     <div className='modal-choice-registration'>
                         <p>Вы регистрируетесь как:</p>
                         <span onClick={toPhysicalPerson}>
