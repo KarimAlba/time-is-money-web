@@ -161,8 +161,7 @@ textarea:valid+label {
 }
 
 .modal-choice-registration-Container {
-    top: 77%;
-    left: 50%;
+    margin: auto;
     display: flex;
     align-items: center;
     justify-content: center;

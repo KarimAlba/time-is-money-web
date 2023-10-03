@@ -136,19 +136,6 @@
   background-color: #00b2f4;
 }
 
-.modal-choice-registration-Container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-choice-registration {
-  width: 500px;
-  height: 150px;
-  background-color: white;
-  border: 1px solid #515151;
-}
-
 @media (width<=1300px) {
   .modalChooseService {
     margin-left: 500px;
