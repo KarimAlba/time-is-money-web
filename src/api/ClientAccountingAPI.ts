@@ -11,7 +11,7 @@ class ClientAccountAPI{
     }
 
     public static resetPassword(newPassword: string): Promise<AxiosResponse<any | any>> {
-        return axiosConfig.post(`/api/main/user/password?newPassword=${newPassword}`)
+        return axiosConfig.patch(`/api/main/user/password?newPassword=${newPassword}`)
     }
 }
 
