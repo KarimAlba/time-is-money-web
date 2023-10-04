@@ -25,7 +25,7 @@ const CreatePluginModal = () => {
         if (name) {
             sendCreateReq();
         }
-        setIsTableVisible(false);
+        setIsTableVisible(!isTableVisible);
     }
 
     return (

@@ -87,10 +87,9 @@
 }
 
 .person-info_license {
-    position: absolute;
-    bottom: 0;
-    align-items: center;
+    margin-top: 10vh;
     padding: 0 20px;
+    align-items: center;
     box-sizing: border-box;
     display: flex;
     flex-flow: column;
@@ -237,13 +236,14 @@ a {
 
 @media (width <=470px) {
     .heder-house {
-        cursor: pointer;
-        display: block;
         position: relative;
         left: 5%;
         top: -43px;
         width: 36px;
+        cursor: pointer;
+        display: block;
     }
+
     .statistic_value p{
         font-size: 21px;
     }
@@ -260,10 +260,10 @@ a {
     }
 
     .heder-cross {
-        display: block;
-        position: relative;
         left: 0%;
         width: 45px;
+        display: block;
+        position: relative;
     }
 
     .modalHouse {
