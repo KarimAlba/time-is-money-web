@@ -213,7 +213,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                 </div>
                                 <div
                                     onClick={handleTemplateClick3}
-                                    className="statistic_point">
+                                    className="statistic_point"
+                                >
                                     <div style={{ display: 'flex' }}>
                                         {templateCount3
                                             ? <img src={ArrowDownIcon} />
@@ -346,7 +347,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         </div>
                         <div
                             onClick={handleTemplateClick2}
-                            className="statistic_point">
+                            className="statistic_point"
+                        >
                             <div style={{ display: 'flex' }}>
                                 {templateCount2
                                     ? <img src={ArrowDownIcon} />
@@ -373,7 +375,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         </div>
                         <div
                             onClick={handleTemplateClick3}
-                            className="statistic_point">
+                            className="statistic_point"
+                        >
                             <div style={{ display: 'flex' }}>
                                 {templateCount3
                                     ? <img src={ArrowDownIcon} />
