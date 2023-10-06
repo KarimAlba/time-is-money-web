@@ -1,4 +1,6 @@
 import './style.css';
+import { QRCodeCanvas } from 'qrcode.react';
+import QRCode from 'qrcode';
 import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
@@ -8,12 +10,33 @@ const PluginTable = () => {
     const [curPage, setCurPage] = useState<number>(0);
     const [size, setSize] = useState<number>(10);
 
-    const createImg = (id: number, data: string) => {
+    const createImg = (id: number, data: string) => {        
         const blob = new Blob([data], {
             type: "image/png"
         });
+
         const fileName = `${id}QR-code.png`;
         const reportUrl = window.URL.createObjectURL(blob);
+        const downloadElement = document.createElement("a");
+        downloadElement.href = reportUrl;
+        downloadElement.download = fileName;
+        document.body.appendChild(downloadElement);
+        downloadElement.click();
+        document.body.removeChild(downloadElement);
+        window.URL.revokeObjectURL(reportUrl);
+    }
+
+    const createQRCodeImg = (text: string, id: number) => {
+        let reportUrl = '';
+        QRCode.toDataURL(text, function (err: any, url: string) {
+            if(err) console.log(err)
+            if (url) reportUrl = url
+            return url
+        });
+
+        console.log(reportUrl)
+
+        const fileName = `${id}QR-code.png`;
         const downloadElement = document.createElement("a");
         downloadElement.href = reportUrl;
         downloadElement.download = fileName;
@@ -27,6 +50,7 @@ const PluginTable = () => {
         WorkStationtAPI.getQRCode(id)
             .then(response => {
                 createImg(id, response.data);
+                //createQRCodeImg(response.data, id)
             })
             .catch(error => console.log(error))
     }
@@ -48,7 +72,6 @@ const PluginTable = () => {
     const getPlugins = () => {
         WorkStationtAPI.getPlugins(curPage, size)
             .then(response => {
-                console.log(response);
                 setRenderPlugins(response.data)
             })
             .catch(error => console.log(error))
