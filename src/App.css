@@ -1,3 +1,13 @@
+@font-face { 
+  font-family: "ArialRegular";
+  src: url("./assets/fonts/Arial/ArialRegular/ArialRegular.eot");
+  src: url("./assets/fonts/Arial/ArialRegular/ArialRegular.eot?#iefix")format("embedded-opentype"),
+  url("./assets/fonts/Arial/ArialRegular/ArialRegular.woff") format("woff"),
+  url("./assets/fonts/Arial/ArialRegular/ArialRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+
 .App {
   text-align: center;
 }
