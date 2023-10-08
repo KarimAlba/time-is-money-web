@@ -67,19 +67,34 @@
     .block1-plugin img {
         height: 800px;
     }
+    
+    .block2-plugin-text {
+        width: 60%;
+    }
 }
 
 @media screen and (min-width: 1700px) and (max-width: 2100px) and (max-device-width: 2100px) {
+    .block1-plugin {
+        position: relative;
+        margin-top: 200px;
+        display: flex;
+        justify-content: end;
+    }
+
     .block1-plugin img {
         position: absolute;
-        top: -50px;
+        top: -130px;
         left: 10%;
-        height: 650px;
+        height: 590px;
     }
     
     .block1-plugin-text1 {
         max-width: 1000px;
         padding: 30px;
+    }
+
+    .block2-plugin-text {
+        width: 60%;
     }
 }
 
