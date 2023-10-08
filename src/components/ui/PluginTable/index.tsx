@@ -1,6 +1,5 @@
 import './style.css';
-import { QRCodeCanvas } from 'qrcode.react';
-import QRCode from 'qrcode';
+//import QRCode from 'qrcode';
 import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
@@ -26,25 +25,25 @@ const PluginTable = () => {
         window.URL.revokeObjectURL(reportUrl);
     }
 
-    const createQRCodeImg = (text: string, id: number) => {
-        let reportUrl = '';
-        QRCode.toDataURL(text, function (err: any, url: string) {
-            if(err) console.log(err)
-            if (url) reportUrl = url
-            return url
-        });
+    // const createQRCodeImg = (text: string, id: number) => {
+    //     let reportUrl = '';
+    //     QRCode.toDataURL(text, function (err: any, url: string) {
+    //         if(err) console.log(err)
+    //         if (url) reportUrl = url
+    //         return url
+    //     });
 
-        console.log(reportUrl)
+    //     console.log(reportUrl)
 
-        const fileName = `${id}QR-code.png`;
-        const downloadElement = document.createElement("a");
-        downloadElement.href = reportUrl;
-        downloadElement.download = fileName;
-        document.body.appendChild(downloadElement);
-        downloadElement.click();
-        document.body.removeChild(downloadElement);
-        window.URL.revokeObjectURL(reportUrl);
-    }
+    //     const fileName = `${id}QR-code.png`;
+    //     const downloadElement = document.createElement("a");
+    //     downloadElement.href = reportUrl;
+    //     downloadElement.download = fileName;
+    //     document.body.appendChild(downloadElement);
+    //     downloadElement.click();
+    //     document.body.removeChild(downloadElement);
+    //     window.URL.revokeObjectURL(reportUrl);
+    // }
 
     const sendReqQR = (id: number) => {
         WorkStationtAPI.getQRCode(id)
