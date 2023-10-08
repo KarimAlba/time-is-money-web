@@ -115,10 +115,11 @@
     text-align: end;
 }
 
-@media screen and (min-width: 2010px) and (max-width: 2400px) and (max-device-width: 2400px) {
+@media screen and (min-width: 1800px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .block1 img {
+        top: -40px;
+        left: 10%;
         height: 650px;
-        left: 15%;
     }
 
     .aplication-text1-block1 {
@@ -126,11 +127,35 @@
         max-width: 800px;
     }
 
+    .block-one h1 {
+        font-size: 32px;
+        line-height: 35px;
+    }
+
     .block-one img {
         position: relative;
-        left: -35px;
+        left: -39px;
         top: 10px;
         height: 60px;
+    }
+
+    .Aplication-contauner-block3 {
+        padding: 150px 150px 0 150px;
+        box-sizing: border-box;
+    }
+    
+    .Aplication-contauner-block3 img {
+        width: 500px;
+    }
+
+    .bloc3-text {
+        margin-top: 30px;
+        height: 450px;
+    }
+
+    .bloc3-text img {
+        height: 120px;
+        margin: 5px;
     }
 }
 
@@ -353,7 +378,7 @@
 
 @media (max-width: 420px) {
     .block1 img {
-        left: 0;
+        left: 10%;
     }
 
     .bloc3-text {
