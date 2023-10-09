@@ -1,6 +1,5 @@
 import { AxiosResponse } from "axios";
 import axiosConfig from "./axiosConfig";
-import IWorkStationUpdateRequest from "../models/request/IWorkStationUpdateRequest";
 import IErrorResponse from "../models/response/IErrorResponse";
 
 class WorkStationtAPI{

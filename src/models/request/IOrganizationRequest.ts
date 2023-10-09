@@ -3,7 +3,6 @@ interface IOrganizationRequest{
     name: string;
     patronymic: string;
     email: string;
-    password: string;
     organizationName: string;
     address: string;
     inn: string;

@@ -73,7 +73,7 @@ li::marker{
     position: absolute;
     top: 0px;
     right: 50px;
-    height: 130px;
+    height: 70px;
 }
 
 .container-client-2{
@@ -445,6 +445,13 @@ li::marker{
     .container-client-1 *,
     .client4-content * {
         font-size: 28px;
+    }
+
+    .investors_logo{
+        position: absolute;
+        top: 0px;
+        right: 50px;
+        height: 130px;
     }
 
     .container-main-Investors h1{

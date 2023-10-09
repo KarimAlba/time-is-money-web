@@ -193,8 +193,9 @@ const EditUser = () => {
         }
     }
 
-    const physicalBlock = <div  style={{marginLeft:'-13px'}}>
-            <div className="edit-user_data">
+    const physicalBlock = 
+        <div style={{marginLeft: '-13px'}}>
+            <div className="edit-user_data data_physical">
                 <h5>Фамилия</h5>
                 <input 
                     type="text" 

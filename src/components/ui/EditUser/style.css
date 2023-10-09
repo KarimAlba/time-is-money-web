@@ -5,7 +5,7 @@
     display: flex;
     align-items: end;
     flex-direction: column;
-    border-radius: 0.5rem;
+    border-radius: 45px;
     background: #fff;
     border: 1px solid #eee;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -39,7 +39,6 @@
 
 .edit-user_data input {
     margin-left: 15px;
-    margin-top: 18px;
     width: 300px;
     height: 63px;
     display: block;
@@ -48,14 +47,51 @@
     border: 1px solid #ffffff;
     color: #000;
     text-transform: initial;
-    box-sizing: border-box;
     background-color: rgb(217, 249, 255);
 }
 
 @media screen and (min-width: 1700px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .edit-user{
-        margin-top: 200px;
-        margin-left: 900px;
+        margin-top: 100px;
+        margin-left: 40vw;
+        width: 1000px;
+    }
+
+    .edit-user h5,
+    .edit-user input{
+        font-size: 20px;
+        line-height: 21.77px;
+        font-weight: 400;
+    }
+
+    .edit-user_data input {
+        margin: 0;
+        margin-left: 15px;
+        width: 500px;
+        height: 53px;
+        padding: 3px 5px;
+        display: block;
+        background: transparent;
+        font-size: 15px;
+        border: 1px solid #ffffff;
+        color: #000;
+        text-transform: initial;
+        background-color: rgb(217, 249, 255);
+        border-radius: 7px;
+    }
+    
+    .data_physical{
+        margin-top: 250px;
+    }
+
+    .access-btn {
+        margin: 30px auto;
+        width: 250px;
+        height: 50px;
+        font-size: 20px;
+        line-height: 23px;
+        border: 0;
+        border-radius: 20px;
     }
 }
 
@@ -74,9 +110,6 @@
     .edit-user {
         width: 680px;
         margin-left: 400px;
-    }
-    .edit-user_data input{
-
     }
 }
 

@@ -7,8 +7,8 @@ import IPhysicalRegistrationRequest from "../models/request/IPhysicalRegistratio
 
 
 class PhysicalAccountAPI {
-    public static registration(body: IPhysicalRegistrationRequest): Promise<AxiosResponse<string | IErrorResponse>> {
-        return axiosConfig.post("/api/main/user/pc-client/registration/", { ...body });
+    public static registration(password: string, body: IPhysicalRegistrationRequest): Promise<AxiosResponse<string | IErrorResponse>> {
+        return axiosConfig.post(`/api/main/user/pc-client/registration?password=${password}`, { ...body });
     }
 
     public static clientAutorization(body: IUserAuth): Promise<AxiosResponse<any | IErrorResponse>> {

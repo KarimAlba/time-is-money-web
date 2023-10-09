@@ -88,7 +88,7 @@ const OrganizationRegistration = () => {
     }
 
     const sendRequest = (org: IOrganizationRequest) => {
-        OrganizationAPI.registration(org)
+        OrganizationAPI.registration(password, org)
             .then(response => {
                 setIsSuccessPopupVisible(true);
                 setTimeout(() => {
@@ -167,7 +167,6 @@ const OrganizationRegistration = () => {
                 name: orgDirName,
                 patronymic: orgDirPatronymic,
                 email: email,
-                password: password,
                 organizationName: orgName,
                 address: orgAddress,
                 inn: orgINN,
