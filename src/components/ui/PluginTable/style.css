@@ -12,30 +12,28 @@ table {
 
 th,
 td {
-    width: 120px;
+    width: auto;
     padding: 10px;
-    font-size: 25px;
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
     box-sizing: border-box;
     border: 2px solid black;
-    font-weight: 400;
 }
 
-td a {
-    font-size: 25px;
+td a{
+    font-size: 18px;
+    line-height: 20px;
+    font-weight: 400;
     text-decoration: none;
     color: rgba(0, 178, 244, 1);
 }
 
-@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
+@media screen and (min-width: 1800px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .table-container {
-        margin: 0 0 0 17%;
-        width: 1200px;
-    }
-
-    th,
-    td {
-        width: 150px;
-        font-size: 30px;
+        margin: 0 20px 0 5%;
+        width: auto;
+        max-width: 1400px;
     }
 }
 

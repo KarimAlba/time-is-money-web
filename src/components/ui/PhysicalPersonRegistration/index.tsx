@@ -66,7 +66,7 @@ const PhysicalPersonRegistration = () => {
     }
 
     const sendRequest = (user: IPhysicalRegistrationRequest) => {
-        PhysicalAccountAPI.registration(user)
+        PhysicalAccountAPI.registration(userPassword, user)
             .then(response => {
                 const data = (response.data as string);
                 localStorage.clear();
@@ -130,9 +130,6 @@ const PhysicalPersonRegistration = () => {
                 name: userName,
                 patronymic: userPatronymic,
                 email: userEmail,
-                password: userPassword,
-                confirmEmail: userConfirmEmail,
-                confirmPassword: userConfirmPassword
             }
 
             return user;

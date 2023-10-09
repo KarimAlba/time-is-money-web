@@ -7,6 +7,7 @@ interface ISearchedWorkStationResponse{
     urlQRCode: string;
     filledApplications: number;
     producedDocuments: number;
+    secretId: string;
 }
 
 export default ISearchedWorkStationResponse;

@@ -89,6 +89,7 @@ const PluginTable = () => {
                         <th>изготовлено документов</th>
                         <th>заполнено приложений</th>
                         <th>плагин ID</th>
+                        <th>секретный код плагина</th>
                         <th>QR-code</th>
                         <th>действителен до:</th>
                         <th>продлить</th>
@@ -102,6 +103,7 @@ const PluginTable = () => {
                                 <td key={plugin.urlQRCode + plugin.name + index}>{plugin.producedDocuments}</td>
                                 <td key={plugin.name}>{plugin.filledApplications}</td>
                                 <td key={plugin.name + plugin.id}>{plugin.id}</td>
+                                <td key={plugin.name + plugin.secretId}>{plugin.secretId}</td>
                                 <td key={plugin.name + 'a1'}>
                                     <a
                                         key={plugin.name + 'b1'}
@@ -125,7 +127,7 @@ const PluginTable = () => {
                         ))
                         : (<tr>
                             <td 
-                                colSpan={7} 
+                                colSpan={8} 
                                 style={{ width: '100%', border: 'none', columnSpan: 'all', textAlign: 'center' }}
                             >
                                 Ничего нет
