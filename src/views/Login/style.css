@@ -80,11 +80,12 @@
 
 .animateContainer input[id="id_email"],
 .animateContainer input[id="pass"] {
-    display: block;
-    outline: none;
+    margin: 18px auto 0 auto;
     width: 50%;
     height: calc(2.5rem + -12px);
     max-height: 55px;
+    display: block;
+    outline: none;
     background: transparent;
     font-size: 15px;
     border: 1px solid #ffffff;
@@ -92,9 +93,6 @@
     text-transform: initial;
     box-sizing: border-box;
     background-color: rgb(217, 249, 255);
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 18px;
 }
 
 .animateContainer label[for="id_email"],
@@ -104,7 +102,6 @@
     position: absolute;
     left: auto;
     top: 35px;
-    text-align: left;
     color: #000;
     -webkit-transition: .2s;
     transition: .2s;
@@ -190,13 +187,53 @@ textarea:valid+label {
     cursor: pointer;
 }
 
+@media screen and ((min-width: 1700px)) and (max-width: 2400px) and (max-device-width: 2400px) {
+    .laptop-img {
+        top: 150px;
+        left: 1%;
+        height: 600px;
+    }
+
+    
+    .animateContainer label[for="id_email"]{
+        left: 72px;
+    }
+    .animateContainer label[for="pass"] {
+        left: 60px;
+    }
+
+    .modal-choice-registration {
+        margin-top: 20px;
+        width: 50%;
+        height: 125px;
+        background-color: white;
+        border-color: #515151;
+        border: 1px solid #515151;
+        border-radius: 5px;
+    }
+    
+    .modal-choice-registration p {
+        margin-top: 0;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    .modal-choice-registration span {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        color: #00b2f4;
+        cursor: pointer;
+    }
+}
+
 @media screen and (max-width: 1490px) and (max-device-width: 1490px) {
     .form-login {
         margin-left: 35%;
     }
 
     .laptop-img {
-        position: absolute;
         top: 200px;
         left: 1%;
         height: 400px;

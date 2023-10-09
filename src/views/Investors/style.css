@@ -1,8 +1,8 @@
 .container-main-Investors {
-    background-size: 70%;
+    background-size: 60%;
     background-repeat: no-repeat;
     background-image: url('../../assets/imgTimeIsMoney/materik.svg');
-    background-position-x: 40%;
+    background-position-x: 100%;
 }
 
 .container-main-Investors h1 {
@@ -11,14 +11,16 @@
 }
 
 .container-clients-investor {
+    position: relative;
     display: flex;
 }
 
 .container-client-1 {
     margin-left: 26px;
     width: 500px;
+    background-color: #ffff;
     border: 1px solid #eee;
-    border-radius: 15px;
+    border-radius: 25px;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -38,10 +40,8 @@ li::marker{
 
 .quantity-clients{
     position: relative;
-    margin-top: 100px;
-    margin-left: 80px;
-    background-image: url('../../assets/imgTimeIsMoney/materik.svg');
-    background-repeat: no-repeat;
+    margin-top: 270px;
+    margin-left: 130px;
 }
 
 .quantity-clients p{
@@ -67,6 +67,13 @@ li::marker{
     left: -20px;
     top: -10px;
     height: 60px;
+}
+
+.investors_logo{
+    position: absolute;
+    top: 0px;
+    right: 50px;
+    height: 130px;
 }
 
 .container-client-2{
@@ -103,6 +110,7 @@ li::marker{
 }
 
 .business-model span{
+    margin-top: 10px;
     color: #00B2F4;
     font-size: 40px;
 }
@@ -138,7 +146,7 @@ li::marker{
 .container-client-3 div img{
     position: relative;
     left: 40px;
-    top: 60px;
+    top: 70px;
     height: 80px;
 }
 
@@ -149,6 +157,16 @@ li::marker{
 
 .client3-condition{
     margin: 20px 0 0 60px;
+    font-style: italic;
+}
+
+.client3-condition span{
+    color: #00B2F4;
+    font-size: 40px;
+}
+
+.client3-condition a{
+    color: #00B2F4;
 }
 
 .container-client-3 h2{
@@ -170,8 +188,8 @@ li::marker{
 }
 
 .container-client-4-content img {
+    margin: 50px 0 0 -170px;
     height: 150px;
-    margin-top: 50px;
 }
 
 .container-client-4-footer {
@@ -188,37 +206,37 @@ li::marker{
     border-radius: 15px;
 }
 
-.client-4-footer-container p {
-    padding: 10px;
+.client-4-footer-container p{
+    padding: 10px 0px 10px 15px;
 }
 
-.client-header {
+.client-header{
     display: flex;
     justify-content: space-between;
     margin: 0 20px;
 }
 
-.client-header img {
+.client-header img{
     margin: 0 10px 0 10px;
     width: 70px;
 }
 
-.container-client-5 {
+.container-client-5{
     margin-top: 80px;
 }
 
 .container-client5-content,
-.container-client-5-icon {
+.container-client-5-icon{
     display: flex;
 }
 
-.container-client-5-icon p {
+.container-client-5-icon p{
     margin: 0;
     color: #00B2F4;
     cursor: pointer;
 }
 
-.content-block {
+.content-block{
     margin: 0 auto;
 }
 
@@ -227,34 +245,34 @@ li::marker{
     display: flex;
 }
 
-.container-client-5-icon img {
-    height: 65px;
+.container-client-5-icon img{
+    height: 85px;
     margin-right: 10px;
 }
 
-.container-client-5-heder p {
+.container-client-5-heder p{
     margin: 0;
     color: #00B2F4
 }
 
-.client-5-content-container {
-    width: 90%;
-    padding: 10px;
+.client-5-content-container{
+    width: 100%;
+    padding: 20px;
     border: 1px solid #eee;
     box-shadow: 0 -10px 17px rgba(0, 0, 0, 0.15);
     box-sizing: border-box;
     border-bottom: none;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
 }
 
-.client-5-content-container p {
+.client-5-content-container p{
     margin: 5px;
 }
 
-.client-5-content-container img {
+.client-5-content-container img{
     margin-top: 10px;
-    height: 20px;
+    height: 35px;
 }
 
 .container-client-6 {
@@ -325,19 +343,11 @@ li::marker{
     margin-top: 200px;
 }
 
-.container-client-8-content{
-    display: flex;
-    justify-content: space-around;
-}
-
-.container-client-7-content{
-    display: flex;
-    justify-content: start;
-}
-
 .container-client-7-content{
     position: relative;  
     width: 100%; 
+    display: flex;
+    justify-content: start;
 }
 
 .container-client-7-content img:first-child {
@@ -379,7 +389,7 @@ li::marker{
 
 .client-7-content-block2 span {
     width: 50px;
-    margin-top: 17px;
+    margin:17px 0 0 10px;
     display: flex;
     color: #fff;
     border-top: 3px solid #00B2F4;
@@ -388,6 +398,11 @@ li::marker{
 .client-7-content-block2-textBootom {
     display: flex;
     justify-content: center;
+}
+
+.container-client-8-content{
+    display: flex;
+    justify-content: space-around;
 }
 
 .container-client-8 {
@@ -426,80 +441,233 @@ li::marker{
     height: 202px;
 }
 
-@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
-    .container-client-1 {
-        max-width: 500px;
+@media screen and (min-width: 1700px) and (max-width: 2400px) and (max-device-width: 2400px){
+    .container-client-1 *,
+    .client4-content * {
+        font-size: 28px;
     }
 
-    .quantity-clients p,
-    .container-client-3 p{
-        font-size: 35px;
+    .container-main-Investors h1{
+        margin: 60px 70px;
+        line-height: 70px;
+        font-size: 65px;
     }
 
-    .statistic-result {
+    .container-client-1{
+        margin-left: 70px;
+        max-width: 400px;
+        padding: 40px 0 40px 40px;
+    }
+
+    .container-client-1 *{
+        line-height: 35px;
+    }
+    
+    li{
+        margin: 15px 10px;
+    }
+
+    .statistic-result{
         position: absolute;
-        top: -70px;
-        left: 30px;
+        top: -90px;
+        left: 50px;
         margin-left: 91px;
     }
     
     .statistic-result h2 {
-        font-size: 70px;
+        font-size: 80px;
+        width: 300px;
     }
     
     .statistic-result img {
         position: absolute;
-        left: -30px;
-        top: -10px;
-        height: 80px;
+        left: -50px;
+        top: -40px;
+        height: 130px;
     }
 
-    .client3-condition{
-        margin: 60px 0 40px 60px;
+    .business-model{
+        margin-left: 70px;
+        width: 733px;
+        height: auto;
+        padding: 0 20px 20px 20px;
+        box-sizing: border-box;
     }
     
-    .client-4-footer-container {
-        width: 350px;
+    .business-model img{
+        left: 620px;
+        top: -60px;
+        height: 140px;
     }
 
-    .client-6-conteiner1{
-        height: auto;
+    .business-model button{
+        margin: 20px 0;
+        width: 50%;
     }
-}
 
-@media screen and (min-width: 1700px) and (max-width: 2400px) and (max-device-width: 2400px){
-    .container-main-Investors h1{
-        margin: 60px 30px;
-        line-height: 70px;
-        font-size: 65px;
+    .container_sales{
+        margin-left: 50px;
+    }
+
+    .container-client-3 img:nth-child(2n){
+        margin: 15px 100px 0 80px;
+        height: 200px;
+        width: 8px;
+        transform: rotate(90deg); 
     }
 
     .container-client-3 h2{
         font-size: 60px;
     }
 
+    .container-client-3 p{
+        font-size: 28px;
+    }
+
+    .client3-condition{
+        margin: 60px 0 40px 60px;
+    }
+
     .subtitle{
-        margin: 10px 0px 0 30px;
-        font-size: 50px;
+        margin: 10px 0px 0 80px;
+        font-size: 30px;
+    }
+
+    .client-header img {
+        margin: 0 40px 0 10px;
+        width: 130px;
+    }
+
+    .container-client-4-content img {
+        margin-top: 50px;
+        height: 125px;
+    }
+
+    .client4-content{
+        height: 450px;
+    }
+
+    .client-4-footer-container{
+        width: 350px;
+    }
+
+    .container-client-5{
+        margin: 80px 140px 0px 30px;
+    }
+
+    .client-5-content-container{
+        padding: 40px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+
+    .container-client-5-icon h3{
+        font-size: 35px;
+        font-weight: 750;
+    }
+
+    .container-client-5-icon p{
+        font-size: 24px;
+        font-weight: 600;
     }
 
     .client-6-conteiner1{
-        width: 600px;
+        margin: 20px 90px;
+        width: 800px;
+        height: auto;
     }
 
     .client-6-conteiner1 img {
-        left: 520px;
+        left: 740px;
         top: -70px;
         height: 150px;
     }
 
     .container-client-6 h1{
-        font-size: 120px;
+        font-size: 65px;
+    }
+
+    .client-6-footer p{
+        margin: 10px 20px;
+    }
+
+    .client-6-block1 p {
+        margin: 25px;
+        line-height: 40px;
+        font-size: 33px;
+        font-weight: 600;
+    }
+
+    .client-6-conteiner2 p{
+        margin: 25px;
+    }
+    
+    .client-6-block1 h1 {
+        margin: 13% 0 13% 30px;
+        font-size: 100px;
+    }
+
+    .client-7-content-block1{ 
+        margin: 30px 0 100px 90px;
+        width: 600px;
+        padding: 65px 45px;
+        border-radius: 45px;
+    }
+
+    .client-7-content-block1 li{ 
+        margin:0 0 0 20px;
+        padding-left: 30px;
+    }
+
+    .client-7-content-block1 li:last-child{ 
+        margin-top: 20px;
+    }
+
+    .client-7-content-block1 li span{ 
+        font-weight: 500;
+    }
+
+    .container-client-7-content img:first-child {
+        position: absolute;
+        left: 640px;
+        top: 50px;
+        height: 90px;
     }
 
     .client-7-content-block2 img {
-        position: initial;
-        height: 610px;
+        height: auto;
+        width: 850px;
+    }
+
+    .client-7-content-block2 p:first-child{
+        font-size: 20px;
+    }
+
+    .container-client-7 .client3-condition{
+        margin: 20px 0 0 90px;
+    }
+
+    .container-client-8{
+        margin: 150px 90px 0 0px
+    }
+
+    .container-client-8-content{
+        margin-left: 50px;
+        justify-content: space-between;
+    }
+    
+    .client-8-content-block1-men{
+        height: 400px;
+    }
+    
+    .container-client-8 h2{
+        font-size: 45px;
+        font-weight: 500;
+    }
+    
+    .container-client-8 p {
+        font-size: 32px;
+        font-weight: 500;
     }
 }
 
@@ -606,6 +774,13 @@ li::marker{
         flex-flow: row wrap;
     }
 
+    .investors_logo {
+        position: absolute;
+        top: 0px;
+        right: 50px;
+        height: 70px;
+    }
+
     .container-client-1 {
         margin: 10px auto;
         width: 55%;
@@ -638,7 +813,7 @@ li::marker{
     }
 
     .container-client-4-content img {
-        margin-top: 50px;
+        margin: 50px 0 0 0px;
         height: 125px;
     }
 
@@ -685,7 +860,7 @@ li::marker{
     }
 
     .client-header img {
-        margin-right: 47px;
+        margin:0 0 0 20px;
     }
 
     .client-7-content-block2 img {
@@ -699,10 +874,6 @@ li::marker{
 
     .container-client-6-footer {
         margin-left: -29px;
-    }
-
-    .client-header img {
-        margin-right: 30px;
     }
 
     .container-client-8-content {
@@ -1010,6 +1181,11 @@ li::marker{
 }
 
 @media screen and (max-width: 500px) and (max-device-width: 500px) {
+    .investors_logo {
+        top: -120px;
+        right: 10px;
+    }
+
     .economic_effect {
         margin: 20px 0;
         font-size: 15px;
@@ -1023,7 +1199,6 @@ li::marker{
 
     .container-client-8-content {
         flex-flow: column;
-
     }
 
     .ellipse2 {

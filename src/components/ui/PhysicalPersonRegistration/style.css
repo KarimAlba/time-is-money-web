@@ -121,6 +121,91 @@
     font-size: 15px;
 }
 
+@media screen and (min-width: 1870px) and (max-width: 2400px) and (max-device-width: 2400px) {
+    .form-register-physical-pesrson {
+        margin: 0;
+        width: 1120px;
+        padding: 200px 30px 30px 85px;
+        border-radius: 45px;
+        box-sizing: border-box;
+    }
+    
+    .eye-image {
+        top: 75%;
+        right: 12%;
+    }
+    
+    .confirm-eye {
+        top: 90%;
+        right: 12%;
+    }
+
+    .physical-pesrson-block1 label[for="surname"],
+    .physical-pesrson-block1 label[for="name"],
+    .physical-pesrson-block1 label[for="patronymic"],
+    .physical-pesrson-block1 label[for="email"],
+    .physical-pesrson-block1 label[for="confirmation-email"],
+    .physical-pesrson-block1 label[for="pass"],
+    .physical-pesrson-block1 label[for="confirmation-pass"] {
+        left: 180px;
+    }
+    
+    .physical-pesrson-block1 input[id="surname"],
+    .physical-pesrson-block1 input[id="name"],
+    .physical-pesrson-block1 input[id="patronymic"],
+    .physical-pesrson-block1 input[id="email"],
+    .physical-pesrson-block1 input[id="confirmation-email"],
+    .physical-pesrson-block1 input[id="pass"],
+    .physical-pesrson-block1 input[id="confirmation-pass"] {
+        margin-top: 5px;
+        width: 70%;
+        max-width: 650px;
+        max-height: 45px;
+        border-radius: 5px;
+    }
+
+    .physical-pesrson-block1 label[for="surname"] {
+        top: 15px;
+    }
+    
+    .physical-pesrson-block1 label[for="name"] {
+        top: 65px;
+        left: 215px;
+    }
+    
+    .physical-pesrson-block1 label[for="patronymic"] {
+        top: 115px;
+    }
+    
+    .physical-pesrson-block1 label[for="email"] {
+        top: 165px;
+        left: 205px;
+    }
+    
+    .physical-pesrson-block1 label[for="confirmation-email"] {
+        left: 97px;
+        top: 215px;
+    }
+    
+    .physical-pesrson-block1 label[for="pass"] {
+        left: 110px;
+        top: 265px;
+    }
+    
+    .physical-pesrson-block1 label[for="confirmation-pass"] {
+        top: 315px;
+        left: 82px;
+    }
+    
+    .reg-btn {
+        margin-top: 25px auto;
+        width: 250px;
+        height: 50px;
+        font-size: 22px;
+        font-weight: 600;
+    }
+}
+
 @media screen and (max-width: 1360px) and (max-device-width: 1360px) {
     .form-register-physical-pesrson {
         width: 643px;

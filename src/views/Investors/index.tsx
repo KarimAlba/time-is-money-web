@@ -43,16 +43,26 @@ const Investors = (props: InvestorsPropsTypes) => {
                         <li>банки; </li>
                         <li>нотариусы;</li>
                         <li>стоматологии;</li>
-                        <li>диагностические центры;</li>
-                        <li>{'многофунк'+'циональные центры (МФЦ);'}</li>
-                        <li>мебельные магазины;
+                        <li>
+                            диагностические <br/> 
+                            центры;
+                        </li>
+                        <li>
+                            {'многофунк'+'циональные'}<br/>
+                            {'центры (МФЦ);'}
+                        </li>
+                        <li>
+                            мебельные <br/>
+                            магазины;
                         </li>
                         <li>автосалоны;</li>
-                        <li>прокатные конторы;</li>
+                        <li>
+                            прокатные конторы;
+                        </li>
                     </ul>
                     <ul className="container-client-1">
                         <li>
-                            страховые
+                            страховые<br/>
                             компании;
                         </li>
                         <li> гостиницы;</li>
@@ -86,7 +96,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                             Москве и Московской области
                         </p>
                     </div>
-
+                    <img src={logo} alt="logotype" className='investors_logo'/>
                 </div>
                 <div className="container-client-2" >
                     <h1>Бизнес-Модель</h1>
@@ -136,7 +146,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                 <div className="container-client-4">
                     <div className="client-header">
                         <h1>Маркетинг</h1>
-                        <img src={logo} />
+                        <img src={logo}/>
                     </div>
                     <div className="container-client-4-content ">
                         <div className="client4-content">
@@ -380,38 +390,33 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </li>
                         <br />
                         <li>
-                            Чистая приведенная стоимость (NPV)
+                            Чистая приведенная стоимость (NPV): 
                             <span style={{ fontSize: '40px' }}>*</span>
-                            <br />
+                            <br/>
                             <span>50 000 000 руб.</span>
                         </li>
                         <br />
                         <li>
                             внутренняя норма рентабельности (IRR):
-                            <br />
-                            <span>
+                            <span style={{ margin: "5px 10px"}}>
                                 73%.
                             </span>
                         </li>
                         <br />
                         <li>
                             период окупаемости:
-                            <br />
-                            <span style={{ margin: 0 }}>38 месяцев.</span>
+                            <span style={{ margin: "5px 10px"}}>38 месяцев.</span>
                         </li>
                         <li>
                             Дисконтированный период окупаемости:
-                            <br />
-                            <span>
+                            <span style={{ margin: "5px 10px"}}>
                                 41 месяцев.
                             </span>
                         </li>
                     </ul>
                     <div className="client-7-content-block2">
-                        <div style={{display: 'block'}}>
-                            <p>денежные потоки накопленным итогом, руб.</p>
-                            <img src={graphic}/>
-                        </div>
+                        <p>Денежные потоки накопленным итогом, руб.</p>
+                        <img src={graphic} alt='graphic'/>
                         <div className="client-7-content-block2-textBootom">
                             <span>_____</span>
                             <p>Чистый денежный поток</p>
@@ -420,6 +425,11 @@ const Investors = (props: InvestorsPropsTypes) => {
                         </div>
                     </div>
                 </div>
+                <p className='client3-condition'>
+                    <span>*</span>
+                    Полностью ознакомиться с расчетами финмодели и скачать ее, 
+                    вы можете <a href="#">здесь</a>.
+                </p>
             </div>
             <div className="container-client-8">
                 <div className="client-header">
