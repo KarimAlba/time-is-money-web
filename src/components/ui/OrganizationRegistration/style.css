@@ -146,11 +146,40 @@
     font-size: 15px;
 }
 
-@media screen and (min-width: 2000px) and (max-width: 2400px) and (max-device-width: 2400px) {
+@media screen and (min-width: 1870px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .form-register-legal-entity {
-        margin-top: 50px;
+        margin: 0;
+        width: 1120px;
+        padding: 30px 30px 30px 85px;
+        border-radius: 45px;
+        box-sizing: border-box;
+    }
+    
+    .eye-image-entity {
+        top: 84%;
+        right: 10%;
+    }
+    
+    .confirm-eye-entity {
+        top: 93%;
+        right: 10%;
     }
 
+    .legal-entiti-block1 label[for="name-of-company"],
+    .legal-entiti-block1 label[for="legal-address"],
+    .legal-entiti-block1 label[for="inn"],
+    .legal-entiti-block1 label[for="checkpoint"],
+    .legal-entiti-block1 label[for="surname"],
+    .legal-entiti-block1 label[for="name"],
+    .legal-entiti-block1 label[for="patronymic"],
+    .legal-entiti-block1 label[for="email"],
+    .legal-entiti-block1 label[for="confirmation-email"],
+    .legal-entiti-block1 label[for="pass"],
+    .legal-entiti-block1 label[for="confirmation-pass"] {
+        top: 18px;
+        left: 70px;
+    }
+    
     .legal-entiti-block1 input[id="name-of-company"],
     .legal-entiti-block1 input[id="legal-address"],
     .legal-entiti-block1 input[id="inn"],
@@ -162,8 +191,69 @@
     .legal-entiti-block1 input[id="confirmation-email"],
     .legal-entiti-block1 input[id="pass"],
     .legal-entiti-block1 input[id="confirmation-pass"] {
-        width: 450px;
-        height: 58px;
+        margin-top: 5px;
+        width: 70%;
+        max-width: 650px;
+        max-height: 45px;
+        border-radius: 5px;
+    }
+
+    .legal-entiti-block1 label[for="legal-address"] {
+        top: 68px;
+        left: 130px;
+    }
+    
+    .legal-entiti-block1 label[for="inn"] {
+        top: 118px;
+        left: 257px;
+    }
+    
+    .legal-entiti-block1 label[for="checkpoint"] {
+        top: 168px;
+        left: 257px;
+    }
+    
+    .legal-entiti-block1 label[for="surname"] {
+        top: 218px;
+        left: -3px;
+    }
+    
+    .legal-entiti-block1 label[for="name"] {
+        top: 268px;
+        left: 260px;
+    }
+    
+    .legal-entiti-block1 label[for="patronymic"] {
+        top: 318px;
+        left: 220px;
+    }
+    
+    .legal-entiti-block1 label[for="email"] {
+        top: 368px;
+        left: 248px;
+    }
+    
+    .legal-entiti-block1 label[for="confirmation-email"] {
+        top: 418px;
+        left: 139px;
+    }
+    
+    .legal-entiti-block1 label[for="pass"] {
+        top: 468px;
+        left: 160px;
+    }
+    
+    .legal-entiti-block1 label[for="confirmation-pass"] {
+        top: 518px;
+        left: 136px;
+    }
+    
+    .reg-btn {
+        margin-top: 25px auto;
+        width: 250px;
+        height: 50px;
+        font-size: 22px;
+        font-weight: 600;
     }
 }
 

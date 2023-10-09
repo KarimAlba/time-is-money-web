@@ -82,7 +82,7 @@ const PasswordRecoveryModal = (props: PasswordRecoveryModalPropsTypes) => {
                         className='buttonHide'
                         onClick={handleSendBtnClick}
                     >
-                        Отправить
+                        ОТПРАВИТЬ
                     </button>
                     </div>
                 </div>
