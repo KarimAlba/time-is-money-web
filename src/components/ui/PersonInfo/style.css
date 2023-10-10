@@ -108,8 +108,7 @@
     cursor: pointer;
 }
 
-.person-info_license {
-    
+.person-info_license { 
     padding: 0 20px;
     align-items: center;
     box-sizing: border-box;
