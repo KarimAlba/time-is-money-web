@@ -507,6 +507,12 @@ li::marker{
         height: 140px;
     }
 
+    .business-model span{
+        position: relative;
+        top: 5px;
+        left: -5px;
+    }
+
     .business-model button{
         margin: 20px 0;
         width: 50%;

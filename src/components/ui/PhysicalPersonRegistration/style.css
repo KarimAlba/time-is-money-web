@@ -125,7 +125,7 @@
     .form-register-physical-pesrson {
         margin: 0;
         width: 1120px;
-        padding: 200px 30px 30px 85px;
+        padding: 200px 30px 30px 200px;
         border-radius: 45px;
         box-sizing: border-box;
     }
@@ -158,7 +158,7 @@
     .physical-pesrson-block1 input[id="pass"],
     .physical-pesrson-block1 input[id="confirmation-pass"] {
         margin-top: 5px;
-        width: 70%;
+        width: 60%;
         max-width: 650px;
         max-height: 45px;
         border-radius: 5px;
