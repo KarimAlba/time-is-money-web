@@ -55,6 +55,7 @@
         margin-top: 100px;
         margin-left: 40vw;
         width: 1000px;
+        padding-top: 40px;
     }
 
     .edit-user h5,
@@ -88,8 +89,8 @@
         margin-top: 250px;
     }
 
-    .access-btn {
-        margin: 30px auto;
+    .access-btn{
+        margin: 40px auto 20px auto;
         width: 250px;
         height: 50px;
         font-size: 20px;
