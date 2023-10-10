@@ -123,6 +123,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
         }
         getUserStatistic();
         handleIsOpenFooter();
+        setIsDownload(false);
+        handleOpenPlugin(false);
     }, [])
 
     return (
@@ -165,20 +167,23 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                             ? <img src={ArrowDownIcon} />
                                             : <img src={ArrowIcon} />
                                         }
-                                        <p>заполненных шаблонов: {countProducedDocs}</p>
+                                        <p>заполненных шаблонов:</p>
+                                        <span>{countProducedDocs}</span>
                                     </div>
                                     {templateCount
                                         ? (<div className="select_point">
                                             <ul>
-                                                {statistic.map(item => 
-                                                    statistic.length > 0
-                                                        ? (<li 
+                                                {statistic.length >= 1
+                                                    ? (statistic.map(item => 
+                                                        <li 
                                                             key={item.name + item.expiredAt}
                                                         >
-                                                            {`Плагин ${item.name}: ${item.producedDocuments}`}
-                                                        </li>)
-                                                        : <li>Данные отсутствуют</li>
-                                                )}
+                                                            {`Плагин ${item.name}:`}
+                                                            <span>{item.producedDocuments}</span>
+                                                        </li>
+                                                    ))
+                                                    : <li>Данные отсутствуют</li>
+                                                }
                                             </ul>
                                         </div>)
                                         : null
@@ -192,20 +197,23 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                             ? <img src={ArrowDownIcon} />
                                             : <img src={ArrowIcon} />
                                         }
-                                        <p>заполненных приложений: {countApplications}</p>
+                                        <p>заполненных приложений:</p>
+                                        <span>{countApplications}</span>
                                     </div>
                                     {templateCount2
                                         ? (<div className="select_point">
-                                            <ul>
-                                                {statistic.map(item => 
-                                                    statistic.length > 0
-                                                        ? (<li 
+                                              <ul>
+                                                {statistic.length >= 1
+                                                    ? (statistic.map(item => 
+                                                        <li 
                                                             key={item.expiredAt + item.name}
                                                         >
-                                                            {`Плагин ${item.name}: ${item.filledApplications}`}
-                                                        </li>)
-                                                        : <li>Данные отсутствуют</li>
-                                                )}
+                                                            {`Плагин ${item.name}:`}
+                                                            <span>{item.filledApplications}</span>
+                                                        </li>
+                                                    ))
+                                                    : <li>Данные отсутствуют</li>
+                                                }
                                             </ul>
                                         </div>)
                                         : null
@@ -224,17 +232,19 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     </div>
                                     {templateCount3
                                         ? (<div className="select_point">
-                                                <ul>
-                                                    {statistic.map(item => 
-                                                        statistic.length > 0
-                                                            ? (<li 
-                                                                key={item.name + item.expiredAt}
-                                                            >
-                                                                {`Плагин ${item.name}: ${(new Date(item.expiredAt)).toLocaleDateString()}`}
-                                                            </li>)
-                                                            : <li>Данные отсутствуют</li>
-                                                    )}
-                                                </ul>
+                                            <ul>
+                                                {statistic.length >= 1
+                                                    ? (statistic.map(item => 
+                                                        <li 
+                                                            key={item.name + item.expiredAt}
+                                                        >
+                                                            {`Плагин ${item.name}:`}
+                                                            <span>{(new Date(item.expiredAt)).toLocaleDateString()}</span>
+                                                        </li>
+                                                    ))
+                                                    : <li>Данные отсутствуют</li>
+                                                }
+                                            </ul>
                                         </div>)
                                         : null
                                     }
@@ -306,154 +316,164 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                     <span>{email}</span>
                     <Link to='edit-user'>Редактировать данные</Link>
                 </div>
-                <div className="person-info_statistic">
-                    <div className="statistic_point">
-                        <p>дата регистрации:</p>
-                        <span>{(new Date(createdAt)).toLocaleDateString()}</span>
-                    </div>
-                    <div className="statistic_point">
-                        <p>скачано плагинов:</p>
-                        <span>{countWorkStations}</span>
-                    </div>
-                    <div className="statistic_value">
-                        <p>количество</p>
-                        <div
-                            onClick={handleTemplateClick}
-                            className="statistic_point"
-                        >
-                            <div style={{ display: 'flex' }}>
+                <div className='person-info_body'>
+                    <div className="person-info_statistic">
+                        <div className="statistic_point">
+                            <p>дата регистрации:</p>
+                            <span>{(new Date(createdAt)).toLocaleDateString()}</span>
+                        </div>
+                        <div className="statistic_point">
+                            <p>скачано плагинов:</p>
+                            <span>{countWorkStations}</span>
+                        </div>
+                        <div className="statistic_value">
+                            <p>количество</p>
+                            <div
+                                onClick={handleTemplateClick}
+                                className="statistic_point"
+                            >
+                                <div style={{ display: 'flex' }}>
+                                    {templateCount
+                                        ? <img src={ArrowDownIcon} />
+                                        : <img src={ArrowIcon} />
+                                    }
+                                    <p>заполненных шаблонов:</p> 
+                                    <span>{countProducedDocs}</span>
+                                </div>
                                 {templateCount
-                                    ? <img src={ArrowDownIcon} />
-                                    : <img src={ArrowIcon} />
-                                }
-                                <p>заполненных шаблонов: {countProducedDocs}</p>
-                            </div>
-                            {templateCount
-                                ? (<div className="select_point">                          
-                                        <ul>
-                                            {statistic.map(item => 
-                                                statistic.length >= 1
-                                                    ? (<li 
-                                                        key={item.name + item.expiredAt}
-                                                    >
-                                                        {`Плагин ${item.name}: ${item.producedDocuments}`}
-                                                    </li>)
+                                    ? (<div className="select_point">                          
+                                            <ul>
+                                                {statistic.length >= 1
+                                                    ? (statistic.map(item => 
+                                                        <li 
+                                                            key={item.name + item.expiredAt}
+                                                        >
+                                                            {`Плагин ${item.name}:`}
+                                                            <span>{item.producedDocuments}</span>
+                                                        </li>
+                                                    ))
                                                     : <li>Данные отсутствуют</li>
-                                            )}
-                                        </ul>
-                                </div>)
-                                : null
-                            }
-                        </div>
-                        <div
-                            onClick={handleTemplateClick2}
-                            className="statistic_point"
-                        >
-                            <div style={{ display: 'flex' }}>
+                                                }
+                                            </ul>
+                                    </div>)
+                                    : null
+                                }
+                            </div>
+                            <div
+                                onClick={handleTemplateClick2}
+                                className="statistic_point"
+                            >
+                                <div style={{ display: 'flex' }}>
+                                    {templateCount2
+                                        ? <img src={ArrowDownIcon} />
+                                        : <img src={ArrowIcon} />
+                                    }
+                                    <p>заполненных приложений:</p>
+                                    <span>{countApplications}</span>
+                                </div>
                                 {templateCount2
-                                    ? <img src={ArrowDownIcon} />
-                                    : <img src={ArrowIcon} />
-                                }
-                                <p>заполненных приложений: {countApplications}</p>
-                            </div>
-                            {templateCount2
-                                ? (<div className="select_point">
-                                    <ul>
-                                        {statistic.map(item => 
-                                            statistic.length > 0
-                                                ? (<li 
-                                                    key={item.expiredAt + item.name}
-                                                >
-                                                    {`Плагин ${item.name}: ${item.filledApplications}`}
-                                                </li>)
-                                                : <li>Данные отсутствуют</li>
-                                        )}
-                                    </ul>
-                                </div>)
-                                : null
-                            }
-                        </div>
-                        <div
-                            onClick={handleTemplateClick3}
-                            className="statistic_point"
-                        >
-                            <div style={{ display: 'flex' }}>
-                                {templateCount3
-                                    ? <img src={ArrowDownIcon} />
-                                    : <img src={ArrowIcon} />
-                                }
-                                <p>QR-code действителен до:</p>
-                            </div>
-                            {templateCount3
-                                ? (<div className="select_point">
+                                    ? (<div className="select_point">
                                         <ul>
-                                            {statistic.map(item => 
-                                                statistic.length > 0
-                                                    ? (<li 
-                                                        key={item.name + item.expiredAt}
-                                                    >
-                                                        {`Плагин ${item.name}: ${(new Date(item.expiredAt)).toLocaleDateString()}`}
-                                                    </li>)
+                                            {statistic.length >= 1
+                                                    ? (statistic.map(item => 
+                                                        <li 
+                                                            key={item.expiredAt + item.name}
+                                                        >
+                                                            {`Плагин ${item.name}:`}
+                                                            <span>{item.filledApplications}</span>
+                                                        </li>
+                                                    ))
                                                     : <li>Данные отсутствуют</li>
-                                            )}
+                                            }
                                         </ul>
-                                </div>)
-                                : null
-                            }
+                                    </div>)
+                                    : null
+                                }
+                            </div>
+                            <div
+                                onClick={handleTemplateClick3}
+                                className="statistic_point"
+                            >
+                                <div style={{ display: 'flex' }}>
+                                    {templateCount3
+                                        ? <img src={ArrowDownIcon} />
+                                        : <img src={ArrowIcon} />
+                                    }
+                                    <p>QR-code действителен до:</p>
+                                </div>
+                                {templateCount3
+                                    ? (<div className="select_point">
+                                            <ul>
+                                                {statistic.length >= 1
+                                                    ? (statistic.map(item => 
+                                                        <li 
+                                                            key={item.name + item.expiredAt}
+                                                        >
+                                                            {`Плагин ${item.name}:`}
+                                                            <span>{(new Date(item.expiredAt)).toLocaleDateString()}</span>
+                                                        </li>
+                                                    ))
+                                                    : <li>Данные отсутствуют</li>
+                                                }
+                                            </ul>
+                                    </div>)
+                                    : null
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="person-info_license">
-                    <button
-                        onClick={handleDownload}
-                        className="download-button"
-                        style={isDownload
-                            ? { backgroundColor: '#00b2f4' }
-                            : { backgroundColor: '#00b2f447' }
-                        }
-                    >
-                        СКАЧАТЬ 
-                    </button>
-                    <div className="agreement">
-                        <button onClick={handleCheckBox} className="checkbox-button">
-                            {isDownload
-                                ? <img src={DoneIcon} />
-                                : null
+                    <div className="person-info_license">
+                        <button
+                            onClick={handleDownload}
+                            className="download-button"
+                            style={isDownload
+                                ? { backgroundColor: '#00b2f4' }
+                                : { backgroundColor: '#00b2f447' }
                             }
+                        >
+                            СКАЧАТЬ 
                         </button>
-                        <p>
-                            <span
-                                style={isDownload
-                                    ? { color: 'rgba(0, 0, 0, 0.3)' }
-                                    : { color: 'black' }
+                        <div className="agreement">
+                            <button onClick={handleCheckBox} className="checkbox-button">
+                                {isDownload
+                                    ? <img src={DoneIcon} />
+                                    : null
                                 }
-                            >
-                                настоящим я соглашаюсь с
-                            </span>
-                            <a> политикой конфиденциальности </a>
-                            <span
-                                style={isDownload
-                                    ? { color: 'rgba(0, 0, 0, 0.3)' }
-                                    : { color: 'black' }
-                                }
-                            >
-                                и
-                            </span>
-                            <br />
-                            <a>
-                                правилами пользования
-                            </a>
-                            <br/>
-                            <span
-                                style={isDownload
-                                    ? { color: 'rgba(0, 0, 0, 0.3)' }
-                                    : { color: 'black' }
-                                }
-                            >
-                                плагином
+                            </button>
+                            <p>
+                                <span
+                                    style={isDownload
+                                        ? { color: 'rgba(0, 0, 0, 0.3)' }
+                                        : { color: 'black' }
+                                    }
+                                >
+                                    настоящим я соглашаюсь с
+                                </span>
+                                <a> политикой конфиденциальности </a>
+                                <span
+                                    style={isDownload
+                                        ? { color: 'rgba(0, 0, 0, 0.3)' }
+                                        : { color: 'black' }
+                                    }
+                                >
+                                    и
+                                </span>
+                                <br />
+                                <a>
+                                    правилами пользования
+                                </a>
+                                <br/>
+                                <span
+                                    style={isDownload
+                                        ? { color: 'rgba(0, 0, 0, 0.3)' }
+                                        : { color: 'black' }
+                                    }
+                                >
+                                    плагином
 
-                            </span>
-                        </p>
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

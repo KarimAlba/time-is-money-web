@@ -13,7 +13,7 @@
 }
 
 .edit-user h5 {
-    margin-left: -16px;
+    margin: 20px 0 10px -16px;
     font-size: 25px;
     font-weight: 400;
     font-family: Arial;
@@ -62,6 +62,10 @@
         font-size: 20px;
         line-height: 21.77px;
         font-weight: 400;
+    }
+
+    .edit-user_data{
+        margin-top: 10px;
     }
 
     .edit-user_data input {

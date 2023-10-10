@@ -82,7 +82,8 @@ const CreateNewPasswordPage = () => {
             <div className="container_fields">
                 <div className="fields_field">
                     <label htmlFor="password">
-                        создайте новый пароль
+                        создайте <br/>
+                        новый пароль
                     </label>
                     <input
                         type={isVisiblePassword
@@ -104,7 +105,7 @@ const CreateNewPasswordPage = () => {
 
                 <div className="fields_field">
                     <label htmlFor="confirm_password">
-                        повторите <br/>
+                        повторите
                         пароль
                     </label>
                     <input
