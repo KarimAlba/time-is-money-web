@@ -312,7 +312,7 @@ li::marker{
 }
 
 .client-6-footer {
-    margin: 30px 0 0 60px;
+    margin: 30px 0 0 70px;
 }
 
 .container-client-6-footer {
@@ -586,12 +586,14 @@ li::marker{
 
     .client-6-conteiner1{
         margin: 20px 90px;
-        width: 800px;
+        width: 750px;
         height: auto;
+        padding: 30px 0;
+        border-radius: 25px;
     }
 
     .client-6-conteiner1 img {
-        left: 740px;
+        left: 670px;
         top: -70px;
         height: 150px;
     }
@@ -618,6 +620,10 @@ li::marker{
     .client-6-block1 h1 {
         margin: 13% 0 13% 30px;
         font-size: 100px;
+    }
+
+    .client-6-conteiner2{
+        width: 600px;
     }
 
     .client-7-content-block1{ 

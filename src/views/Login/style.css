@@ -11,7 +11,7 @@
     z-index: 1;
 }
 
-.form-login {
+.form-login{
     position: relative;
     z-index: 2;
     margin-left: 40%;
@@ -26,7 +26,7 @@
 
 }
 
-.block-Login1 {
+.block-Login1{
     display: flex;
     flex-direction: column;
     padding: 0.7rem 1.5rem 35px;
@@ -41,7 +41,7 @@
     box-sizing: border-box;
 }
 
-.block-Login1 h3 {
+.block-Login1 h3{
     font-size: 1.3rem;
     text-align: center;
     text-transform: uppercase;
@@ -52,7 +52,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
-.block-Login1 button {
+.block-Login1 button{
     cursor: pointer;
     width: 200px;
     font-size: 23px;
@@ -92,7 +92,8 @@
     color: #000;
     text-transform: initial;
     box-sizing: border-box;
-    background-color: rgb(217, 249, 255);
+    background-color: #00B2F42E;
+    border-radius: 5px;
 }
 
 .animateContainer label[for="id_email"],
