@@ -1,5 +1,5 @@
 import './style.css';
-//import QRCode from 'qrcode';
+import QRCode from 'qrcode';
 import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
@@ -9,33 +9,13 @@ const PluginTable = () => {
     const [curPage, setCurPage] = useState<number>(0);
     const [size, setSize] = useState<number>(10);
 
-    const createImg = (id: number, data: string) => {        
-        const blob = new Blob([data], {
-            type: "image/png"
-        });
-
-        const fileName = `${id}QR-code.png`;
-        const reportUrl = window.URL.createObjectURL(blob);
-        const downloadElement = document.createElement("a");
-        downloadElement.href = reportUrl;
-        downloadElement.download = fileName;
-        document.body.appendChild(downloadElement);
-        downloadElement.click();
-        document.body.removeChild(downloadElement);
-        window.URL.revokeObjectURL(reportUrl);
-    }
-
-    // const createQRCodeImg = (text: string, id: number) => {
-    //     let reportUrl = '';
-    //     QRCode.toDataURL(text, function (err: any, url: string) {
-    //         if(err) console.log(err)
-    //         if (url) reportUrl = url
-    //         return url
+    // const createImg = (id: number, data: string) => {        
+    //     const blob = new Blob([data], {
+    //         type: "image/png"
     //     });
 
-    //     console.log(reportUrl)
-
     //     const fileName = `${id}QR-code.png`;
+    //     const reportUrl = window.URL.createObjectURL(blob);
     //     const downloadElement = document.createElement("a");
     //     downloadElement.href = reportUrl;
     //     downloadElement.download = fileName;
@@ -45,17 +25,36 @@ const PluginTable = () => {
     //     window.URL.revokeObjectURL(reportUrl);
     // }
 
+    const createQRCodeImg = (text: string, id: number) => {
+        let reportUrl = '';
+        QRCode.toDataURL(text, function (err: any, url: string) {
+            if(err) console.log(err)
+            if (url) reportUrl = url
+            return url
+        });
+
+        const fileName = `${id}QR-code.png`;
+        const downloadElement = document.createElement("a");
+        downloadElement.href = reportUrl;
+        downloadElement.download = fileName;
+        document.body.appendChild(downloadElement);
+        downloadElement.click();
+        document.body.removeChild(downloadElement);
+        window.URL.revokeObjectURL(reportUrl);
+    }
+
     const sendReqQR = (id: number) => {
         WorkStationtAPI.getQRCode(id)
             .then(response => {
-                createImg(id, response.data);
-                //createQRCodeImg(response.data, id)
+                //createImg(id, response.data);
+                createQRCodeImg(response.data, id);
             })
             .catch(error => console.log(error))
     }
 
-    const handleDownloadQR = (id: number) => {
-        sendReqQR(id);
+    const handleDownloadQR = (text: string, id: number) => {
+        // sendReqQR(id);
+        createQRCodeImg(text, id);
     }
 
     const updateWorkStation = (id: number) => {
@@ -98,16 +97,16 @@ const PluginTable = () => {
                 <tbody>
                     {renderPlugins.length > 0
                         ? (renderPlugins.map((plugin, index) =>
-                            <tr key={plugin.name + index + plugin.urlQRCode}>
-                                <td key={plugin.name + plugin.urlQRCode + index}>{plugin.name}</td>
-                                <td key={plugin.urlQRCode + plugin.name + index}>{plugin.producedDocuments}</td>
+                            <tr key={plugin.name + index + plugin.textQr}>
+                                <td key={plugin.name + plugin.textQr + index}>{plugin.name}</td>
+                                <td key={plugin.textQr + plugin.name + index}>{plugin.producedDocuments}</td>
                                 <td key={plugin.name}>{plugin.filledApplications}</td>
                                 <td key={plugin.name + plugin.id}>{plugin.id}</td>
                                 <td key={plugin.name + plugin.secretId}>{plugin.secretId}</td>
                                 <td key={plugin.name + 'a1'}>
                                     <a
                                         key={plugin.name + 'b1'}
-                                        onClick={() => handleDownloadQR(plugin.id)}
+                                        onClick={() => handleDownloadQR(plugin.textQr, plugin.id)}
                                     >
                                         СКАЧАТЬ
                                     </a>
@@ -117,7 +116,7 @@ const PluginTable = () => {
                                 </td>
                                 <td key={plugin.name + 'd1'}>
                                     <a 
-                                        key={plugin.name + plugin.urlQRCode}
+                                        key={plugin.name + plugin.textQr}
                                         onClick={() => handleProlongation(plugin.id)}
                                     >
                                         ПРОДЛИТЬ
