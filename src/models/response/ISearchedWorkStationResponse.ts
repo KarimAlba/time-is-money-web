@@ -4,7 +4,7 @@ interface ISearchedWorkStationResponse{
     expiredAt: string;  
     ownerId: number;
     ownerType: string;
-    urlQRCode: string;
+    textQr: string;
     filledApplications: number;
     producedDocuments: number;
     secretId: string;
