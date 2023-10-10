@@ -2,7 +2,6 @@ import './style.css';
 import PluginTable from '../PluginTable';
 import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
-import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
 const CreatePluginModal = () => {
     const [name, setName] = useState<string>('');

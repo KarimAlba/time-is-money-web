@@ -46,6 +46,7 @@
     height: 55px;
     padding: 5px;
     border: 1px solid #ffffff;
+    border-radius: 5px;
     color: #000;
     text-transform: initial;
     box-sizing: border-box;
@@ -73,6 +74,40 @@
     border-radius: 15px;
     background: #00B2F4;
     color: #fff;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 1700px) and (max-width: 2400px) and (max-device-width: 2400px){
+    .recovery-container{
+        margin: 100px auto;
+        width: 1000px;
+        height: auto;
+        padding: 20px 100px;
+    }
+
+    .container_fields img{
+        position: absolute;
+        top: 15px;
+        left: 90%;
+        width: 25px;
+    }
+
+    .container_fields{
+        width: 80%;
+    }
+    
+    .fields_field input{
+        width: 60%;
+        height: 55px;
+        padding: 5px;
+    }
+    
+    .fields_field label{
+        margin-top: 5px;
+        width: 160px;
+        max-height: 55px;
+        text-align: left;
+    }
 }
 
 @media screen and (max-width: 1050px) and (max-device-width: 1050px) {
