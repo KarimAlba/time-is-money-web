@@ -158,6 +158,12 @@
     }
 }
 
+@media screen and (max-width: 730px) and (max-device-width: 730px){
+    .container-img {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 650px) and (max-device-width: 650px) {
     .container-img img {
         width: 70px;
@@ -172,7 +178,7 @@
     .header-burger {
         display: block;
         position: relative;
-        left: 80%;
+        left: 90%;
         width: 50px;
     }
 
@@ -209,12 +215,6 @@
         box-shadow: 8px 10px 5px 2px rgba(105, 105, 106, 0.2)
     }
 
-}
-
-@media screen and (max-width: 650px) and (max-device-width: 650px){
-    .container-img {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 590px) and (max-device-width: 590px) {
