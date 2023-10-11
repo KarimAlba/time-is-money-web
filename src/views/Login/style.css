@@ -188,19 +188,21 @@ textarea:valid+label {
     cursor: pointer;
 }
 
-@media screen and ((min-width: 1700px)) and (max-width: 2400px) and (max-device-width: 2400px) {
+@media screen and (min-width: 1700px) and (max-width: 2400px) and (max-device-width: 2400px) {
     .laptop-img {
         top: 150px;
         left: 1%;
         height: 600px;
     }
 
-    
     .animateContainer label[for="id_email"]{
         left: 72px;
+        font-size: 28px;
     }
+
     .animateContainer label[for="pass"] {
         left: 60px;
+        font-size: 28px;
     }
 
     .modal-choice-registration {
