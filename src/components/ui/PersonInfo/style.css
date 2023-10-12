@@ -2,7 +2,7 @@
     font-size: 20px;
 }
 
-.person-info {
+.person-info{
     position: fixed;
     top: 0;
     left: 0;
@@ -58,26 +58,26 @@
     justify-content: start;
 }
 
-.select_point {
+.select_point{
     display: flex;
     justify-content: space-between;
     margin-left: 40px;
 }
 
-.statistic_point {
+.statistic_point{
     margin: 10px 0;
     display: flex;
     justify-content: space-between;
 }
 
-.statistic_select {
+.statistic_select{
     margin: 10px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.statistic_point p {
+.statistic_point p{
     margin: 0;
     float: right;
 }
@@ -95,21 +95,21 @@
     justify-content: space-between;
 }
 
-.statistic_value .statistic_point {
+.statistic_value .statistic_point{
     display: flex;
     flex-direction: column;
     justify-content: start;
 }
 
-.statistic_point img {
+.statistic_point img{
     margin: 5px 10px 0 0;
     width: 12px;
     height: 21px;
     cursor: pointer;
 }
 
-.person-info_license { 
-    padding: 0 20px;
+.person-info_license{ 
+    padding: 0px 20px 20px 20px;
     align-items: center;
     box-sizing: border-box;
     display: flex;
@@ -118,7 +118,7 @@
     border-top: 3px solid rgba(3, 43, 144, 0.18);
 }
 
-.download-button {
+.download-button{
     width: 260px;
     font-size: 25px;
     margin-top: 10px;
@@ -129,16 +129,16 @@
     border-radius: 20px;
 }
 
-a {
+a{
     text-decoration: underline;
 }
 
-.agreement {
+.agreement{
     display: flex;
     justify-content: start;
 }
 
-.checkbox-button {
+.checkbox-button{
     position: relative;
     margin-top: 56px;
     margin-right: 10px;
@@ -155,7 +155,7 @@ a {
     width: 30px;
 }
 
-.heder-house {
+.heder-house{
     display: none;
 }
 
