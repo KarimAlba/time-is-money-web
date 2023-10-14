@@ -1,23 +1,9 @@
 import IActionModel from "../models/IActionModel";
-import actionsConstants from "./actionConstatns";
+import actionsConstants from "./actionConstants";
 
-export const successRegistration = (payload: IActionModel) => {
+export const goodMove = (payload: IActionModel) => {
     return {
-        type: actionsConstants.SUCCESS_REGISTRATION,
-        payload
-    };
-};
-
-export const badRegistration = (payload: IActionModel) => {
-    return {
-        type: actionsConstants.BAD_REGISTRATION,
-        payload
-    };
-};
-
-export const successAuthorization = (payload: IActionModel) => {
-    return {
-        type: actionsConstants.SUCCESS_AUTHORIZATION,
+        type: actionsConstants.GOOD_MOVE,
         payload
     };
 };
@@ -29,31 +15,23 @@ export const badAuthorization = (payload: IActionModel) => {
     };
 };
 
-export const successUserUpdate = (payload: IActionModel) => {
+export const badRegistration = (payload: IActionModel) => {
     return {
-        type: actionsConstants.SUCCESS_UPDATE,
+        type: actionsConstants.BAD_REGISTRATION,
         payload
     };
 };
 
-export const badUserUpdate = (payload: IActionModel) => {
+export const badUpdate = (payload: IActionModel) => {
     return {
         type: actionsConstants.BAD_UPDATE,
         payload
     };
 };
 
-export const successCreation = (payload: IActionModel) => {
+export const badRecovery = (payload: IActionModel) => {
     return {
-        type: actionsConstants.BAD_UPDATE,
-        payload
-    };
-};
-
-
-export const badCreation = (payload: IActionModel) => {
-    return {
-        type: actionsConstants.BAD_UPDATE,
+        type: actionsConstants.BAD_RECOVERY,
         payload
     };
 };

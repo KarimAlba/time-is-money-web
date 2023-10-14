@@ -1,15 +1,19 @@
 import './style.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SuccessPopup from "../SuccessPopup/index";
-import ErrorPopup from '../ErrorPopup/ErrorPopUp';
-import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
-import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
+//import SuccessPopup from "../SuccessPopup/index";
+import ErrorPopup from '../../modals/ErrorPopup/ErrorPopUp';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
+import actionsConstants from '../../../store/actions/actionConstants';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
+import { badRegistration, goodMove } from '../../../store/actions/notificationsActions';
+import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
 
 const PhysicalPersonRegistration = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [userSurname, setUserSurname] = useState<string>('');
     const [userName, setUserName] = useState<string>('');
     const [userPatronymic, setUserPatronymic] = useState<string>('');
@@ -21,7 +25,7 @@ const PhysicalPersonRegistration = () => {
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
     const [errorMessages, setErrorMessages] = useState<string[] | []>([]);
 
-    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
+    //const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
     const [isVisiblePassword, setIsVisiblePassword] = useState<boolean>(false)
     const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword)
     const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] = useState<boolean>(false);
@@ -70,14 +74,22 @@ const PhysicalPersonRegistration = () => {
             .then(response => {
                 const data = (response.data as string);
                 localStorage.clear();
-                setIsSuccessPopupVisible(true);
+                //setIsSuccessPopupVisible(true);
+                dispatch(goodMove({
+                    type: actionsConstants.GOOD_MOVE,
+                    payload: 'Успешно зарегестрированы'
+                }))
                 setTimeout(() => {
                     navigate('/login');
                 }, 1000)
             })
             .catch(error => {
-                setErrorMessages(["Проверьте правильность заполненных полей"]);
-                setIsErrorPopupVisible(true);
+                //setErrorMessages(["Проверьте правильность заполненных полей"]);
+                setIsErrorPopupVisible(false);
+                dispatch(badRegistration({
+                    type: actionsConstants.BAD_REGISTRATION,
+                    payload: 'Не удалось зарегестрировать пользователя'
+                }))
             })
     }
 
@@ -231,13 +243,13 @@ const PhysicalPersonRegistration = () => {
                     onClose={() => setIsErrorPopupVisible(false)}
                 />
             )}
-            {isSuccessPopupVisible
+            {/* {isSuccessPopupVisible
                 ? <SuccessPopup
                     message={'Успешно зарегистрированы'}
                     onClose={() => setIsSuccessPopupVisible(false)}
                 />
                 : null
-            }
+            } */}
         </div>
     )
 }

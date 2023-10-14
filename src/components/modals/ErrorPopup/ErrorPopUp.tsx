@@ -17,7 +17,7 @@ const ErrorPopup = (props: ErrorPopupProps) => {
 
       const timer = setTimeout(() => {
         onClose(); // Закрываем popup спустя 4 секунды
-      }, 4000);
+      }, 2000);
   
       return () => {
         clearTimeout(timer); 

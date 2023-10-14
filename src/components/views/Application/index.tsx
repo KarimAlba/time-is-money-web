@@ -1,12 +1,12 @@
 import './style.css';
-import one from '../../assets/imgTimeIsMoney/stroke.svg';
-import screenQr from '../../assets/imgTimeIsMoney/screenQrCode.svg';
-import Star from '../../assets/imgTimeIsMoney/Star.svg';
 import { useEffect } from 'react';
-import mobilePhoneScreen1 from '../../assets/images/phone1.png';
-import mobilePhoneScreen2 from '../../assets/images/phone2.png';
-import mobilePhoneScreen3 from '../../assets/images/phone3.png';
-import photoAplication from '../../assets/imgTimeIsMoney/photoAplication.svg';
+import Star from '../../../assets/imgTimeIsMoney/Star.svg';
+import one from '../../../assets/imgTimeIsMoney/stroke.svg';
+import mobilePhoneScreen1 from '../../../assets/images/phone1.png';
+import mobilePhoneScreen2 from '../../../assets/images/phone2.png';
+import mobilePhoneScreen3 from '../../../assets/images/phone3.png';
+import screenQr from '../../../assets/imgTimeIsMoney/screenQrCode.svg';
+import photoAplication from '../../../assets/imgTimeIsMoney/photoAplication.svg';
 
 interface ApplicationPropsTypes{
     handleCurrentBtnChange: Function;

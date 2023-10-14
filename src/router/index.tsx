@@ -1,16 +1,16 @@
-import Login from "../views/Login";
+import Login from "../components/views/Login";
 import { useState, lazy, Suspense } from 'react';
 import { Routes, Route } from "react-router-dom";
 import EditUser from "../components/ui/EditUser";
 import Preloader from "../components/ui/Preloader";
 import UserPlugin from "../components/ui/UserPlugin";
 
-const UserPage = lazy(() => import("../views/User"));
-const MainPage = lazy(() => import("../views/MainPage"));
-const Investors = lazy(() => import("../views/Investors"));
-const PluginPage = lazy(() => import("../views/PluginPage"));
-const Application = lazy(() => import("../views/Application"));
+const UserPage = lazy(() => import("../components/views/User"));
 const LoginForm = lazy(() => import("../components/ui/LoginForm"));
+const MainPage = lazy(() => import("../components/views/MainPage"));
+const Investors = lazy(() => import("../components/views/Investors"));
+const PluginPage = lazy(() => import("../components/views/PluginPage"));
+const Application = lazy(() => import("../components/views/Application"));
 const CongratulationsBlock = lazy(() => import("../components/ui/CongratulationsBlock"));
 const CreateNewPasswordPage = lazy(() => import("../components/ui/CreateNewPasswordPage"));
 const OrganizationRegistration = lazy(() => import("../components/ui/OrganizationRegistration"));
