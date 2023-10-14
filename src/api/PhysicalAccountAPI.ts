@@ -12,7 +12,7 @@ class PhysicalAccountAPI {
     }
 
     public static clientAutorization(body: IUserAuth): Promise<AxiosResponse<any | IErrorResponse>> {
-        return axiosConfig.post('/api/main/user/pc-client/auth', { ...body });
+        return axiosConfig.post(`/api/main/user/pc-client/auth?email=${body.email}&password=${body.password}&isWorkStationOwner=true`);
     }
 
     public static edit(body: IEditUserRequest): Promise<AxiosResponse<any | IErrorResponse>> {
