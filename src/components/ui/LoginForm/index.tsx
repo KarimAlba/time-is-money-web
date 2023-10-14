@@ -1,14 +1,17 @@
 import './style.css';
 import axios from 'axios';
 import { useState, useEffect } from "react"
-import SuccessPopup from "../SuccessPopup/index";
-import ErrorPopup from "../ErrorPopup/ErrorPopUp";
+//import SuccessPopup from "../SuccessPopup/index";
+import ErrorPopup from "../../modals/ErrorPopup/ErrorPopUp";
 import IUserAuth from "../../../models/request/IUserAuth";
 import { useLocation, useNavigate } from "react-router-dom";
-import PasswordRecoveryModal from '../PasswordRecoveryModal';
+import PasswordRecoveryModal from '../../modals/PasswordRecoveryModal';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
+import actionsConstants from '../../../store/actions/actionConstants';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
+import { badAuthorization, goodMove } from '../../../store/actions/notificationsActions';
 
 interface ModalRegisterPropsTypes {
     isVisible: Boolean;
@@ -53,6 +56,7 @@ const LoginForm = () => {
     const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const isEmailValid = (email: string) => {
         const emailRegex = /@../;
@@ -72,7 +76,7 @@ const LoginForm = () => {
         PhysicalAccountAPI.clientAutorization(user)
             .then(response => {
                 localStorage.clear();
-                setIsSuccessPopupVisible(true);
+                //setIsSuccessPopupVisible(true);
                 localStorage.setItem('token', response.data.tokenResponse.token);
                 axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.tokenResponse.token}`
                 if (response.data.entity.inn) {
@@ -80,13 +84,21 @@ const LoginForm = () => {
                 } else {
                     localStorage.setItem('id', String(response.data.entity.id));
                 }
+                dispatch(goodMove({
+                    type: actionsConstants.GOOD_MOVE,
+                    payload: 'Успешно авторизованы'
+                }))
                 setTimeout(() => {
                     navigate('/user');
                 }, 1000);
             })
             .catch(error => {
-                setErrorMessage("Некорректный email или пароль");
-                setIsErrorPopupVisible(true);
+                //setErrorMessage("Некорректный email или пароль");
+                //setIsErrorPopupVisible(true);
+                dispatch(badAuthorization({
+                    type: actionsConstants.BAD_AUTHORIZATION,
+                    payload: 'Ошибка авторизации'
+                }))
             });
     }
 
@@ -176,13 +188,13 @@ const LoginForm = () => {
                         onClose={() => setIsErrorPopupVisible(false)}
                     />
                 )}
-                {isSuccessPopupVisible
+                {/* {isSuccessPopupVisible
                     ? <SuccessPopup
                         message={'Успешно авторизованы'}
                         onClose={() => setIsSuccessPopupVisible(false)}
                     />
                     : null
-                }
+                } */}
                 <ModalRegister isVisible={isVisible} />
 
                 {isPasswordRecovery
@@ -196,3 +208,7 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+function dispatch(arg0: any) {
+    throw new Error('Function not implemented.');
+}

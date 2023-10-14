@@ -1,7 +1,7 @@
 import './style.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import ErrorPopup from "../ErrorPopup/ErrorPopUp";
+import ErrorPopup from "../../modals/ErrorPopup/ErrorPopUp";
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import ClientAccountAPI from '../../../api/ClientAccountingAPI';

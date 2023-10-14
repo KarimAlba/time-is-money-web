@@ -1,11 +1,11 @@
 import './style.css';
-import queue from '../../assets/imgTimeIsMoney/queue.svg'
-import Star from '../../assets/imgTimeIsMoney/Star.svg'
-import stroke from '../../assets/imgTimeIsMoney/stroke.svg'
-import Phone from '../../assets/imgTimeIsMoney/Phone.svg'
-import laptop from '../../assets/imgTimeIsMoney/laptop.svg'
-import { useNavigate } from 'react-router';
 import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import Star from '../../../assets/imgTimeIsMoney/Star.svg';
+import queue from '../../../assets/imgTimeIsMoney/queue.svg';
+import Phone from '../../../assets/imgTimeIsMoney/Phone.svg';
+import stroke from '../../../assets/imgTimeIsMoney/stroke.svg';
+import laptop from '../../../assets/imgTimeIsMoney/laptop.svg';
 
 interface MainPagePropsTypes {
     handleCurrentBtnChange: Function;

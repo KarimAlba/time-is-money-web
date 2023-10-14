@@ -1,8 +1,8 @@
 import './style.css';
-import RunningMan from "../../assets/imgTimeIsMoney/RunningMan.svg"
-import StepList from "../../components/ui/stepList";
-import star from '../../assets/imgTimeIsMoney/Star.svg'
 import { useEffect } from 'react';
+import StepList from "../../ui/stepList";
+import star from '../../../assets/imgTimeIsMoney/Star.svg'
+import RunningMan from "../../../assets/imgTimeIsMoney/RunningMan.svg"
 
 interface PluginPagePropsTypes{
     handleCurrentBtnChange: Function;

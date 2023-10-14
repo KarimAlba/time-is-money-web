@@ -1,10 +1,13 @@
 import './style.css';
-import SuccessPopup from '../SuccessPopup';
+//import SuccessPopup from '../SuccessPopup';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import ErrorPopup from '../ErrorPopup/ErrorPopUp';
+import ErrorPopup from '../../modals/ErrorPopup/ErrorPopUp';
 import OrganizationAPI from '../../../api/OrganizationAPI';
+import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
+import actionsConstants from '../../../store/actions/actionConstants';
+import { badUpdate, goodMove } from '../../../store/actions/notificationsActions';
 
 const EditUser = () => {
     const [type, setType] = useState<number>(1);
@@ -27,6 +30,7 @@ const EditUser = () => {
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const isEmailValid = (email: string) => {
         const emailRegex = /@../;
@@ -108,14 +112,22 @@ const EditUser = () => {
                 .then(response => {
                     localStorage.removeItem('token');
                     localStorage.setItem('token', response.data.token);
-                    setIsSuccessPopupVisible(true);
+                    //setIsSuccessPopupVisible(true);
+                    dispatch(goodMove({
+                        type: actionsConstants.GOOD_MOVE,
+                        payload: 'Успешно обновлено'
+                    }))
                     setTimeout(() => {
                         navigate('/login');
                     }, 1000)
                 })
                 .catch(error => {
-                    setErrorMessages(["Проверьте правильность заполненных полей"]);
-                    setIsErrorPopupVisible(true);
+                    //setErrorMessages(["Проверьте правильность заполненных полей"]);
+                    setIsErrorPopupVisible(false);
+                    dispatch(badUpdate({
+                        type: actionsConstants.BAD_UPDATE,
+                        payload: 'Не удалось обновить данные'
+                    }))
                 })
         }
     }
@@ -181,14 +193,22 @@ const EditUser = () => {
 
             OrganizationAPI.edit(edittedOrg)
                 .then(response => {
-                    setIsSuccessPopupVisible(true);
+                    //setIsSuccessPopupVisible(true);
+                    dispatch(goodMove({
+                        type: actionsConstants.GOOD_MOVE,
+                        payload: 'Успешно обновлено'
+                    }))
                     setTimeout(() => {
                         navigate('/login');
                     }, 1000)
                 })
                 .catch(error => {
-                    setErrorMessages(["Проверьте правильность заполненных полей"]);
-                    setIsErrorPopupVisible(true);
+                    //setErrorMessages(["Проверьте правильность заполненных полей"]);
+                    setIsErrorPopupVisible(false);
+                    dispatch(badUpdate({
+                        type: actionsConstants.BAD_UPDATE,
+                        payload: 'Не удалось обновить данные'
+                    }))
                 })
         }
     }
@@ -347,13 +367,13 @@ const organizationBlock =
                     onClose={() => setIsErrorPopupVisible(false)} 
                 />
             )}
-            {isSuccessPopupVisible
+            {/* {isSuccessPopupVisible
                 ? <SuccessPopup 
                     message={'Успешно обновлено'} 
                     onClose={() => setIsSuccessPopupVisible(false)} 
                 />
                 : null
-            }
+            } */}
         </div>
     )
 }

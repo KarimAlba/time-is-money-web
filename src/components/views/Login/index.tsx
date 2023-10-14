@@ -1,6 +1,8 @@
 import './style.css';
+import { useEffect } from 'react';
 import { Outlet } from "react-router-dom";
-import imgLogin from '../../assets/imgTimeIsMoney/imgLogin.svg';import { useEffect } from 'react';
+import imgLogin from '../../../assets/imgTimeIsMoney/imgLogin.svg';
+
 
 interface LoginPropsTypes{
     handleCurrentBtnChange: Function;
