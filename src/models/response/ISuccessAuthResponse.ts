@@ -25,3 +25,5 @@ interface ISuccessAuthResponse{
         textQr: string;
     }[];
 }
+
+export default ISuccessAuthResponse;
