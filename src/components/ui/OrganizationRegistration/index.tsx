@@ -1,15 +1,15 @@
 import './style.css';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//import SuccessPopup from "../SuccessPopup/index";
+import SuccessPopup from '../../modals/SuccessPopup';
 import ErrorPopup from '../../modals/ErrorPopup/ErrorPopUp';
 import OrganizationAPI from '../../../api/OrganizationAPI';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
-import { useDispatch } from 'react-redux/es/hooks/useDispatch';
-import actionsConstants from '../../../store/actions/actionConstants';
+//import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+//import actionsConstants from '../../../store/actions/actionConstants';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
-import { badRegistration, goodMove } from '../../../store/actions/notificationsActions';
+//import { badRegistration, goodMove } from '../../../store/actions/notificationsActions';
 
 const OrganizationRegistration = () => {
     const [orgName, setOrgName] = useState<string>('');
@@ -35,7 +35,7 @@ const OrganizationRegistration = () => {
     const handleConfirmPasswordClick = () => setIsVisibleConfirmPassword(!isVisibleConfirmPassword);
 
     const navigate = useNavigate();
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
     const isEmailValid = (email: string) => {
         const emailRegex = /@../;
@@ -94,23 +94,24 @@ const OrganizationRegistration = () => {
     const sendRequest = (org: IOrganizationRequest) => {
         OrganizationAPI.registration(password, org)
             .then(response => {
-                //setIsSuccessPopupVisible(true);
-                dispatch(goodMove({
-                    type: actionsConstants.GOOD_MOVE,
-                    payload: 'Успешно зарегестрированы'
-                }))
+                setIsSuccessPopupVisible(true);
+                // dispatch(goodMove({
+                //     type: actionsConstants.GOOD_MOVE,
+                //     payload: 'Успешно зарегестрированы'
+                // }))
                 setTimeout(() => {
                     navigate('/login');
                 }, 1000);
                 localStorage.clear();
             })
             .catch(error => {
-                //setErrorMessages(["Проверьте правильность заполненных полей"]);
-                setIsErrorPopupVisible(false);
-                dispatch(badRegistration({
-                    type: actionsConstants.BAD_REGISTRATION,
-                    payload: 'Не удалось зарегестрировать пользователя'
-                }))
+                setErrorMessages(["Не удалось зарегестрировать пользователя"]);
+                setIsErrorPopupVisible(true);
+                //setIsErrorPopupVisible(false);
+                // dispatch(badRegistration({
+                //     type: actionsConstants.BAD_REGISTRATION,
+                //     payload: 'Не удалось зарегестрировать пользователя'
+                // }))
             })
     }
 
@@ -339,13 +340,13 @@ const OrganizationRegistration = () => {
                     onClose={() => setIsErrorPopupVisible(false)}
                 />
             )}
-            {/* {isSuccessPopupVisible
+            {isSuccessPopupVisible
                 ? <SuccessPopup
                     message={'Успешно зарегистрированы'}
                     onClose={() => setIsSuccessPopupVisible(false)}
                 />
                 : null
-            } */}
+            }
 
         </div>
     )
