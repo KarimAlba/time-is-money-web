@@ -12,6 +12,11 @@ interface ISuccessAuthResponse{
         patronymic: string;
         email: string;
         createdAt: string;
+        userId?: number;
+        organizationName?: string;
+        organizationAddress?: string;
+        inn?: string;
+        kpp?: string;
     };
     workStationResponses: {
         id: number;

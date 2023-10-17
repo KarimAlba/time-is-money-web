@@ -6,6 +6,7 @@ import ErrorPopup from '../../modals/ErrorPopup/ErrorPopUp';
 import OrganizationAPI from '../../../api/OrganizationAPI';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
+import ISuccessEditResponse from '../../../models/response/ISuccessEditResponse';
 //import actionsConstants from '../../../store/actions/actionConstants';
 //import { badUpdate, goodMove } from '../../../store/actions/notificationsActions';
 
@@ -111,7 +112,8 @@ const EditUser = () => {
             PhysicalAccountAPI.edit(edittedUser)
                 .then(response => {
                     localStorage.removeItem('token');
-                    localStorage.setItem('token', response.data.token);
+                    const data = (response.data as ISuccessEditResponse);
+                    localStorage.setItem('token', data.token);
                     setIsSuccessPopupVisible(true);
                     // dispatch(goodMove({
                     //     type: actionsConstants.GOOD_MOVE,
@@ -195,6 +197,9 @@ const EditUser = () => {
             OrganizationAPI.edit(edittedOrg)
                 .then(response => {
                     setIsSuccessPopupVisible(true);
+                    localStorage.removeItem('token');
+                    const data = (response.data as ISuccessEditResponse);
+                    localStorage.setItem('token', data.token);
                     // dispatch(goodMove({
                     //     type: actionsConstants.GOOD_MOVE,
                     //     payload: 'Успешно обновлено'

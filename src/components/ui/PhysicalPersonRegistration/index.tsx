@@ -10,6 +10,7 @@ import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 import { badRegistration, goodMove } from '../../../store/actions/notificationsActions';
 import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
+import ISuccessPhysicalPersonRegistr from '../../../models/response/ISuccessPhysicalPersonRegistr';
 
 const PhysicalPersonRegistration = () => {
     const navigate = useNavigate();
@@ -72,7 +73,7 @@ const PhysicalPersonRegistration = () => {
     const sendRequest = (user: IPhysicalRegistrationRequest) => {
         PhysicalAccountAPI.registration(userPassword, user)
             .then(response => {
-                const data = (response.data as string);
+                const data = (response.data as ISuccessPhysicalPersonRegistr);
                 localStorage.clear();
                 setIsSuccessPopupVisible(true);
                 // dispatch(goodMove({
