@@ -43,14 +43,14 @@ const PluginTable = () => {
         window.URL.revokeObjectURL(reportUrl);
     }
 
-    const sendReqQR = (id: number) => {
-        WorkStationtAPI.getQRCode(id)
-            .then(response => {
-                //createImg(id, response.data);
-                createQRCodeImg(response.data, id);
-            })
-            .catch(error => console.log(error))
-    }
+    // const sendReqQR = (id: number) => {
+    //     WorkStationtAPI.getQRCode(id)
+    //         .then(response => {
+    //             //createImg(id, response.data);
+    //             createQRCodeImg(response.data, id);
+    //         })
+    //         .catch(error => console.log(error))
+    // }
 
     const handleDownloadQR = (text: string, id: number) => {
         // sendReqQR(id);
@@ -70,7 +70,8 @@ const PluginTable = () => {
     const getPlugins = () => {
         WorkStationtAPI.getPlugins(curPage, size)
             .then(response => {
-                setRenderPlugins(response.data)
+                const data = (response.data as ISearchedWorkStationResponse[]);
+                setRenderPlugins(data)
             })
             .catch(error => console.log(error))
     }

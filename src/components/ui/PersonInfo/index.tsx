@@ -11,6 +11,8 @@ import IEntityResponse from "../../../models/response/IEntityResponse";
 import ArrowDownIcon from '../../../assets/imgTimeIsMoney/arrow-down-icon.svg';
 import crossBurgerMenu from '../../../assets/imgTimeIsMoney/crossBurgerMenu.svg';
 import IUserStatisticResponse from '../../../models/response/IUserStatisticResponse';
+import ISuccessGetUserDataResponse from '../../../models/response/ISuccessGetUserDataResponse';
+import ISuccessFindStatisticResponse from '../../../models/response/ISuccessFindStatisticResponse';
 
 interface PersonInfoPropsTypes {
     handleIsOpenFooter: Function
@@ -67,8 +69,10 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const handleMounted = () => {
         ClientAccountAPI.getClientData()
             .then(response => {
-                complieteFields(response.data);
-                fillLocalStorage(response.data);
+                const data = (response.data as ISuccessGetUserDataResponse);
+
+                complieteFields(data);
+                fillLocalStorage(data);
             })
             .catch(error => console.log(error))
     }
@@ -106,10 +110,11 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const getUserStatistic = () => {
         WorkStationtAPI.getStatistic()
             .then(response => {
-                setStatistic(response.data.workStationResponses);
-                setCountApplications(String(response.data.countFilledApplications));
-                setCountProducedDocs(String(response.data.countProducedDocuments));
-                setCountWorkStations(String(response.data.countWorkStations));
+                const data = (response.data as ISuccessFindStatisticResponse);
+                setStatistic(data.workStationResponses);
+                setCountApplications(String(data.countFilledApplications));
+                setCountProducedDocs(String(data.countProducedDocuments));
+                setCountWorkStations(String(data.countWorkStations));
             })
             .catch(error => console.log(error))
     }

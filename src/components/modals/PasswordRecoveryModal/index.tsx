@@ -1,12 +1,12 @@
 import './style.css';
-//import SuccessPopup from '../SuccessPopup';
+import SuccessPopup from '../SuccessPopup';
 import { useState, useEffect } from 'react';
 import ErrorPopup from '../ErrorPopup/ErrorPopUp';
-import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+//import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import ClientAccountAPI from '../../../api/ClientAccountingAPI';
 import CloseIcon from '../../../assets/images/icons/close-icon.svg';
-import actionsConstants from '../../../store/actions/actionConstants';
-import { goodMove, badRecovery } from '../../../store/actions/notificationsActions';
+//import actionsConstants from '../../../store/actions/actionConstants';
+//import { goodMove, badRecovery } from '../../../store/actions/notificationsActions';
 
 interface PasswordRecoveryModalPropsTypes{
     setPasswordRecoveryOpenStatus: Function;
@@ -20,29 +20,31 @@ const PasswordRecoveryModal = (props: PasswordRecoveryModalPropsTypes) => {
     const [isErrorPopupVisible, setIsErrorPopupVisible] = useState<boolean>(false);
     const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
 
-    const dispatch = useDispatch();
+    //const dispatch = useDispatch();
 
     const sendReq = () => {
         ClientAccountAPI.sendCode(email)
           .then(response => {
             setIsErrorPopupVisible(false);
+            setIsSuccessPopupVisible(true);
 
-            dispatch(goodMove({
-                type: actionsConstants.GOOD_MOVE,
-                payload: 'Ссылка на восстановление успешно отправлена!'
-            }))
+            // dispatch(goodMove({
+            //     type: actionsConstants.GOOD_MOVE,
+            //     payload: 'Ссылка на восстановление успешно отправлена!'
+            // }))
 
             setTimeout(() => {
                 setPasswordRecoveryOpenStatus();
             }, 1400);
           })
           .catch(error => {
-            //setErrorMessage(error.response.data.message);
-            setIsErrorPopupVisible(false);
-            dispatch(badRecovery({
-                type: actionsConstants.BAD_RECOVERY,
-                payload: 'Не удалось отправить ссылку на указанный адрес'
-            }))
+            setErrorMessage('Не удалось отправить ссылку на указанный адрес');
+            setIsErrorPopupVisible(true);
+            //setIsErrorPopupVisible(false);
+            // dispatch(badRecovery({
+            //     type: actionsConstants.BAD_RECOVERY,
+            //     payload: 'Не удалось отправить ссылку на указанный адрес'
+            // }))
           });
       }
     
@@ -109,13 +111,13 @@ const PasswordRecoveryModal = (props: PasswordRecoveryModalPropsTypes) => {
                 />
             )}
 
-            {/* {isSuccessPopupVisible
+            {isSuccessPopupVisible
                 ? <SuccessPopup 
                     message={'Успешно'} 
                     onClose={() => setIsSuccessPopupVisible(false)} 
                 />
                 : null
-            } */}
+            }
         
         </div>
     )

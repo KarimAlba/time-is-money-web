@@ -5,12 +5,13 @@ import SuccessPopup from '../../modals/SuccessPopup';
 import ErrorPopup from "../../modals/ErrorPopup/ErrorPopUp";
 import IUserAuth from "../../../models/request/IUserAuth";
 import { useLocation, useNavigate } from "react-router-dom";
-import PasswordRecoveryModal from '../../modals/PasswordRecoveryModal';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
+import PasswordRecoveryModal from '../../modals/PasswordRecoveryModal';
 //import actionsConstants from '../../../store/actions/actionConstants';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
+import ISuccessAuthResponse from '../../../models/response/ISuccessAuthResponse';
 //import { badAuthorization, goodMove } from '../../../store/actions/notificationsActions';
 
 interface ModalRegisterPropsTypes {
@@ -77,12 +78,13 @@ const LoginForm = () => {
             .then(response => {
                 localStorage.clear();
                 setIsSuccessPopupVisible(true);
-                localStorage.setItem('token', response.data.tokenResponse.token);
-                axios.defaults.headers.common['Authorization'] = `Bearer ${response.data.tokenResponse.token}`
-                if (response.data.entity.inn) {
-                    fillOrganizationLocalStorage(response.data.entity);
+                const data = (response.data as ISuccessAuthResponse);
+                localStorage.setItem('token', data.tokenResponse.token);
+                axios.defaults.headers.common['Authorization'] = `Bearer ${data.tokenResponse.token}`
+                if (data.entity.inn) {
+                    fillOrganizationLocalStorage(data.entity);
                 } else {
-                    localStorage.setItem('id', String(response.data.entity.id));
+                    localStorage.setItem('id', String(data.entity.id));
                 }
                 // dispatch(goodMove({
                 //     type: actionsConstants.GOOD_MOVE,
