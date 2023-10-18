@@ -12,5 +12,4 @@ if (token)  {
 
 const axiosConfig = axios;
 
-
 export default axiosConfig;
