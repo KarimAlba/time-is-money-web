@@ -2,7 +2,7 @@ import './style.css';
 import SuccessPopup from '../../modals/SuccessPopup';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-import ErrorPopup from '../../modals/ErrorPopup/ErrorPopUp';
+import ErrorPopup from '../../modals/ErrorPopup';
 import OrganizationAPI from '../../../api/OrganizationAPI';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';

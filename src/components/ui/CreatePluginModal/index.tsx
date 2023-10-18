@@ -11,11 +11,10 @@ const CreatePluginModal = () => {
 
     const sendCreateReq = () => {
         WorkStationtAPI.create(name)
-            .then(response => {
+            .then(() => {
                 setIsTableVisible(true);
             })
-            .catch(error => {
-                console.log(error);
+            .catch(() => {
                 setIsTableVisible(false);
             })
     }

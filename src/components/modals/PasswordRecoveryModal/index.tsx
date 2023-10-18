@@ -1,7 +1,7 @@
 import './style.css';
 import SuccessPopup from '../SuccessPopup';
 import { useState, useEffect } from 'react';
-import ErrorPopup from '../ErrorPopup/ErrorPopUp';
+import ErrorPopup from '../ErrorPopup';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import ClientAccountAPI from '../../../api/ClientAccountingAPI';
 import CloseIcon from '../../../assets/images/icons/close-icon.svg';

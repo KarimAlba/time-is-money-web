@@ -1,48 +1,19 @@
 import './style.css';
 import axios from 'axios';
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import ErrorPopup from "../../modals/ErrorPopup";
 import SuccessPopup from '../../modals/SuccessPopup';
-import ErrorPopup from "../../modals/ErrorPopup/ErrorPopUp";
 import IUserAuth from "../../../models/request/IUserAuth";
-import { useLocation, useNavigate } from "react-router-dom";
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
 import PasswordRecoveryModal from '../../modals/PasswordRecoveryModal';
 //import actionsConstants from '../../../store/actions/actionConstants';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
+import ChooseRegistrationModal from '../../modals/ChooseRegistrationModal';
 import ISuccessAuthResponse from '../../../models/response/ISuccessAuthResponse';
 //import { badAuthorization, goodMove } from '../../../store/actions/notificationsActions';
-
-interface ModalRegisterPropsTypes {
-    isVisible: Boolean;
-}
-
-function ModalRegister(props: ModalRegisterPropsTypes) {
-    const location = useLocation();
-    const navigate = useNavigate();
-    const toPhysicalPerson = () => navigate('physicalPerson');
-    const toEntity = () => navigate('entity');
-    const { isVisible } = props;
-    return (
-        <>
-            {isVisible
-                ? (<div className="overlay modal-choice-registration-Container">
-                    <div className='modal-choice-registration'>
-                        <p>Вы регистрируетесь как:</p>
-                        <span onClick={toPhysicalPerson}>
-                            ФИЗИЧЕСКОЕ ЛИЦО
-                        </span>
-                        <span onClick={toEntity}>
-                            ЮРИДИЧЕСКОЕ ЛИЦО
-                        </span>
-                    </div>
-                </div>)
-                : null
-            }
-        </>
-    )
-}
 
 const LoginForm = () => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -197,7 +168,11 @@ const LoginForm = () => {
                     />
                     : null
                 }
-                <ModalRegister isVisible={isVisible} />
+
+                {isVisible
+                    ? <ChooseRegistrationModal/>
+                    : null
+                }
 
                 {isPasswordRecovery
                     ? <PasswordRecoveryModal setPasswordRecoveryOpenStatus={getPasswordRecoveryOpenStatus}/>

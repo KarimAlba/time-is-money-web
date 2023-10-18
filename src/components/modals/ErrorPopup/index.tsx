@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import './ErrorPopUp.css'
+import './style.css'
+import { useEffect, useState } from "react";
 
 interface ErrorPopupProps {
   error?: string;
   errorArray?: string[] | [];
-  onClose: () => void;
+  onClose: Function;
 }
 
 const ErrorPopup = (props: ErrorPopupProps) => {
@@ -13,10 +13,10 @@ const ErrorPopup = (props: ErrorPopupProps) => {
   const [isErrorPopupVisible, setIsErrorPopupVisible] = useState(false);
 
     useEffect(() => {
-      setIsErrorPopupVisible(true); // Показываем popup
+      setIsErrorPopupVisible(true);
 
       const timer = setTimeout(() => {
-        onClose(); // Закрываем popup спустя 4 секунды
+        onClose();
       }, 2000);
   
       return () => {
@@ -35,7 +35,7 @@ const ErrorPopup = (props: ErrorPopupProps) => {
           : <p>{error}</p>
         }
         <button 
-          onClick={onClose}
+          onClick={() => onClose()}
           className="close-btn"
         >
           x

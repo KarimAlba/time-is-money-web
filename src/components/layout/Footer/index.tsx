@@ -1,6 +1,6 @@
 import './style.css';
-const Footer = () => {
 
+const Footer = () => {
     return (
         <div className="container-Footer">
             <div className="Footer">

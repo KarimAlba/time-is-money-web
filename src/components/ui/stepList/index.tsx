@@ -1,6 +1,6 @@
 import { useState } from "react";
-import StepModel from "../../../models/StepModel";
 import StepItem from "../StepItem";
+import StepModel from "../../../models/StepModel";
 import screen1 from "../../../assets/imgTimeIsMoney/screen1.svg";
 import screen2 from "../../../assets/imgTimeIsMoney/screen2.svg";
 import screen3 from "../../../assets/imgTimeIsMoney/screen3.svg";
@@ -50,14 +50,14 @@ const StepList = () => {
     return (
         <div style={{ display: "flex", flexDirection: "column" }}>
             {
-                stepModels.map(step => {
-                    return (<StepItem 
+                stepModels.map(step => 
+                    <StepItem 
                         photoUrl={step.photoUrl} 
                         number={step.number} 
                         text={step.text} 
                         key={step.number}
-                    />)
-                })
+                    />
+                )
             }
         </div>
     )

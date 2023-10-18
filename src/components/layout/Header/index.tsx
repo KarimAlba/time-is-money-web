@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react"
 import './style.css';
-import logo from '../../../assets/imgTimeIsMoney/logo.svg'
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import burger from '../../../assets/imgTimeIsMoney/hamburger.svg'
-import crossBurgerMenu from '../../../assets/imgTimeIsMoney/crossBurgerMenu.svg'
+import logo from '../../../assets/imgTimeIsMoney/logo.svg';
+import burger from '../../../assets/imgTimeIsMoney/hamburger.svg';
+import crossBurgerMenu from '../../../assets/imgTimeIsMoney/crossBurgerMenu.svg';
 
 interface HeaderPropsTypes {
     handleIsOpenFooter: Function;
@@ -48,7 +48,7 @@ const Header = (props: HeaderPropsTypes) => {
         if (currentBtnProp) {
             setCurrentBtn(currentBtnProp);
         }
-    }, [currentBtnProp])
+    }, [currentBtnProp]);
 
     return (
         <div className="container-header">
