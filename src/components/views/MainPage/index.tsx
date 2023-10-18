@@ -49,7 +49,6 @@ const MainPage = (props: MainPagePropsTypes) => {
                     </div>
                 </div>
             </div>
-            {/* второй блок */}
             <div className="container-block2">
                 <div className="block-info">
                     <p>Наш продукт состоит из:</p>
@@ -83,7 +82,6 @@ const MainPage = (props: MainPagePropsTypes) => {
                     <img src={Phone} className="img3" />
                 </div>
             </div>
-            {/* третий блок */}
             <div className="container-block3">
                 <div className="container-block3-info">
                     <div className="container-block3-info1">
@@ -110,9 +108,7 @@ const MainPage = (props: MainPagePropsTypes) => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <img src={laptop} className="img5" />
-                </div>
+                <img src={laptop} className="img5" />
             </div>
         </div>
     )

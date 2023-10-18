@@ -4,7 +4,7 @@
     line-height: 1.5;
 }
 
-.block1 {
+.block1{
     margin: 100px 0;
     position: relative;
     display: flex;
@@ -18,7 +18,7 @@
     height: 500px;
 }
 
-.aplication-text1-block1 {
+.aplication-text1-block1{
     margin-left: 30px;
     max-width: 600px;
     padding: 74px;
@@ -29,9 +29,10 @@
     text-align: justify;
 }
 
-.aplication-text1-block1 span {
+.aplication-text1-block1 a{
     color: #00B2F4;
     cursor: pointer;
+    text-decoration: none;
 
 }
 

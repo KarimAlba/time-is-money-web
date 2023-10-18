@@ -2,7 +2,7 @@ import './style.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SuccessPopup from '../../modals/SuccessPopup';
-import ErrorPopup from '../../modals/ErrorPopup/ErrorPopUp';
+import ErrorPopup from '../../modals/ErrorPopup';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';

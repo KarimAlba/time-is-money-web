@@ -1,10 +1,10 @@
 import './style.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
-import ErrorPopup from "../../modals/ErrorPopup/ErrorPopUp";
+import ErrorPopup from "../../modals/ErrorPopup";
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
-import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import ClientAccountAPI from '../../../api/ClientAccountingAPI';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 
 const CreateNewPasswordPage = () => {

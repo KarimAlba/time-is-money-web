@@ -15,14 +15,6 @@ interface ApplicationPropsTypes{
 const Application = (props: ApplicationPropsTypes) => {
     const { handleCurrentBtnChange } = props;
 
-    const onClickGooglePlay = () => (
-        window.location.assign('https://play.google.com/store/apps/details?id=com.studiovr.timeismoney')
-    )
-
-    const onClickAppStore = () => (
-        window.location.assign('https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674')
-    )
-
     useEffect(() => {
         handleCurrentBtnChange('Приложение')
     }, []);
@@ -35,8 +27,8 @@ const Application = (props: ApplicationPropsTypes) => {
                 </div>
                 <div className="aplication-text1-block1">
                     <p>
-                        Установите наше приложение из <span onClick={() => onClickAppStore()}>App Store</span>,
-                        <span onClick={() => onClickGooglePlay()}> Google Play</span> или <span>RuStore </span>
+                        Установите наше приложение из <a href='https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674'>App Store</a>, 
+                        <a href='https://play.google.com/store/apps/details?id=com.studiovr.timeismoney'> Google Play</a> или <a href='#'>RuStore </a>
                         на свой смартфон. Пройдите простую регистрацию и заполните
                         пустые поля в документах. Сделать это вы можете как в ручную,
                         так и автоматически переносом данных из Госуслуг.

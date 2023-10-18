@@ -21,7 +21,10 @@ const UserPage = (props: UserPagePropsTypes) => {
 
     return (
         <div>
-            <PersonInfo handleIsOpenFooter={handlePersonInfoMounted} handleOpenPlugin={setOpenPlugin} />
+            <PersonInfo 
+                handleIsOpenFooter={handlePersonInfoMounted} 
+                handleOpenPlugin={setOpenPlugin} 
+            />
             <Outlet />
         </div>
     )

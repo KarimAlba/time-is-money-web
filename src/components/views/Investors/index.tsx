@@ -1,22 +1,22 @@
 import './style.css';
-import Elipsestar from '../../../assets/imgTimeIsMoney/ElipseStar.svg';
-import ElipseStar2 from "../../../assets/imgTimeIsMoney/EllpseStar2.svg";
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import graphic from '../../../assets/images/graphic.svg';
+import TiM from '../../../assets/imgTimeIsMoney/ТиМ2.svg';
 import logo from '../../../assets/imgTimeIsMoney/logo.svg';
+import men2 from '../../../assets/imgTimeIsMoney/men2.svg';
+import men1 from '../../../assets/imgTimeIsMoney/men1.svg';
+import plus from '../../../assets/imgTimeIsMoney/plus1.svg';
+import minus from '../../../assets/imgTimeIsMoney/minus.svg';
 import icon3 from '../../../assets/imgTimeIsMoney/icon3.1.svg';
 import icon4 from '../../../assets/imgTimeIsMoney/icon4.1.svg';
 import icon5 from '../../../assets/imgTimeIsMoney/icon5.1.svg';
-import publicServices from '../../../assets/imgTimeIsMoney/publicServices2.svg';
-import MyDocuments from '../../../assets/imgTimeIsMoney/MyDocuments2.svg';
-import TiM from '../../../assets/imgTimeIsMoney/ТиМ2.svg';
-import plus from '../../../assets/imgTimeIsMoney/plus1.svg';
-import minus from '../../../assets/imgTimeIsMoney/minus.svg';
-import graphic from '../../../assets/images/graphic.svg';
-import men2 from '../../../assets/imgTimeIsMoney/men2.svg';
-import men1 from '../../../assets/imgTimeIsMoney/men1.svg';
 import BlueLine from '../../../assets/images/icons/blue-line-icon.svg';
+import Elipsestar from '../../../assets/imgTimeIsMoney/ElipseStar.svg';
+import ElipseStar2 from "../../../assets/imgTimeIsMoney/EllpseStar2.svg";
+import MyDocuments from '../../../assets/imgTimeIsMoney/MyDocuments2.svg';
+import publicServices from '../../../assets/imgTimeIsMoney/publicServices2.svg';
 import DiagrammaEllipse from '../../../assets/images/icons/diagramma-ellipse-icon.svg'
-import { useNavigate } from 'react-router';
-import { useEffect } from 'react';
 
 interface InvestorsPropsTypes {
     handleCurrentBtnChange: Function;
