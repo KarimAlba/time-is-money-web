@@ -6,7 +6,7 @@ import ISuccessFindStatisticResponse from "../models/response/ISuccessFindStatis
 
 class WorkStationtAPI{
     public static getPlugins(page: number, size: number): Promise<AxiosResponse<ISearchedWorkStationResponse[] | IErrorResponse>> {
-        return axiosConfig.get(`/api/main/work-station/find-all?page=${page}&size=${size}`);
+        return axiosConfig.get(`/api/main/work-station/all?page=${page}&size=${size}`);
     }
 
     // public static searchBy(param: string): Promise<AxiosResponse<any | IErrorResponse>> {
@@ -14,11 +14,11 @@ class WorkStationtAPI{
     // }
 
     public static getStatistic(): Promise<AxiosResponse<ISuccessFindStatisticResponse | IErrorResponse>> {
-        return axiosConfig.get('/api/main/work-station/find-statistic');
+        return axiosConfig.get('/api/main/work-station/statistics');
     }
 
     // public static getQRCode(id: number): Promise<AxiosResponse<any | IErrorResponse>> {
-    //     return axiosConfig.get(`/api/main/work-station/read/file/qr?id=${id}`, {
+    //     return axiosConfig.get(`/api/main/work-station?id=${id}`, {
     //         responseType: "blob"
     //     });
     // }

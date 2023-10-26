@@ -93,7 +93,7 @@ const OrganizationRegistration = () => {
 
     const sendRequest = (org: IOrganizationRequest) => {
         OrganizationAPI.registration(password, org)
-            .then(response => {
+            .then(() => {
                 setIsSuccessPopupVisible(true);
                 // dispatch(goodMove({
                 //     type: actionsConstants.GOOD_MOVE,
@@ -104,7 +104,7 @@ const OrganizationRegistration = () => {
                 }, 1000);
                 localStorage.clear();
             })
-            .catch(error => {
+            .catch(() => {
                 setErrorMessages(["Не удалось зарегестрировать пользователя"]);
                 setIsErrorPopupVisible(true);
                 //setIsErrorPopupVisible(false);
@@ -178,6 +178,7 @@ const OrganizationRegistration = () => {
             const organization = {
                 lastname: orgDirSurname,
                 name: orgDirName,
+                phoneNumber: null,
                 patronymic: orgDirPatronymic,
                 email: email,
                 organizationName: orgName,

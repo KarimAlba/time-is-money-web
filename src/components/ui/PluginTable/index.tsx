@@ -4,10 +4,16 @@ import { useState, useEffect } from 'react';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
-const PluginTable = () => {
+interface PluginTablePropsTypes{
+    checkAreWorkStations?: Function;
+}
+
+const PluginTable = (props: PluginTablePropsTypes) => {
     const [renderPlugins, setRenderPlugins] = useState<ISearchedWorkStationResponse[]>([]);
     const [curPage, setCurPage] = useState<number>(0);
     const [size, setSize] = useState<number>(10);
+
+    const { checkAreWorkStations } = props;
 
     // const createImg = (id: number, data: string) => {        
     //     const blob = new Blob([data], {
@@ -71,7 +77,10 @@ const PluginTable = () => {
         WorkStationtAPI.getPlugins(curPage, size)
             .then(response => {
                 const data = (response.data as ISearchedWorkStationResponse[]);
-                setRenderPlugins(data)
+                setRenderPlugins(data);
+                if (checkAreWorkStations) {
+                    data.length > 0 ? checkAreWorkStations(true) : checkAreWorkStations(false)
+                }
             })
             .catch(error => console.log(error))
     }
