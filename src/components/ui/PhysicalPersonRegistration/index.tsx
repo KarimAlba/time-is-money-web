@@ -142,6 +142,7 @@ const PhysicalPersonRegistration = () => {
             const user = {
                 lastname: userSurname,
                 name: userName,
+                phoneNumber: null,
                 patronymic: userPatronymic,
                 email: userEmail,
             }

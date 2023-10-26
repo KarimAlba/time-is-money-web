@@ -1,4 +1,6 @@
 import './style.css';
+import PluginTable from '../PluginTable';
+import { useState, useEffect } from 'react';
 import CreatePluginModal from '../CreatePluginModal';
 
 interface UserPluginPropsTypes {
@@ -6,13 +8,22 @@ interface UserPluginPropsTypes {
 }
 const UserPlugin = (props: UserPluginPropsTypes) => {
     const { isOpenProps } = props;
+    const [areWorkStations, setAreWorkStations] = useState<boolean>(true);
+
+    const checkAreWorkStations = (result: boolean) => setAreWorkStations(result);
+
+    useEffect(() => {
+        setAreWorkStations(true);
+    }, []);
 
     return (
         <div className="plugins">
             <h2>ВАШИ ПЛАГИНЫ:</h2>
             {isOpenProps
                 ? <CreatePluginModal/>
-                : null
+                : areWorkStations 
+                    ? <PluginTable checkAreWorkStations={checkAreWorkStations}/>
+                    : null
             }
         </div>
     )

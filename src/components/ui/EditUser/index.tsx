@@ -105,6 +105,7 @@ const EditUser = () => {
             const edittedUser = {
                 lastname: lastname,
                 name: name,
+                phoneNumber: null,
                 patronymic: patronymic,
                 email: email
             }
@@ -186,6 +187,7 @@ const EditUser = () => {
             const edittedOrg = {
                 lastname: lastname,
                 name: name,
+                phoneNumber: null,
                 patronymic: patronymic,
                 email: email,
                 organizationName: orgName,
@@ -198,8 +200,10 @@ const EditUser = () => {
                 .then(response => {
                     setIsSuccessPopupVisible(true);
                     localStorage.removeItem('token');
+                    localStorage.removeItem('organizationName');
                     const data = (response.data as ISuccessEditResponse);
                     localStorage.setItem('token', data.token);
+                    localStorage.setItem('organizationName', orgName);
                     // dispatch(goodMove({
                     //     type: actionsConstants.GOOD_MOVE,
                     //     payload: 'Успешно обновлено'
@@ -208,7 +212,7 @@ const EditUser = () => {
                         navigate('/login');
                     }, 1000)
                 })
-                .catch(error => {
+                .catch(() => {
                     setErrorMessages(["Не удалось обновить данные"]);
                     setIsErrorPopupVisible(true);
                     //setIsErrorPopupVisible(false);
