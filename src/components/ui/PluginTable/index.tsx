@@ -139,7 +139,7 @@ const PluginTable = (props: PluginTablePropsTypes) => {
                                 <td key={plugin.name + 'f1'}>
                                     <a 
                                         key={plugin.textQr + plugin.name}
-                                        onClick={() => navigate(`/redirect?=${plugin.id}`)}
+                                        onClick={() => navigate(`/redirect?id=${plugin.id}`)}
                                     >
                                         ПЕРЕЙТИ
                                     </a>
