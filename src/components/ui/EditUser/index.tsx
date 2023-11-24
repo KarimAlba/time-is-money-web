@@ -1,11 +1,13 @@
 import './style.css';
-import SuccessPopup from '../../modals/SuccessPopup';
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import ErrorPopup from '../../modals/ErrorPopup';
+import SuccessPopup from '../../modals/SuccessPopup';
 import OrganizationAPI from '../../../api/OrganizationAPI';
+import isKPPValid from '../../../utils/validation/isKPPValid';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
+import isEmailValid from '../../../utils/validation/isEmailValid';
 import ISuccessEditResponse from '../../../models/response/ISuccessEditResponse';
 //import actionsConstants from '../../../store/actions/actionConstants';
 //import { badUpdate, goodMove } from '../../../store/actions/notificationsActions';
@@ -32,11 +34,6 @@ const EditUser = () => {
 
     const navigate = useNavigate();
     //const dispatch = useDispatch();
-
-    const isEmailValid = (email: string) => {
-        const emailRegex = /@../;
-        return emailRegex.test(email);
-    };
 
     const handleLastNameChange = (e: React.ChangeEvent<HTMLInputElement>) => setLastname(e.target.value);
 
@@ -148,7 +145,7 @@ const EditUser = () => {
                 copy.push('Поле "Адрес" не должно быть пустым')
             }
     
-            if (orgKPP.length !== 9 || String(+orgKPP ^ 0) !== orgKPP) {
+            if (isKPPValid(orgKPP)) {
                 copy.push('Поле "КПП" должно состоять из 9 цифр')
             }
         }

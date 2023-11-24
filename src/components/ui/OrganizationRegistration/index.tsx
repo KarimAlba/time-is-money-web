@@ -1,12 +1,16 @@
 import './style.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SuccessPopup from '../../modals/SuccessPopup';
 import ErrorPopup from '../../modals/ErrorPopup';
 import OrganizationAPI from '../../../api/OrganizationAPI';
+import isINNValid from '../../../utils/validation/isINNValid';
+import isKPPValid from '../../../utils/validation/isKPPValid';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
+import isEmailValid from '../../../utils/validation/isEmailValid';
 //import actionsConstants from '../../../store/actions/actionConstants';
+import isPasswordValid from '../../../utils/validation/isPasswordValid';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 import IOrganizationRequest from '../../../models/request/IOrganizationRequest';
 //import { badRegistration, goodMove } from '../../../store/actions/notificationsActions';
@@ -36,16 +40,6 @@ const OrganizationRegistration = () => {
 
     const navigate = useNavigate();
     //const dispatch = useDispatch();
-
-    const isEmailValid = (email: string) => {
-        const emailRegex = /@../;
-        return emailRegex.test(email);
-    };
-
-    const isPasswordValid = (password: string) => {
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
-        return passwordRegex.test(password);
-    };
 
     const handleOrgNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setOrgName(e.target.value);
@@ -126,11 +120,11 @@ const OrganizationRegistration = () => {
             copy.push('Поле "Адрес" не должно быть пустым')
         }
 
-        if (orgINN.length !== 10 || String(+orgINN ^ 0) !== orgINN) {
+        if (isINNValid(orgINN)) {
             copy.push('Поле "ИНН" должно состоять из 10 цифр')
         }
 
-        if (orgKPP.length !== 9 || String(+orgKPP ^ 0) !== orgKPP) {
+        if (isKPPValid(orgKPP)) {
             copy.push('Поле "КПП" должно состоять из 9 цифр')
         }
 

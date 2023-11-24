@@ -1,14 +1,16 @@
 import './style.css';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SuccessPopup from '../../modals/SuccessPopup';
 import ErrorPopup from '../../modals/ErrorPopup';
+import SuccessPopup from '../../modals/SuccessPopup';
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from '../../../api/PhysicalAccountAPI';
 //import actionsConstants from '../../../store/actions/actionConstants';
+import isEmailValid from '../../../utils/validation/isEmailValid';
+import isPasswordValid from '../../../utils/validation/isPasswordValid';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
-import { badRegistration, goodMove } from '../../../store/actions/notificationsActions';
+//import { badRegistration, goodMove } from '../../../store/actions/notificationsActions';
 import IPhysicalRegistrationRequest from '../../../models/request/IPhysicalRegistrationRequest';
 import ISuccessPhysicalPersonRegistr from '../../../models/response/ISuccessPhysicalPersonRegistr';
 
@@ -31,16 +33,6 @@ const PhysicalPersonRegistration = () => {
     const handleEyeClick = () => setIsVisiblePassword(!isVisiblePassword)
     const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] = useState<boolean>(false);
     const handleConfirmPasswordClick = () => setIsVisibleConfirmPassword(!isVisibleConfirmPassword);
-
-    const isEmailValid = (email: string) => {
-        const emailRegex = /@../;
-        return emailRegex.test(email);
-    };
-
-    const isPasswordValid = (password: string) => {
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
-        return passwordRegex.test(password);
-    };
 
     const handleSurnameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUserSurname(e.target.value);

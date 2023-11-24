@@ -1,6 +1,6 @@
 # Time is Money
 
-![Иллюстрация к проекту](https://github.com/danilZherdev/time-is-money-web/raw/master/src/assets/images/TIMReadmePage.png)
+![Иллюстрация к проекту](https://gitlab.com/fzalbert/tim-web/raw/main/src/assets/images/ReadmePage.png)
 
 ## Technologies
 1. React - https://reactjs.org/ <br/>
@@ -10,4 +10,6 @@
 5. Webpack - https://webpack.js.org/ <br/>
 6. Axios - https://axios-http.com/ <br/>
 7. PostCSS - https://postcss.org/ <br/>
-8. ESLint - https://eslint.org/
+8. ESLint - https://eslint.org/ <br/>
+9. Jest - https://jestjs.io/ <br/>
+10. Cypress - https://www.cypress.io/

@@ -31,7 +31,8 @@
     "watch:css": "postcss src/views/MainPage/style.css -r",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
+    "cypress:open": "cypress open",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -51,5 +52,14 @@
       "last 30 firefox versions",
       "last 30 safari versions"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@babel/preset-typescript": "^7.23.2",
+    "babel-jest": "^29.7.0",
+    "cypress": "^13.4.0",
+    "cypress-downloadfile": "^1.2.3",
+    "jest": "^29.7.0"
   }
 }

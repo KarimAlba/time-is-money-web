@@ -8,8 +8,10 @@ import IUserAuth from "../../../models/request/IUserAuth";
 import eye from '../../../assets/imgTimeIsMoney/eye-icon.png';
 //import { useDispatch } from 'react-redux/es/hooks/useDispatch';
 import PhysicalAccountAPI from "../../../api/PhysicalAccountAPI";
+import isEmailValid from '../../../utils/validation/isEmailValid';
 import PasswordRecoveryModal from '../../modals/PasswordRecoveryModal';
 //import actionsConstants from '../../../store/actions/actionConstants';
+import isPasswordValid from '../../../utils/validation/isPasswordValid';
 import closedEye from '../../../assets/imgTimeIsMoney/closed-eye-icon.png';
 import ChooseRegistrationModal from '../../modals/ChooseRegistrationModal';
 import ISuccessAuthResponse from '../../../models/response/ISuccessAuthResponse';
@@ -30,15 +32,15 @@ const LoginForm = () => {
     const navigate = useNavigate();
     //const dispatch = useDispatch();
 
-    const isEmailValid = (email: string) => {
-        const emailRegex = /@../;
-        return emailRegex.test(email);
-    };
+    // const isEmailValid = (email: string) => {
+    //     const emailRegex = /@../;
+    //     return emailRegex.test(email);
+    // };
 
-    const isPasswordValid = (password: string) => {
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
-        return passwordRegex.test(password);
-    };
+    // const isPasswordValid = (password: string) => {
+    //     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^\w\s]).{8,}/;
+    //     return passwordRegex.test(password);
+    // };
 
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => setUserEmail(e.target.value);
 
