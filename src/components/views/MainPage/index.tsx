@@ -9,17 +9,19 @@ import laptop from '../../../assets/imgTimeIsMoney/laptop.svg';
 
 interface MainPagePropsTypes {
     handleCurrentBtnChange: Function;
+    handleRedirectPageMounted: Function;
 }
 
 const MainPage = (props: MainPagePropsTypes) => {
-    const { handleCurrentBtnChange } = props;
+    const { handleCurrentBtnChange, handleRedirectPageMounted } = props;
     const navigate = useNavigate();
     const toApplication = () => navigate('/application');
     const toPluginPage = () => navigate('/PluginPage');
     const toLogin = () => navigate('/login');
 
     useEffect(() => {
-        handleCurrentBtnChange('Главная')
+        handleCurrentBtnChange('Главная');
+        handleRedirectPageMounted(true);
     }, []);
 
     return (

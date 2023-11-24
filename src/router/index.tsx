@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import EditUser from "../components/ui/EditUser";
 import Preloader from "../components/ui/Preloader";
 import UserPlugin from "../components/ui/UserPlugin";
+import RedirectPage from "../components/views/RedirectPage";
 
 const UserPage = lazy(() => import("../components/views/User"));
 const LoginForm = lazy(() => import("../components/ui/LoginForm"));
@@ -19,16 +20,19 @@ const PhysicalPersonRegistration = lazy(() => import("../components/ui/PhysicalP
 interface RouterPropsTypes{
     setCurBtnValue: Function;
     handleIsOpenFooter: Function;
+    handleRedirected: Function;
 }
 
 const Router = (props: RouterPropsTypes) => {
-    const { setCurBtnValue, handleIsOpenFooter } = props;
+    const { setCurBtnValue, handleIsOpenFooter, handleRedirected } = props;
 
     const [isOpenPlugin, setIsOpenPlugin] = useState<boolean>(false);
   
     const handleOpenPlugin = (value: boolean) => setIsOpenPlugin(value);
   
-    const handleCurrentBtnChange = (value: string) => setCurBtnValue(value); 
+    const handleCurrentBtnChange = (value: string) => setCurBtnValue(value);
+
+    const handleRedirectPageMounted = (val: boolean) => handleRedirected(val);
 
     return (
         <Routes>
@@ -36,7 +40,10 @@ const Router = (props: RouterPropsTypes) => {
                 path="/" 
                 element={
                     <Suspense fallback={<Preloader/>}>
-                        <MainPage handleCurrentBtnChange={handleCurrentBtnChange}/>
+                        <MainPage 
+                            handleCurrentBtnChange={handleCurrentBtnChange} 
+                            handleRedirectPageMounted={handleRedirectPageMounted}
+                        />
                     </Suspense>
                 } 
             />
@@ -112,6 +119,7 @@ const Router = (props: RouterPropsTypes) => {
                             handlePersonInfoMounted={handleIsOpenFooter} 
                             handleOpenPlugin={handleOpenPlugin}
                             handleCurrentBtnChange={handleCurrentBtnChange}
+                            handleRedirectPageMounted={handleRedirectPageMounted}
                         />
                     </Suspense>
                 } 
@@ -119,6 +127,14 @@ const Router = (props: RouterPropsTypes) => {
                 <Route path='' element={<UserPlugin isOpenProps={isOpenPlugin}/>}/>
                 <Route path="edit-user" element={<EditUser/>}/>
             </Route>
+            <Route 
+                path="/redirect" 
+                element={
+                    <Suspense fallback={<Preloader/>}>
+                        <RedirectPage handleRedirectPageMounted={handleRedirectPageMounted}/>
+                    </Suspense>
+                } 
+            />
       </Routes>
     )
 }

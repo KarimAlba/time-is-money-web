@@ -13,9 +13,13 @@ function App() {
   const [isOpenFooter, setIsOpenFooter] = useState<boolean>(true);
   const [currentBtn, setCurrentBtn] = useState<string>('Главная');
 
+  const [isOpenLayout, setIsOpenLayaout] = useState<boolean>(true);
+
   const handleIsOpenFooter = () => setIsOpenFooter(true);
 
   const getCurBtnValue = (value: string) => setCurrentBtn(value); 
+
+  const handleRedirected = (val: boolean) => setIsOpenLayaout(val);
 
   //const users = useSelector((state: any) => state.notification.message);
 
@@ -28,17 +32,21 @@ function App() {
 
   return (
     <div>
-      <Header 
-        handleIsOpenFooter={handleIsOpenFooter} 
-        currentBtnProp={currentBtn}
-      />
+      {isOpenLayout
+        ? <Header 
+          handleIsOpenFooter={handleIsOpenFooter} 
+          currentBtnProp={currentBtn}
+        />
+        : null
+      }
 
       <Router 
         setCurBtnValue={getCurBtnValue} 
         handleIsOpenFooter={() => setIsOpenFooter(false)}
+        handleRedirected={handleRedirected}
       />
 
-      {isOpenFooter
+      {isOpenFooter && isOpenLayout
         ? <Footer/>
         : null
       }
