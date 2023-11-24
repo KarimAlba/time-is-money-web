@@ -1,0 +1,12 @@
+{
+  "include": ["../node_modules/cypress", "*/*.ts", "e2e/project-started.cy.ts"],
+  "compilerOptions": {
+    "paths": {
+      "@api/*": ["../../src/api/*"],
+      "@models/*": ["../../src/models/*"],
+      "@downloads/*": ["../downloads/*"]
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+  }
+}

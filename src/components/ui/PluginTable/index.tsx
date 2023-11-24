@@ -65,7 +65,7 @@ const PluginTable = (props: PluginTablePropsTypes) => {
 
     const updateWorkStation = (id: number) => {
         WorkStationtAPI.prolongation(id)
-            .then(response => getPlugins())
+            .then(() => getPlugins())
             .catch(error => console.log(error))
     }
 
