@@ -6,10 +6,16 @@ interface UserPagePropsTypes {
     handlePersonInfoMounted: Function;
     handleOpenPlugin: Function;
     handleCurrentBtnChange: Function;
+    handleRedirectPageMounted: Function;
 }
 
 const UserPage = (props: UserPagePropsTypes) => {
-    const { handlePersonInfoMounted, handleOpenPlugin, handleCurrentBtnChange } = props;
+    const { 
+        handlePersonInfoMounted, 
+        handleOpenPlugin, 
+        handleCurrentBtnChange,
+        handleRedirectPageMounted 
+    } = props;
 
     const setOpenPlugin = (value:boolean) => { 
         handleOpenPlugin(value)
@@ -17,6 +23,7 @@ const UserPage = (props: UserPagePropsTypes) => {
 
     useEffect(() => {
         handleCurrentBtnChange('Вход');
+        handleRedirectPageMounted(true);
     }, []);
 
     return (

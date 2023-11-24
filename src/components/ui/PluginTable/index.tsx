@@ -1,6 +1,7 @@
 import './style.css';
 import QRCode from 'qrcode';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
@@ -14,6 +15,8 @@ const PluginTable = (props: PluginTablePropsTypes) => {
     const [size, setSize] = useState<number>(10);
 
     const { checkAreWorkStations } = props;
+
+    const navigate = useNavigate();
 
     // const createImg = (id: number, data: string) => {        
     //     const blob = new Blob([data], {
@@ -102,6 +105,7 @@ const PluginTable = (props: PluginTablePropsTypes) => {
                         <th>QR-code</th>
                         <th>действителен до:</th>
                         <th>продлить</th>
+                        <th>ссылка на подключение</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -132,11 +136,19 @@ const PluginTable = (props: PluginTablePropsTypes) => {
                                         ПРОДЛИТЬ
                                     </a>
                                 </td>
+                                <td key={plugin.name + 'f1'}>
+                                    <a 
+                                        key={plugin.textQr + plugin.name}
+                                        onClick={() => navigate(`/redirect?=${plugin.id}`)}
+                                    >
+                                        ПЕРЕЙТИ
+                                    </a>
+                                </td>
                             </tr>
                         ))
                         : (<tr>
                             <td 
-                                colSpan={8} 
+                                colSpan={9} 
                                 style={{ width: '100%', border: 'none', columnSpan: 'all', textAlign: 'center' }}
                             >
                                 Ничего нет
