@@ -1,6 +1,6 @@
 # Time is Money
 
-![Иллюстрация к проекту](https://gitlab.com/fzalbert/tim-web/raw/main/src/assets/images/ReadmePage.png)
+![Иллюстрация к проекту](https://github.com/danilZherdev/time-is-money-web/raw/master/src/assets/images/ReadmePage.png)
 
 ## Technologies
 1. React - https://reactjs.org/ <br/>
