@@ -27,7 +27,7 @@ const RedirectPage = (props) => {
             // 'action': '', // Equivalent to ACTION in INTENTs
             // 'category': '', // Equivalent to CATEGORY in INTENTs
             // 'component': '', // Equivalent to COMPONENT in INTENTs
-            'scheme': 'timeismoney', // Scheme part in a custom scheme URL
+            'scheme': 'tim', // Scheme part in a custom scheme URL
             'package': 'com.studiovr.timeismoney', // Package name in Play store
             'fallback': 'https://play.google.com/store/apps/details?id=com.studiovr.timeismoney'
         }
