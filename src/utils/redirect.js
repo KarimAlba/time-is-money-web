@@ -3,9 +3,9 @@ function redirectConfig() {
     var queryString = {},
         browserMovedToBackground = false;
 
-    // Parse the query string so we can take individual query string params
+    // Проанализируйте строку запроса, чтобы мы могли использовать отдельные параметры строки запроса.
     (function (search) {
-        
+        console.log('search' + search)
         search = (search || '').split(/[\&\?]/g);
         for (var i = 0, count = search.length; i < count; i++) {
             if (!search[i]) continue;
@@ -14,10 +14,11 @@ function redirectConfig() {
                 ([pair[1] || ''].concat(queryString[pair[0]])) : 
                 (pair[1] || '');
         }
+        console.log('qs:', queryString)
         
     })(window.location.search);
 
-    // Listen to visibility change to prevent next url
+    // Слушайте изменение видимости, чтобы предотвратить следующий URL-адрес
     window.document.addEventListener("visibilitychange", function(e) {
         browserMovedToBackground = window.document.visibilityState === 'hidden' || window.document.visibilityState === 'unloaded';
     });
@@ -33,10 +34,13 @@ function redirectConfig() {
         queryString: queryString,
 
         redirect: function (options) {
-
+            console.log(options)
             var hasIos = !!(options.iosApp || options.iosAppStore);
+            console.log('hasIos:', hasIos);
             var hasAndroid = !!(options.android);
+            console.log('hasAndroid:', hasAndroid);
             var hasOverallFallback = !!(options.overallFallback);
+            console.log('hasOverallFallback:', hasOverallFallback);
 
             /**
             * Что происходит сейчас:
