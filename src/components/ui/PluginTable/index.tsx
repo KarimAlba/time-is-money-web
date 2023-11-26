@@ -1,7 +1,7 @@
 import './style.css';
 import QRCode from 'qrcode';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import SuccessPopup from '../../modals/SuccessPopup';
 import WorkStationtAPI from '../../../api/WorkStationAPI';
 import ISearchedWorkStationResponse from '../../../models/response/ISearchedWorkStationResponse';
 
@@ -11,12 +11,11 @@ interface PluginTablePropsTypes{
 
 const PluginTable = (props: PluginTablePropsTypes) => {
     const [renderPlugins, setRenderPlugins] = useState<ISearchedWorkStationResponse[]>([]);
+    const [isSuccessPopupVisible, setIsSuccessPopupVisible] = useState<boolean>(false);
     const [curPage, setCurPage] = useState<number>(0);
     const [size, setSize] = useState<number>(10);
 
     const { checkAreWorkStations } = props;
-
-    const navigate = useNavigate();
 
     // const createImg = (id: number, data: string) => {        
     //     const blob = new Blob([data], {
@@ -88,6 +87,17 @@ const PluginTable = (props: PluginTablePropsTypes) => {
             .catch(error => console.log(error))
     }
 
+    const handleCopy = (id: number) => {
+        const textField = document.createElement('input');
+        document.body.appendChild(textField);
+        textField.value = `https://api.time-money.shop/redirect?id=${id}`
+        textField.select();
+        document.execCommand('copy');
+        document.body.removeChild(textField);
+
+        setIsSuccessPopupVisible(true);
+    }
+
     useEffect(() => {
         getPlugins();
     }, []);
@@ -139,9 +149,9 @@ const PluginTable = (props: PluginTablePropsTypes) => {
                                 <td key={plugin.name + 'f1'}>
                                     <a 
                                         key={plugin.textQr + plugin.name}
-                                        onClick={() => navigate(`/redirect?id=${plugin.id}`)}
+                                        onClick={() => handleCopy(plugin.id)}
                                     >
-                                        ПЕРЕЙТИ
+                                        СКОПИРОВАТЬ
                                     </a>
                                 </td>
                             </tr>
@@ -157,6 +167,14 @@ const PluginTable = (props: PluginTablePropsTypes) => {
                     }
                 </tbody>
             </table>
+
+            {isSuccessPopupVisible
+                ? <SuccessPopup
+                    message={'Ссылка скопирована'}
+                    onClose={() => setIsSuccessPopupVisible(false)}
+                />
+                : null
+            }
         </div>
     )
 }
