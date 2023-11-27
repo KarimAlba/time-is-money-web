@@ -35,7 +35,7 @@ const RedirectPage = (props) => {
     }); 
 
     useEffect(() => {
-        handleRedirectPageMounted(false)
+        handleRedirectPageMounted(false);
     });
 
     return (
