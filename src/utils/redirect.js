@@ -98,12 +98,10 @@ function redirectConfig() {
 
                 var urls = [];
                 if (options.iosApp) {
-                    urls.push(options.iosApp);
-                    return
+                    urls = Object.assign([], [options.iosApp])
                 }
                 if (options.iosAppStore) {
-                    urls.push(options.iosAppStore);
-                    return
+                    urls = Object.assign([], [options.iosAppStore])
                 }
                 tryToOpenInMultiplePhases(urls);
 
