@@ -60,7 +60,7 @@ function redirectConfig() {
             */
 
             var tryToOpenInMultiplePhases = function(urls) {
-
+                console.log('urls', urls)
                 browserMovedToBackground = false;
 
                 var currentIndex = 0;
@@ -99,9 +99,11 @@ function redirectConfig() {
                 var urls = [];
                 if (options.iosApp) {
                     urls.push(options.iosApp);
+                    return
                 }
                 if (options.iosAppStore) {
                     urls.push(options.iosAppStore);
+                    return
                 }
                 tryToOpenInMultiplePhases(urls);
 
