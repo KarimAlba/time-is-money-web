@@ -15,11 +15,10 @@ const RedirectPage = (props) => {
 
     // Here we initiate the redirect process
     AppRedirect.redirect({
-
-        iosApp: 'tim://plugin/' + qs['id'],
+        iosApp: 'tim://plugin?id=' + qs['id'],
 
         //iosAppStore: 'https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674' + qs['message'], - вариант прошлый 
-        iosAppStore: 'https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674' + qs['id'],
+        iosAppStore: 'https://apps.apple.com/us/app/тим/id6447686674?id=' + qs['id'],
         // For this, your app need to have category filter: android.intent.category.BROWSABLE
 
         android: {
