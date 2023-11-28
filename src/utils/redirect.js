@@ -88,11 +88,11 @@ function redirectConfig() {
             // var chromeVersion = /Chrome\/([0-9\.]+)/.test(navigator.userAgent) ? navigator.userAgent.match(/Chrome\/([0-9\.]+)/)[1] : '';
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
+                alert(navigator.userAgent)
                 var urls = [];
                 if (options.iosApp) {
                     urls.push(options.iosApp);
-                }
-                if (options.iosAppStore) {
+                } else {
                     urls.push(options.iosAppStore);
                 }
                 tryToOpenInMultiplePhases(urls);
