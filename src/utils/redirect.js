@@ -2,7 +2,6 @@ function redirectConfig() {
     var queryString = {},
         browserMovedToBackground = false;
 
-    // Проанализируйте строку запроса, чтобы мы могли использовать отдельные параметры строки запроса.
     (function (search) {
         console.log('search' + search)
         search = (search || '').split(/[\&\?]/g);
@@ -16,7 +15,6 @@ function redirectConfig() {
         }        
     })(window.location.search);
 
-    // Слушайте изменение видимости, чтобы предотвратить следующий URL-адрес
     window.document.addEventListener("visibilitychange", function(e) {
         browserMovedToBackground = window.document.visibilityState === 'hidden' || window.document.visibilityState === 'unloaded';
     });
@@ -30,28 +28,8 @@ function redirectConfig() {
         redirect: function (options) {
             console.log('options', options)
             var hasIos = !!(options.iosApp || options.iosAppStore);
-            console.log('hasIos:', hasIos);
             var hasAndroid = !!(options.android);
-            console.log('hasAndroid:', hasAndroid);
             var hasOverallFallback = !!(options.overallFallback);
-            console.log('hasOverallFallback:', hasOverallFallback);
-
-            /**
-            * Что происходит сейчас:
-            * 1. Подбираем правильную платформу на основе userAgent:
-            * 2. Пробуем открыть приложение по специальной схеме
-            *
-            *    └───> Если это удалось, мы вышли из браузера и перешли в приложение.
-            *          *. Если пользователь на этом этапе вернется в браузер, он, к сожалению, будет перенаправлен на второй URL (AppStore и т. д.).
-            *    └───> Если открыть приложение не удалось (схема не распознана), то:
-            *          1. Будет показана ошибка
-            *          2. Пользователь будет перенаправлен на второй URL.
-            *          *.  Вернувшись в браузер позже, вы увидите ошибку.
-            * 
-            * Для Android все по-другому. Существует URL-адрес Intent://, который принимает аргумент «пакет» для возврата в Магазин. 
-            * Но если вы хотите агрегировать аргументы для хранилища, вы можете использовать для этого «резервный» аргумент и указать URL-адрес магазина.
-            * Аргументы QueryString будут автоматически агрегированы.
-            */
 
             var tryToOpenInMultiplePhases = function(urls) {
                 browserMovedToBackground = false;
@@ -84,27 +62,26 @@ function redirectConfig() {
                 next();
             };
 
-            // var chromeVersion = /Chrome\/([0-9\.]+)/.test(navigator.userAgent) ? navigator.userAgent.match(/Chrome\/([0-9\.]+)/)[1] : '';
-
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
                 var urls = [];
                 if (options.iosApp) {
-                    window.open('tim://plugin/')
-                } else {
-                    window.open('https://apps.apple.com/us/app/тим/id6447686674')
+                    urls.push(options.iosApp);
+                } 
+                if (options.iosAppStore){
+                    urls.push(options.iosAppStore);
                 }
                 tryToOpenInMultiplePhases(urls);
 
             } else if (hasAndroid && /Android/.test(navigator.userAgent)) {
                 var intent = options.android;
                 var intentUrl = 'intent://' + intent.host + '#Intent;' +
-                            'scheme=' + encodeURIComponent(intent.scheme) + ';' + 
-                            'package=' + encodeURIComponent(intent.package) + ';' + 
-                            (intent.action ? 'action=' + encodeURIComponent(intent.action) + ';': '') + 
-                            (intent.category ? 'category=' + encodeURIComponent(intent.category) + ';': '') + 
-                            (intent.component ? 'component=' + encodeURIComponent(intent.component) + ';': '') + 
-                            (intent.fallback ? 'S.browser_fallback_url=' + encodeURIComponent(intent.fallback) + ';': '') + 
-                            'end';
+                    'scheme=' + encodeURIComponent(intent.scheme) + ';' + 
+                    'package=' + encodeURIComponent(intent.package) + ';' + 
+                    (intent.action ? 'action=' + encodeURIComponent(intent.action) + ';': '') + 
+                    (intent.category ? 'category=' + encodeURIComponent(intent.category) + ';': '') + 
+                    (intent.component ? 'component=' + encodeURIComponent(intent.component) + ';': '') + 
+                    (intent.fallback ? 'S.browser_fallback_url=' + encodeURIComponent(intent.fallback) + ';': '') + 
+                    'end';
                 var anchor = document.createElement('a');
                 document.body.appendChild(anchor);
                 anchor.href = intentUrl;
@@ -118,42 +95,9 @@ function redirectConfig() {
             } else {
                 console.log('Unknown platform and no overallFallback URL, nothing to do');
             }
-
-            // if (hasAndroid && /Android/.test(navigator.userAgent)) {
-            //     var intent = options.android;
-            //     var intentUrl = 'intent://' + intent.host + '#Intent;' +
-            //         'scheme=' + encodeURIComponent(intent.scheme) + ';' + 
-            //         'package=' + encodeURIComponent(intent.package) + ';' + 
-            //         (intent.action ? 'action=' + encodeURIComponent(intent.action) + ';': '') + 
-            //         (intent.category ? 'category=' + encodeURIComponent(intent.category) + ';': '') + 
-            //         (intent.component ? 'component=' + encodeURIComponent(intent.component) + ';': '') + 
-            //         (intent.fallback ? 'S.browser_fallback_url=' + encodeURIComponent(intent.fallback) + ';': '') + 
-            //         'end';
-            //     var anchor = document.createElement('a');
-            //     document.body.appendChild(anchor);
-            //     anchor.href = intentUrl;
-            //     if (anchor.click) {
-            //         anchor.click();
-            //     } else {
-            //         window.location = intentUrl;
-            //     }
-            // } else if(hasOverallFallback) {
-            //     window.location = options.overallFallback;
-            // } else {
-            //     var urls = [];
-            //     if (options.iosApp) {
-            //         urls = Object.assign([], [options.iosApp])
-            //     }
-            //     if (options.iosAppStore) {
-            //         urls = Object.assign([], [options.iosAppStore])
-            //     }
-            //     tryToOpenInMultiplePhases(urls);
-            // }
         }
     };
 
-    /** @expose */
-    //window.AppRedirect = AppRedirect;
     return AppRedirect;
 };
 
