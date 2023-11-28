@@ -1,5 +1,4 @@
 function redirectConfig() {
-
     var queryString = {},
         browserMovedToBackground = false;
 
@@ -10,12 +9,11 @@ function redirectConfig() {
         for (var i = 0, count = search.length; i < count; i++) {
             if (!search[i]) continue;
             var pair = search[i].split('=');
-            queryString[pair[0]] = queryString[pair[0]] !== undefined ?
-                ([pair[1] || ''].concat(queryString[pair[0]])) : 
-                (pair[1] || '');
-        }
-        console.log('qs:', queryString)
-        
+            console.log(i, pair)
+            queryString[pair[0]] = queryString[pair[0]] !== undefined 
+                ? ([pair[1] || ''].concat(queryString[pair[0]])) 
+                : (pair[1] || '');
+        }        
     })(window.location.search);
 
     // Слушайте изменение видимости, чтобы предотвратить следующий URL-адрес
@@ -27,10 +25,6 @@ function redirectConfig() {
     });
 
     var AppRedirect = {
-        /** 
-         * @expose 
-         * @public
-         * */
         queryString: queryString,
 
         redirect: function (options) {
@@ -60,7 +54,6 @@ function redirectConfig() {
             */
 
             var tryToOpenInMultiplePhases = function(urls) {
-                console.log('urls', urls)
                 browserMovedToBackground = false;
 
                 var currentIndex = 0;
@@ -94,51 +87,26 @@ function redirectConfig() {
 
             // var chromeVersion = /Chrome\/([0-9\.]+)/.test(navigator.userAgent) ? navigator.userAgent.match(/Chrome\/([0-9\.]+)/)[1] : '';
 
-            // if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
+            if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
+                var urls = [];
+                if (options.iosApp) {
+                    urls.push(options.iosApp);
+                }
+                if (options.iosAppStore) {
+                    urls.push(options.iosAppStore);
+                }
+                tryToOpenInMultiplePhases(urls);
 
-            //     var urls = [];
-            //     if (options.iosApp) {
-            //         urls = Object.assign([], [options.iosApp])
-            //     }
-            //     if (options.iosAppStore) {
-            //         urls = Object.assign([], [options.iosAppStore])
-            //     }
-            //     tryToOpenInMultiplePhases(urls);
-
-            // } else if (hasAndroid && /Android/.test(navigator.userAgent)) {
-            //     var intent = options.android;
-            //     var intentUrl = 'intent://' + intent.host + '#Intent;' +
-            //                 'scheme=' + encodeURIComponent(intent.scheme) + ';' + 
-            //                 'package=' + encodeURIComponent(intent.package) + ';' + 
-            //                 (intent.action ? 'action=' + encodeURIComponent(intent.action) + ';': '') + 
-            //                 (intent.category ? 'category=' + encodeURIComponent(intent.category) + ';': '') + 
-            //                 (intent.component ? 'component=' + encodeURIComponent(intent.component) + ';': '') + 
-            //                 (intent.fallback ? 'S.browser_fallback_url=' + encodeURIComponent(intent.fallback) + ';': '') + 
-            //                 'end';
-            //     var anchor = document.createElement('a');
-            //     document.body.appendChild(anchor);
-            //     anchor.href = intentUrl;
-            //     if (anchor.click) {
-            //         anchor.click();
-            //     } else {
-            //         window.location = intentUrl;
-            //     }
-            // } else if(hasOverallFallback) {
-            //     window.location = options.overallFallback;
-            // } else {
-            //     console.log('Unknown platform and no overallFallback URL, nothing to do');
-            // }
-
-            if (hasAndroid && /Android/.test(navigator.userAgent)) {
+            } else if (hasAndroid && /Android/.test(navigator.userAgent)) {
                 var intent = options.android;
                 var intentUrl = 'intent://' + intent.host + '#Intent;' +
-                    'scheme=' + encodeURIComponent(intent.scheme) + ';' + 
-                    'package=' + encodeURIComponent(intent.package) + ';' + 
-                    (intent.action ? 'action=' + encodeURIComponent(intent.action) + ';': '') + 
-                    (intent.category ? 'category=' + encodeURIComponent(intent.category) + ';': '') + 
-                    (intent.component ? 'component=' + encodeURIComponent(intent.component) + ';': '') + 
-                    (intent.fallback ? 'S.browser_fallback_url=' + encodeURIComponent(intent.fallback) + ';': '') + 
-                    'end';
+                            'scheme=' + encodeURIComponent(intent.scheme) + ';' + 
+                            'package=' + encodeURIComponent(intent.package) + ';' + 
+                            (intent.action ? 'action=' + encodeURIComponent(intent.action) + ';': '') + 
+                            (intent.category ? 'category=' + encodeURIComponent(intent.category) + ';': '') + 
+                            (intent.component ? 'component=' + encodeURIComponent(intent.component) + ';': '') + 
+                            (intent.fallback ? 'S.browser_fallback_url=' + encodeURIComponent(intent.fallback) + ';': '') + 
+                            'end';
                 var anchor = document.createElement('a');
                 document.body.appendChild(anchor);
                 anchor.href = intentUrl;
@@ -150,15 +118,39 @@ function redirectConfig() {
             } else if(hasOverallFallback) {
                 window.location = options.overallFallback;
             } else {
-                var urls = [];
-                if (options.iosApp) {
-                    urls = Object.assign([], [options.iosApp])
-                }
-                if (options.iosAppStore) {
-                    urls = Object.assign([], [options.iosAppStore])
-                }
-                tryToOpenInMultiplePhases(urls);
+                console.log('Unknown platform and no overallFallback URL, nothing to do');
             }
+
+            // if (hasAndroid && /Android/.test(navigator.userAgent)) {
+            //     var intent = options.android;
+            //     var intentUrl = 'intent://' + intent.host + '#Intent;' +
+            //         'scheme=' + encodeURIComponent(intent.scheme) + ';' + 
+            //         'package=' + encodeURIComponent(intent.package) + ';' + 
+            //         (intent.action ? 'action=' + encodeURIComponent(intent.action) + ';': '') + 
+            //         (intent.category ? 'category=' + encodeURIComponent(intent.category) + ';': '') + 
+            //         (intent.component ? 'component=' + encodeURIComponent(intent.component) + ';': '') + 
+            //         (intent.fallback ? 'S.browser_fallback_url=' + encodeURIComponent(intent.fallback) + ';': '') + 
+            //         'end';
+            //     var anchor = document.createElement('a');
+            //     document.body.appendChild(anchor);
+            //     anchor.href = intentUrl;
+            //     if (anchor.click) {
+            //         anchor.click();
+            //     } else {
+            //         window.location = intentUrl;
+            //     }
+            // } else if(hasOverallFallback) {
+            //     window.location = options.overallFallback;
+            // } else {
+            //     var urls = [];
+            //     if (options.iosApp) {
+            //         urls = Object.assign([], [options.iosApp])
+            //     }
+            //     if (options.iosAppStore) {
+            //         urls = Object.assign([], [options.iosAppStore])
+            //     }
+            //     tryToOpenInMultiplePhases(urls);
+            // }
         }
     };
 
