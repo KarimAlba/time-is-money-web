@@ -14,7 +14,7 @@ const RedirectPage = (props) => {
     var qs = AppRedirect.queryString;
 
     AppRedirect.redirect({
-        iosApp: 'tim://plugin/' + qs['id'],
+        iosApp: 'tim://plugin/',
 
         //iosAppStore: 'https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674' + qs['message'], - вариант прошлый 
         iosAppStore: 'https://apps.apple.com/us/app/тим/id6447686674',
