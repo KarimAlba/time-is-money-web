@@ -100,6 +100,7 @@ const PluginTable = (props: PluginTablePropsTypes) => {
 
     useEffect(() => {
         getPlugins();
+        console.log(/iP(hone|ad|od)/.test('(IPhone; CPU IPhone OS 16_6_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)'))
     }, []);
 
     return (
