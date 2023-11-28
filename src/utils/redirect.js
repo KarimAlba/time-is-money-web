@@ -82,18 +82,16 @@ function redirectConfig() {
                 };
 
                 next();
-
             };
 
             // var chromeVersion = /Chrome\/([0-9\.]+)/.test(navigator.userAgent) ? navigator.userAgent.match(/Chrome\/([0-9\.]+)/)[1] : '';
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
-                alert(navigator.userAgent)
                 var urls = [];
                 if (options.iosApp) {
-                    urls.push(options.iosApp);
+                    window.open('tim://plugin/')
                 } else {
-                    urls.push(options.iosAppStore);
+                    window.open('https://apps.apple.com/us/app/тим/id6447686674')
                 }
                 tryToOpenInMultiplePhases(urls);
 
