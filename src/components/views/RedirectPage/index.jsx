@@ -19,7 +19,7 @@ const RedirectPage = (props) => {
         iosApp: 'tim://plugin/' + qs['id'],
 
         //iosAppStore: 'https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674' + qs['message'], - вариант прошлый 
-        iosAppStore: 'https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674',
+        iosAppStore: 'https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674' + qs['id'],
         // For this, your app need to have category filter: android.intent.category.BROWSABLE
 
         android: {
@@ -44,7 +44,7 @@ const RedirectPage = (props) => {
             <img 
                 src={logo} 
                 alt="logotype" 
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('https://api.time-money.shop/')}
             />
 
             <div className='redirect-container_text'>
