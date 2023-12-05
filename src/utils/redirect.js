@@ -67,7 +67,7 @@ function redirectConfig() {
                 if (options.iosApp) {
                     urls.push(options.iosApp);
                 } else{
-                    urls.push('https://apps.apple.com/us/app/тим/id6447686674')
+                    window.location.href = 'https://apps.apple.com/us/app/тим/id6447686674'
                 }
                 tryToOpenInMultiplePhases(urls)
             } else if (hasAndroid && /Android/.test(navigator.userAgent)) {
