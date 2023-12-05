@@ -16,12 +16,10 @@ const RedirectPage = (props) => {
     AppRedirect.redirect({
         iosApp: 'tim://plugin/',
 
-        //iosAppStore: 'https://apps.apple.com/us/app/%D1%82%D0%B8%D0%BC/id6447686674' + qs['message'], - вариант прошлый 
         iosAppStore: 'https://apps.apple.com/us/app/тим/id6447686674',
-        // For this, your app need to have category filter: android.intent.category.BROWSABLE
 
         android: {
-            'host': 'plugin/' + encodeURIComponent(qs['id']), // Host/path/querystring part in a custom scheme URL
+            'host': 'plugin/' + encodeURIComponent(qs['id']),
             'scheme': 'tim',
             'package': 'com.studiovr.timeismoney',
             'fallback': 'https://play.google.com/store/apps/details?id=com.studiovr.timeismoney'
