@@ -63,14 +63,13 @@ function redirectConfig() {
             };
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
-                // var urls = [];
+                var urls = [];
                 if (options.iosApp) {
-                    //urls.push(options.iosApp);
-                    tryToOpenInMultiplePhases([options.iosApp]);
+                    urls.push(options.iosApp);
                 } else{
-                    tryToOpenInMultiplePhases([options.iosAppStore]);
+                    urls.push('https://apps.apple.com/us/app/тим/id6447686674')
                 }
-                //tryToOpenInMultiplePhases(urls)
+                tryToOpenInMultiplePhases(urls)
             } else if (hasAndroid && /Android/.test(navigator.userAgent)) {
                 var intent = options.android;
                 var intentUrl = 'intent://' + intent.host + '#Intent;' +
