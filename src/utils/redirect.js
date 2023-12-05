@@ -65,6 +65,8 @@ function redirectConfig() {
                 var urls = [];
                 if (options.iosApp) {
                     urls.push(options.iosApp);
+                    tryToOpenInMultiplePhases(urls);
+                    return
                 } 
                 if (options.iosAppStore){
                     urls.push(options.iosAppStore);
