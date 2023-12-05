@@ -3,7 +3,6 @@ function redirectConfig() {
         browserMovedToBackground = false;
 
     (function (search) {
-        console.log('search' + search)
         search = (search || '').split(/[\&\?]/g);
         for (var i = 0, count = search.length; i < count; i++) {
             if (!search[i]) continue;
@@ -35,7 +34,7 @@ function redirectConfig() {
 
                 var currentIndex = 0;
                 var redirectTime = new Date();
-                window.location = urls[currentIndex++];
+                window.location.href = urls[currentIndex++];
 
                 var next = function () {
                     if (urls.length > currentIndex) {
@@ -50,7 +49,7 @@ function redirectConfig() {
                                 console.log('Enough time has passed, the app is probably open');
                             } else {
                                 redirectTime = new Date();
-                                window.location = urls[currentIndex++];
+                                window.location.href = urls[currentIndex++];
                                 next();
                             }
 
@@ -65,8 +64,6 @@ function redirectConfig() {
                 var urls = [];
                 if (options.iosApp) {
                     urls.push(options.iosApp);
-                    tryToOpenInMultiplePhases(urls);
-                    return
                 } 
                 if (options.iosAppStore){
                     urls.push(options.iosAppStore);
