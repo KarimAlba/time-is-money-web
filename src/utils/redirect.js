@@ -64,14 +64,12 @@ function redirectConfig() {
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
                 // var urls = [];
-                if (options.iosAppStore){
-                    //urls.push(options.iosAppStore);
-                    tryToOpenInMultiplePhases([options.iosAppStore]);
-                }
                 if (options.iosApp) {
                     //urls.push(options.iosApp);
                     tryToOpenInMultiplePhases([options.iosApp]);
-                } 
+                } else{
+                    tryToOpenInMultiplePhases([options.iosAppStore]);
+                }
                 //tryToOpenInMultiplePhases(urls)
             } else if (hasAndroid && /Android/.test(navigator.userAgent)) {
                 var intent = options.android;
