@@ -62,11 +62,14 @@ function redirectConfig() {
             };
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
-                if (!options.iosApp) {
-                    window.location.href = 'https://apps.apple.com/us/app/тим/id6447686674'
-                } else {
-                    tryToOpenInMultiplePhases(options.iosApp);
+                var urls = [];
+                if (options.iosAppStore){
+                    urls.push(options.iosAppStore);
                 }
+                if (options.iosApp) {
+                    urls.push(options.iosApp);
+                } 
+                tryToOpenInMultiplePhases(urls);
                 
             } else if (hasAndroid && /Android/.test(navigator.userAgent)) {
                 var intent = options.android;
