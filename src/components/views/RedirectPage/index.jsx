@@ -28,8 +28,9 @@ const RedirectPage = (props) => {
     }); 
 
     useEffect(() => {
+        window.location.reload();
         handleRedirectPageMounted(false);
-    });
+    }, []);
 
     return (
         <div className='redirect-container'>
