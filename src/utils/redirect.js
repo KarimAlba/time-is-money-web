@@ -53,10 +53,10 @@ function redirectConfig() {
                 try {
                     document.getElementById("l").src = urls[currentIndex++];
                 } catch (error) {
-                    window.location.href = urls[1];
+                    window.location.href = urls[currentIndex++ || 1];
                 }
                 setTimeout(() => {
-                    if (currentIndex < 2) {
+                    if (!currentIndex) {
                         window.location.href = urls[1];
                     }
                 }, 500);
