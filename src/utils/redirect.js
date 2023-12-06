@@ -39,22 +39,22 @@ function redirectConfig() {
                 var timer;
 
                 var counter = 0;
-                const visibilityChangeHandler = () => {
-                    if (counter++) {
-                        document.removeEventListener('visibilitychange', visibilityChangeHandler);
-                        return;
-                    }
-                    IOSAppIsInstalled = true;
-                    if (document.hidden) {
-                        window.clearTimeout(timer);
-                    }
-                };
-                document.addEventListener('visibilitychange', visibilityChangeHandler);
+                // const visibilityChangeHandler = () => {
+                //     if (counter++) {
+                //         document.removeEventListener('visibilitychange', visibilityChangeHandler);
+                //         return;
+                //     }
+                //     IOSAppIsInstalled = true;
+                //     if (document.hidden) {
+                //         window.clearTimeout(timer);
+                //     }
+                // };
+                // document.addEventListener('visibilitychange', visibilityChangeHandler);
                 window.location.href = urls[currentIndex++];
                 timer = setTimeout(() => {
-                    if (!document.hidden) {
+                    // if (!document.hidden) {
                         window.location.href = urls[currentIndex++];
-                    }
+                    // }
                 }, 1000);
 
                 // var next = function () {
