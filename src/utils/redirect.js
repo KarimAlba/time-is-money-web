@@ -33,35 +33,31 @@ function redirectConfig() {
                 browserMovedToBackground = false;
 
                 var currentIndex = 0;
-                // var redirectTime = new Date();
-                try {
-                    window.location.href = urls[currentIndex++];
-                } catch (error) {
-                    window.location.href = urls[currentIndex++];
-                }
+                var redirectTime = new Date(Date.now());
+                window.location.href = urls[currentIndex++];
 
-                // var next = function () {
-                //     if (urls.length > currentIndex) {
-                //         setTimeout(function () {
+                var next = function () {
+                    if (urls.length > currentIndex) {
+                        setTimeout(function () {
 
-                //             if (browserMovedToBackground) {
-                //                 console.log('Browser moved to the background, we assume that we are done here')
-                //                 return;
-                //             }
+                            if (browserMovedToBackground) {
+                                console.log('Browser moved to the background, we assume that we are done here')
+                                return;
+                            }
 
-                //             if (new Date() - redirectTime > 3000) {
-                //                 console.log('Enough time has passed, the app is probably open');
-                //             } else {
-                //                 redirectTime = new Date();
-                //                 window.location.href = urls[currentIndex++];
-                //                 next();
-                //             }
+                            if (new Date(Date.now()) - redirectTime > 1000) {
+                                console.log('Enough time has passed, the app is probably open');
+                            } else {
+                                redirectTime = new Date();
+                                window.location.href = urls[currentIndex++];
+                                next();
+                            }
 
-                //         }, 10);
-                //     }
-                // };
+                        }, 10);
+                    }
+                };
 
-                // next();
+                next();
             };
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
