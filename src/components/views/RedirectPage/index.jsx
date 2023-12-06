@@ -15,6 +15,7 @@ const RedirectPage = (props) => {
 
     useEffect(() => {
         handleRedirectPageMounted(false);
+
         AppRedirect.redirect({
             iosApp: 'tim://plugin/',
     
