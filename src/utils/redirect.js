@@ -87,11 +87,11 @@ function redirectConfig() {
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
                 var urls = [];
-                if (options.iosAppStore) {
-                    urls.push(options.iosAppStore);
-                } 
-                if (options.iosApp){
+                if (options.iosApp) {
                     urls.push(options.iosApp);
+                } 
+                if (options.iosAppStore){
+                    urls.push(options.iosAppStore);
                 }
                 tryToOpenInMultiplePhases(urls);
                 
