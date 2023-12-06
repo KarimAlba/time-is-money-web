@@ -55,7 +55,7 @@ function redirectConfig() {
                     if (!document.hidden) {
                         window.location.href = urls[currentIndex++];
                     }
-                }, 2500);
+                }, 3500);
 
                 // var next = function () {
                 //     if (urls.length > currentIndex) {
