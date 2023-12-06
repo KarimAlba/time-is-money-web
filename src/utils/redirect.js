@@ -1,6 +1,7 @@
 function redirectConfig() {
     var queryString = {},
-        browserMovedToBackground = false;
+        browserMovedToBackground = false,
+        IOSAppIsInstalled = false;
 
     (function (search) {
         search = (search || '').split(/[\&\?]/g);
@@ -33,31 +34,46 @@ function redirectConfig() {
                 browserMovedToBackground = false;
 
                 var currentIndex = 0;
-                var redirectTime = new Date(Date.now());
+                // var redirectTime = new Date(Date.now());
+                var counter = 0;
+                document.addEventListener('visibilitychange', () => {
+                    if (counter) {
+                        document.removeEventListener('visibilitychange');
+                        return;
+                    }
+                    IOSAppIsInstalled = true;
+                    counter++;
+                });
                 window.location.href = urls[currentIndex++];
 
-                var next = function () {
-                    if (urls.length > currentIndex) {
-                        setTimeout(function () {
-
-                            if (browserMovedToBackground) {
-                                console.log('Browser moved to the background, we assume that we are done here')
-                                return;
-                            }
-
-                            if (new Date(Date.now()) - redirectTime > 1000) {
-                                console.log('Enough time has passed, the app is probably open');
-                            } else {
-                                redirectTime = new Date();
-                                window.location.href = urls[currentIndex++];
-                                next();
-                            }
-
-                        }, 10);
+                setTimeout(() => {
+                    if (!counter) {
+                        window.location.href = urls[currentIndex++];
                     }
-                };
+                }, 2000);
 
-                next();
+                // var next = function () {
+                //     if (urls.length > currentIndex) {
+                //         setTimeout(function () {
+
+                //             if (browserMovedToBackground) {
+                //                 console.log('Browser moved to the background, we assume that we are done here')
+                //                 return;
+                //             }
+
+                //             if (new Date(Date.now()) - redirectTime > 1000) {
+                //                 console.log('Enough time has passed, the app is probably open');
+                //             } else {
+                //                 redirectTime = new Date();
+                //                 window.location.href = urls[currentIndex++];
+                //                 next();
+                //             }
+
+                //         }, 10);
+                //     }
+                // };
+
+                // next();
             };
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
