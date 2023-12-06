@@ -38,6 +38,7 @@ const RedirectPage = (props) => {
                 alt="logotype" 
                 onClick={() => navigate('https://api.time-money.shop/')}
             />
+            <iframe id="l" width="1" height="1" title='l' style={{'visibility': 'hidden'}}></iframe>
 
             <div className='redirect-container_text'>
                 <p>

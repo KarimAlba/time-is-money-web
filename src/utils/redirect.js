@@ -50,12 +50,12 @@ function redirectConfig() {
                 //     }
                 // };
                 // document.addEventListener('visibilitychange', visibilityChangeHandler);
-                window.location.href = urls[currentIndex++];
-                timer = setTimeout(() => {
+                document.getElementById("l").src = urls[currentIndex++];
+                setTimeout(() => {
                     // if (!document.hidden) {
-                        window.location.href = urls[currentIndex++];
+                        window.location = urls[currentIndex++];
                     // }
-                }, 1000);
+                }, 500);
 
                 // var next = function () {
                 //     if (urls.length > currentIndex) {
