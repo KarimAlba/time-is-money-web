@@ -65,9 +65,9 @@ function redirectConfig() {
                 if (options.iosApp) {
                     urls.push(options.iosApp);
                 } 
-                if (options.iosAppStore){
-                    urls.push(options.iosAppStore);
-                }
+                // if (options.iosAppStore){
+                //     urls.push(options.iosAppStore);
+                // }
                 tryToOpenInMultiplePhases(urls);
                 
             } else if (hasAndroid && /Android/.test(navigator.userAgent)) {

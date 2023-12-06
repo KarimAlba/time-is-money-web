@@ -13,23 +13,21 @@ const RedirectPage = (props) => {
     
     var qs = AppRedirect.queryString;
 
-    AppRedirect.redirect({
-        iosApp: 'tim://plugin/',
-
-        iosAppStore: 'https://apps.apple.com/us/app/тим/id6447686674',
-
-        android: {
-            'host': 'plugin/' + encodeURIComponent(qs['id']),
-            'scheme': 'tim',
-            'package': 'com.studiovr.timeismoney',
-            'fallback': 'https://play.google.com/store/apps/details?id=com.studiovr.timeismoney'
-        }
-
-    }); 
-
     useEffect(() => {
-        window.location.reload();
         handleRedirectPageMounted(false);
+        AppRedirect.redirect({
+            iosApp: 'tim://plugin/',
+    
+            iosAppStore: 'https://apps.apple.com/us/app/тим/id6447686674',
+    
+            android: {
+                'host': 'plugin/' + encodeURIComponent(qs['id']),
+                'scheme': 'tim',
+                'package': 'com.studiovr.timeismoney',
+                'fallback': 'https://play.google.com/store/apps/details?id=com.studiovr.timeismoney'
+            }
+    
+        });
     }, []);
 
     return (
