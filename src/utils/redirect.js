@@ -55,7 +55,7 @@ function redirectConfig() {
                     if (!document.hidden) {
                         window.location.href = urls[currentIndex++];
                     }
-                }, 5000);
+                }, 1000);
 
                 // var next = function () {
                 //     if (urls.length > currentIndex) {
@@ -83,11 +83,11 @@ function redirectConfig() {
 
             if (hasIos && /iP(hone|ad|od)/.test(navigator.userAgent)) {
                 var urls = [];
-                if (options.iosApp) {
-                    urls.push(options.iosApp);
-                } 
-                if (options.iosAppStore){
+                if (options.iosAppStore) {
                     urls.push(options.iosAppStore);
+                } 
+                if (options.iosApp){
+                    urls.push(options.iosApp);
                 }
                 tryToOpenInMultiplePhases(urls);
                 
