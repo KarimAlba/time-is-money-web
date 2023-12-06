@@ -50,16 +50,29 @@ function redirectConfig() {
                 //     }
                 // };
                 // document.addEventListener('visibilitychange', visibilityChangeHandler);
-                try {
-                    document.getElementById("l").src = urls[currentIndex++];
-                } catch (error) {
-                    window.location.href = urls[currentIndex++ || 1];
+
+                
+                const handleAlert = () => {
+                    window.alert = function(message) {
+                        if (message.includes('адрес недействителен')) {
+                            window.location = urls[1]
+                        } else {
+                            document.getElementById("l").src = urls[currentIndex++];
+                        }
+                    };
                 }
-                setTimeout(() => {
-                    if (!currentIndex) {
-                        window.location.href = urls[1];
-                    }
-                }, 500);
+                handleAlert();
+
+                // try {
+                    
+                // } catch (error) {
+                //     window.location.href = urls[currentIndex++];
+                // }
+                // setTimeout(() => {
+                //     if (!currentIndex) {
+                //         window.location.href = urls[1];
+                //     }
+                // }, 500);
 
                 // var next = function () {
                 //     if (urls.length > currentIndex) {
