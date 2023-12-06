@@ -22,6 +22,7 @@ function redirectConfig() {
         browserMovedToBackground = true;
     });
 
+
     var AppRedirect = {
         queryString: queryString,
 
@@ -34,11 +35,29 @@ function redirectConfig() {
                 browserMovedToBackground = false;
 
                 var currentIndex = 0;
+                
+                const handleAlert = () => {
+                    window.alert = function(message) {
+                        if (message.includes('адрес недействителен')) {
+                            return true;
+                        }
+                        
+                        return false
+                    };
+                    
+                }
+                
+                if(handleAlert()) {
+                    window.location = urls[currentIndex++]
+                } else {
+                    document.getElementById("l").src = urls[0];
+                }
+                
                 // var redirectTime = new Date(Date.now());
 
-                var timer;
+                //var timer;
 
-                var counter = 0;
+                //var counter = 0;
                 // const visibilityChangeHandler = () => {
                 //     if (counter++) {
                 //         document.removeEventListener('visibilitychange', visibilityChangeHandler);
@@ -50,18 +69,6 @@ function redirectConfig() {
                 //     }
                 // };
                 // document.addEventListener('visibilitychange', visibilityChangeHandler);
-
-                
-                const handleAlert = () => {
-                    window.alert = function(message) {
-                        if (message.includes('адрес недействителен')) {
-                            window.location = urls[1]
-                        } else {
-                            document.getElementById("l").src = urls[currentIndex++];
-                        }
-                    };
-                }
-                handleAlert();
 
                 // try {
                     
