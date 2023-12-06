@@ -35,23 +35,26 @@ function redirectConfig() {
 
                 var currentIndex = 0;
                 // var redirectTime = new Date(Date.now());
-                // var counter = 0;
-                // const visibilityChangeHandler = () => {
-                //     if (counter) {
-                //         document.removeEventListener('visibilitychange', visibilityChangeHandler);
-                //         return;
-                //     }
-                //     IOSAppIsInstalled = true;
-                //     counter++;
-                // };
-                // document.addEventListener('visibilitychange', visibilityChangeHandler);
-                window.location.href = urls[currentIndex++];
 
-                setTimeout(() => {
+                let timer;
+
+                var counter = 0;
+                const visibilityChangeHandler = () => {
+                    if (counter) {
+                        document.removeEventListener('visibilitychange', visibilityChangeHandler);
+                        return;
+                    }
+                    IOSAppIsInstalled = true;
+                    clearTimeout(timer);
+                    counter++;
+                };
+                document.addEventListener('visibilitychange', visibilityChangeHandler);
+                window.location.href = urls[currentIndex++];
+                timer = setTimeout(() => {
                     if (document.visibilityState === 'visible') {
                         window.location.href = urls[currentIndex++];
                     }
-                }, 2000);
+                }, 1000);
 
                 // var next = function () {
                 //     if (urls.length > currentIndex) {
