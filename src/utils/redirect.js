@@ -50,11 +50,15 @@ function redirectConfig() {
                 //     }
                 // };
                 // document.addEventListener('visibilitychange', visibilityChangeHandler);
-                document.getElementById("l").src = urls[currentIndex++];
+                try {
+                    document.getElementById("l").src = urls[currentIndex++];
+                } catch (error) {
+                    window.location = urls[currentIndex++];
+                }
                 setTimeout(() => {
-                    // if (!document.hidden) {
+                    if (currentIndex < 2) {
                         window.location = urls[currentIndex++];
-                    // }
+                    }
                 }, 500);
 
                 // var next = function () {
