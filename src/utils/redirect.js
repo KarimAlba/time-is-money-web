@@ -36,25 +36,26 @@ function redirectConfig() {
                 var currentIndex = 0;
                 // var redirectTime = new Date(Date.now());
 
-                let timer;
+                var timer;
 
                 var counter = 0;
                 const visibilityChangeHandler = () => {
-                    if (counter) {
+                    if (counter++) {
                         document.removeEventListener('visibilitychange', visibilityChangeHandler);
                         return;
                     }
                     IOSAppIsInstalled = true;
-                    clearTimeout(timer);
-                    counter++;
+                    if (document.hidden) {
+                        window.clearTimeout(timer);
+                    }
                 };
                 document.addEventListener('visibilitychange', visibilityChangeHandler);
                 window.location.href = urls[currentIndex++];
                 timer = setTimeout(() => {
-                    if (document.visibilityState === 'visible') {
+                    if (!document.hidden) {
                         window.location.href = urls[currentIndex++];
                     }
-                }, 1000);
+                }, 1500);
 
                 // var next = function () {
                 //     if (urls.length > currentIndex) {
