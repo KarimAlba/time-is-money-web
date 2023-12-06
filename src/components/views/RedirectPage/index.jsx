@@ -18,7 +18,7 @@ const RedirectPage = (props) => {
         AppRedirect.redirect({
             iosApp: 'tim://plugin/',
     
-            iosAppStore: 'itms://apps.apple.com/us/app/тим/id6447686674',
+            iosAppStore: 'https://apps.apple.com/us/app/тим/id6447686674',
     
             android: {
                 'host': 'plugin/' + encodeURIComponent(qs['id']),
