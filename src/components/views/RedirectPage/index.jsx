@@ -1,10 +1,11 @@
 import './style.css';
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import redirectConfig from '../../../utils/redirect';
 import logo from '../../../assets/imgTimeIsMoney/ТиМ2.svg';
 
 const RedirectPage = (props) => {
+    const [countTimer, setCountTimer] = useState(5);
     const { handleRedirectPageMounted } = props;
 
     const navigate = useNavigate();
@@ -31,16 +32,25 @@ const RedirectPage = (props) => {
         });
     }, []);
 
+    useEffect(() => {
+        if (countTimer > 0) {
+            setTimeout(() => {
+                setCountTimer(countTimer - 1);
+            }, 1000)
+        }
+    }, [countTimer]);
+
     return (
         <div className='redirect-container'>
             <script src='../../../utils/redirect'></script>
-            <img 
-                src={logo} 
-                alt="logotype" 
-                onClick={() => navigate('https://api.time-money.shop/')}
-            />
+            <a href="http://api.time-money.shop/">
+                <img 
+                    src={logo} 
+                    alt="logotype" 
+                />
+            </a>
             <iframe id="l" width="1" height="1" title='l' style={{'visibility': 'hidden'}}></iframe>
-
+            <h1>{countTimer}</h1>
             <div className='redirect-container_text'>
                 <p>
                     This is the automatic redirect page to the native app or to the App Store / Play Store.

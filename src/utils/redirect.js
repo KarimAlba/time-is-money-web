@@ -36,50 +36,45 @@ function redirectConfig() {
 
                 var currentIndex = 0;
                 
-                const handleAlert = () => {
-                    window.alert = function(message) {
-                        if (message.includes('адрес недействителен')) {
-                            return true;
-                        }
+                // const handleAlert = () => {
+                //     window.alert = function(message) {
+                //         if (message.includes('адрес недействителен')) {
+                //             return true;
+                //         }
                         
-                        return false
-                    };
+                //         return false
+                //     };
                     
-                }
+                // }
                 
-                if(handleAlert()) {
-                    window.location = urls[currentIndex++]
-                } else {
-                    document.getElementById("l").src = urls[0];
-                }
+                // if(handleAlert()) {
+                //     window.location = urls[currentIndex++]
+                // } else {
+                //     document.getElementById("l").src = urls[0];
+                // }
                 
                 // var redirectTime = new Date(Date.now());
 
-                //var timer;
+                var timer;
 
-                //var counter = 0;
-                // const visibilityChangeHandler = () => {
-                //     if (counter++) {
-                //         document.removeEventListener('visibilitychange', visibilityChangeHandler);
-                //         return;
-                //     }
-                //     IOSAppIsInstalled = true;
-                //     if (document.hidden) {
-                //         window.clearTimeout(timer);
-                //     }
-                // };
-                // document.addEventListener('visibilitychange', visibilityChangeHandler);
-
-                // try {
-                    
-                // } catch (error) {
-                //     window.location.href = urls[currentIndex++];
-                // }
-                // setTimeout(() => {
-                //     if (!currentIndex) {
-                //         window.location.href = urls[1];
-                //     }
-                // }, 500);
+                var counter = 0;
+                const visibilityChangeHandler = () => {
+                    if (counter++) {
+                        document.removeEventListener('visibilitychange', visibilityChangeHandler);
+                        return;
+                    }
+                    IOSAppIsInstalled = true;
+                    if (document.hidden) {
+                        window.clearTimeout(timer);
+                    }
+                };
+                document.addEventListener('visibilitychange', visibilityChangeHandler);
+                window.location.href = urls[currentIndex++];
+                timer = setTimeout(() => {
+                    if (!document.hidden) {
+                        window.location.href = urls[currentIndex++];
+                    }
+                }, 5000);
 
                 // var next = function () {
                 //     if (urls.length > currentIndex) {
