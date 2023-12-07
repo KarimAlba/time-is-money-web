@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.redirect-container h1{
+    font-size: 40px;
+}
+
 .redirect-container img{
     position: absolute;
     top: 50px;
