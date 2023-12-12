@@ -1,8 +1,9 @@
 import './style.css';
 import { useEffect } from 'react';
 import StepList from "../../ui/stepList";
-import star from '../../../assets/imgTimeIsMoney/Star.svg'
-import RunningMan from "../../../assets/imgTimeIsMoney/RunningMan.svg"
+import star from '../../../assets/imgTimeIsMoney/Star.svg';
+import RunningMan from "../../../assets/imgTimeIsMoney/RunningMan.svg";
+import Manifest from '../../../assets/commons/manifest.xml';
 
 interface PluginPagePropsTypes{
     handleCurrentBtnChange: Function;
@@ -22,7 +23,7 @@ const PluginPage = (props: PluginPagePropsTypes) => {
                 <div className="block1-plugin-text1">
                     <p>
                         Работа нашего плагина проста. Если у вас лицензионная версия Word,
-                        то скачайте наш плагин <a href="">здесь</a>, если у вас нет лицензионного Word,
+                        то скачайте наш плагин <a download href={Manifest}>здесь</a>, если у вас нет лицензионного Word,
                         скачайте нашу версию текстового редактора с уже встроенным
                         плагином  <a href="">здесь</a>.
                         <br />
