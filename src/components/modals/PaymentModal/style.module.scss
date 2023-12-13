@@ -126,6 +126,7 @@
         left: calc((100% - 300px)/2);
         width: 300px;
         padding: 30px 15px;
+        max-height: 750px;
         border-radius: 20px;
     
         .payment_close-btn{
@@ -160,9 +161,9 @@
             justify-content: center;
 
             img{
-                margin: 20px auto;
-                max-width: 150px;
-                max-height: 150px;
+                margin: 12px auto;
+                max-width: 120px;
+                max-height: 120px;
             }
 
             .sber{
@@ -172,7 +173,7 @@
 
                 img{
                     margin: 0 auto;
-                    max-width: 200px;
+                    max-width: 150px;
                 }
             }
         }
