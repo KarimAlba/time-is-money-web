@@ -1,9 +1,10 @@
 import './style.css';
-import { useEffect } from 'react';
 import StepList from "../../ui/stepList";
+import { useEffect, useState } from 'react';
+import PaymentModal from '../../modals/PaymentModal';
 import star from '../../../assets/imgTimeIsMoney/Star.svg';
-import RunningMan from "../../../assets/imgTimeIsMoney/RunningMan.svg";
 import Manifest from '../../../assets/commons/manifest.xml';
+import RunningMan from "../../../assets/imgTimeIsMoney/RunningMan.svg";
 
 interface PluginPagePropsTypes{
     handleCurrentBtnChange: Function;
@@ -12,8 +13,11 @@ interface PluginPagePropsTypes{
 const PluginPage = (props: PluginPagePropsTypes) => {
     const { handleCurrentBtnChange } = props;
 
+    const [isOpenPaymentModal, setIsOpenPaymentModal] = useState<boolean>(false);
+
     useEffect(() => {
         handleCurrentBtnChange('Плагин');
+        setIsOpenPaymentModal(false);
     }, []);
 
     return (
@@ -38,7 +42,7 @@ const PluginPage = (props: PluginPagePropsTypes) => {
                         <br />
                         <br />
                         Со стоимостью подписки, условиями пользования и вариантах
-                        оплаты вы можете ознакомиться <a href="">здесь</a>.
+                        оплаты вы можете ознакомиться <a onClick={() => setIsOpenPaymentModal(true)}>здесь</a>.
                     </p>
                 </div>
             </div>
@@ -46,7 +50,7 @@ const PluginPage = (props: PluginPagePropsTypes) => {
                 <h2>КАК ИЗГОТОВИТЬ ШАБЛОН</h2>
                 <StepList />
                 <div className="block2-plugin-text">
-                    <img src={star}  />
+                    <img src={star}/>
                     <p>
                         Мы так же предусмотрели возможность обратной связи!
                         Теперь вы можете заполнять данные в нашем плагине и отправлять
@@ -57,8 +61,10 @@ const PluginPage = (props: PluginPagePropsTypes) => {
                     </p>
                 </div>
             </div>
-
-
+            {isOpenPaymentModal
+                ? <PaymentModal handleClose={() => setIsOpenPaymentModal(false)}/>
+                : null
+            }
         </div>
     )
 }
