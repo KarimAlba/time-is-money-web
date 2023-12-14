@@ -411,12 +411,24 @@ li::marker{
 }
 
 .client-8-content-block1 {
+    position: relative;
     margin-top: 40px;
     margin-left: 50px;
 }
 
 .client-8-content-block1-men {
     height: 200px;
+}
+
+.border{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.victor{
+    margin: 20px 0px 20px 20px;
+    height: 160px;
 }
 
 .container-client-8 h2 {
@@ -672,11 +684,16 @@ li::marker{
 
     .container-client-8-content{
         margin-left: 50px;
-        justify-content: space-between;
+        justify-content: space-around;
     }
     
     .client-8-content-block1-men{
         height: 400px;
+    }
+
+    .victor{
+        margin: 40px 0px 40px 40px;
+        height: 320px;
     }
     
     .container-client-8 h2{
@@ -1120,6 +1137,30 @@ li::marker{
         margin: auto;
         width: 90%;
     }
+
+    .container-client-8-content {
+        flex-flow: column;
+    }
+
+    .client-8-content-block1-men {
+        height: 220px;
+        margin-left: 80px;
+    }
+
+    .container-client-8 h2 {
+        font-size: 26px;
+        margin-left: 77px;
+    }
+
+    .container-client-8 p {
+        font-size: 23px;
+        margin-left: 80px;
+    }
+
+    .victor{
+        margin: 20px 0px 20px 100px;
+        height: 180px;
+    }
 }
 
 @media screen and (max-width: 550px) and (max-device-width: 550px) {
@@ -1220,10 +1261,6 @@ li::marker{
         width: 80%;
     }
 
-    .container-client-8-content {
-        flex-flow: column;
-    }
-
     .ellipse2 {
         display: none;
     }
@@ -1231,21 +1268,6 @@ li::marker{
     .client-7-content-block2 img {
         width: 100%;
         margin-left: 8px;
-    }
-
-    .client-8-content-block1-men {
-        height: 220px;
-        margin-left: 80px;
-    }
-
-    .container-client-8 h2 {
-        font-size: 26px;
-        margin-left: 77px;
-    }
-
-    .container-client-8 p {
-        font-size: 23px;
-        margin-left: 80px;
     }
 }
 
