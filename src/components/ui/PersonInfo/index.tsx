@@ -22,11 +22,10 @@ interface PersonInfoPropsTypes {
 const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [isDownload, setIsDownload] = useState<boolean>(false);
     const [title, setTitle] = useState<string>('');
-    const [name, setName] = useState<string>('');
-    const [lastname, setLastname] = useState<string>('');
-    const [patronymic, setPatronymic] = useState<string>('');
+    const [,setName] = useState<string>('');
+    const [, setLastname] = useState<string>('');
+    const [, setPatronymic] = useState<string>('');
     const [email, setEmail] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
     const [createdAt, setCreatedAt] = useState<string>('');
     const [statistic, setStatistic] = useState<IUserStatisticResponse[] | []>([]);
 
@@ -34,7 +33,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
     const [countWorkStations, setCountWorkStations] = useState<string>('');
     const [countProducedDocs, setCountProducedDocs] = useState<string>('');
 
-    const [id, setId] = useState<string>('');
+    const [, setId] = useState<string>('');
 
     const [templateCount, setTemplateCount] = useState<boolean>(false)
     const [templateCount2, setTemplateCount2] = useState<boolean>(false)
@@ -119,6 +118,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
             .catch(error => console.log(error))
     }
 
+    const navigateToPrivacyPolicy = () => navigate('/privacy-policy');
+
     useEffect(() => {
         if (localStorage.getItem('token')) {
             handleMounted();
@@ -140,6 +141,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         className="heder-cross" 
                         src={crossBurgerMenu} 
                         onClick={() => setMenuActive(false)} 
+                        alt='burger icon'
                     />
                     <div className="menuHouse">
                         <div className="person-info_title">
@@ -169,8 +171,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                 >
                                     <div style={{ display: 'flex' }}>
                                         {templateCount
-                                            ? <img src={ArrowDownIcon} />
-                                            : <img src={ArrowIcon} />
+                                            ? <img src={ArrowDownIcon}/>
+                                            : <img src={ArrowIcon}/>
                                         }
                                         <p>заполненных шаблонов:</p>
                                         <span>{countProducedDocs}</span>
@@ -199,8 +201,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     className="statistic_point">
                                     <div style={{ display: 'flex' }}>
                                         {templateCount2
-                                            ? <img src={ArrowDownIcon} />
-                                            : <img src={ArrowIcon} />
+                                            ? <img src={ArrowDownIcon}/>
+                                            : <img src={ArrowIcon}/>
                                         }
                                         <p>заполненных приложений:</p>
                                         <span>{countApplications}</span>
@@ -230,8 +232,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                 >
                                     <div style={{ display: 'flex' }}>
                                         {templateCount3
-                                            ? <img src={ArrowDownIcon} />
-                                            : <img src={ArrowIcon} />
+                                            ? <img src={ArrowDownIcon}/>
+                                            : <img src={ArrowIcon}/>
                                         }
                                         <p>QR-code действителен до:</p>
                                     </div>
@@ -270,7 +272,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             <div className="agreement">
                                 <button onClick={handleCheckBox} className="checkbox-button">
                                     {isDownload
-                                        ? <img src={DoneIcon} />
+                                        ? <img src={DoneIcon}/>
                                         : null
                                     }
                                 </button>
@@ -283,7 +285,9 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     >
                                         настоящим я соглашаюсь с
                                     </span>
-                                    <a> политикой конфиденциальности </a>
+                                    <a onClick={navigateToPrivacyPolicy}>
+                                        политикой конфиденциальности 
+                                    </a>
                                     <span
                                         style={isDownload
                                             ? { color: 'rgba(0, 0, 0, 0.3)' }
@@ -293,7 +297,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                         и
                                     </span>
                                     <br />
-                                    <a>
+                                    <a onClick={navigateToPrivacyPolicy}>
                                         правилами пользования
                                     </a>
                                     <span
@@ -401,8 +405,8 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                             >
                                 <div style={{ display: 'flex' }}>
                                     {templateCount3
-                                        ? <img src={ArrowDownIcon} />
-                                        : <img src={ArrowIcon} />
+                                        ? <img src={ArrowDownIcon} alt='arrow'/>
+                                        : <img src={ArrowIcon} alt='arrow'/>
                                     }
                                     <p>QR-code действителен до:</p>
                                 </div>
@@ -441,7 +445,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                         <div className="agreement">
                             <button onClick={handleCheckBox} className="checkbox-button">
                                 {isDownload
-                                    ? <img src={DoneIcon} />
+                                    ? <img src={DoneIcon} alt='done icon'/>
                                     : null
                                 }
                             </button>
@@ -454,7 +458,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                 >
                                     настоящим я соглашаюсь с
                                 </span>
-                                <a> политикой конфиденциальности </a>
+                                <a onClick={navigateToPrivacyPolicy}> политикой конфиденциальности </a>
                                 <span
                                     style={isDownload
                                         ? { color: 'rgba(0, 0, 0, 0.3)' }
@@ -464,7 +468,7 @@ const PersonInfo = (props: PersonInfoPropsTypes) => {
                                     и
                                 </span>
                                 <br />
-                                <a>
+                                <a onClick={navigateToPrivacyPolicy}>
                                     правилами пользования
                                 </a>
                                 <br/>

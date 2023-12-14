@@ -12,6 +12,7 @@ const MainPage = lazy(() => import("../components/views/MainPage"));
 const Investors = lazy(() => import("../components/views/Investors"));
 const PluginPage = lazy(() => import("../components/views/PluginPage"));
 const Application = lazy(() => import("../components/views/Application"));
+const PrivacyPolicy = lazy(() => import("../components/views/PrivacyPolicy"));
 const CongratulationsBlock = lazy(() => import("../components/ui/CongratulationsBlock"));
 const CreateNewPasswordPage = lazy(() => import("../components/ui/CreateNewPasswordPage"));
 const OrganizationRegistration = lazy(() => import("../components/ui/OrganizationRegistration"));
@@ -135,6 +136,11 @@ const Router = (props: RouterPropsTypes) => {
                     </Suspense>
                 } 
             />
+            <Route path="privacy-policy" element={
+                <Suspense fallback={<Preloader/>}>
+                    <PrivacyPolicy/>
+                </Suspense>
+            }/>
       </Routes>
     )
 }
