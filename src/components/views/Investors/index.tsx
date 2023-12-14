@@ -11,8 +11,11 @@ import minus from '../../../assets/imgTimeIsMoney/minus.svg';
 import icon3 from '../../../assets/imgTimeIsMoney/icon3.1.svg';
 import icon4 from '../../../assets/imgTimeIsMoney/icon4.1.svg';
 import icon5 from '../../../assets/imgTimeIsMoney/icon5.1.svg';
+import FinModel from '../../../assets/commons/VM fin model v6.2.xlsx';
 import BlueLine from '../../../assets/images/icons/blue-line-icon.svg';
 import Elipsestar from '../../../assets/imgTimeIsMoney/ElipseStar.svg';
+import Border from '../../../assets/images/icons/blue-border-icon.svg';
+import Victor from '../../../assets/images/icons/pilaev-victor-icon.svg';
 import ElipseStar2 from "../../../assets/imgTimeIsMoney/EllpseStar2.svg";
 import MyDocuments from '../../../assets/imgTimeIsMoney/MyDocuments2.svg';
 import publicServices from '../../../assets/imgTimeIsMoney/publicServices2.svg';
@@ -428,7 +431,7 @@ const Investors = (props: InvestorsPropsTypes) => {
                 <p className='client3-condition'>
                     <span>*</span>
                     Полностью ознакомиться с расчетами финмодели и скачать ее, 
-                    вы можете <a href="#">здесь</a>.
+                    вы можете <a download href={FinModel}>здесь</a>.
                 </p>
             </div>
             <div className="container-client-8">
@@ -438,32 +441,51 @@ const Investors = (props: InvestorsPropsTypes) => {
                 </div>
                 <div className="container-client-8-content">
                     <div className="client-8-content-block1">
-                        <div>
-                            <img src={men1} className="client-8-content-block1-men" />
-                        </div>
+                        <img 
+                            src={men1} 
+                            className="client-8-content-block1-men"
+                            alt='founder'
+                        />
                         <br />
-                        <h2> Вадим Фоменко</h2>
+                        <h2>Вадим Фоменко</h2>
                         <p>
-                            Главный фаундер,
-                            <br />
-                            генеральный директор
-                            <br />
-                            IT-компании «Stein
-                            <br />
+                            Главный фаундер,<br/>
+                            генеральный директор<br/>
+                            IT-компании «Stein<br/>
                             Connecting» г. Мюнхен
                         </p>
                     </div>
                     <div className="client-8-content-block1">
-                        <div >
-                            <img src={men2} className="client-8-content-block1-men" />
-                        </div>
+                        <img 
+                            src={Border} 
+                            alt="blue border"
+                            className="client-8-content-block1-men border"
+                        />
+                        <img 
+                            src={Victor} 
+                            className="client-8-content-block1-men victor"
+                            alt='developer'
+                        />
+                        <br />
+                        <h2>Виктор Пилаев</h2>
+                        <p>
+                            Fullstack-разработчик,<br/>
+                            опыт в разработке 7 лет,<br/>
+                            ведущий разработчик<br/> 
+                            компании ТиМ
+                        </p>
+                    </div>
+                    <div className="client-8-content-block1">
+                        <img 
+                            src={men2} 
+                            className="client-8-content-block1-men"
+                            alt='director'
+                        />
                         <br />
                         <h2> Сарсаков Абдула</h2>
                         <p>
-                            Генеральный директор
-                            <br />
-                            Юридическая консалтинговая
-                            <br />
+                            Генеральный директор<br/>
+                            Юридическая консалтинговая<br/>
                             компания «ЮрконсалтЪ»
                         </p>
                     </div>
